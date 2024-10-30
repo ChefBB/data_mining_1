@@ -1,5 +1,3 @@
-% Template Tesi in Informatica, ispirata al template "Tesi di laurea - Universit� di Pisa" di Simone Schirinzi (https://www.overleaf.com/latex/templates/tesi-di-laurea-universita-di-pisa/rwdcqtqwftpg). 
-
 % Carattere dimensione 12
 \documentclass[12pt]{report}
 
@@ -159,7 +157,7 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \clearpage
 \setcounter{page}{1}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
-\addcontentsline{toc}{chapter}{Introduzione} % Capitolo non numerato
+\addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
 \input{introduzione.tex}
 
 \clearpage
@@ -168,7 +166,15 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 
 \clearpage
 
-\addcontentsline{toc}{chapter}{Conclusioni} % Capitolo non numerato
+\input{capitolo2.tex}
+
+\clearpage
+
+\input{capitolo3.tex}
+
+\clearpage
+
+\addcontentsline{toc}{chapter}{Key findings and conclusions} % Capitolo non numerato
 \input{conclusioni.tex}
 
 \bibliographystyle{plain} % We choose the "plain" reference style
