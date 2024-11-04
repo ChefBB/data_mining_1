@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Relazione"] 1730299673.43358 "Relazione.aux" "Relazione.bbl" "Relazione" 1730299676.26767 0
+["bibtex Relazione"] 1730299673.43358 "Relazione.aux" "Relazione.bbl" "Relazione" 1730304075.36187 0
   "./bibliography.bib" 1719064876.34473 299 9a56073761a17467ba115822b2685c02 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Relazione.aux" 1730299675.44608 2113 b59d5b525bfb434d3d4cc94afe1281d1 "pdflatex"
+  "Relazione.aux" 1730304074.47054 2113 b59d5b525bfb434d3d4cc94afe1281d1 "pdflatex"
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1730299673.82318 "/Users/brunobarbieri/Documents/Uni/magistrale/first/data_mining_1/report/Relazione.tex" "Relazione.pdf" "Relazione" 1730299676.26825 0
-  "/Users/brunobarbieri/Documents/Uni/magistrale/first/data_mining_1/report/Relazione.tex" 1730299669.72612 6358 6925308f1c8e9aaa09d0d9725a90a7e4 ""
+["pdflatex"] 1730304073.35857 "/Users/brunobarbieri/Documents/Uni/magistrale/first/data_mining_1/report/Relazione.tex" "Relazione.pdf" "Relazione" 1730304075.36231 0
+  "/Users/brunobarbieri/Documents/Uni/magistrale/first/data_mining_1/report/Relazione.tex" 1730304073.01414 6358 6925308f1c8e9aaa09d0d9725a90a7e4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -77,11 +77,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Relazione.aux" 1730299675.44608 2113 b59d5b525bfb434d3d4cc94afe1281d1 "pdflatex"
+  "Relazione.aux" 1730304074.47054 2113 b59d5b525bfb434d3d4cc94afe1281d1 "pdflatex"
   "Relazione.bbl" 1730299673.81209 49 0eba253fc001332e731e8aba3f23127b "bibtex Relazione"
-  "Relazione.lof" 1730299675.44877 120 3f6acbd09ad3b26e533c391fd6bd8d37 "pdflatex"
-  "Relazione.tex" 1730299669.72612 6358 6925308f1c8e9aaa09d0d9725a90a7e4 ""
-  "Relazione.toc" 1730299675.44863 748 07386931f2eeaf88d8494a24f76d66df "pdflatex"
+  "Relazione.lof" 1730304074.47342 120 3f6acbd09ad3b26e533c391fd6bd8d37 "pdflatex"
+  "Relazione.tex" 1730304073.01414 6358 6925308f1c8e9aaa09d0d9725a90a7e4 ""
+  "Relazione.toc" 1730304074.47289 748 07386931f2eeaf88d8494a24f76d66df "pdflatex"
   "capitolo1.tex" 1730276481.49528 1608 80ab551306df76b576a51ca97fdc3cdb ""
   "capitolo2.tex" 1730276782.11079 300 ec9b8de9e281564f33257d74ca809330 ""
   "capitolo3.tex" 1730279065.5896 44 cc780e4d1a5b5c6d57f322e22499c3a0 ""
