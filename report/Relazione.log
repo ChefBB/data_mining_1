@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  30 OCT 2024 17:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  12 NOV 2024 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -376,27 +376,40 @@ Overfull \vbox (9.74998pt too high) has occurred while \output is active []
 
 ] (./capitolo1.tex
 Capitolo 1.
-) [2
+
+Overfull \hbox (32.80011pt too wide) in paragraph at lines 63--88
+ [][] 
+ []
 
 
-] (./capitolo2.tex
+Overfull \hbox (28.10805pt too wide) in paragraph at lines 93--128
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2
+
+
+]) [3] (./capitolo2.tex
 Capitolo 2.
-) [3
+) [4
 
 
 ] (./capitolo3.tex
 Capitolo 3.
-) [4
+) [5
 
 
-] (./conclusioni.tex) (./Relazione.bbl [5
+] (./conclusioni.tex) (./Relazione.bbl [6
 
 
 ]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [6
+) [7
 
 ] (./Relazione.aux)
  ***********
@@ -405,18 +418,18 @@ L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8342 strings out of 474116
- 160468 string characters out of 5743682
- 1931187 words of memory out of 5000000
- 30596 multiletter control sequences out of 15000+600000
- 577725 words of font info for 69 fonts, out of 8000000 for 9000
+ 8357 strings out of 474116
+ 160758 string characters out of 5743682
+ 1944187 words of memory out of 5000000
+ 30609 multiletter control sequences out of 15000+600000
+ 580487 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,396b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Relazione.pdf (9 pages, 30224 bytes).
+ 123i,19n,121p,424b,440s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Relazione.pdf (10 pages, 46610 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 53 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

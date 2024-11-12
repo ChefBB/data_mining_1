@@ -4,10 +4,13 @@
 \contentsline {chapter}{Introduction}{1}{}%
 \contentsline {chapter}{\numberline {1}Data Understanding and Preparation}{2}{}%
 \contentsline {section}{\numberline {1.1}Data Introduction}{2}{}%
-\contentsline {chapter}{\numberline {2}Clustering}{3}{}%
-\contentsline {section}{\numberline {2.1}Centroid-based methods}{3}{}%
-\contentsline {section}{\numberline {2.2}Density-based methods}{3}{}%
-\contentsline {section}{\numberline {2.3}Analysis by hierarchical clustering}{3}{}%
-\contentsline {section}{\numberline {2.4}General considerations}{3}{}%
-\contentsline {chapter}{\numberline {3}Classification}{4}{}%
-\contentsline {chapter}{Key findings and conclusions}{5}{}%
+\contentsline {section}{\numberline {1.2}Distribution of the variables and statistics}{3}{}%
+\contentsline {subsection}{\numberline {1.2.1}Discrete attributes}{3}{}%
+\contentsline {subsection}{\numberline {1.2.2}Continuous attributes}{3}{}%
+\contentsline {chapter}{\numberline {2}Clustering}{4}{}%
+\contentsline {section}{\numberline {2.1}Centroid-based methods}{4}{}%
+\contentsline {section}{\numberline {2.2}Density-based methods}{4}{}%
+\contentsline {section}{\numberline {2.3}Analysis by hierarchical clustering}{4}{}%
+\contentsline {section}{\numberline {2.4}General considerations}{4}{}%
+\contentsline {chapter}{\numberline {3}Classification}{5}{}%
+\contentsline {chapter}{Key findings and conclusions}{6}{}%
