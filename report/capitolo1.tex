@@ -58,16 +58,16 @@
 The dataset \textit{complete\_df.csv}, which is the merge of the original \textit{train.csv} and \textit{test.csv} datasets, contains 21909 titles of different forms of visual entertainment that have been rated on IMDb, an online database of information related to films, television series etc. 
 Each record is described by 23 attributes, both numerical and non-numerical. 
 All the variables of the dataset are introduced and explained in Table 1.1 and Table 1.2.
-\begin{table}[h]
+\begin{table}[h!]
     \centering
-    \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
+    \begin{tabularx}{\textwidth}{|l|l|X|} % Using 'l' for left alignment of columns
         \hline
         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
         \hline
         originalTitle & Nominal & Title in its original language \\  
         \hline
         rating & Ordinal & IMDB title rating class \\
-        & & The range is from (0,1] to (9,10] \\ 
+        & & Range: from (0,1] to (9,10] \\ 
         \hline
         titleType & Nominal & The type of media product \\ 
         \hline
@@ -84,13 +84,15 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         \hline
         genres & Nominal & The genre(s) associated with the title \\ 
         \hline
-    \end{tabular}
+    \end{tabularx}
     \caption{Description of non-numerical attributes}
     \label{tab:attributes}
 \end{table}
-\begin{table}[h]
+
+% \renewcommand{\arraystretch}{2} % Adjust row height
+\begin{table}[h!]
     \centering
-    \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
+    \begin{tabularx}{\textwidth}{|l|l|X|} % Using 'l' for left alignment of columns
         \hline
         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
         \hline
@@ -120,16 +122,19 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         \hline
         awardNominationsExcludeWins & Numeric & Number of award nominations excluding wins \\ 
         \hline
-        numRegions & Numeric & The regions number for this version of the title \\ 
+        numRegions & Numeric & The number of regions where this version of the title is available \\ 
         \hline
         userReviewsTotal & Numeric & Number of User Reviews \\ 
         \hline
-        ratingCount & Numeric & The total number of user ratings for the title \\ 
+        ratingCount & Numeric & The total number of user ratings for the title \\
         \hline
-    \end{tabular}
+    \end{tabularx}
     \caption{Description of numerical attributes}
     \label{tab:numerical_attributes}
 \end{table}
+% \renewcommand{\arraystretch}{1.5} % Adjust row height
+
+
 \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
 \subsection{Discrete attributes}
 ...content...

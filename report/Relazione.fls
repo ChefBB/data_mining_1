@@ -92,6 +92,10 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd
