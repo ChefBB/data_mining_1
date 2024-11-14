@@ -67,17 +67,18 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         originalTitle & Nominal & Title in its original language \\  
         \hline
         rating & Ordinal & IMDB title rating class \\
-        & & Range: from (0,1] to (9,10] \\ 
+        & & Range: from (0,1] to (9,10], converted into an integer interval: [1, 10]\\ 
         \hline
         titleType & Nominal & The type of media product \\ 
         \hline
-        canHaveEpisodes & Nominal (Binary) & Whether or not the title can have episodes \\ 
+        canHaveEpisodes & Binary & Whether or not the title can have episodes \\ 
         & & True: can have episodes; False: cannot have episodes \\ 
         \hline
-        isRatable & Nominal (Binary) & Whether or not the title can be rated by users \\ 
-        & & True: it can be rated; False: cannot be rated \\ 
+        isRatable & Binary & Whether or not the title can be rated by users \\ 
+        & & True: it can be rated; False: cannot be rated \\
+        & & The training set, as well as the test set, only contain True values; hence, this attribute will be discarded \\
         \hline
-        isAdult & Nominal (Binary) & Whether or not the title is for adults \\ 
+        isAdult & Binary & Whether or not the title is for adults \\ 
         & & 0: non-adult title; 1: adult title \\ 
         \hline
         countryOfOrigin & Nominal & The country(ies) where the title was produced \\ 
@@ -96,37 +97,39 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         \hline
         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
         \hline
-        runtimeMinutes & Numeric & Runtime of the title expressed in minutes \\ 
+        runtimeMinutes & Integer & Runtime of the title expressed in minutes \\ 
         \hline
-        startYear & Interval & Release/start year of a title \\ 
+        startYear & Year & Release/start year of a title \\ 
         \hline
-        endYear & Interval & TV Series' end year \\
+        endYear & Year & TV Series' end year \\
         \hline
-        awardWins & Numeric & Number of awards the title won \\ 
+        awardWins & Integer & Number of awards the title won \\ 
         \hline
-        numVotes & Numeric & Number of votes the title has received \\ 
+        numVotes & Integer & Number of votes the title has received \\ 
         \hline
-        worstRating & Numeric & Worst title rating \\
+        worstRating & Integer & Worst title rating \\
         & & Range: [1, 10] \\
+        & & Always equal to 1, so the column was discarded \\
         \hline
-        bestRating & Numeric & Best title rating \\ 
+        bestRating & Integer & Best title rating \\ 
         & & Range: [1, 10] \\
+        & & Always equal to 10, so the column was discarded \\
         \hline
-        totalImages & Numeric & Number of Images on the IMDb title page \\ 
+        totalImages & Integer & Number of Images on the IMDb title page \\ 
         \hline
-        totalVideos & Numeric & Number of Videos on the IMDb title page \\ 
+        totalVideos & Integer & Number of Videos on the IMDb title page \\ 
         \hline
-        totalCredits & Numeric & Number of Credits for the title \\ 
+        totalCredits & Integer & Number of Credits for the title \\ 
         \hline
-        criticReviewsTotal & Numeric & Total Number of Critic Reviews \\ 
+        criticReviewsTotal & Integer & Total Number of Critic Reviews \\ 
         \hline
-        awardNominationsExcludeWins & Numeric & Number of award nominations excluding wins \\ 
+        awardNominationsExcludeWins & Integer & Number of award nominations excluding wins \\ 
         \hline
-        numRegions & Numeric & The number of regions where this version of the title is available \\ 
+        numRegions & Integer & The number of regions where this version of the title is available \\ 
         \hline
-        userReviewsTotal & Numeric & Number of User Reviews \\ 
+        userReviewsTotal & Integer & Number of User Reviews \\ 
         \hline
-        ratingCount & Numeric & The total number of user ratings for the title \\
+        ratingCount & Integer & The total number of user ratings for the title \\
         \hline
     \end{tabularx}
     \caption{Description of numerical attributes}
