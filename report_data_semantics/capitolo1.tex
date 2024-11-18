@@ -111,10 +111,24 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
 \end{table}
 \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
 \subsection{Discrete attributes}
-In this paragraph, we examine the most informative discrete attributes of the dataset to provide an overview of their statistics and frequencies.
-From Fig.1(a), we observe that the classes of the \textit{titleType} attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). By analyzing the \textit{canHaveEpisodes} attribute within these \textit{titleType} values, we found out that only \textit{tvSeries} and \textit{tvMiniSeries} can have episodes, as expected.
-As shown in Fig.1(b), the frequency of rating classes is skewed toward higher values. The most frequent rating class is (7, 8], which is the rating of 4822 titles.
-Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown in Fig.1(c)
+In this paragraph, we examine the most informative discrete attributes of the dataset to provide an overview of their statistics and frequencies. 
+\\From Fig.1.1(a), we observe that the classes of the \textit{titleType} attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). By analyzing the \textit{canHaveEpisodes} attribute within these \textit{titleType} values, we found out that only \textit{tvSeries} and \textit{tvMiniSeries} can have episodes, as expected.
+\\As shown in Fig.1.1(b), the frequency of rating classes is skewed toward higher values. The most frequent rating class is (7, 8], which is the rating of 4822 titles.
+\\Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown in Fig.1.1(c).
+\begin{figure}[h!]
+    \centering
+    \subfigure[(a)]{
+        \includegraphics[width=0.45\textwidth]{plots/fig1_a.png} % Replace with your plot
+        }
+    \subfigure[(b)]{
+        \includegraphics[width=0.45\textwidth]{plots/fig1_b.png}
+        }
+    \subfigure[(c)]{
+        \includegraphics[width=0.45\textwidth]{plots/fig1_c.png}
+        }
+    \caption{Bar chart of the discrete attributes: (a): counting of the title types frequencies combined with the canHaveEpisodes variable (b): counting of ratings frequencies (c): counting of the adult and non-adult frequencies combined with the isRatable attribute.}
+    \label{fig:bar-charts}
+\end{figure}
 \subsection{Continuous attributes}
 ...content...
 ...content...
