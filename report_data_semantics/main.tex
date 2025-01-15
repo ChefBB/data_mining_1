@@ -134,20 +134,20 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \begin{document}
 
 % Frontespizio
-\begin{titlepage}
+% \begin{titlepage}
 % \begin{figure}
 %     \centering\includegraphics[scale=0.5]{immagini/cherubino_pant541.png}
 % \end{figure}
 
-\begin{center} %SISTEMARE MARGINI 
-    % {\LARGE{ Data Science and Business Informatics Master Course \\}}
-    % \vspace{2cm}
-    {\LARGE { Data Mining: Foundations }}\\
-    \vspace{2cm}
-    {\Large { Group 12 }}\\
-    \vspace{3cm}
-    {\large { Bruno Barbieri, Noemi Dalmasso, Gaia Federica Francesca Ferrara }}
-\end{center}
+% \begin{center} %SISTEMARE MARGINI 
+%     % {\LARGE{ Data Science and Business Informatics Master Course \\}}
+%     % \vspace{2cm}
+%     {\LARGE { Data Mining: Foundations }}\\
+%     \vspace{2cm}
+%     {\Large { Group 12 }}\\
+%     \vspace{3cm}
+%     {\large { Bruno Barbieri, Noemi Dalmasso, Gaia Federica Francesca Ferrara }}
+% \end{center}
 
 % \vspace{2cm}
 
@@ -164,29 +164,30 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % \vspace{25mm}
 
 % \centering{\large{\bf ANNO ACCADEMICO 20xx/20xx }}
-\end{titlepage}
+% \end{titlepage}
 % Fine frontespizio
 
-\tableofcontents
-\thispagestyle{empty}
 
-%\listoffigures ho tolto questo così l'introduzione sta subito dopo l'indice
-%\thispagestyle{empty}
-
-\clearpage
 \setcounter{page}{1}
-\addtocontents{toc}{\protect\thispagestyle{empty}}
-\addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
+% \addtocontents{toc}{\protect\thispagestyle{empty}}
+% \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
 \input{introduzione.tex}
-
-\clearpage
 
 \input{capitolo1.tex}
 
-\clearpage
+
 
 \addcontentsline{toc}{chapter}{Conclusioni} % Capitolo non numerato
 \input{conclusioni.tex}
+\clearpage
+
+
+\tableofcontents
+% \thispagestyle{empty}
+\clearpage
+
+\listoffigures
+% \thispagestyle{empty}
 
 \bibliographystyle{plain} % We choose the "plain" reference style
 \bibliography{bibliography} % Entries are in the refs.bib file
