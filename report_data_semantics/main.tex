@@ -11,13 +11,13 @@
 % \documentclass[12pt, twoside]{report}
 
 % Margini (4cm a sx, 2.5cm a dx, 2.5cm in alto, 2.5cm in basso)
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, centering]{geometry}
+\usepackage[top=2cm, bottom=2.5cm, left=2cm, right=2.5cm, centering]{geometry}
 
 % Per la stampa fronte-retro sostituire con: 
 % \usepackage[top=2.5cm, bottom=2.5cm, inner=4cm, outer=4cm, right=2.5cm, centering]{geometry}
 
 % Interlinea
-\linespread{1.3}
+\linespread{1.1}
 
 
 % Librerie utili
@@ -142,7 +142,7 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \begin{center} %SISTEMARE MARGINI 
     % {\LARGE{ Data Science and Business Informatics Master Course \\}}
     % \vspace{2cm}
-    {\LARGE { Data Mining: Foundations }}\\
+    {\LARGE { Data Mining: Fundamentals }}\\
     \vspace{2cm}
     {\Large { Group 12 }}\\
     \vspace{3cm}
@@ -177,11 +177,19 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 \setcounter{page}{1}
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
-\input{introduzione.tex}
+\input{introduzione.tex}  %dA METTERE TUTTO NELLA STESSA PAGINA
 
 \clearpage
 
 \input{capitolo1.tex}
+
+\clearpage
+
+\input{capitolo2.tex}
+
+\clearpage
+
+\input{capitolo3.tex}
 
 \clearpage
 
