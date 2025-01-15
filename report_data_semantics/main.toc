@@ -1,6 +1,17 @@
 \babel@toc {english}{}\relax 
+<<<<<<< HEAD
+=======
+\thispagestyle {empty}
+\contentsline {chapter}{Introduction}{1}{}%
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 \contentsline {chapter}{\numberline {1}Data Understanding and Preparation}{2}{}%
 \contentsline {section}{\numberline {1.1}Data Semantics}{2}{}%
 \contentsline {section}{\numberline {1.2}Distribution of the variables and statistics}{2}{}%
 \contentsline {subsection}{\numberline {1.2.1}Discrete attributes}{2}{}%
 \contentsline {subsection}{\numberline {1.2.2}Continuous attributes}{3}{}%
+<<<<<<< HEAD
+=======
+\contentsline {section}{\numberline {1.3}Data Quality}{3}{}%
+\contentsline {subsection}{\numberline {1.3.1}Syntactic Inconsistencies}{4}{}%
+\contentsline {subsection}{\numberline {1.3.2}Missing Values}{5}{}%
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d

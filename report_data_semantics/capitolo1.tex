@@ -110,16 +110,21 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
     \label{tab:numerical_attributes}
 \end{table}
 \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
+This section will give an overview about the distribution of variables that has been carried on to understand patterns, detect meaningful statistics and assess their relevance to the project. 
+As a matter of fact, variables \textbf{METTERE VAR CHE TOGLIAMO} and \textbf{METTERE VAR CHE TOGLIAMO} were found to have limited contribution based on their distributions and were excluded to the dataset.
+
 \subsection{Discrete attributes}
-In this paragraph, we examine the most informative discrete attributes of the dataset to provide an overview of their statistics and frequencies. 
-\\From Fig.1.1(a), we observe that the classes of the \textit{titleType} attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). By analyzing the \textit{canHaveEpisodes} attribute within these \textit{titleType} values, we found out that only \textit{tvSeries} and \textit{tvMiniSeries} can have episodes, as expected.
-\\As shown in Fig.1.1(b), the frequency of rating classes is skewed toward higher values. The most frequent rating class is (7, 8], which is the rating of 4822 titles.
-\\Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown in Fig.1.1(c)
-\\Finally, as shown in Fig.1.1(d), when analyzing the \textit{genres} variable across different \textit{titleType} values, we observe that \textit{Drama} and \textit{Comedy} are the most common genres. This is because they appear in the top 3 genres of nearly every \textit{titleType} category.
+\textbf{DA CAMBIARE IN BASE AI GRAFICI CHE DECIDIAMO DI TENERE}
+In this paragraph, the most informative discrete attributes of the dataset are examined to provide an overview of their statistics and frequencies. \\
+From Fig.1.1(a), it is observed that the classes of the \texttt{titleType} attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). 
+By analyzing the \texttt{canHaveEpisodes} attribute within these \texttt{titleType} values, it is found that only \textit{tvSeries} and \textit{tvMiniSeries} can have episodes, as expected.
+As shown in Fig.1.1(b), the frequency of rating classes is slighly skewed toward higher values, with the most frequent rating class being (7, 8], which is the rating of 4822 titles.
+Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown in Fig.1.1(c)
+Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable across different \texttt{titleType} values reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as they appear in the top 3 genres of nearly every \textit{titleType} category.
 \begin{figure}[h!]
     \centering
     \subfigure[]{
-        \includegraphics[width=0.45\textwidth]{plots/fig1_a.png} % Replace with your plot
+        \includegraphics[width=0.45\textwidth]{plots/fig1_a.png} 
         }
     \subfigure[]{
         \includegraphics[width=0.45\textwidth]{plots/fig1_b.png}
@@ -127,8 +132,8 @@ In this paragraph, we examine the most informative discrete attributes of the da
     \subfigure[]{
         \includegraphics[width=0.45\textwidth]{plots/fig1_c.png}
         }
-        \subfigure[]{
-        \includegraphics[width=0.45\textwidth]{plots/fig1_d.png} % Replace with your plot
+    \subfigure[]{
+        \includegraphics[width=0.45\textwidth]{plots/fig1_d.png} 
         }
     \caption{Bar chart of the discrete attributes: (a): counting of the title
     types frequencies combined with the canHaveEpisodes variable;
@@ -140,6 +145,30 @@ In this paragraph, we examine the most informative discrete attributes of the da
 \end{figure}
 
 \subsection{Continuous attributes}
+
+
+\section{Data Quality}\label{sec:data_quality}
+In this phase, a proper evaluation of the observed data was conducted in preparation for the analysis.
+Once having checked that there are no duplicates and no incomplete rows in the dataset, attention was given at identifying missing values and outliers within the columns.
+
+\subsection{Syntactic Inconsistencies}
+In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values identified with NaN.
+However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), but they were indicated with the string "\textbackslash\textbackslash N".
+To avoid this inconsistency causing problems during data preparation, these values have been replaced with NaN.
+By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} column that previously contained the string "\textbackslash\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
+
+\subsection{Missing Values}
+Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, also represented in percentages for a better understanding:
+\begin{itemize}
+    \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). To handle them it has been decided to \textbf{COSA FARE?};
+    
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that \textbf{have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group};
+    
+    \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
+
+    \item \texttt{genres}: it is 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
+\end{itemize}
+
 
 
 \end{document}

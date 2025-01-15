@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  15 JAN 2025 11:30
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  15 JAN 2025 15:38
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
+<<<<<<< HEAD
 **/Users/brunobarbieri/Documents/Uni/master/first/data_mining_1/report_data_semantics/main.tex
 (/Users/brunobarbieri/Documents/Uni/master/first/data_mining_1/report_data_semantics/main.tex
 LaTeX2e <2023-11-01> patch level 1
@@ -91,10 +96,107 @@ Package: babel 2024/11/30 v24.14 The multilingual framework for pdfLaTeX, LuaLaT
 \bbl@readstream=\read2
 \bbl@dirlevel=\count273
  (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
+=======
+**"c:/Users/Gagia/Desktop/progetto DM/report_data_semantics/main.tex"
+(c:/Users/Gagia/Desktop/progetto DM/report_data_semantics/main.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-10-09>
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count199
+\c@subparagraph=\count266
+\c@figure=\count267
+\c@table=\count268
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+\caption@tempdima=\dimen142
+\captionmargin=\dimen143
+\caption@leftmargin=\dimen144
+\caption@rightmargin=\dimen145
+\caption@width=\dimen146
+\caption@indent=\dimen147
+\caption@parindent=\dimen148
+\caption@hangindent=\dimen149
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count269
+\c@continuedfloat=\count270
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen150
+\lightrulewidth=\dimen151
+\cmidrulewidth=\dimen152
+\belowrulesep=\dimen153
+\belowbottomsep=\dimen154
+\aboverulesep=\dimen155
+\abovetopsep=\dimen156
+\cmidrulesep=\dimen157
+\cmidrulekern=\dimen158
+\defaultaddspace=\dimen159
+\@cmidla=\count271
+\@cmidlb=\count272
+\@aboverulesep=\dimen160
+\@belowrulesep=\dimen161
+\@thisruleclass=\count273
+\@lastruleclass=\count274
+\@thisrulewidth=\dimen162
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count275
+\Gm@cntv=\count276
+\c@Gm@tempcnt=\count277
+\Gm@bindingoffset=\dimen163
+\Gm@wd@mp=\dimen164
+\Gm@odd@mp=\dimen165
+\Gm@even@mp=\dimen166
+\Gm@layoutwidth=\dimen167
+\Gm@layoutheight=\dimen168
+\Gm@layouthoffset=\dimen169
+\Gm@layoutvoffset=\dimen170
+\Gm@dimlist=\toks18
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2024/10/20 v24.12 The multilingual framework for pdfLaTeX, LuaLaTeX and XeLaTeX
+\babel@savecnt=\count278
+\U@D=\dimen171
+\l@unhyphenated=\language79
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count279
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
 Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+<<<<<<< HEAD
 (babel)             (\language23). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language23). Reported on input line 108.
@@ -152,10 +254,70 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \c@lofdepth=\count275
 \c@subtable=\count276
 \c@lotdepth=\count277
+=======
+(babel)             (\language73). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language73). Reported on input line 108.
+)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2024/10/24 v3.43 KOMA-Script package (end user interface for scrlayer)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer.sty
+Package: scrlayer 2024/10/24 v3.43 KOMA-Script package (defining layers and page styles)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.sty
+Package: scrkbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2024/10/24 v3.43 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.sty
+Package: scrlfile 2024/10/24 v3.43 KOMA-Script package (file load hooks)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-hook.sty
+Package: scrlfile-hook 2024/10/24 v3.43 KOMA-Script package (using LaTeX hooks)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2024/10/24 v3.43 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+))
+\footheight=\skip51
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 2182.
+)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip52
+\subfigcapskip=\skip53
+\subfigcaptopadj=\dimen174
+\subfigbottomskip=\skip54
+\subfigcapmargin=\dimen175
+\subfiglabelskip=\skip55
+\c@subfigure=\count280
+\c@lofdepth=\count281
+\c@subtable=\count282
+\c@lotdepth=\count283
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
+<<<<<<< HEAD
 (/usr/local/texlive/2024/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip55
 \subfig@bottom=\skip56
@@ -237,16 +399,107 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+=======
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/subfigure\subfigure.cfg)
+\subfig@top=\skip56
+\subfig@bottom=\skip57
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count284
+)
+\csq@reset=\count285
+\csq@gtype=\count286
+\csq@glevel=\count287
+\csq@qlevel=\count288
+\csq@maxlvl=\count289
+\csq@tshold=\count290
+\csq@ltx@everypar=\toks21
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
+File: csquotes.cfg 
+)) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box52
+\beforetitleunit=\skip58
+\aftertitleunit=\skip59
+\ttl@plus=\dimen176
+\ttl@minus=\dimen177
+\ttl@toksa=\toks22
+\titlewidth=\dimen178
+\titlewidthlast=\dimen179
+\titlewidthfirst=\dimen180
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count291
+\float@exts=\toks23
+\float@box=\box53
+\@float@everytoks=\toks24
+\@floatcapt=\box54
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count292
+\lst@gtempboxa=\box55
+\lst@token=\toks25
+\lst@length=\count293
+\lst@currlwidth=\dimen181
+\lst@column=\count294
+\lst@pos=\count295
+\lst@lostspace=\dimen182
+\lst@width=\dimen183
+\lst@newlines=\count296
+\lst@lineno=\count297
+\lst@maxwidth=\dimen184
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count298
+\lst@skipnumbers=\count299
+\lst@framebox=\box56
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
+<<<<<<< HEAD
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count294
 \l__pdf_internal_box=\box56
 ) (./main.aux)
+=======
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count300
+\l__pdf_internal_box=\box57
+) (main.aux)
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
@@ -279,6 +532,7 @@ Package caption Info: End \AtBeginDocument code.
 * hratio: 1:1
 * vratio: 1:1
 * modes: 
+<<<<<<< HEAD
 * h-part:(L,W,R)=(71.13188pt, 472.03123pt, 71.13188pt)
 * v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
 * \paperwidth=614.295pt
@@ -288,6 +542,17 @@ Package caption Info: End \AtBeginDocument code.
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
 * \topmargin=-38.1381pt
+=======
+* h-part:(L,W,R)=(56.9055pt, 486.25761pt, 71.13188pt)
+* v-part:(T,H,B)=(56.9055pt, 666.9326pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=486.25761pt
+* \textheight=666.9326pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -309,6 +574,7 @@ Package caption Info: End \AtBeginDocument code.
 Package scrlayer-scrpage Warning: Very small head height detected!
 (scrlayer-scrpage)                Using scrlayer-scrpage the head height
 (scrlayer-scrpage)                should be at least \baselineskip, which is
+<<<<<<< HEAD
 (scrlayer-scrpage)                18.85004pt currently.
 (scrlayer-scrpage)                But head height is currently 12.0pt only.
 (scrlayer-scrpage)                You may use
@@ -346,10 +612,63 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                At least 18.85002pt needed,
+=======
+(scrlayer-scrpage)                15.95009pt currently.
+(scrlayer-scrpage)                But head height is currently 12.0pt only.
+(scrlayer-scrpage)                You may use
+(scrlayer-scrpage)                geometry option `head=15.95009pt'
+(scrlayer-scrpage)                \relax to avoid this warning.
+
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count301
+\scratchdimen=\dimen185
+\scratchbox=\box58
+\nofMPsegments=\count302
+\nofMParguments=\count303
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen186
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
+\everyMPtoPDFconversion=\toks27
+) (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+\c@lstlisting=\count307
+
+
+[1
+
+{C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 5.
+)
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+
+
+[1
+
+] (introduzione.tex)
+
+
+Package scrlayer-scrpage Warning: \headheight to low.
+(scrlayer-scrpage)                At least 15.95007pt needed,
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 (scrlayer-scrpage)                but only 12.0pt found.
 (scrlayer-scrpage)                I'll enlarge \headheight, for further
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
+<<<<<<< HEAD
 (scrlayer-scrpage)                `head=18.85002pt'.
 (scrlayer-scrpage)                I'll also decrease \topmargin on input line 1.
 
@@ -367,12 +686,27 @@ Overfull \hbox (15.63914pt too wide) in paragraph at lines 44--69
 
 
 Overfull \hbox (12.5711pt too wide) in paragraph at lines 74--109
+=======
+(scrlayer-scrpage)                `head=15.95007pt'.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 182.
+
+
+Overfull \vbox (3.95007pt too high) has occurred while \output is active []
+
+ [1
+
+] (capitolo1.tex
+Chapter 1.
+
+Overfull \hbox (1.41277pt too wide) in paragraph at lines 44--69
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<<<<<<< HEAD
 <plots/fig1_a.png, id=8, 433.62pt x 433.62pt>
 File: plots/fig1_a.png Graphic file (type png)
 <use plots/fig1_a.png>
@@ -395,10 +729,38 @@ Package pdftex.def Info: plots/fig1_d.png  used on input line 132.
 (pdftex.def)             Requested size: 212.41261pt x 169.66954pt.
 [2
 
+=======
+<plots/fig1_a.png, id=14, 426.393pt x 426.393pt>
+File: plots/fig1_a.png Graphic file (type png)
+<use plots/fig1_a.png>
+Package pdftex.def Info: plots/fig1_a.png  used on input line 128.
+(pdftex.def)             Requested size: 218.81444pt x 218.81084pt.
+<plots/fig1_b.png, id=16, 438.6789pt x 402.5439pt>
+File: plots/fig1_b.png Graphic file (type png)
+<use plots/fig1_b.png>
+Package pdftex.def Info: plots/fig1_b.png  used on input line 131.
+(pdftex.def)             Requested size: 218.81444pt x 200.79234pt.
+<plots/fig1_c.png, id=17, 388.8126pt x 375.804pt>
+File: plots/fig1_c.png Graphic file (type png)
+<use plots/fig1_c.png>
+Package pdftex.def Info: plots/fig1_c.png  used on input line 134.
+(pdftex.def)             Requested size: 218.81444pt x 211.49818pt.
+<plots/fig1_d.png, id=18, 462.528pt x 346.896pt>
+File: plots/fig1_d.png Graphic file (type png)
+<use plots/fig1_d.png>
+Package pdftex.def Info: plots/fig1_d.png  used on input line 137.
+(pdftex.def)             Requested size: 218.81444pt x 164.11035pt.
+
+
+[2
+
+
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<<<<<<< HEAD
 [3] [4 <./plots/fig1_a.png> <./plots/fig1_b.png> <./plots/fig1_c.png> <./plots/fig1_d.png>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -418,6 +780,41 @@ Output written on main.pdf (4 pages, 179210 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
+=======
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 161.
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 161.
+
+
+[3]
+
+[4 <./plots/fig1_a.png> <./plots/fig1_b.png> <./plots/fig1_c.png> <./plots/fig1_d.png>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 170.
+
+
+[5] (main.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-10-09>
+ ***********
+ ) ) 
+Here is how much of TeX's memory you used:
+ 9714 strings out of 473897
+ 189020 string characters out of 5726462
+ 655642 words of memory out of 5000000
+ 32494 multiletter control sequences out of 15000+600000
+ 564134 words of font info for 56 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 123i,19n,121p,519b,434s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Gagia\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (7 pages, 154821 bytes).
+PDF statistics:
+ 75 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 256ae11ff730e6aa6c815a1176c3f91dffb7850d
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
