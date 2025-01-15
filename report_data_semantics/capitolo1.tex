@@ -170,3 +170,17 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 
     \item \texttt{genres}: it is 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
 \end{itemize}
+
+\section{Variable Transformation}\label{sec:var_Transformation}
+As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables were converted from strings into lists of strings to facilitate further analysis. 
+This transformation was necessary because some records contain multiple genres or countries as values for these variables.
+
+Multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
+
+Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.
+
+\textbf{DA AGGIUNGERE NORMALIZZAZIONE E RESTO MA ANCORA DA FARE}
+
+
+\section{Pairwise correlations and eventual elimination of variables}\label{sec:correlation}
+\textbf{DA FARE}
