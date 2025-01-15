@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  15 JAN 2025 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  15 JAN 2025 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -683,30 +683,29 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: plots/fig1_a.png Graphic file (type png)
 <use plots/fig1_a.png>
 Package pdftex.def Info: plots/fig1_a.png  used on input line 119.
-(pdftex.def)             Requested size: 212.41261pt x 212.4161pt.
+(pdftex.def)             Requested size: 226.57297pt x 226.57542pt.
 <plots/fig1_b.png, id=17, 505.89pt x 433.62pt>
 File: plots/fig1_b.png Graphic file (type png)
 <use plots/fig1_b.png>
 Package pdftex.def Info: plots/fig1_b.png  used on input line 126.
-(pdftex.def)             Requested size: 212.41261pt x 182.07285pt.
+(pdftex.def)             Requested size: 226.57297pt x 194.2075pt.
 <plots/fig1_c.png, id=18, 714.7503pt x 570.933pt>
 File: plots/fig1_c.png Graphic file (type png)
 <use plots/fig1_c.png>
 Package pdftex.def Info: plots/fig1_c.png  used on input line 133.
-(pdftex.def)             Requested size: 212.41261pt x 169.66954pt.
-<plots/fig1_d.png, id=19, 714.7503pt x 570.933pt>
+(pdftex.def)             Requested size: 226.57297pt x 180.98607pt.
+<plots/fig1_d.png, id=19, 713.3049pt x 570.933pt>
 File: plots/fig1_d.png Graphic file (type png)
 <use plots/fig1_d.png>
 Package pdftex.def Info: plots/fig1_d.png  used on input line 140.
-(pdftex.def)             Requested size: 212.41261pt x 169.66954pt.
- [4]
+(pdftex.def)             Requested size: 226.57297pt x 181.34326pt.
+ [4] [5 <./plots/fig1_a.png> <./plots/fig1_b.png> <./plots/fig1_c.png> <./plots/fig1_d.png>]
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 158.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
- [5 <./plots/fig1_a.png> <./plots/fig1_b.png> <./plots/fig1_c.png> <./plots/fig1_d.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 165.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
@@ -764,7 +763,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,21n,121p,1213b,1761s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (12 pages, 187243 bytes).
+Output written on main.pdf (12 pages, 174978 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

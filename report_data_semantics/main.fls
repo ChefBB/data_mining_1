@@ -259,12 +259,12 @@ INPUT ./plots/fig1_d.png
 INPUT ./plots/fig1_d.png
 INPUT ./plots/fig1_d.png
 INPUT ./plots/fig1_d.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/omsptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ts1ptm.fd
