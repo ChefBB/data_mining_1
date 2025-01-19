@@ -7,13 +7,13 @@
 % \documentclass[12pt, twoside]{report}
 
 % Margini (4cm a sx, 2.5cm a dx, 2.5cm in alto, 2.5cm in basso)
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, centering]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm, centering]{geometry}
 
 % Per la stampa fronte-retro sostituire con: 
 % \usepackage[top=2.5cm, bottom=2.5cm, inner=4cm, outer=4cm, right=2.5cm, centering]{geometry}
 
 % Interlinea
-\linespread{1.5}
+\linespread{1.2}
 
 % Librerie utili
 \usepackage[english]{babel} % applicazione regole di scrittura per la lingua italiana 
@@ -23,7 +23,7 @@
 \cfoot[]{}
 \cfoot[\pagemark]{\pagemark}
 \pagestyle{scrplain}
-\usepackage{mathptmx} % font Times New Roman (simile)
+\usepackage{lmodern} % font Times New Roman (simile)
 \usepackage{graphicx} % inserimento di immagini
 \usepackage{subcaption}
 \usepackage{csquotes} % per le citazioni "in blocco"
@@ -250,15 +250,18 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 %     \centering\includegraphics[scale=0.5]{immagini/cherubino_pant541.png}
 % \end{figure}
 
-% \begin{center} %SISTEMARE MARGINI 
-%     % {\LARGE{ Data Science and Business Informatics Master Course \\}}
-%     % \vspace{2cm}
-%     {\LARGE { Data Mining: Foundations }}\\
-%     \vspace{2cm}
-%     {\Large { Group 12 }}\\
-%     \vspace{3cm}
-%     {\large { Bruno Barbieri, Noemi Dalmasso, Gaia Federica Francesca Ferrara }}
-% \end{center}
+\begin{center} %SISTEMARE MARGINI 
+     %{\LARGE{ Data Science and Business Informatics Master Course \\}}
+     %\vspace{2cm}
+     {\LARGE { Data Mining: Fundamentals}}\\
+     \vspace{2cm}
+    {\Large { Group 12 }}\\
+     \vspace{2cm}
+     {\large { Bruno Barbieri, Noemi Dalmasso, Gaia Federica Francesca Ferrara }}
+\end{center}
+
+The aim of this report is to display an analysis carried out on the IMDb dataset; the analysis has been conducted making use of data mining methodologies. 
+After the data understanding and preparation phase, clustering, classification, and pattern mining techniques have been applied.
 
 % \vspace{2cm}
 
@@ -278,33 +281,38 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 % \end{titlepage}
 % Fine frontespizio
 
+\tableofcontents
 
-\setcounter{page}{1}
 % \addtocontents{toc}{\protect\thispagestyle{empty}}
 % \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
-\input{introduzione.tex}
+%\input{introduzione.tex}
 
-\input{capitolo1.tex}
+\setcounter{page}{1}
+\input{capitolo1.tex} %data preparation
 
 
 
-\input{capitolo2.tex}
+\input{capitolo2.tex} %clustering
 
-\input{capitolo3.tex}
+\input{capitolo3.tex} %classification
+
+\input{capitolo4.tex} %regression
+
+\input{capitolo5.tex} %pattern mining
 
 % \addcontentsline{toc}{chapter}{Conclusioni} % Capitolo non numerato
-\input{conclusioni.tex}
+%\input{conclusioni.tex} non servono le conclusioni
 
 
-\tableofcontents
+
 % \thispagestyle{empty}
 \clearpage
 
-\listoffigures
+%\listoffigures secondo me non utile
 % \thispagestyle{empty}
 
 \printbibliography
-\renewcommand{\listfigurename}{List of figures}
-\listoffigures
+%\renewcommand{\listfigurename}{List of figures}
+%\listoffigures
 
 \end{document}

@@ -77,7 +77,6 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
 \end{table}
 \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
 This section will give an overview about the distribution of variables that has been carried on to understand patterns, detect meaningful statistics and assess their relevance to the project. 
-As a matter of fact, variables \textbf{METTERE VAR CHE TOGLIAMO} and \textbf{METTERE VAR CHE TOGLIAMO} were found to have limited contribution based on their distributions and were excluded to the dataset.
 
 \subsection{Discrete attributes}
 \textbf{DA CAMBIARE IN BASE AI GRAFICI CHE DECIDIAMO DI TENERE}
@@ -147,7 +146,7 @@ Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable
 \end{figure}
 
 \subsection{Continuous attributes}
-
+...content...content...content...content...content...content...
 
 \section{Data Quality}\label{sec:data_quality}
 In this phase, a proper evaluation of the observed data was conducted in preparation for the analysis.
@@ -155,16 +154,16 @@ Once having checked that there are no duplicates and no incomplete rows in the d
 
 \subsection{Syntactic Inconsistencies}
 In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values identified with NaN.
-However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), but they were indicated with the string "\textbackslash\textbackslash N".
+However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), but they were indicated with the string "\textbackslash N".
 To avoid this inconsistency causing problems during data preparation, these values have been replaced with NaN.
-By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} column that previously contained the string "\textbackslash\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
+By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} column that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
 
 \subsection{Missing Values}
 Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, also represented in percentages for a better understanding:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). To handle them it has been decided to \textbf{COSA FARE?};
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that \textbf{have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group};
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group;
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
 
@@ -179,8 +178,19 @@ Multi-label one-hot encoding was applied to the \texttt{genres} column; each uni
 
 Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.
 
-\textbf{DA AGGIUNGERE NORMALIZZAZIONE E RESTO MA ANCORA DA FARE}
+\textbf{AGGUNGERE NORMALIZZAZIONE CHE TENIAMO IN CONTO DI FARE NEI VARI MODELLI, SENZA TRASFORMARE DEFINITIVAMENTE GIA' DA SUBITO IL DATASET} 
 
 
-\section{Pairwise correlations and eventual elimination of variables}\label{sec:correlation}
-\textbf{DA FARE}
+\section{Pairwise correlations and elimination of variables}\label{sec:correlation}
+%(figure~\ref{fig:rnn_confmatr80})
+The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous numerical variables of the dataset.
+For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, and so it would be redundant to keep them both.
+For this reason it has been decided to drop \textbf{DECIDERE QUALE DROPPARE}. 
+On the other hand, regarding categorial attributes, after having analized them, \textbf{METTERE VAR CHE TOGLIAMO: es. best/worst rating, isratable, endyear(???)} were found to have limited contribution \textbf{explain why} based on their distributions and were excluded to the dataset.
+\begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
+    \centering % Centers the figure
+    \includegraphics[width=0.9\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
+    \caption{Correlation matrix} % Add a caption
+    \label{fig:correlation_matrix} % Add a label for referencing
+\end{figure}
+\textbf{DA FINIRE}
