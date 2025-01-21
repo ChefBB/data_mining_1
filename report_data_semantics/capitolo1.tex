@@ -173,13 +173,14 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 \section{Variable Transformation}\label{sec:var_Transformation}
 As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables were converted from strings into lists of strings to facilitate further analysis. 
 This transformation was necessary because some records contain multiple genres or countries as values for these variables.
-
 Multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
+Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.\\
 
-Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.
 
-\textbf{AGGUNGERE NORMALIZZAZIONE CHE TENIAMO IN CONTO DI FARE NEI VARI MODELLI, SENZA TRASFORMARE DEFINITIVAMENTE GIA' DA SUBITO IL DATASET} 
-
+For the numeric attributes, it was observed that some variables required stronger transformations due to their highly positively skewed distributions. 
+Specifically, a log-transformation was applied to variables with a skewness greater than 10, \textbf{while a square root transformation was deemed reasonable for the variable with a skewness of 4 (although this step has not yet been implemented).}
+This approach was chosen because the standard normalization techniques, such as \texttt{MinMaxScaler} and \texttt{StandardScaler} provided by \texttt{sklearn.preprocessing}, were insufficient to achieve an adequate normalization of the dataset. 
+These scalers are more effective when applied after stronger preprocessing steps aimed at addressing extreme skewness.
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
 %(figure~\ref{fig:rnn_confmatr80})
