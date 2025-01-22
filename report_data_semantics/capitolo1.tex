@@ -152,6 +152,13 @@ Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable
 In this phase, a proper evaluation of the observed data was conducted in preparation for the analysis.
 Once having checked that there are no duplicates and no incomplete rows in the dataset, attention was given at identifying missing values and outliers within the columns.
 
+\subsection{Outliers detection}
+While examining the dataset, it became apparent that some attributes have outliers. 
+The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 14589, 14821, 14427), 
+these might be considered variables with many outliers (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) but they actually have less outliers compared to the other variables.
+For the other attributes \textbf{CONTINUARE......}
+
+
 \subsection{Syntactic Inconsistencies}
 In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values identified with NaN.
 However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), but they were indicated with the string "\textbackslash N".
@@ -171,27 +178,27 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 \end{itemize}
 
 \section{Variable Transformation}\label{sec:var_Transformation}
-As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables were converted from strings into lists of strings to facilitate further analysis. 
+As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
 This transformation was necessary because some records contain multiple genres or countries as values for these variables.
 Multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
 Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.\\
 
-
-For the numeric attributes, it was observed that some variables required stronger transformations due to their highly positively skewed distributions. 
-Specifically, a log-transformation was applied to variables with a skewness greater than 10, \textbf{while a square root transformation was deemed reasonable for the variable with a skewness of 4 (although this step has not yet been implemented).}
-This approach was chosen because the standard normalization techniques, such as \texttt{MinMaxScaler} and \texttt{StandardScaler} provided by \texttt{sklearn.preprocessing}, were insufficient to achieve an adequate normalization of the dataset. 
-These scalers are more effective when applied after stronger preprocessing steps aimed at addressing extreme skewness.
+For the numeric attributes, it was observed that some variables required a stronger transformation due to their highly positively skewed distributions. 
+Specifically, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
+This step was performed directly on the dataset. 
+For the application of the different data mining techniques, \texttt{MinMaxScaler} and \texttt{StandardScaler} standard normalization techniques have been applied; respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
+The choice between these two methods was made based on the specific requirements of each data mining technique and the most suitable normalization approach for the task at hand.
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
-%(figure~\ref{fig:rnn_confmatr80})
+
 The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous numerical variables of the dataset.
 For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, and so it would be redundant to keep them both.
-For this reason it has been decided to drop \textbf{DECIDERE QUALE DROPPARE}. 
-On the other hand, regarding categorial attributes, after having analized them, \textbf{METTERE VAR CHE TOGLIAMO: es. best/worst rating, isratable, endyear(???)} were found to have limited contribution \textbf{explain why} based on their distributions and were excluded to the dataset.
+For this reason it has been decided to drop \texttt{ratingCount}. 
+On the other hand, regarding categorial attributes, after having analized them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} have been discarded because they \textbf{endyear(???)} were found to have limited contribution based on their distributions.
+As a matter of fact, their unique values were respectively 10, 1 and True for all attributes.
 \begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
     \centering % Centers the figure
-    \includegraphics[width=0.9\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
+    \includegraphics[width=0.8\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
     \caption{Correlation matrix} % Add a caption
     \label{fig:correlation_matrix} % Add a label for referencing
 \end{figure}
-\textbf{DA FINIRE}
