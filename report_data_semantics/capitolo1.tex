@@ -148,9 +148,11 @@ Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable
 \subsection{Continuous attributes}
 ...content...content...content...content...content...content...
 
+
 \section{Data Quality}\label{sec:data_quality}
 In this phase, a proper evaluation of the observed data was conducted in preparation for the analysis.
 Once having checked that there are no duplicates and no incomplete rows in the dataset, attention was given at identifying missing values and outliers within the columns.
+
 
 \subsection{Outliers detection}
 While examining the dataset, it became apparent that some attributes have outliers. 
@@ -165,6 +167,8 @@ However, there were missing values also in other columns (\texttt{endYear}, \tex
 To avoid this inconsistency causing problems during data preparation, these values have been replaced with NaN.
 By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} column that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
 
+
+
 \subsection{Missing Values}
 Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, also represented in percentages for a better understanding:
 \begin{itemize}
@@ -177,6 +181,8 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
     \item \texttt{genres}: it is 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
 \end{itemize}
 
+
+
 \section{Variable Transformation}\label{sec:var_Transformation}
 As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
 This transformation was necessary because some records contain multiple genres or countries as values for these variables.
@@ -184,13 +190,13 @@ Multi-label one-hot encoding was applied to the \texttt{genres} column; each uni
 Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.\\
 
 For the numeric attributes, it was observed that some variables required a stronger transformation due to their highly positively skewed distributions. 
-Specifically, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
-This step was performed directly on the dataset. 
-For the application of the different data mining techniques, \texttt{MinMaxScaler} and \texttt{StandardScaler} standard normalization techniques have been applied; respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
-The choice between these two methods was made based on the specific requirements of each data mining technique and the most suitable normalization approach for the task at hand.
+Specifically, when required by the data mining method, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
+\textbf{DECIDERE SE SPECIFICARE EFFETTIVAMENTE IN QUALE TECHNIQUE L'ABBIAMO APPLICATA O SE RIMANERE VAGHI}.
+Following the log-transformation, standard normalization techniques - \texttt{MinMaxScaler} and \texttt{StandardScaler} - have then been applied (when scaling was necessary); respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
+The decision to apply one or the other was again made based on the specific requirements of each data mining technique.
+
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
-
 The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous numerical variables of the dataset.
 For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, and so it would be redundant to keep them both.
 For this reason it has been decided to drop \texttt{ratingCount}. 
