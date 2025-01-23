@@ -179,10 +179,11 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 
 \subsection{Outliers detection}
 While examining the dataset, it became apparent that some attributes have outliers. 
-The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 14589, 14821, 14427), 
+The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 89\%, 14821, 14427), 
 these might be considered variables with many outliers (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) but they actually have less outliers compared to the other variables.
 For the other attributes \textbf{CONTINUARE......}
-
+\textbf{VALORI OUTLIERS SU TRAIN IN \% --> 86.7 , 90.2 , 87.8}
+\textbf{VALORI OUTLIERS SU DF\_PP IN \% --> 88.7 , 90.2 , 87.8}
 
 \section{Variable Transformation}\label{sec:var_Transformation}
 As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
