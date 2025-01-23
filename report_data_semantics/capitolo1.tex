@@ -154,12 +154,6 @@ In this phase, a proper evaluation of the observed data was conducted in prepara
 Once having checked that there are no duplicates and no incomplete rows in the dataset, attention was given at identifying missing values and outliers within the columns.
 
 
-\subsection{Outliers detection}
-While examining the dataset, it became apparent that some attributes have outliers. 
-The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 14589, 14821, 14427), 
-these might be considered variables with many outliers (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) but they actually have less outliers compared to the other variables.
-For the other attributes \textbf{CONTINUARE......}
-
 
 \subsection{Syntactic Inconsistencies}
 In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values identified with NaN.
@@ -181,6 +175,13 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
     \item \texttt{genres}: it is 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
 \end{itemize}
 
+
+
+\subsection{Outliers detection}
+While examining the dataset, it became apparent that some attributes have outliers. 
+The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 14589, 14821, 14427), 
+these might be considered variables with many outliers (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) but they actually have less outliers compared to the other variables.
+For the other attributes \textbf{CONTINUARE......}
 
 
 \section{Variable Transformation}\label{sec:var_Transformation}
