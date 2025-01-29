@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  23 JAN 2025 18:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  29 JAN 2025 11:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
 (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
-(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
-File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+(C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+File: size11.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count194
 \c@chapter=\count195
@@ -576,12 +576,12 @@ LaTeX Font Info:    ... okay on input line 245.
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -595,10 +595,10 @@ LaTeX Font Info:    ... okay on input line 245.
 Package scrlayer-scrpage Warning: Very small head height detected!
 (scrlayer-scrpage)                Using scrlayer-scrpage the head height
 (scrlayer-scrpage)                should be at least \baselineskip, which is
-(scrlayer-scrpage)                17.39995pt currently.
+(scrlayer-scrpage)                16.31996pt currently.
 (scrlayer-scrpage)                But head height is currently 12.0pt only.
 (scrlayer-scrpage)                You may use
-(scrlayer-scrpage)                geometry option `head=17.39995pt'
+(scrlayer-scrpage)                geometry option `head=16.31996pt'
 (scrlayer-scrpage)                \relax to avoid this warning.
 
 (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
@@ -656,7 +656,7 @@ LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 2
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 284.
+(Font)              <10.95> on input line 284.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 284.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -664,16 +664,16 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 Package scrlayer-scrpage Warning: \headheight to low.
-(scrlayer-scrpage)                At least 17.39993pt needed,
+(scrlayer-scrpage)                At least 16.31995pt needed,
 (scrlayer-scrpage)                but only 12.0pt found.
 (scrlayer-scrpage)                I'll enlarge \headheight, for further
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
-(scrlayer-scrpage)                `head=17.39993pt'.
+(scrlayer-scrpage)                `head=16.31995pt'.
 (scrlayer-scrpage)                I'll also decrease \topmargin on input line 284.
 
 
-Overfull \vbox (5.39993pt too high) has occurred while \output is active []
+Overfull \vbox (4.31995pt too high) has occurred while \output is active []
 
  [1
 
@@ -697,35 +697,35 @@ File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 [2
 
-]
-<plots/fig1_a.png, id=15, 433.62pt x 433.62pt>
+{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}]
+<plots/fig1_a.png, id=18, 433.62pt x 433.62pt>
 File: plots/fig1_a.png Graphic file (type png)
 <use plots/fig1_a.png>
 Package pdftex.def Info: plots/fig1_a.png  used on input line 118.
 (pdftex.def)             Requested size: 240.23016pt x 240.23187pt.
-<plots/fig1_b.png, id=17, 505.89pt x 433.62pt>
+<plots/fig1_b.png, id=20, 505.89pt x 433.62pt>
 File: plots/fig1_b.png Graphic file (type png)
 <use plots/fig1_b.png>
 Package pdftex.def Info: plots/fig1_b.png  used on input line 125.
 (pdftex.def)             Requested size: 240.23016pt x 205.9121pt.
-<plots/fig1_c.png, id=18, 714.7503pt x 570.933pt>
+<plots/fig1_c.png, id=21, 714.7503pt x 570.933pt>
 File: plots/fig1_c.png Graphic file (type png)
 <use plots/fig1_c.png>
 Package pdftex.def Info: plots/fig1_c.png  used on input line 132.
 (pdftex.def)             Requested size: 240.23016pt x 191.89316pt.
-<plots/fig1_d.png, id=19, 713.3049pt x 570.933pt>
+<plots/fig1_d.png, id=22, 713.3049pt x 570.933pt>
 File: plots/fig1_d.png Graphic file (type png)
 <use plots/fig1_d.png>
 Package pdftex.def Info: plots/fig1_d.png  used on input line 139.
 (pdftex.def)             Requested size: 240.23016pt x 192.27647pt.
 
 
-[3{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}]
+[3]
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 160.
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 160.
 
 
@@ -734,11 +734,6 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 16
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (2.02455pt too wide) in paragraph at lines 181--187
-\OT1/lmr/m/n/12 tant as-pect to high-light is that since \OT1/lmtt/m/n/12 awardWins\OT1/lmr/m/n/12 , \OT1/lmtt/m/n/12 totalVideos \OT1/lmr/m/n/12 and \OT1/lmtt/m/n/12 awardNominationsExcludeWins
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 189--193
 
  []
@@ -746,7 +741,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--193
 
 
 [5{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-<plots/correlation_matrix.png, id=37, 706.0779pt x 623.6901pt>
+<plots/correlation_matrix.png, id=38, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
 Package pdftex.def Info: plots/correlation_matrix.png  used on input line 209.
@@ -801,17 +796,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17495 strings out of 473897
- 347595 string characters out of 5726462
- 1230254 words of memory out of 5000000
- 40157 multiletter control sequences out of 15000+600000
- 600877 words of font info for 59 fonts, out of 8000000 for 9000
+ 17496 strings out of 473897
+ 347628 string characters out of 5726462
+ 1230263 words of memory out of 5000000
+ 40158 multiletter control sequences out of 15000+600000
+ 600850 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1240b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (12 pages, 632413 bytes).
+<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (12 pages, 664057 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
+ 99 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
