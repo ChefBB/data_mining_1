@@ -1,0 +1,15 @@
+check for duplicates
+histograms following sturges' rule
+parallel coordinates (looks really useful)
+data matrix
+    - correlation
+
+Checklist for Data Understanding
+• Determine the quality of the data. (e.g. syntactic accuracy)
+• Find outliers. (e.g. using visualization techniques)
+• Detect and examine missing values. Possible hidden by default values.
+• Discover new or confirm expected dependencies or correlations
+between attributes.
+• Check specific application dependent assumptions (e.g. the attribute
+follows a normal distribution)
+• Compare statistics with the expected behaviour.
