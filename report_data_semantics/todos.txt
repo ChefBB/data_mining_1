@@ -13,3 +13,16 @@ between attributes.
 • Check specific application dependent assumptions (e.g. the attribute
 follows a normal distribution)
 • Compare statistics with the expected behaviour.
+
+
+“The validation of clustering structures is the most
+difficult and frustrating part of cluster analysis.
+Without a strong effort in this direction, cluster
+analysis will remain a black art accessible only to
+those true believers who have experience and great
+courage.”
+
+
+use k-means with higher k, unite into lower number of clusters
+(originally wished for k). useful in case data is noisy, non-globular,
+clusters have different shapes/densities
