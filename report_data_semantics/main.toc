@@ -11,7 +11,7 @@
 \contentsline {section}{\numberline {1.4}Variable Transformation}{5}{}%
 \contentsline {section}{\numberline {1.5}Pairwise correlations and elimination of variables}{6}{}%
 \contentsline {chapter}{\numberline {2}Clustering}{8}{}%
-\contentsline {section}{\numberline {2.1}Centroid-based methods}{8}{}%
+\contentsline {section}{\numberline {2.1}K-means}{8}{}%
 \contentsline {section}{\numberline {2.2}Density-based methods}{9}{}%
 \contentsline {section}{\numberline {2.3}Analysis by hierarchical clustering}{9}{}%
 \contentsline {section}{\numberline {2.4}General considerations}{9}{}%
