@@ -1,5 +1,4 @@
-check for duplicates
-histograms following sturges' rule
+histograms following sturges' rule (maybe without outliers)
 parallel coordinates (looks really useful)
 data matrix
     - correlation
