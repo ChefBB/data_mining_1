@@ -3,14 +3,46 @@
 
 This chapter of the report aims at illustrating the clustering analysis performed on the dataset at hand.
 The employed clustering techniques are K-means (Centroid-based), DBSCAN (density-based) and hierarchical clustering.
-The analysis conducted using these methods focused on the numeric attributes of the dataset \textbf{CAPIRE SE FARE ANALISI SOLO SU NUMERICHE O INCLUDERE ANCHE BINARIE CON MIXED DISTANCES
-MATRIX}, appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \textbf{STANDARDSCALER o MINMAX???}.
-To provide a proper visualization of the results, a Principal Component Analysis has been conducted on the preprocessed data. 
-In particular, the optimal number of components that has been found is \textbf{se usiamo solo numeriche dovrebbe essere 4/5} (as in \textbf{AGGIUNGERE FIGURA}).
+%The analysis conducted using these methods focused on the numeric attributes of the dataset \textbf{CAPIRE SE FARE ANALISI SOLO SU NUMERICHE O INCLUDERE ANCHE BINARIE CON MIXED DISTANCES
+%MATRIX}, appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \textbf{STANDARDSCALER o MINMAX???}.
+%To provide a proper visualization of the results, a Principal Component Analysis has been conducted on the preprocessed data. 
+%In particular, the optimal number of components that has been found is \textbf{se usiamo solo numeriche dovrebbe essere 4/5} (as in \textbf{AGGIUNGERE FIGURA}).
 
+\section{Centroid-based methods}\label{sec:centroid_based} %DA AGGIUNGERE SOTTOSEZIONE K-MEANS SE INCLUDIAMO ANCHE BISECTING
+The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, which negatively affected cluster formation. 
+The variables have been appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \texttt{StandardScaler}.
 
-\section{Centroid-based methods}\label{sec:centroid_based}
+To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score. 
+The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that k = 4 provides the optimal balance between these metrics. Choosing k = 4 returns a SSE score of 67496 and Silhouette score of 0.21. 
 
+To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
+The cluster visualization results are presented in figure~\ref{fig:pairplot_kmeans}. 
+%The distribution of data points across the four clusters is as follows: \textbf{[Cluster 1: N1 points, Cluster 2: N2 points, Cluster 3: N3 points, Cluster 4: N4 points]}.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/sse_silh_kmeans.png}
+        \caption{SSE and Silhouette scores}
+        \label{fig:sse_silh_kmeans}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
+        \caption{PCA Analysis}
+        \label{fig:pca_kmeans}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/pairplot_kmeans.png}
+        \caption{K-means Visualization}
+        \label{fig:pairplot_kmeans}
+    \end{subfigure}
+    \caption{K-means clustering analysis}
+    \label{fig:three_subplots}
+\end{figure}
 
 \section{Density-based methods}\label{sec:density_based}
 
