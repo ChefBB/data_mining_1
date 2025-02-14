@@ -3,38 +3,64 @@
 
 This chapter of the report aims at illustrating the clustering analysis performed on the dataset at hand.
 The employed clustering techniques are K-means (Centroid-based), DBSCAN (density-based) and hierarchical clustering.
-%The analysis conducted using these methods focused on the numeric attributes of the dataset \textbf{CAPIRE SE FARE ANALISI SOLO SU NUMERICHE O INCLUDERE ANCHE BINARIE CON MIXED DISTANCES
-%MATRIX}, appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \textbf{STANDARDSCALER o MINMAX???}.
-%To provide a proper visualization of the results, a Principal Component Analysis has been conducted on the preprocessed data. 
-%In particular, the optimal number of components that has been found is \textbf{se usiamo solo numeriche dovrebbe essere 4/5} (as in \textbf{AGGIUNGERE FIGURA}).
 
-\section{K-means}\label{sec:centroid_based} %DA AGGIUNGERE SOTTOSEZIONE K-MEANS SE INCLUDIAMO ANCHE BISECTING
-The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, which negatively affected cluster formation. 
-The variables have been appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \texttt{StandardScaler}.
+The analysis conducted using these methods focused only exclusively on the dataset's numerical attributes, which were appropriately log-transformed (as mentioned in the \textit{Variable Transformation} section) and normalized using \texttt{StandardScaler}.  
+For the K-means algorithm, \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} were excluded due to their high proportion of zero values, which negatively affected cluster formation.
+
+In addition, an attempt was made to incorporate categorical variables to the analysis with the K-means algorithm by converting them into binary attributes and constructing a mixed-distances matrix. 
+Distances were then calculated using the Euclidean distance for numerical (log-tranformed and scaled) features and the Jaccard similarity for binary ones. 
+However, this approach did not lead to any improvement in the results.
+
+Principal Component Analysis (PCA) was applied to the preprocessed data to effectively visualize the clustering results. 
+Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
+These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
+The differences between these two approaches are illustrated in Figure X.
+The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches.
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
+        \caption{PCA excluding variables}
+        \label{fig:sse_silh_kmeans}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/pca5.png}
+        \caption{PCA with all variables}
+        \label{fig:pca5}
+    \end{subfigure}
+    \caption{Principal Component Analysis}
+    \label{fig:pca_diff}
+\end{figure}
+
+\section{K-means}\label{sec:centroid_based}
+%The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, which negatively affected cluster formation. 
+%The variables have been appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \texttt{StandardScaler}.
 
 To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score. 
-The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that k = 4 provides the optimal balance between these metrics. Choosing k = 4 returns a SSE score of 67496 and Silhouette score of 0.21. 
+The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = 4 provides the optimal balance between these metrics. Choosing \textit{k} = 4 returns a SSE score of 67496 and Silhouette score of 0.21. 
 
-To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
-The cluster visualization results are presented in figure~\ref{fig:pairplot_kmeans}. 
+% To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
+The cluster results are presented in figure~\ref{fig:pairplot_kmeans}. 
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/sse_silh_kmeans.png}
         \caption{SSE and Silhouette scores}
         \label{fig:sse_silh_kmeans}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
-        \caption{PCA Analysis}
-        \label{fig:pca_kmeans}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    % \hfill
+    % \begin{subfigure}[b]{0.3\textwidth}
+    %     \centering
+    %     \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
+    %     \caption{PCA Analysis}
+    %     \label{fig:pca_kmeans}
+    % \end{subfigure}
+    % \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/pairplot_kmeans.png}
         \caption{K-means Visualization}
@@ -43,7 +69,7 @@ The cluster visualization results are presented in figure~\ref{fig:pairplot_kmea
     \caption{K-means clustering analysis}
     \label{fig:three_subplots}
 \end{figure}
-The distribution of data points across the four clusters is as follows (shown in percentages of data points per cluster):
+The distribution of data points across the four clusters is as follows (shown in percentage of data points per cluster):
 Red (0): 51.68\%, Blue (1): 7.42\%, Green (2): 24.22\%, Orange (3): 16.68\%.
 The clusters are not as well-separated in most Principal Component combinations as they are with PC1. 
 In fact, in the other combinations, the clusters tend to overlap and their boundaries are not always clearly distinct.
@@ -51,7 +77,16 @@ This might be an indication that the true clusters have irregular shapes or diff
 
 
 
-\section{Density-based methods}\label{sec:density_based}
+\section{DBSCAN}\label{sec:density_based}
+To determine the optimal DBSCAN parameters, the \textit{k\textsuperscript{th} nearest neighbors} method was used: this allows to identify \textit{eps} (the maximum distance between two points for them to be considered neighbors) given the value of \textit{Minpts} (minimum number of points in a neighborhood for a point to be considered a core point).
+Initially, \textit{Minpts} was set to 22, following the rule of setting it above twice the number of dimensions. 
+However, due to the dataset's unbalanced nature and the sparsity of high-dimensional data, reducing \textit{Minpts} to 11 allowed the formation of smaller clusters while preventing the risk of detecting only one dominant cluster and classifying many minority groups as noise instead of distinct clusters.
+To determine \textit{eps}, the k\textsuperscript{th} nearest neighbors plot (with \textit{k} = 11) was analyzed. While the "knee" point suggested an eps of around 0.1, this value would have resulted in excessive noise and a single dominant cluster. To address this, eps was set to 1.564, allowing for meaningful connectivity while preserving the detection of smaller clusters without merging them into a single entity. 
+By adjusting \textit{eps} and \textit{Minpts} appropriately, the clustering results achieved a Silhouette score of 0.139, indicating little improved cluster separation and reduced noise, which is considered good enough for an unbalanced, high-dimensional dataset.
+
+
+
+
 
 
 \section{Analysis by hierarchical clustering}\label{sec:hierarchical}

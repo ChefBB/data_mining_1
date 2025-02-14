@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  13 FEB 2025 18:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  14 FEB 2025 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -535,6 +535,12 @@ LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 24
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (main.aux
 
+LaTeX Warning: Label `fig:sse_silh_kmeans' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:sse_silh_kmeans' multiply defined.
+
+
 LaTeX Warning: Label `ch:capitolo2' multiply defined.
 
 )
@@ -756,44 +762,57 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7 <./plots/correlation_matrix.png>]
 Chapter 2.
-<plots/sse_silh_kmeans.png, id=47, 462.528pt x 346.896pt>
-File: plots/sse_silh_kmeans.png Graphic file (type png)
-<use plots/sse_silh_kmeans.png>
-Package pdftex.def Info: plots/sse_silh_kmeans.png  used on input line 25.
-(pdftex.def)             Requested size: 150.14671pt x 112.60753pt.
-<plots/pca_kmeans.png, id=48, 499.3857pt x 379.4175pt>
+
+Overfull \hbox (2.24904pt too wide) in paragraph at lines 7--9
+\OT1/lmr/m/n/10.95 mal-ized us-ing \OT1/lmtt/m/n/10.95 StandardScaler\OT1/lmr/m/n/10.95 . For the K-means al-go-rithm, \OT1/lmtt/m/n/10.95 awardWins\OT1/lmr/m/n/10.95 , \OT1/lmtt/m/n/10.95 awardNominationsExcludeWins\OT1/lmr/m/n/10.95 ,
+ []
+
+<plots/pca_kmeans.png, id=47, 499.3857pt x 379.4175pt>
 File: plots/pca_kmeans.png Graphic file (type png)
 <use plots/pca_kmeans.png>
-Package pdftex.def Info: plots/pca_kmeans.png  used on input line 32.
-(pdftex.def)             Requested size: 150.14671pt x 114.07506pt.
-<plots/pairplot_kmeans.png, id=49, 762.4485pt x 712.5822pt>
-File: plots/pairplot_kmeans.png Graphic file (type png)
-<use plots/pairplot_kmeans.png>
-Package pdftex.def Info: plots/pairplot_kmeans.png  used on input line 39.
-(pdftex.def)             Requested size: 150.14671pt x 140.31754pt.
+Package pdftex.def Info: plots/pca_kmeans.png  used on input line 23.
+(pdftex.def)             Requested size: 245.2399pt x 186.32724pt.
+<plots/pca5.png, id=48, 499.3857pt x 379.4175pt>
+File: plots/pca5.png Graphic file (type png)
+<use plots/pca5.png>
+Package pdftex.def Info: plots/pca5.png  used on input line 29.
+(pdftex.def)             Requested size: 245.2399pt x 186.32724pt.
 
 
 [8
 
- <./plots/sse_silh_kmeans.png> <./plots/pca_kmeans.png> <./plots/pairplot_kmeans.png>]) (capitolo3.tex
+ <./plots/pca_kmeans.png> <./plots/pca5.png>]
+<plots/sse_silh_kmeans.png, id=54, 462.528pt x 346.896pt>
+File: plots/sse_silh_kmeans.png Graphic file (type png)
+<use plots/sse_silh_kmeans.png>
+Package pdftex.def Info: plots/sse_silh_kmeans.png  used on input line 51.
+(pdftex.def)             Requested size: 245.2399pt x 183.9334pt.
+<plots/pairplot_kmeans.png, id=55, 762.4485pt x 712.5822pt>
+File: plots/pairplot_kmeans.png Graphic file (type png)
+<use plots/pairplot_kmeans.png>
+Package pdftex.def Info: plots/pairplot_kmeans.png  used on input line 65.
+(pdftex.def)             Requested size: 245.2399pt x 229.19438pt.
 
-[9]
+
+[9 <./plots/sse_silh_kmeans.png> <./plots/pairplot_kmeans.png>]) (capitolo3.tex
+
+[10]
 Chapter 3.
 ) (capitolo4.tex
 
-[10
+[11
 
 ]
 Chapter 4.
 ) (capitolo5.tex
 
-[11
+[12
 
 ]
 Chapter 5.
 )
 
-[12
+[13
 
 ]
 
@@ -813,17 +832,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17524 strings out of 473897
- 348410 string characters out of 5726462
- 1230407 words of memory out of 5000000
- 40186 multiletter control sequences out of 15000+600000
- 600850 words of font info for 59 fonts, out of 8000000 for 9000
+ 17534 strings out of 473897
+ 348580 string characters out of 5726462
+ 1230546 words of memory out of 5000000
+ 40195 multiletter control sequences out of 15000+600000
+ 605070 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1240b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (13 pages, 1164936 bytes).
+<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (14 pages, 1219519 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

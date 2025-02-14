@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1739468521.62694 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1739556982.27334 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1739468516.42383 "c:/Users/Gagia/Desktop/progetto DM/report_data_semantics/main.tex" "main.pdf" "main" 1739468521.62794 0
+["pdflatex"] 1739556977.6832 "c:/Users/Gagia/Desktop/progetto DM/report_data_semantics/main.tex" "main.pdf" "main" 1739556982.2745 0
   "C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737310083 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Gagia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1730486100 11948315 6548ab8caeecfc235d79a24208231612 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc" 1256929440 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -29,6 +29,7 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmr6.tfm" 1256929440 11836 e3b6ce3e601aec94f64a536e7f4224d5 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmr8.tfm" 1256929440 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmri10.tfm" 1256929440 16968 1b588d0f410bd67a83eaecf8c64b2a43 ""
+  "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmri8.tfm" 1256929440 16976 7228e7c7bc486e2318fc496e0de33875 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmro10.tfm" 1256929440 12016 5fd5ddca8271bb43b0a1d696493463db ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmtt10.tfm" 1256929440 1340 adaa94f9add991a099a6fc98bbb5f02c ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/ts1-lmr10.tfm" 1256929440 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
@@ -37,7 +38,9 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb" 1256929440 119235 05e5c8d6d60439433e50047898c2c0e0 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb" 1256929440 113634 9384aebdf26f9881e046a4b5574566db ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb" 1256929440 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
+  "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb" 1256929440 112593 fda2373ba4420af33949610de4c28fe8 ""
+  "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb" 1256929440 109952 907d11d9707997c3fd76af7ec651ec78 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb" 1256929440 27863 09ce3735688ffde955e72da27c95b61a ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb" 1256929440 113227 d3d1adc024746ff57b20efba82c6d365 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -120,21 +123,22 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "c:/Users/Gagia/Desktop/progetto DM/report_data_semantics/main.tex" 1738146504 12160 e578a2aa2d41b8700be287be0538f597 ""
   "capitolo1.tex" 1738145282 12675 dfbe665fe6ab412706356f5c0aa51f14 ""
-  "capitolo2.tex" 1739468515 3933 48479e5bfe695ebcb2b3707d592f3eb3 ""
+  "capitolo2.tex" 1739556976 6856 0372f2395faa6e2e1f2f729fdf97d078 ""
   "capitolo3.tex" 1737302912 44 cc780e4d1a5b5c6d57f322e22499c3a0 ""
   "capitolo4.tex" 1737306522 44 b5f01c049d491e682df38f53df915368 ""
   "capitolo5.tex" 1737306518 46 c3f7b49be244fff29ebb63267fdd1440 ""
-  "main.aux" 1739468520 5563 d1c3dcc8b56f68a55b239bd808a20b52 "pdflatex"
+  "main.aux" 1739556981 6031 ff2d357672ecca4dad7d06013544fbd0 "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1739468520 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1739556981 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1738146504 12160 e578a2aa2d41b8700be287be0538f597 ""
-  "main.toc" 1739468520 1386 153853d89bc92f99e287b71177818b9b "pdflatex"
+  "main.toc" 1739556981 1373 093a57913722800391efe735d10c90fb "pdflatex"
   "plots/correlation_matrix.png" 1737311619 431826 cfb5ca287acdcbc14d9728a2d0adf5e1 ""
   "plots/fig1_a.png" 1737302913 22446 4772a89199482225d811e9689ad0da84 ""
   "plots/fig1_b.png" 1737302913 14421 2dd49ee14619746320f99ce2d88eff57 ""
   "plots/fig1_c.png" 1737302913 31517 78d5819eb1c2948af256b9f54c41a1fb ""
   "plots/fig1_d.png" 1737302913 60686 a3b877aa7d3e83028adf9a11d8b52f04 ""
   "plots/pairplot_kmeans.png" 1739461542 628711 868d83715b083e9dc8d5d434dd4de568 ""
+  "plots/pca5.png" 1739555898 27844 fa72105c76bc5f3ce1c1c5dd49a1af72 ""
   "plots/pca_kmeans.png" 1739461551 28646 9cc962f63697747b35010cb64fba2cfb ""
   "plots/sse_silh_kmeans.png" 1739461122 24879 79bf4e44c85781ee5f39978c830b5578 ""
   (generated)
