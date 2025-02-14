@@ -46,7 +46,7 @@ The cluster results are presented in figure~\ref{fig:pairplot_kmeans}.
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[b]{0.40\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/sse_silh_kmeans.png}
         \caption{SSE and Silhouette scores}
@@ -60,7 +60,7 @@ The cluster results are presented in figure~\ref{fig:pairplot_kmeans}.
     %     \label{fig:pca_kmeans}
     % \end{subfigure}
     % \hfill
-    \begin{subfigure}[b]{0.40\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/pairplot_kmeans.png}
         \caption{K-means Visualization}
@@ -81,10 +81,39 @@ This might be an indication that the true clusters have irregular shapes or diff
 To determine the optimal DBSCAN parameters, the \textit{k\textsuperscript{th} nearest neighbors} method was used: this allows to identify \textit{eps} (the maximum distance between two points for them to be considered neighbors) given the value of \textit{Minpts} (minimum number of points in a neighborhood for a point to be considered a core point).
 Initially, \textit{Minpts} was set to 22, following the rule of setting it above twice the number of dimensions. 
 However, due to the dataset's unbalanced nature and the sparsity of high-dimensional data, reducing \textit{Minpts} to 11 allowed the formation of smaller clusters while preventing the risk of detecting only one dominant cluster and classifying many minority groups as noise instead of distinct clusters.
-To determine \textit{eps}, the k\textsuperscript{th} nearest neighbors plot (with \textit{k} = 11) was analyzed. While the "knee" point suggested an eps of around 0.1, this value would have resulted in excessive noise and a single dominant cluster. To address this, eps was set to 1.564, allowing for meaningful connectivity while preserving the detection of smaller clusters without merging them into a single entity. 
-By adjusting \textit{eps} and \textit{Minpts} appropriately, the clustering results achieved a Silhouette score of 0.139, indicating little improved cluster separation and reduced noise, which is considered good enough for an unbalanced, high-dimensional dataset.
+To determine \textit{eps}, the k\textsuperscript{th} nearest neighbors plot with \textit{k} = 11 was analyzed (figure ~\ref{fig:DBSCAN_kth_graph}). While the "knee" point suggested an eps of around 0.1, this value would have resulted in excessive noise and a single dominant cluster. 
+To address this, eps was set to 1.564, allowing for meaningful connectivity while preserving the detection of smaller clusters without merging them into a single entity. 
+The algorithm identified 4 groups in the dataset, including one representing noise (1,753 points). 
+The largest cluster contains 13,198 points, while the smaller clusters consist of 733 and 747 points, 
+respectively.The  results are shown in figure~\ref{fig:DBSCAN_provvisoria}
 
+To conclude, by adjusting \textit{eps} and \textit{Minpts} appropriately, the clustering results achieved a Silhouette score of 0.139 \textbf{(SIL CONTANDO OUTLIERS)}, indicating little improved cluster separation and reduced noise, which is considered good enough for an unbalanced, high-dimensional dataset.
 
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/DBSCAN_kth_graph.png}
+        \caption{k\textsuperscript{th} nearest neighbors}
+        \label{fig:DBSCAN_kth_graph}
+    \end{subfigure}
+    % \hfill
+    % \begin{subfigure}[b]{0.3\textwidth}
+    %     \centering
+    %     \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
+    %     \caption{PCA Analysis}
+    %     \label{fig:pca_kmeans}
+    % \end{subfigure}
+    % \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/DBSCAN_provvisoria.png}
+        \caption{DBSCAN Visualization}
+        \label{fig:DBSCAN_provvisoria}
+    \end{subfigure}
+    \caption{DBSCAN clustering analysis}
+    \label{fig:three_subplots}
+\end{figure}
 
 
 
