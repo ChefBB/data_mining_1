@@ -166,7 +166,7 @@ By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \text
 \subsection{Missing Values}
 Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, also represented in percentages for a better understanding:
 \begin{itemize}
-    \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). To handle them it has been decided to \textbf{COSA FARE?};
+    \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). To handle them it has been decided to \textbf{COSA FARE? forse furbo sostituire i nan con lo startyear di quel record};
     
     \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group;
     
