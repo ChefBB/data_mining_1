@@ -1,8 +1,8 @@
-PWD /Users/brunobarbieri/Documents/Uni/master/first/data_mining_1/report
+PWD /Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report
 INPUT /usr/local/texlive/2024/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/brunobarbieri/Documents/Uni/master/first/data_mining_1/report/Relazione.tex
+INPUT /Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report/Relazione.tex
 OUTPUT Relazione.log
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls

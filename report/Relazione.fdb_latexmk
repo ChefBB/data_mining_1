@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex Relazione"] 1731582835.9217 "Relazione.aux" "Relazione.bbl" "Relazione" 1731583038.28288 0
+["bibtex Relazione"] 1739979897.23185 "Relazione.aux" "Relazione.bbl" "Relazione" 1739979901.45874 0
   "./bibliography.bib" 1719064876.34473 299 9a56073761a17467ba115822b2685c02 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Relazione.aux" 1731583037.51017 2984 593615f2a9cabf7b1ee0eb4effc66e64 "pdflatex"
+  "Relazione.aux" 1739979900.65866 3022 d69a079d73f48b59d09e038adfeede11 "pdflatex"
   (generated)
   "Relazione.bbl"
   "Relazione.blg"
   (rewritten before read)
-["pdflatex"] 1731583035.77464 "/Users/brunobarbieri/Documents/Uni/master/first/data_mining_1/report/Relazione.tex" "Relazione.pdf" "Relazione" 1731583038.28325 0
-  "/Users/brunobarbieri/Documents/Uni/master/first/data_mining_1/report/Relazione.tex" 1731582140.48402 6407 30fe7ec5836f80114b8d01f004b05338 ""
+["pdflatex"] 1739979898.40733 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report/Relazione.tex" "Relazione.pdf" "Relazione" 1739979901.45905 0
+  "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report/Relazione.tex" 1731582140.48402 6407 30fe7ec5836f80114b8d01f004b05338 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -30,11 +30,11 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf" 1136768653 1380 0ea3a3370054be6da6acd929ec569f06 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
-  "/usr/local/texlive/2024/texmf-dist/tex/generic/babel-italian/italian.ldf" 1704400413 11324 231db2406347b14c88e42443ebaa8d26 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty" 1707339808 146276 10a40dabec03ce18494af0c3a51bcbdc ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/babel-italian/italian.ldf" 1728589403 11361 8658bbf8ead5c43fd2f199c4b2910145 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty" 1733001190 143156 7d7f4a729134569542df4f1d20065545 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/it/babel-it.ini" 1663444672 4255 d2c36ede3f04f7968d64917327cbb37a ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex" 1498512262 336 03ec4eb0d03eb340ff7cfbc6acac5ec5 ""
-  "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def" 1704662920 6948 df63e25be1d2bc35bbad5a0141f41348 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def" 1724963526 6945 bd5d6b511b1a8665314b99c284c05828 ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty" 1705352648 5048 425739d70251273bf93e3d51f3c40048 ""
@@ -82,11 +82,11 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "Relazione.aux" 1731583037.51017 2984 593615f2a9cabf7b1ee0eb4effc66e64 "pdflatex"
-  "Relazione.bbl" 1731582836.26744 49 0eba253fc001332e731e8aba3f23127b "bibtex Relazione"
-  "Relazione.lof" 1731583037.51254 120 3f6acbd09ad3b26e533c391fd6bd8d37 "pdflatex"
+  "Relazione.aux" 1739979900.65866 3022 d69a079d73f48b59d09e038adfeede11 "pdflatex"
+  "Relazione.bbl" 1739979898.39796 49 0eba253fc001332e731e8aba3f23127b "bibtex Relazione"
+  "Relazione.lof" 1739979900.6613 120 3f6acbd09ad3b26e533c391fd6bd8d37 "pdflatex"
   "Relazione.tex" 1731582140.48402 6407 30fe7ec5836f80114b8d01f004b05338 ""
-  "Relazione.toc" 1731583037.51242 989 baf69a146a978f7de0f384c3a8b33bfa "pdflatex"
+  "Relazione.toc" 1739979900.66108 989 baf69a146a978f7de0f384c3a8b33bfa "pdflatex"
   "capitolo1.tex" 1731583035.27162 5875 de545f19f42a1dbc385327e8a277f6f3 ""
   "capitolo2.tex" 1730276782.11079 300 ec9b8de9e281564f33257d74ca809330 ""
   "capitolo3.tex" 1730279065.5896 44 cc780e4d1a5b5c6d57f322e22499c3a0 ""
