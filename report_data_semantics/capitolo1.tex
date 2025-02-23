@@ -146,7 +146,7 @@ Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable
 \end{figure}
 
 \subsection{Continuous attributes}
-...content...content...content...content...content...content...
+\textbf{ANCORA DA FARE}...content...content...content...content...content...content...
 
 
 \section{Data Quality}\label{sec:data_quality}
@@ -179,24 +179,26 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 
 \subsection{Outliers detection}
 While examining the dataset, it became apparent that some attributes have outliers. 
-The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 89\%, 14821, 14427), 
+The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
 these might be considered variables with many outliers (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) but they actually have less outliers compared to the other variables.
 For the other attributes \textbf{CONTINUARE......}
 \textbf{VALORI OUTLIERS SU TRAIN IN \%: 86.7 , 90.2 , 87.8}
 \textbf{VALORI OUTLIERS SU DF\_PP IN \%: 88.7 , 90.2 , 87.8}
 
 \section{Variable Transformation}\label{sec:var_Transformation}
-As the first step in the variable transformation process, the \texttt{CountryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
+As the first step in the variable transformation process, the \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
 This transformation was necessary because some records contain multiple genres or countries as values for these variables.
-Multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
+After that, multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
+A similar approach was taken for the \texttt{countryOfOrigin} attribute; however, instead of creating a separate feature for each unique country (as there were many), countries were grouped by continent.
+Six binary attributes were created: \texttt{is\_from\_Africa}, \texttt{is\_from\_Asia}, \texttt{is\_from\_Europe}, \texttt{is\_from\_North America}, \texttt{is\_from\_Oceania}, and \texttt{is\_from\_South America}.
+This transformation preserves information about titles produced in more than one continent, as they will have a value of 1 for each corresponding attribute.
 Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.\\
 
-For the numeric attributes, it was observed that some variables required a stronger transformation due to their highly positively skewed distributions. 
+For the numeric attributes, it was observed that required a stronger transformation due to their highly positively skewed distributions. 
 Specifically, when required by the data mining method, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
-\textbf{DECIDERE SE SPECIFICARE EFFETTIVAMENTE IN QUALE TECHNIQUE L'ABBIAMO APPLICATA O SE RIMANERE VAGHI}.
+\textbf{DECIDERE SE SPECIFICARE EFFETTIVAMENTE IN QUALE DM METHOD L'ABBIAMO APPLICATA O SE RIMANERE VAGHI}.
 Following the log-transformation, standard normalization techniques - \texttt{MinMaxScaler} and \texttt{StandardScaler} - have then been applied (when scaling was necessary); respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
-The decision to apply one or the other was again made based on the specific requirements of each data mining technique.
-
+The decision to apply one or the other was again made based on the specific requirements of each data mining technique, and so will be specified accordingly in each section.
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
 The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous numerical variables of the dataset.
