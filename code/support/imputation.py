@@ -56,7 +56,7 @@ def impute_data(train: pd.DataFrame, test: pd.DataFrame | None=None) -> tuple[pd
     return train_res, test_res
 
 
-def impute_runtime_minutes(df: pd.DataFrame, perc: float | None=0.99) -> Callable[[pd.DataFrame], pd.Series]:
+def impute_runtime_minutes(df: pd.DataFrame, perc: float | None=None) -> Callable[[pd.DataFrame], pd.Series]:
     """
     Impute missing values in the 'runtimeMinutes' column of the given DataFrame.
     Assigns to missing values randomly sampled data out of the central perc% range.
@@ -110,18 +110,20 @@ def impute_runtime_minutes(df: pd.DataFrame, perc: float | None=0.99) -> Callabl
                 central_upper = perc_threshold.loc[title_type, upper_bound]
                 valid_values = valid_values[(valid_values >= central_lower) & (valid_values <= central_upper)]
 
-            for index in group.index:
-                # If the value is outside the central perc% range, assign a random sample from the valid values
-                if group[index] < lower or group[index] > upper:
-                    imputed_runtime.loc[index] = valid_values.sample(n=1, replace=True, random_state=42).values[0]
+                for index in group.index:
+                    # If the value is outside the central perc% range, assign a random sample from the valid values
+                    if group[index] < lower or group[index] > upper:
+                        imputed_runtime.loc[index] = valid_values.sample(n=1, replace=True, random_state=42).values[0]
 
             # Sample values for missing entries
             missing_count = group.isna().sum()
-            if missing_count > 0:
+            if missing_count > 0 and valid_values.size > 0:
                 sampled_values = valid_values.sample(n=missing_count, replace=True, random_state=42)
                 # Assign sampled values to the missing positions
                 imputed_runtime.loc[group.index[group.isna()]] = sampled_values.values
-
+            elif valid_values.size == 0:
+                print(title_type)
+                
         return imputed_runtime
     
     return impute_rt_mins
