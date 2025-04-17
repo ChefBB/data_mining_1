@@ -168,7 +168,7 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). To handle them it has been decided to \textbf{COSA FARE? forse furbo sostituire i nan con lo startyear di quel record};
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group;
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype};
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
 
@@ -189,10 +189,11 @@ For the other attributes \textbf{CONTINUARE......}
 As the first step in the variable transformation process, the \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
 This transformation was necessary because some records contain multiple genres or countries as values for these variables.
 After that, multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
-A similar approach was taken for the \texttt{countryOfOrigin} attribute; however, instead of creating a separate feature for each unique country (as there were many), countries were grouped by continent.
+A similar approach was taken for the \texttt{countryOfOrigin} attribute; however, instead of creating a separate feature for each unique country (as there were many of them), countries were grouped by continent.
 Six binary attributes were created: \texttt{is\_from\_Africa}, \texttt{is\_from\_Asia}, \texttt{is\_from\_Europe}, \texttt{is\_from\_North America}, \texttt{is\_from\_Oceania}, and \texttt{is\_from\_South America}.
 This transformation preserves information about titles produced in more than one continent, as they will have a value of 1 for each corresponding attribute.
-Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.\\
+Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.
+\textbf{QUESTIONE TOTALMEDIA, TOTALNOMINATION - sono state fatte?}\\
 
 For the numeric attributes, it was observed that required a stronger transformation due to their highly positively skewed distributions. 
 Specifically, when required by the data mining method, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
