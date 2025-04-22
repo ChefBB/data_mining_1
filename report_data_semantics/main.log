@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  12 APR 2025 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  22 APR 2025 12:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Gagia/Desktop/progetto DM1/report_data_semantics/main.tex"
-(c:/Users/Gagia/Desktop/progetto DM1/report_data_semantics/main.tex
+**"c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex"
+(c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-10-09>
 (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -752,7 +752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--197
 <plots/correlation_matrix.png, id=38, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 212.
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 213.
 (pdftex.def)             Requested size: 400.38872pt x 353.67032pt.
 )
 
@@ -852,14 +852,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  17572 strings out of 473897
- 349451 string characters out of 5726462
+ 349675 string characters out of 5726462
  1230647 words of memory out of 5000000
  40225 multiletter control sequences out of 15000+600000
  612913 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1241b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,19n,121p,1257b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (14 pages, 1910064 bytes).
+Output written on main.pdf (14 pages, 1910534 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

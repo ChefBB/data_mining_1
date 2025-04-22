@@ -168,7 +168,7 @@ Once having solved the above-mentioned inconsistency, the resulting total amount
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). To handle them it has been decided to \textbf{COSA FARE? forse furbo sostituire i nan con lo startyear di quel record};
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype};
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype; anche se questo causa problemi nel momento in cui andiamo a classificare un nuovo record che non ha titletype};
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
 
@@ -206,7 +206,8 @@ The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matri
 For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, and so it would be redundant to keep them both.
 For this reason it has been decided to drop \texttt{ratingCount}. 
 On the other hand, regarding categorial attributes, after having analized them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} have been discarded because they \textbf{endyear(???)} were found to have limited contribution based on their distributions.
-As a matter of fact, their unique values were respectively 10, 1 and True for all attributes.
+As a matter of fact, their unique values were respectively 10, 1 and True for all attributes.\\
+\textbf{ELIMINATION OF RECORDS BELONGING TO "VIDEOGAMES" CLASS IN TITLETYPE}
 \begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
     \centering % Centers the figure
     \includegraphics[width=0.8\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
