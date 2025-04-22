@@ -78,7 +78,7 @@ def impute_runtime_minutes(df: pd.DataFrame, perc: float | None=None) -> Callabl
         perc_threshold = df.groupby('titleType')['runtimeMinutes'].quantile([lower_bound, upper_bound]).unstack()
 
     # Define the percentiles for each titleType category, while cutting off outliers
-    percentiles = df.groupby('titleType')['runtimeMinutes'].quantile([0.3, 0.7]).unstack()
+    percentiles = df.groupby('titleType')['runtimeMinutes'].quantile([0.25, 0.75]).unstack()
 
     def impute_rt_mins(df: pd.DataFrame) -> pd.Series:
         """
@@ -98,8 +98,8 @@ def impute_runtime_minutes(df: pd.DataFrame, perc: float | None=None) -> Callabl
 
         # Iterate over each group and impute missing values
         for title_type, group in groups:
-            lower = percentiles.loc[title_type, 0.3]
-            upper = percentiles.loc[title_type, 0.7]
+            lower = percentiles.loc[title_type, 0.25]
+            upper = percentiles.loc[title_type, 0.75]
 
             # Get valid values within the 30-70 percentile range
             valid_values = group[(group >= lower) & (group <= upper)].dropna()
@@ -195,3 +195,165 @@ def impute_plaw_distrib_feat(df: pd.DataFrame, feat: str, perc: float=0.995) -> 
         return imputed_feat[feat]
     
     return impute_feat
+
+
+
+def impute_rt_mins_normals(df: pd.DataFrame, perc: float=0.995) -> Callable[[pd.DataFrame], pd.Series]:
+    """
+    Impute missing values in the 'runtimeMinutes' column of the given DataFrame for normal titles.
+    Assigns to missing values randomly sampled data out of the central perc% range.
+    Also imputes the values for rows outside the perc range if not None.
+    Imputation is done separately for each 'titleType' category.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame to impute.
+
+    Returns:
+        Callable[[pd.DataFrame], pd.Series]: A function that takes a DataFrame and returns the imputed 'runtimeMinutes' column.
+    """
+    lower_bound = (1 - perc) / 2
+    upper_bound = 1 - lower_bound
+    
+    # Define the percentiles for each titleType category, while cutting off outliers
+    percentiles_normal = df.loc[
+        (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0),
+        'runtimeMinutes'].quantile([0.25, 0.75])
+    perc_threshold_normal = df.loc[
+        (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0),
+        'runtimeMinutes'].quantile([lower_bound, upper_bound]).unstack()
+    
+
+    def impute_rt_mins(df: pd.DataFrame) -> pd.Series:
+        """
+        Impute missing values in the 'runtimeMinutes' column of the given DataFrame for normal titles.
+        Assigns to missing values randomly sampled data out of the central perc% range.
+
+        Parameters:
+            df (pd.DataFrame): The DataFrame to impute.
+        Returns:
+            pd.Series: The imputed 'runtimeMinutes' column.
+        """
+        # Create a copy of the original column to preserve order
+        imputed_runtime = df['runtimeMinutes'].copy()
+
+        # Get valid values within the 30-70 percentile range
+        lower_normal = percentiles_normal[0.25]
+        upper_normal = percentiles_normal[0.75]
+        
+        normal = df.loc[
+            (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0),
+            'runtimeMinutes'].dropna()
+
+        # Filter the group to include only rows within the central perc% range
+        valid_values = normal[
+            (normal['runtimeMinutes'] >= lower_normal) &
+            (normal['runtimeMinutes'] <= upper_normal), 'runtimeMinutes'].dropna()
+
+        # Sample values for missing entries
+        missing_count = df.loc[
+            (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0),
+            'runtimeMinutes'].isna().sum()
+        if missing_count > 0 and valid_values.size > 0:
+            sampled_values = valid_values.sample(n=missing_count, replace=True, random_state=42)
+            # Assign sampled values to the missing positions
+            imputed_runtime.loc[
+                (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0) &
+                (imputed_runtime['runtimeMinutes'].isna())] = sampled_values.values
+        
+        outlier_count = df.loc[
+            (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0) &
+            
+            'runtimeMinutes'].().sum()
+        # Impute values outside the central perc% range
+        if perc is not None:
+            central_lower = perc_threshold_normal.loc[0, lower_bound]
+            central_upper = perc_threshold_normal.loc[0, upper_bound]
+            imputed_runtime.loc[
+                (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0) &
+                ((imputed_runtime['runtimeMinutes'] < central_lower) |
+                 (imputed_runtime['runtimeMinutes'] > central_upper))] = imputed_runtime.loc[
+                    (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 0) &
+                    ((imputed_runtime['runtimeMinutes'] < lower_normal) |
+                     (imputed_runtime['runtimeMinutes'] > upper_normal))].sample(
+                         n=missing_count, replace=True, random_state=42).values
+
+        return imputed_runtime
+    
+    return impute_rt_mins
+
+
+def impute_rt_mins_short(df: pd.DataFrame, perc: float=0.995) -> Callable[[pd.DataFrame], pd.Series]:
+    """
+    Impute missing values in the 'runtimeMinutes' column of the given DataFrame for short titles.
+    Assigns to missing values randomly sampled data out of the central perc% range.
+    Also imputes the values for rows outside the perc range if not None.
+    Imputation is done separately for each 'titleType' category.
+    
+    Parameters:
+        df (pd.DataFrame): The DataFrame to impute.
+        perc (float): The percentile threshold for imputing values. Default is 0.995.
+    Returns:
+        Callable[[pd.DataFrame], pd.Series]: A function that takes a DataFrame and returns the imputed 'runtimeMinutes' column.
+    """
+    lower_bound = (1 - perc) / 2
+    upper_bound = 1 - lower_bound
+    # Define the percentiles for each titleType category, while cutting off outliers
+    percentiles_short = df.loc[
+        df['is_Short'] == 1,
+        'runtimeMinutes'].quantile([0.25, 0.75])
+    perc_threshold_short = df.loc[
+        df['is_Short'] == 1,
+        'runtimeMinutes'].quantile([lower_bound, upper_bound]).unstack()
+    
+    def impute_rt_mins(df: pd.DataFrame) -> pd.Series:
+        """
+        Impute missing values in the 'runtimeMinutes' column of the given DataFrame for shorts.
+        Assigns to missing values randomly sampled data out of the central perc% range.
+        
+        Parameters:
+            df (pd.DataFrame): The DataFrame to impute.
+        Returns:
+            pd.Series: The imputed 'runtimeMinutes' column.
+        """
+        # Create a copy of the original column to preserve order
+        imputed_runtime = df['runtimeMinutes'].copy()
+
+        # Get valid values within the 30-70 percentile range
+        lower_short = percentiles_short[0.25]
+        upper_short = percentiles_short[0.75]
+        
+        short = df.loc[
+            df['is_Short'] == 1,
+            'runtimeMinutes'].dropna()
+
+        # Filter the group to include only rows within the central perc% range
+        valid_values = short[
+            (short['runtimeMinutes'] >= lower_short) &
+            (short['runtimeMinutes'] <= upper_short), 'runtimeMinutes'].dropna()
+
+        # Sample values for missing entries
+        missing_count = df.loc[
+            df['is_Short'] == 1,
+            'runtimeMinutes'].isna().sum()
+        if missing_count > 0 and valid_values.size > 0:
+            sampled_values = valid_values.sample(n=missing_count, replace=True, random_state=42)
+            # Assign sampled values to the missing positions
+            imputed_runtime.loc[
+                df['is_Short'] == 1 &
+                (imputed_runtime['runtimeMinutes'].isna())] = sampled_values.values
+            
+        return imputed_runtime
+    
+    return impute_rt_mins
+    
+    
+    
+    
+    
+    
+    percentiles_episodes = df.loc[
+        (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 1),
+        'runtimeMinutes'].quantile([0.25, 0.75])
+    perc_threshold_episodes = df.loc[
+        (df['is_Short'] == 0) & (df['canHaveEpisodes'] == 1), 
+        'runtimeMinutes'].quantile([lower_bound, upper_bound]).unstack()
