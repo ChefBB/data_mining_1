@@ -7,10 +7,9 @@ import numpy as np
 
 
 to_log = [
-    'reviewsTotal',
-    'numRegions', 'ratingCount',
-    'castNumber', 'companiesNumber', 'externalLinks',
-    'writerCredits', 'directorsCredits', 'totalMedia',
+    'criticReviewsTotal', 'userReviewsTotal',
+    'numRegions',
+    'totalMedia',
     'totalNominations', 'totalCredits',
     # 'regions_freq_enc', 'regions_EU', 'regions_NA', 'regions_AS',
     # 'regions_AF', 'regions_OC', 'regions_SA', 'regions_UNK',
