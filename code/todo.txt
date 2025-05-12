@@ -1,0 +1,9 @@
+apply outlier handling
+    plaw distribs
+    runtimeMinutes handling
+
+
+questions
+- regression and new rating feature
+- clustering/pattern mining on train+test or just train
+    can we use test to validate hypothesis?
