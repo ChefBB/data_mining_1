@@ -1,1 +1,19 @@
-\chapter{Classification}\label{ch:capitolo3}
+\chapter{Classification}
+\label{ch:capitolo3}
+Classification was performed on the available training set using three different algorithms: K-NN (\textit{K-Nearest Neighbours}), Naïve Bayes and Decision Trees.
+For K-NN \textbf{and Naïve Bayes}, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters \textbf{each} model.
+The features used in K-NN and Naïve Bayes were normalized, as these models are sensitive to unscaled values.
+After training, the models were evaluated on the test set using standard performance metrics. 
+The target variables chosen for this task are \textbf{2/3 dipende se includiamo anche is\_from\_NA}: \texttt{titleType}, \texttt{has\_LowEngagement} \textbf{, and is\_from\_NA}.
+These will be discussed in more detail in the corresponding sections below.
+
+\section{Multiclass classification}\label{sec:multiclass_classification}
+Among the multiclass features of the training set, \texttt{titleType} 
+was chosen as the target variable for this task due to its relevance in the dataset.
+
+
+
+
+\section{Binary classification}\label{sec:binary_classification}
+The binary target variable used in this task, \texttt{has\_LowEngagement}, was specifically defined for this purpose. 
+It identifies records where the \texttt{numVotes} attribute is less than 100.

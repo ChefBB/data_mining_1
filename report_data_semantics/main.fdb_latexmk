@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1746020744.9596 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1747493289.72904 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1746020741.19279 "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" "main.pdf" "main" 1746020744.96049 0
+["pdflatex"] 1747493283.9968 "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" "main.pdf" "main" 1747493289.72904 0
   "C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737310083 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Gagia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1730486100 11948315 6548ab8caeecfc235d79a24208231612 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc" 1256929440 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -128,17 +128,17 @@
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1718356376 7243 e5dac1240636811edb77568b81818372 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" 1740305607 12160 e578a2aa2d41b8700be287be0538f597 ""
+  "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" 1747490393 12171 0e66028e2e188f488e300fce02ea179c ""
   "capitolo1.tex" 1746020740 14570 680a65fd57bf3aaf0fb64fb771feee56 ""
   "capitolo2.tex" 1740305607 8157 da0fd9fbf6c6eff27b685db877c6893a ""
-  "capitolo3.tex" 1740305607 44 cc780e4d1a5b5c6d57f322e22499c3a0 ""
+  "capitolo3.tex" 1747493279 1349 c3cceb76ebe429a164070790e4c2455d ""
   "capitolo4.tex" 1740305607 44 b5f01c049d491e682df38f53df915368 ""
-  "capitolo5.tex" 1740305607 46 c3f7b49be244fff29ebb63267fdd1440 ""
-  "main.aux" 1746020744 6445 0225f66cab845ae66c33498d35d89ed4 "pdflatex"
+  "capitolo5.tex" 1747490672 254 6bb4f32fcdd61cbe658ec82130589f7f ""
+  "main.aux" 1747493288 7411 971dada0be276fe1dd962c5045f72ff3 "pdflatex"
   "main.bbl" 1740305607 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1746020744 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
-  "main.tex" 1740305607 12160 e578a2aa2d41b8700be287be0538f597 ""
-  "main.toc" 1746020744 1361 b819684bc3c6b37b82ee94adad8731c9 "pdflatex"
+  "main.run.xml" 1747493288 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.tex" 1747490393 12171 0e66028e2e188f488e300fce02ea179c ""
+  "main.toc" 1747493288 1745 5837cb62ca795bb0a42e71fad16b4013 "pdflatex"
   "plots/DBSCAN_kth_graph.png" 1740305607 40213 8b32af421440e0d2b55366629fe4eeb6 ""
   "plots/DBSCAN_provvisoria.png" 1740305607 893140 193ea31c3540f165e417f3509e49fe6b ""
   "plots/correlation_matrix.png" 1740305607 431826 cfb5ca287acdcbc14d9728a2d0adf5e1 ""
