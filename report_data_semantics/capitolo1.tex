@@ -2,7 +2,8 @@
 \label{ch:capitolo1}
 
 \section{Data Semantics}\label{sec:data_semantics}
-The dataset \textit{train.csv} contains 16431 titles of different forms of visual entertainment that have been rated on IMDb, an online database of information related to films, television series etc. 
+The dataset \textit{train.csv} contains 16431 titles of different forms of visual entertainment that have been rated on IMDb, 
+an online database of information related to films, television series etc. 
 Each record is described by 23 attributes, both numerical and non-numerical. 
 All the variables of the dataset are introduced and explained in Table 1.1 and Table 1.2.
 \begin{table}[h]
@@ -11,7 +12,7 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         \hline
         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
         \hline
-        originalTitle & Nominal & Title in its original language \\  
+        originalTitle & Categorical & Title in its original language \\  
         \hline
         rating & Ordinal & IMDB title rating class \\
         & & The range is from (0,1] to (9,10] \\ 
@@ -20,23 +21,23 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         \hline
         bestRating & Ordinal & Best title rating \\ 
         \hline
-        titleType & Nominal & The format of the title \\ 
+        titleType & Categorical & The format of the title \\ 
         \hline
-        canHaveEpisodes & Nominal (Binary) & Whether or not the title can have episodes \\ 
+        canHaveEpisodes & Binary & Whether or not the title can have episodes \\ 
         & & True: can have episodes; False: cannot have episodes \\ 
         \hline
-        isRatable & Nominal (Binary) & Whether or not the title can be rated by users \\ 
+        isRatable & Binary & Whether or not the title can be rated by users \\ 
         & & True: it can be rated; False: cannot be rated \\ 
         \hline
-        isAdult & Nominal (Binary) & Whether or not the title is for adults \\ 
+        isAdult & Binary & Whether or not the title is for adults \\ 
         & & 0: non-adult title; 1: adult title \\ 
         \hline
-        countryOfOrigin & Nominal & The country(ies) where the title was produced \\ 
+        countryOfOrigin & Categorical & The country(ies) where the title was produced \\ 
         \hline
-        genres & Nominal & The genre(s) associated with the title \\ 
+        genres & Categorical & The genre(s) associated with the title \\ 
         \hline
     \end{tabular}
-    \caption{Description of non-numerical attributes}
+    \caption{Description of discrete attributes}
     \label{tab:attributes}
 \end{table}
 \begin{table}[h]
@@ -72,20 +73,26 @@ All the variables of the dataset are introduced and explained in Table 1.1 and T
         ratingCount & Numeric & The total number of user ratings for the title \\ 
         \hline
     \end{tabular}
-    \caption{Description of numerical attributes}
+    \caption{Description of continuous attributes}
     \label{tab:numerical_attributes}
 \end{table}
 \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
-This section will give an overview about the distribution of variables that has been carried on to understand patterns, detect meaningful statistics and assess their relevance to the project. 
+This section will give an overview about the distribution of variables that has been carried on to understand patterns, 
+detect meaningful statistics and assess their relevance to the project. 
 
 \subsection{Discrete attributes}
 \textbf{DA CAMBIARE IN BASE AI GRAFICI CHE DECIDIAMO DI TENERE}
 In this paragraph, the most informative discrete attributes of the dataset are examined to provide an overview of their statistics and frequencies. \\
-From Fig.1.1(a), it is observed that the classes of the \texttt{titleType} attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). 
-By analyzing the \texttt{canHaveEpisodes} attribute within these \texttt{titleType} values, it is found that only \textit{tvSeries} and \textit{tvMiniSeries} can have episodes, as expected.
-As shown in Fig.1.1(b), the frequency of rating classes is slighly skewed toward higher values, with the most frequent rating class being (7, 8], which is the rating of 4822 titles.
-Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown in Fig.1.1(c)
-Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable across different \texttt{titleType} values reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as they appear in the top 3 genres of nearly every \textit{titleType} category.
+From figure~\ref{fig:sub1} it is observed that the classes of the \texttt{titleType} attribute are unbalanced, with \textit{movie} being 
+the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). 
+By analyzing the \texttt{canHaveEpisodes} attribute within these \texttt{titleType} values, it is found that only \textit{tvSeries} and 
+\textit{tvMiniSeries} can have episodes, as expected.
+As shown in figure~\ref{fig:sub2}, the frequency of rating classes is slighly skewed toward higher values, with the most frequent rating 
+class being (7, 8], which is the rating of 4822 titles.
+Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown 
+in figure~\ref{fig:sub3}
+Finally, as indicated in figure~\ref{fig:sub4}, an analysis of the \texttt{genres} variable across different \texttt{titleType} values 
+reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as they appear in the top 3 genres of nearly every \texttt{titleType} category.
 % \begin{figure}[h!]
 %     \centering
 %     \begin{subfigure}[b]{0.48\textwidth}
@@ -146,63 +153,103 @@ Finally, as indicated in Fig.1.1(d), an analysis of the \texttt{genres} variable
 \end{figure}
 
 \subsection{Continuous attributes}
-\textbf{ANCORA DA FARE}...content...content...content...content...content...content...
+\textbf{ANCORA DA FARE!!! plot + descrizione ...content...content...content...content...content...content...}
 
 
 \section{Data Quality}\label{sec:data_quality}
 In this phase, a proper evaluation of the observed data was conducted in preparation for the analysis.
-Once having checked that there are no duplicates and no incomplete rows in the dataset, attention was given at identifying missing values and outliers within the columns.
+Once having checked that there are no duplicates and no incomplete rows in the dataset, 
+attention was given at identifying missing values and outliers within the columns.
 
 
 
 \subsection{Syntactic Inconsistencies}
-In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values identified with NaN.
-However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), but they were indicated with the string "\textbackslash N".
-To avoid this inconsistency causing problems during data preparation, these values have been replaced with NaN.
-By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} column that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
+In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}.
+However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), 
+but they were indicated with the string "\textbackslash N".
+To avoid this inconsistency that might have caused problems during data preparation, these values have been replaced with \texttt{NaN}.
+By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} columns 
+that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
 
 
 
 \subsection{Missing Values}
-Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, also represented in percentages for a better understanding:
+Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, 
+also represented in percentages for a better understanding:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). For this reason and due to the lack of reliable imputation methods, the entire feature has been removed;
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two different ways according to the data mining task in hand. More details are provided in the specific paragraphs;
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two different ways according to the data mining task in hand. More details are provided in the specific sections \textbf{specificare nei diversi paragrafi};
     % by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype; anche se questo causa problemi nel momento in cui andiamo a classificare un nuovo record che non ha titletype};
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
 
-    \item \texttt{genres}: it is 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
+    \item \texttt{genres}: it has 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
 \end{itemize}
 
 
 
 \subsection{Outliers detection}
 While examining the dataset, it became apparent that some attributes have outliers. 
-The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
-these might be considered variables with many outliers (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) but they actually have less outliers compared to the other variables.
+The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} 
+and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
+these might be considered variables with many outliers 
+(as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) 
+but they actually have less outliers compared to the other variables.
 For the other attributes \textbf{CONTINUARE......}
 \textbf{VALORI OUTLIERS SU TRAIN IN \%: 86.7 , 90.2 , 87.8}
 \textbf{VALORI OUTLIERS SU DF\_PP IN \%: 88.7 , 90.2 , 87.8}
 
+
 \section{Variable Transformation}\label{sec:var_Transformation}
-As the first step in the variable transformation process, the \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into lists of strings to facilitate further analysis. 
-This transformation was necessary because some records contain multiple genres or countries as values for these variables.
-After that, multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information.
-A similar approach was taken for the \texttt{countryOfOrigin} attribute; however, instead of creating a separate feature for each unique country (as there were many of them), countries were grouped by continent.
-The follwing variables have been created: \texttt{countryOfOrigin\_NA}, \texttt{countryOfOrigin\_SA}, \texttt{countryOfOrigin\_AF}, \texttt{countryOfOrigin\_AS}, \texttt{countryOfOrigin\_EU}, and \texttt{countryOfOrigin\_OC}. 
-\textbf{These attributes have, for each record, the corresponding number of countries belonging to that continent}.
-In addition to those, \texttt{countryOfOrigin\_freq\_enc}, and \texttt{countryOfOrigin\_UNK} have also been created; their purpose is to identify \textbf{SPECIFICARE RUOLO FREQUENCY ENCODING} for the first one, and to indicate which records have a country \textbf{SPECIFICARE QUESTIONE DEGLI UNKNOWN CONTINENTS} for the other. 
+As a first step in the variable transformation process, the \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into 
+lists of strings to facilitate further analysis. This transformation was necessary because some records contain multiple genres or countries as values for these variables.
+After that, multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, 
+allowing records that belong to multiple genres simultaneously to maintain this information.
+A similar approach was taken for the \texttt{countryOfOrigin} attribute; however, instead of creating a separate feature for each unique country 
+(as there were many of them), countries were grouped by continent.
+The following variables have been created: 
+\begin{multicols}{2}
+\begin{itemize}
+    \item \texttt{countryOfOrigin\_NA} (North America);
+    \item \texttt{countryOfOrigin\_SA} (South America);
+    \item \texttt{countryOfOrigin\_AF} (Africa);
+    \item \texttt{countryOfOrigin\_AS} (Asia);
+    \item \texttt{countryOfOrigin\_EU} (Europe);
+    \item \texttt{countryOfOrigin\_OC} (Oceania);
+    \item \texttt{countryOfOrigin\_UNK} (Unknown continent).
+\end{itemize}
+\end{multicols}
+% \begin{itemize}
+%     \item \texttt{countryOfOrigin\_NA} (North America);
+%     \item \texttt{countryOfOrigin\_SA} (South America);
+%     \item \texttt{countryOfOrigin\_AF} (Africa);
+%     \item \texttt{countryOfOrigin\_AS} (Asia);
+%     \item \texttt{countryOfOrigin\_EU} (Europe);
+%     \item \texttt{countryOfOrigin\_OC} (Oceania);
+%     \item \texttt{countryOfOrigin\_UNK}.
+% \end{itemize}
+This transformation was implemented using \texttt{pycountry\_convert}, a Python library that converts between different country and continent codes and names. 
+Its function \texttt{country\_alpha2\_to\_continent\_code()} was used to process the lists of strings of the \texttt{countryOfOrigin} variable;
+the function takes a country code in the ISO 3166-1 alpha-2 format (e.g., "US", "FR", "IN") and returns the corresponding continent code (such as "NA" for North America, "EU" for Europe, "AS" for Asia etc.). 
+If the country code is invalid or there are obsolete country names, the \texttt{countryOfOrigin\_UNK} variable gets a value according to the number of unknown countries for that record. 
+For each record, these new variables contain counts representing the number of countries from each continent.
+In addition, \texttt{countryOfOrigin\_freq\_enc} was created to capture frequency-based information. 
+Unlike the continent-based variables that count individual countries, this variable represents how frequently a specific combination of countries appears across the entire dataset.\\
 % Six binary attributes were created: \texttt{is\_from\_Africa}, \texttt{is\_from\_Asia}, \texttt{is\_from\_Europe}, \texttt{is\_from\_North America}, \texttt{is\_from\_Oceania}, and \texttt{is\_from\_South America}.
 % This transformation preserves information about titles produced in more than one continent, as they will have a value of 1 for each corresponding attribute.
-Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.
-Looking at the already existing features it has also been decided to \textbf{scrivere QUESTIONE TOTALMEDIA, TOTALNOMINATION}\\
+Furthermore, it has been decided to extract the ceiling value for each entry in the \texttt{rating} column, in order to use it as an integer for further analysis.\\
+Looking at the already existing features it has also been decided to aggregate some of them in order to create more stable and meaningful data. 
+In particular, \texttt{awardWins} and \texttt{awardNominationsExcludeWins} were combined into a new variable called \texttt{totalNominations} to take into account
+which records have received a nominations, independently from the fact that they then won or not.
+Two other variables, i.e. \texttt{totalImages} and \texttt{totalVideos} were aggregated into \texttt{totalMedia} to sum the number of multimedia elements
+of each record.\\
 
-For the numeric attributes, it was observed that required a stronger transformation due to their highly positively skewed distributions. 
+As for the continuous attributes, it was observed that they required a stronger transformation due to their highly positively skewed distributions. 
 Specifically, when required by the data mining method, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
 \textbf{DECIDERE SE SPECIFICARE EFFETTIVAMENTE IN QUALE DM METHOD L'ABBIAMO APPLICATA O SE RIMANERE VAGHI}.
-Following the log-transformation, standard normalization techniques - \texttt{MinMaxScaler} and \texttt{StandardScaler} - have then been applied (when scaling was necessary); respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
+Following the log-transformation, standard normalization techniques - \texttt{MinMaxScaler} and \texttt{StandardScaler} - have then been applied (when scaling was necessary); 
+respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
 The decision to apply one or the other was again made based on the specific requirements of each data mining technique, and so will be specified accordingly in each section.
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
