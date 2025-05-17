@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1747502342.0329 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1747502745.66585 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1747502336.69585 "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" "main.pdf" "main" 1747502342.03466 0
+["pdflatex"] 1747502738.99756 "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" "main.pdf" "main" 1747502745.66729 0
   "C:/Users/Gagia/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737310083 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Gagia/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1730486100 11948315 6548ab8caeecfc235d79a24208231612 ""
   "C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc" 1256929440 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -132,14 +132,14 @@
   "c:/Users/Gagia/Desktop/progetto DM1/current project/report_data_semantics/main.tex" 1747499443 12044 1ee13f70cfe93b2ff04f42c5aa83ff24 ""
   "capitolo1.tex" 1747501279 18256 dcfbd1bda65a08836ac213a1e888b08e ""
   "capitolo2.tex" 1740305607 8157 da0fd9fbf6c6eff27b685db877c6893a ""
-  "capitolo3.tex" 1747502335 2026 38987cf9b7326d3445bdf6319b6ebd01 ""
+  "capitolo3.tex" 1747502737 2039 04d036a21127801496f4fb25e50b9c86 ""
   "capitolo4.tex" 1740305607 44 b5f01c049d491e682df38f53df915368 ""
   "capitolo5.tex" 1747490672 254 6bb4f32fcdd61cbe658ec82130589f7f ""
-  "main.aux" 1747502341 8029 45bd3d33b514a8cbca48a746e0d31052 "pdflatex"
+  "main.aux" 1747502744 8029 45bd3d33b514a8cbca48a746e0d31052 "pdflatex"
   "main.bbl" 1740305607 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1747502341 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1747502744 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1747499443 12044 1ee13f70cfe93b2ff04f42c5aa83ff24 ""
-  "main.toc" 1747502341 2135 3b28c188a3f66cb0dacafdab6d59ac1e "pdflatex"
+  "main.toc" 1747502744 2135 3b28c188a3f66cb0dacafdab6d59ac1e "pdflatex"
   "plots/DBSCAN_kth_graph.png" 1740305607 40213 8b32af421440e0d2b55366629fe4eeb6 ""
   "plots/DBSCAN_provvisoria.png" 1740305607 893140 193ea31c3540f165e417f3509e49fe6b ""
   "plots/correlation_matrix.png" 1740305607 431826 cfb5ca287acdcbc14d9728a2d0adf5e1 ""

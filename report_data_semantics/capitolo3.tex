@@ -13,7 +13,8 @@ was chosen as the target variable for this task due to its relevance in the data
 An important aspect to highlight is the usage of \texttt{fill\_runtimeMinutes\_notitleType}
 as one of the variables to train the models. 
 This feature was created to impute the missing values of the original \texttt{runtimeMinutes} variable,
-but without using the median value according to the titleType. Instead, the missing values were imputed using \textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT}.
+but without using the median value according to the titleType. Instead, the missing values were imputed using the help of
+\textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT}.
 This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
 imputation when \texttt{titleType} itself is the target variable to predict.
 \subsection{K-NN}
