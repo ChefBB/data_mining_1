@@ -9,11 +9,22 @@ These will be discussed in more detail in the corresponding sections below.
 
 \section{Multiclass classification}\label{sec:multiclass_classification}
 Among the multiclass features of the training set, \texttt{titleType} 
-was chosen as the target variable for this task due to its relevance in the dataset.
-
+was chosen as the target variable for this task due to its relevance in the dataset.\\
+An important aspect to highlight is the usage of \texttt{fill\_runtimeMinutes\_notitleType}
+as one of the variables to train the models. 
+This feature was created to impute the missing values of the original \texttt{runtimeMinutes} variable,
+but without using the median value according to the titleType. Instead, the missing values were imputed using \textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT}.
+This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
+imputation when \texttt{titleType} itself is the target variable to predict.
+\subsection{K-NN}
+\subsection{Naïve Bayes}
+\subsection{Decision Trees}
 
 
 
 \section{Binary classification}\label{sec:binary_classification}
 The binary target variable used in this task, \texttt{has\_LowEngagement}, was specifically defined for this purpose. 
 It identifies records where the \texttt{numVotes} attribute is less than 100.
+\subsection{K-NN}
+\subsection{Naïve Bayes}
+\subsection{Decision Trees}

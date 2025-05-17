@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  17 MAY 2025 18:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  17 MAY 2025 19:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -720,24 +720,24 @@ Package biblatex Info: Reference segment=0 on input line 247.
 \c@lstlisting=\count438
 
 
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 288.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 286.
 (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 288.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 286.
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 288.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 286.
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 288.
+(Font)              <10.95> on input line 286.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 288.
+(Font)              <8> on input line 286.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 288.
+(Font)              <6> on input line 286.
 
 
 Package scrlayer-scrpage Warning: \headheight to low.
@@ -747,7 +747,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=16.31995pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 288.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 286.
 
 
 Overfull \vbox (4.31995pt too high) has occurred while \output is active []
@@ -815,25 +815,35 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 18
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (52.18443pt too wide) in paragraph at lines 193--202
+Overfull \hbox (52.18443pt too wide) in paragraph at lines 193--205
 \OT1/lmr/bx/n/10.95 TERE GRAFICO che rap-p-re-senti in qualche modo il re-sult di DE-TECT[]OULIERS[]MULTI[]ATTRIBUTES
  []
 
 
 
 [5{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 232--247
+Underfull \hbox (badness 10000) in paragraph at lines 235--250
 
  []
 
 <plots/correlation_matrix.png, id=38, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 264.
-(pdftex.def)             Requested size: 423.151pt x 373.77917pt.
-)
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 277.
+(pdftex.def)             Requested size: 253.88737pt x 224.2618pt.
 
-[6] (capitolo2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 283--287
+
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 288--290
+\OT1/lmr/m/n/10.95 af-ter hav-ing anal-ized all of them, \OT1/lmtt/m/n/10.95 bestRating\OT1/lmr/m/n/10.95 ,
+ []
+
+) (capitolo2.tex
+
+[6]
 
 [7 <./plots/correlation_matrix.png>]
 Chapter 2.
@@ -903,7 +913,7 @@ Chapter 5.
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 312.
+LaTeX Warning: Empty bibliography on input line 310.
 
 (main.aux)
  ***********
@@ -919,15 +929,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17715 strings out of 473897
- 352126 string characters out of 5726462
- 1236974 words of memory out of 5000000
- 40365 multiletter control sequences out of 15000+600000
+ 17717 strings out of 473897
+ 352186 string characters out of 5726462
+ 1236960 words of memory out of 5000000
+ 40367 multiletter control sequences out of 15000+600000
  612913 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1257b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (14 pages, 1918157 bytes).
+Output written on main.pdf (14 pages, 1919350 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

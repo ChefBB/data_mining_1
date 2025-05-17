@@ -179,7 +179,7 @@ also represented in percentages for a better understanding:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). For this reason and due to the lack of reliable imputation methods, the entire feature has been removed;
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two different ways according to the data mining task in hand. More details are provided in the specific sections \textbf{specificare nei diversi paragrafi};
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two different ways according to the data mining task in hand. More details are provided in the specific sections \textbf{SPECIFICARE NEI PARAGRAFI DOVE ABBIAMO USATO \_Bruno e dove \_notitletype};
     % by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype; anche se questo causa problemi nel momento in cui andiamo a classificare un nuovo record che non ha titletype};
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
@@ -199,6 +199,9 @@ but they actually have less outliers compared to the other variables.
 For the other attributes \textbf{CONTINUARE......}
 \textbf{VALORI OUTLIERS SU TRAIN IN \%: 86.7 , 90.2 , 87.8}
 \textbf{VALORI OUTLIERS SU DF\_PP IN \%: 88.7 , 90.2 , 87.8}
+Even though they are not proper outliers, the records that had "Videogame" as value of the attribute \texttt{titleType} were removed 
+because of the fundamentally different titletype compared to the other title types of the dataset. In addition, their value of \texttt{runtimeMinutes}
+seemed erroneous since they have an undefined or irrelevant runtime.
 
 
 \section{Variable Transformation}\label{sec:var_Transformation}
@@ -253,15 +256,35 @@ respectively to scale each feature to a given range and to standardize features 
 The decision to apply one or the other was again made based on the specific requirements of each data mining technique, and so will be specified accordingly in each section.
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
-The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous numerical variables of the dataset.
-For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, and so it would be redundant to keep them both.
-For this reason it has been decided to drop \texttt{ratingCount}. 
-On the other hand, regarding categorial attributes, after having analized them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} have been discarded because they \textbf{endyear(???)} were found to have limited contribution based on their distributions.
-As a matter of fact, their unique values were respectively 10, 1 and True for all attributes.\\
-\textbf{ELIMINATION OF RECORDS BELONGING TO "VIDEOGAMES" CLASS IN TITLETYPE}
-\begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
-    \centering % Centers the figure
-    \includegraphics[width=0.8\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
-    \caption{Correlation matrix} % Add a caption
+%The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.
+% For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
+% For this reason it has been decided to drop \texttt{ratingCount}.
+% Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
+
+% On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
+% they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
+
+% \begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
+%     \centering % Centers the figure
+%     \includegraphics[width=0.7\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
+%     \caption{Correlation matrix} % Add a caption
+%     \label{fig:correlation_matrix} % Add a label for referencing
+% \end{figure}
+
+\noindent
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{plots/correlation_matrix.png}
+    \captionof{figure}{Correlation matrix}
     \label{fig:correlation_matrix} % Add a label for referencing
-\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.
+For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
+For this reason it has been decided to drop \texttt{ratingCount}.
+Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
+
+On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
+they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
+\end{minipage}
