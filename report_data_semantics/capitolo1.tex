@@ -234,7 +234,7 @@ The following variables have been created:
 % \end{itemize}
 This transformation was implemented using \texttt{pycountry\_convert}, a Python library that converts between different country and continent codes and names. 
 Its function \texttt{country\_alpha2\_to\_continent\_code()} was used to process the lists of strings of the \texttt{countryOfOrigin} variable;
-the function takes a country code in the ISO 3166-1 alpha-2 format (e.g., "US", "FR", "IN") and returns the corresponding continent code (such as "NA" for North America, "EU" for Europe, "AS" for Asia etc.). 
+the function takes a country code in the ISO 3166-1 alpha-2 format (e.g., "US", "FR", "IN") and returns the corresponding continent code. 
 If the country code is invalid or there are obsolete country names, the \texttt{countryOfOrigin\_UNK} variable gets a value according to the number of unknown countries for that record. 
 For each record, these new variables contain counts representing the number of countries from each continent.
 In addition, \texttt{countryOfOrigin\_freq\_enc} was created to capture frequency-based information. 
@@ -250,10 +250,11 @@ of each record.\\
 
 As for the continuous attributes, it was observed that they required a stronger transformation due to their highly positively skewed distributions. 
 Specifically, when required by the data mining method, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
-\textbf{DECIDERE SE SPECIFICARE EFFETTIVAMENTE IN QUALE DM METHOD L'ABBIAMO APPLICATA O SE RIMANERE VAGHI}.
 Following the log-transformation, standard normalization techniques - \texttt{MinMaxScaler} and \texttt{StandardScaler} - have then been applied (when scaling was necessary); 
 respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
 The decision to apply one or the other was again made based on the specific requirements of each data mining technique, and so will be specified accordingly in each section.
+\textbf{CONTROLLARE SE IN OGNI SEZIONE C'E' SPECIFICA SULLE DUE NORMALIZZAZIONI USATE!!!}.
+
 
 \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
 %The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.

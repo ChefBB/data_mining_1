@@ -3,6 +3,7 @@
 Classification was performed on the available training set using three different algorithms: K-NN (\textit{K-Nearest Neighbours}), Naïve Bayes and Decision Trees.
 For K-NN \textbf{and Naïve Bayes}, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters \textbf{each} model.
 The features used in K-NN and Naïve Bayes were normalized, as these models are sensitive to unscaled values.
+In particular, a log-transformation and \textbf{SCRIVERE SE StandardScaler O MINMAX} were applied to data.
 After training, the models were evaluated on the test set using standard performance metrics. 
 The target variables chosen for this task are 2: \texttt{titleType}, and \texttt{has\_LowEngagement}.
 These will be discussed in more detail in the corresponding sections below.
@@ -13,19 +14,24 @@ was chosen as the target variable for this task due to its relevance in the data
 An important aspect to highlight is the usage of \texttt{fill\_runtimeMinutes\_notitleType}
 as one of the variables to train the models. 
 This feature was created to impute the missing values of the original \texttt{runtimeMinutes} variable,
-but without using the median value according to the titleType. Instead, the missing values were imputed using the help of
-\textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT}.
+but without using the median value according to the titleType. Instead, the missing values were imputed using the help of two variables: \texttt{canHaveEpisodes} and \texttt{is\_Short}
+(as one of the resulting variables of the multi-label one-hot encoding process of the \texttt{genres} attribute).
+In particular, 
+\textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT - con canhaveepisodes e is\_short preso dai generi}.
 This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
-imputation when \texttt{titleType} itself is the target variable to predict.
-\subsection{K-NN}
-\subsection{Naïve Bayes}
-\subsection{Decision Trees}
+imputation for an attribute when \texttt{titleType} itself is the target variable to predict.
+\subsection*{K-NN}
+\subsection*{Naïve Bayes}
+\subsection*{Decision Trees}
 
 
 
 \section{Binary classification}\label{sec:binary_classification}
 The binary target variable used in this task, \texttt{has\_LowEngagement}, was specifically defined for this purpose. 
 It identifies records where the \texttt{numVotes} attribute is less than 100.
-\subsection{K-NN}
-\subsection{Naïve Bayes}
-\subsection{Decision Trees}
+\subsection*{K-NN}
+\subsection*{Naïve Bayes}
+\subsection*{Decision Trees}
+
+
+\section{General considerations}\label{sec:general_considerations}

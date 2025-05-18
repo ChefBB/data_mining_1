@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  17 MAY 2025 19:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  18 MAY 2025 20:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -613,6 +613,9 @@ LaTeX Warning: Label `sub@fig:sse_silh_kmeans' multiply defined.
 LaTeX Warning: Label `fig:three_subplots' multiply defined.
 
 
+LaTeX Warning: Label `sec:general_considerations' multiply defined.
+
+
 LaTeX Warning: Label `ch:capitolo2' multiply defined.
 
 )
@@ -713,8 +716,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl)
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 247.
 Package biblatex Info: Reference segment=0 on input line 247.
 \c@lstlisting=\count438
@@ -829,15 +833,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--250
 <plots/correlation_matrix.png, id=38, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 277.
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 278.
 (pdftex.def)             Requested size: 253.88737pt x 224.2618pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--287
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
 
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 288--290
+Underfull \hbox (badness 1983) in paragraph at lines 289--291
 \OT1/lmr/m/n/10.95 af-ter hav-ing anal-ized all of them, \OT1/lmtt/m/n/10.95 bestRating\OT1/lmr/m/n/10.95 ,
  []
 
@@ -875,7 +879,7 @@ Package pdftex.def Info: plots/pairplot_kmeans.png  used on input line 65.
 
 
 [9 <./plots/sse_silh_kmeans.png> <./plots/pairplot_kmeans.png>]
-<plots/DBSCAN_kth_graph.png, id=63, 711.1368pt x 422.0568pt>
+<plots/DBSCAN_kth_graph.png, id=62, 711.1368pt x 422.0568pt>
 File: plots/DBSCAN_kth_graph.png Graphic file (type png)
 <use plots/DBSCAN_kth_graph.png>
 Package pdftex.def Info: plots/DBSCAN_kth_graph.png  used on input line 96.
@@ -886,7 +890,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 97.
-<plots/DBSCAN_provvisoria.png, id=64, 946.0143pt x 887.4756pt>
+<plots/DBSCAN_provvisoria.png, id=63, 946.0143pt x 887.4756pt>
 File: plots/DBSCAN_provvisoria.png Graphic file (type png)
 <use plots/DBSCAN_provvisoria.png>
 Package pdftex.def Info: plots/DBSCAN_provvisoria.png  used on input line 110.
@@ -900,16 +904,18 @@ Chapter 3.
 [11
 
 ]
+
+[12]
 Chapter 4.
 ) (capitolo5.tex
 
-[12
+[13
 
 ]
 Chapter 5.
 )
 
-[13
+[14
 
 ]
 
@@ -930,16 +936,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  17717 strings out of 473897
- 352186 string characters out of 5726462
- 1236960 words of memory out of 5000000
- 40367 multiletter control sequences out of 15000+600000
+ 352120 string characters out of 5726462
+ 1236992 words of memory out of 5000000
+ 40369 multiletter control sequences out of 15000+600000
  612913 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1257b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (14 pages, 1919361 bytes).
+Output written on main.pdf (15 pages, 1922857 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
+ 136 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

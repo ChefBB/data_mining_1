@@ -14,7 +14,7 @@ However, this approach was computationally expensive and did not lead to any imp
 Principal Component Analysis (PCA) was applied to the preprocessed data just for clusters visualization purposes. 
 Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
 These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
-The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches.
+The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches. \textbf{IN REALTA' NON SI VEDE TROPPO LA DIFFERENZA, QUINDI MAGARI NON FARE PCA MA SOLO VISUALIZZAZIONE CON ISTOGRAMMI??? oppure semplicemente tenere solo uno dei due plot?}
 \begin{figure}[h]
     \centering
     \begin{subfigure}[b]{0.40\textwidth}
@@ -32,14 +32,14 @@ The plots in figure~\ref{fig:pca_diff} show the differences between these two ap
     \caption{Principal Component Analysis}
     \label{fig:pca_diff}
 \end{figure}
-\textbf{SE EFFETTIVAMENTE CAMBIAMO NAN ENDYEAR CON IL RISPETTIVO STARTYEAR GIUSTIFICARE IL PERCHE' NON L'ABBIAMO POI INCLUSA COME VAR NELLA CLUSTERING ANALYSIS}
 
 \section{K-means}\label{sec:centroid_based}
 %The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, which negatively affected cluster formation. 
 %The variables have been appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \texttt{StandardScaler}.
 
-To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score. 
+To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score and a proper \textit{k}. 
 The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = 4 provides the optimal balance between these metrics. Choosing \textit{k} = 4 returns a SSE score of 67496 and Silhouette score of 0.21. 
+\textbf{VALORI TROPPO ALTI, VEDERE SE CAMBIANO CAMBIANDO SCALING E/O TOGLIENDO OUTLIER}
 
 % To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
 The cluster results are presented in figure~\ref{fig:pairplot_kmeans}. 
