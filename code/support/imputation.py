@@ -308,3 +308,54 @@ def impute_plaw_distrib_feat(df: pd.DataFrame, feat: str, perc: float=0.995) -> 
         return imputed_feat[feat]
     
     return impute_feat
+
+
+def impute_outliers(df, lower_thresh, upper_thresh, feature):
+    """
+    Impute outliers in the DataFrame by replacing them with randomly sampled values from interquartile range.
+    
+    Parameters
+    ----------
+    df : pd.DataFrame
+        The input DataFrame containing the data to be imputed.
+    lower_thresh : float
+        The lower threshold for outlier detection.
+    upper_thresh : float
+        The upper threshold for outlier detection.
+    feature : str
+        The name of the feature/column in the DataFrame to be imputed.
+
+    Returns
+    -------
+    pd.DataFrame
+        A DataFrame with the imputed values for the specified feature.
+    """
+    # Create a copy of the original column to preserve order
+    imputed_df = df.copy()
+    
+    # Count the outliers
+    outliers_count = imputed_df[
+        (imputed_df[feature] < lower_thresh) | 
+        (imputed_df[feature] > upper_thresh)
+    ].shape[0]
+    
+    # Set up the interquartile range random sampling
+    first_quartile_threshold = imputed_df[feature].quantile(0.25)
+    third_quartile_threshold = imputed_df[feature].quantile(0.75)
+    interquartile_set = imputed_df[
+        (imputed_df[feature] >= first_quartile_threshold) & 
+        (imputed_df[feature] <= third_quartile_threshold)
+    ][feature].dropna()
+    
+    # Set values below the lower threshold to the lower threshold value
+    imputed = interquartile_set.sample(
+        n=outliers_count, 
+        replace=True, 
+        random_state=42
+    ).values
+    imputed_df.loc[
+        (imputed_df[feature] > upper_thresh) | (imputed_df[feature] < lower_thresh),
+        feature
+    ] = imputed
+    
+    return imputed_df
