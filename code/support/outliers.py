@@ -47,10 +47,8 @@ def detect_outliers(train, test, columns=outliers_columns, lower_percentile=1, u
         upper_percentile (float): Upper percentile threshold (default 99).
 
     Returns:
-        train_outlier_mask (np.ndarray): Boolean array for training data, True for outliers.
-        test_outlier_mask (np.ndarray): Boolean array for testing data, True for outliers.
-        lower_thresh (float): Value at lower percentile.
-        upper_thresh (float): Value at upper percentile.
+        train (pd.DataFrame): Training dataset with outliers marked and imputed.
+        test (pd.DataFrame): Testing dataset with outliers marked and imputed.
     """
     train['outlier'] = False
     test['outlier'] = False
