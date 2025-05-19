@@ -1,2 +1,27 @@
 \chapter{Pattern Mining}
 \label{ch:capitolo2}
+The pattern mining technique chosen for this task was Apriori.
+To perform this task, continuous attributes were discretized according to
+their distributions. The objective of this process was creating bins that were both meaningful
+and balanced in terms of number of attributes for each bin.
+Among all the available attributes, the ones chosen for the pattern mining task are the following (with their corresponding binning):
+\textbf{AGGIUSTARE QUANDO VERRANNO GESTITI OUTLIER e quando avremo var definitive - cambiare nome var runtimebruno}
+\begin{itemize}
+    \item \texttt{runTimeMinutes\_Bruno}: VeryLowRT (0-25), LowRT (26-60), MediumRT (61-120), HighRT (121-180), VeryHighRT (181-3000)
+    \item \texttt{numVotes}: VeryLowV (5-15), LowV (16-50), MediumV (51-150), HighV (151-997), VeryHighV (1001-966565)
+    \item \texttt{rating}: VeryLowR (1-3), LowR (4-6), MediumR (7), HighR (8), VeryHighR (9-10)
+    \item \texttt{userReviewsTotal}: NoUR (0), FewUR (1-2), ManyUR (4-13), VeryManyUR (31-149)
+    \item \texttt{countryOfOrigin\_EU, \_NA, \_OC, \_AS, \_AF, \_SA}: not\_from\_[continent name], is\_from\_[continent name]
+\end{itemize}
+In addition, \texttt{titleType} was \textbf{come l'abbiamo gestita per PM? non c'è one hot encoding quindi l'abbiamo usata così com'è}.
+The data on which this task was performed was not normalized.
+
+
+\section{Extraction of frequent patterns}\label{sec:freq_patterns}
+
+
+\section{Extraction of rules}\label{sec:rules}
+
+
+
+\section{Exploiting rules for target prediction}\label{sec:prediction_rules}
