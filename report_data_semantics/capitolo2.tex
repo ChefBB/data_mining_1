@@ -4,13 +4,14 @@
 This chapter of the report aims at illustrating the clustering analysis performed on the dataset at hand.
 The employed clustering techniques are K-means (Centroid-based), DBSCAN (density-based) and hierarchical clustering.
 
-The analysis conducted using these methods focused only exclusively on the dataset's numerical attributes, which were appropriately log-transformed (as mentioned in the \textit{Variable Transformation} section) and normalized using \texttt{StandardScaler}.  
-For the K-means algorithm, \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} were excluded due to their high proportion of zero values, which negatively affected cluster formation.
+The analysis conducted using these methods focused only exclusively on the dataset's numerical attributes, which were appropriately log-transformed (as mentioned in the \textit{Variable Transformation} section) and normalized using \texttt{MinMaxScaler}.  
+For the K-means algorithm, \texttt{totalNominations} and \texttt{totalMedia} were excluded due to their high proportion of zero values, which negatively affected cluster formation.
 
 In addition, an attempt was made to incorporate categorical variables to the analysis with the K-means algorithm by converting them into binary attributes and constructing a mixed-distances matrix. 
 Distances were then calculated using the Euclidean distance for numerical (log-tranformed and scaled) features and the Jaccard similarity for binary ones. 
 However, this approach was computationally expensive and did not lead to any improvement in the results.
 
+\textbf{RIVEDERE PARTE PCA}
 Principal Component Analysis (PCA) was applied to the preprocessed data just for clusters visualization purposes. 
 Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
 These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
@@ -38,7 +39,7 @@ The plots in figure~\ref{fig:pca_diff} show the differences between these two ap
 %The variables have been appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \texttt{StandardScaler}.
 
 To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score and a proper \textit{k}. 
-The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = 4 provides the optimal balance between these metrics. Choosing \textit{k} = 4 returns a SSE score of 67496 and Silhouette score of 0.21. 
+The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = ??? provides the optimal balance between these metrics. Choosing \textit{k} = ??? returns a SSE score of ??? and Silhouette score of ???. 
 \textbf{VALORI TROPPO ALTI, VEDERE SE CAMBIANO CAMBIANDO SCALING E/O TOGLIENDO OUTLIER}
 
 % To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
@@ -70,10 +71,10 @@ The cluster results are presented in figure~\ref{fig:pairplot_kmeans}.
     \label{fig:three_subplots}
 \end{figure}
 The distribution of data points across the four clusters is as follows (shown in percentage of data points per cluster):
-Red (0): 51.68\%, Blue (1): 7.42\%, Green (2): 24.22\%, Orange (3): 16.68\%.
-The clusters are not as well-separated in most Principal Component combinations as they are with PC1. 
-In fact, in the other combinations, the clusters tend to overlap and their boundaries are not always clearly distinct.
-This might be an indication that the true clusters have irregular shapes or different densities, resulting in boundaries between them being not clearly defined.
+% Red (0): 51.68\%, Blue (1): 7.42\%, Green (2): 24.22\%, Orange (3): 16.68\%.
+% The clusters are not as well-separated in most Principal Component combinations as they are with PC1. 
+% In fact, in the other combinations, the clusters tend to overlap and their boundaries are not always clearly distinct.
+% This might be an indication that the true clusters have irregular shapes or different densities, resulting in boundaries between them being not clearly defined.
 
 
 
