@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  20 MAY 2025 17:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  20 MAY 2025 19:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -617,18 +617,6 @@ LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 10
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./main.aux
 
-LaTeX Warning: Label `fig:sub1' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sub1' multiply defined.
-
-
-LaTeX Warning: Label `fig:sub2' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:sub2' multiply defined.
-
-
 LaTeX Warning: Label `fig:sse_silh_kmeans' multiply defined.
 
 
@@ -792,54 +780,52 @@ LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 2
 (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<plots/fig1_a.png, id=14, 433.62pt x 433.62pt>
-File: plots/fig1_a.png Graphic file (type png)
-<use plots/fig1_a.png>
-Package pdftex.def Info: plots/fig1_a.png  used on input line 89.
-(pdftex.def)             Requested size: 253.88737pt x 253.88834pt.
-<plots/fig1_b.png, id=16, 505.89pt x 433.62pt>
-File: plots/fig1_b.png Graphic file (type png)
-<use plots/fig1_b.png>
-Package pdftex.def Info: plots/fig1_b.png  used on input line 96.
-(pdftex.def)             Requested size: 253.88737pt x 217.62329pt.
-<plots/fig1_c.png, id=17, 714.7503pt x 570.933pt>
-File: plots/fig1_c.png Graphic file (type png)
-<use plots/fig1_c.png>
-Package pdftex.def Info: plots/fig1_c.png  used on input line 103.
-(pdftex.def)             Requested size: 253.88737pt x 202.80023pt.
-<plots/fig1_d.png, id=18, 713.3049pt x 570.933pt>
-File: plots/fig1_d.png Graphic file (type png)
-<use plots/fig1_d.png>
-Package pdftex.def Info: plots/fig1_d.png  used on input line 110.
-(pdftex.def)             Requested size: 253.88737pt x 203.20969pt.
- [2
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+<plots/types_count.png, id=14, 570.933pt x 354.123pt>
+File: plots/types_count.png Graphic file (type png)
+<use plots/types_count.png>
+Package pdftex.def Info: plots/types_count.png  used on input line 54.
+(pdftex.def)             Requested size: 423.151pt x 262.46837pt.
+[2
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 123.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 114.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 137--141
-
- []
-
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./plots/fig1_a.png> <./plots/fig1_b.png> <./plots/fig1_c.png> <./plots/fig1_d.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 142--144
+Underfull \hbox (badness 10000) in paragraph at lines 128--132
 
  []
 
 
-Overfull \hbox (15.78712pt too wide) in paragraph at lines 163--168
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./plots/types_count.png>]
+Overfull \hbox (15.78712pt too wide) in paragraph at lines 154--159
 []\OT1/lmr/m/n/10.95 Each of the first six fea-tures pro-vides the num-ber of coun-tries in the cor-re-spond-ing con-ti-nent. \OT1/lmtt/m/n/10.95 countryOfOrigin[]UNK
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--168
+Underfull \hbox (badness 10000) in paragraph at lines 154--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--172
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
 
  []
 
@@ -847,80 +833,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--172
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
-<plots/correlation_matrix.png, id=32, 706.0779pt x 623.6901pt>
+<plots/correlation_matrix.png, id=26, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 227.
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 218.
 (pdftex.def)             Requested size: 423.151pt x 373.77917pt.
 [4]
 Overfull \vbox (29.17912pt too high) has occurred while \output is active []
 
  [5 <./plots/correlation_matrix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--237
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
 
  []
 
 
-Overfull \hbox (46.94038pt too wide) in paragraph at lines 238--242
-[]\OT1/lmr/m/n/10.95 The \OT1/lmtt/m/n/10.95 awardWins \OT1/lmr/m/n/10.95 and \OT1/lmtt/m/n/10.95 awardNominationsExcludeWins \OT1/lmr/m/n/10.95 at-tributes were com-bined into a sin-gle at-tribute, \OT1/lmtt/m/n/10.95 totalNominations\OT1/lmr/m/n/10.95 ,
+Overfull \hbox (37.51108pt too wide) in paragraph at lines 229--233
+[]\OT1/lmr/m/n/10.95 The \OT1/lmtt/m/n/10.95 awardWins \OT1/lmr/m/n/10.95 and \OT1/lmtt/m/n/10.95 awardNominationsExcludeWins \OT1/lmr/m/n/10.95 at-tributes were com-bined into a sin-gle fea-ture, \OT1/lmtt/m/n/10.95 totalNominations\OT1/lmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--242
+Underfull \hbox (badness 10000) in paragraph at lines 229--233
 
  []
 
-<plots/nominations_distrib.png, id=40, 391.7034pt x 339.669pt>
+<plots/nominations_distrib.png, id=34, 391.7034pt x 339.669pt>
 File: plots/nominations_distrib.png Graphic file (type png)
 <use plots/nominations_distrib.png>
-Package pdftex.def Info: plots/nominations_distrib.png  used on input line 255.
+Package pdftex.def Info: plots/nominations_distrib.png  used on input line 245.
 (pdftex.def)             Requested size: 253.88737pt x 220.16547pt.
-<plots/totalVideos_Images_distrib.png, id=41, 391.7034pt x 339.669pt>
+<plots/totalVideos_Images_distrib.png, id=35, 391.7034pt x 339.669pt>
 File: plots/totalVideos_Images_distrib.png Graphic file (type png)
 <use plots/totalVideos_Images_distrib.png>
-Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 260.
+Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 250.
 (pdftex.def)             Requested size: 253.88737pt x 220.16547pt.
 [6 <./plots/nominations_distrib.png> <./plots/totalVideos_Images_distrib.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 357--372
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
-[7]) (./capitolo2.tex [8]
+
+Underfull \hbox (badness 10000) in paragraph at lines 304--317
+
+ []
+
+) (./capitolo2.tex [7]
 Chapter 2.
-<plots/pca_kmeans.png, id=54, 499.3857pt x 379.4175pt>
+<plots/pca_kmeans.png, id=45, 499.3857pt x 379.4175pt>
 File: plots/pca_kmeans.png Graphic file (type png)
 <use plots/pca_kmeans.png>
 Package pdftex.def Info: plots/pca_kmeans.png  used on input line 23.
 (pdftex.def)             Requested size: 211.57147pt x 160.74371pt.
-<plots/pca5.png, id=55, 499.3857pt x 379.4175pt>
+<plots/pca5.png, id=46, 499.3857pt x 379.4175pt>
 File: plots/pca5.png Graphic file (type png)
 <use plots/pca5.png>
 Package pdftex.def Info: plots/pca5.png  used on input line 29.
 (pdftex.def)             Requested size: 211.57147pt x 160.74371pt.
-[9
+[8
 
  <./plots/pca_kmeans.png> <./plots/pca5.png>]
-<plots/sse_silh_kmeans.png, id=61, 462.528pt x 346.896pt>
+<plots/sse_silh_kmeans.png, id=52, 462.528pt x 346.896pt>
 File: plots/sse_silh_kmeans.png Graphic file (type png)
 <use plots/sse_silh_kmeans.png>
 Package pdftex.def Info: plots/sse_silh_kmeans.png  used on input line 52.
 (pdftex.def)             Requested size: 259.1819pt x 194.39276pt.
-<plots/pairplot_kmeans.png, id=62, 762.4485pt x 712.5822pt>
+<plots/pairplot_kmeans.png, id=53, 762.4485pt x 712.5822pt>
 File: plots/pairplot_kmeans.png Graphic file (type png)
 <use plots/pairplot_kmeans.png>
 Package pdftex.def Info: plots/pairplot_kmeans.png  used on input line 66.
 (pdftex.def)             Requested size: 259.1819pt x 242.23125pt.
- [10 <./plots/sse_silh_kmeans.png> <./plots/pairplot_kmeans.png>]
-<plots/DBSCAN_kth_graph.png, id=70, 711.1368pt x 422.0568pt>
+ [9 <./plots/sse_silh_kmeans.png> <./plots/pairplot_kmeans.png>]
+<plots/DBSCAN_kth_graph.png, id=61, 711.1368pt x 422.0568pt>
 File: plots/DBSCAN_kth_graph.png Graphic file (type png)
 <use plots/DBSCAN_kth_graph.png>
 Package pdftex.def Info: plots/DBSCAN_kth_graph.png  used on input line 97.
@@ -931,22 +922,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 98.
-<plots/DBSCAN_provvisoria.png, id=71, 946.0143pt x 887.4756pt>
+<plots/DBSCAN_provvisoria.png, id=62, 946.0143pt x 887.4756pt>
 File: plots/DBSCAN_provvisoria.png Graphic file (type png)
 <use plots/DBSCAN_provvisoria.png>
 Package pdftex.def Info: plots/DBSCAN_provvisoria.png  used on input line 111.
 (pdftex.def)             Requested size: 259.1819pt x 243.14247pt.
-) (./capitolo3.tex [11 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png>]
+) (./capitolo3.tex [10 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png>]
 Chapter 3.
-[12
+[11
 
-]) (./capitolo4.tex [13]
+]) (./capitolo4.tex [12]
 Chapter 4.
-) (./capitolo5.tex [14
+) (./capitolo5.tex [13
 
 ]
 Chapter 5.
-) [15
+) [14
 
 ]
 
@@ -966,18 +957,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17774 strings out of 474116
- 350744 string characters out of 5743682
- 1943187 words of memory out of 5000000
- 39916 multiletter control sequences out of 15000+600000
+ 17749 strings out of 474116
+ 350258 string characters out of 5743682
+ 1942187 words of memory out of 5000000
+ 39891 multiletter control sequences out of 15000+600000
  613224 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1223b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,20n,121p,1223b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (16 pages, 1969165 bytes).
+Output written on main.pdf (15 pages, 1886698 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

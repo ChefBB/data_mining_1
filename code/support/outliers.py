@@ -2,7 +2,7 @@ import numpy as np
 from support.imputation import impute_outliers
 
 outliers_columns = [
-    'startYear', 'runtimeMinutes', 'numVotes', 'totalCredits',
+    'runtimeMinutes', 'numVotes', 'totalCredits',
     'criticReviewsTotal',
     'numRegions', 'userReviewsTotal', 'fill_runtimeMinutes_Bruno',
     'totalNominations', 'totalMedia', 'runtimeMinutes_notitletype'
