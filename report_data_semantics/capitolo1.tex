@@ -1,7 +1,6 @@
 \chapter{Data Understanding and Preparation}
 \label{ch:capitolo1}
 
-\section{Initial Dataset}\label{sec:data_semantics}
 The dataset \textit{train.csv} contains 16431 titles of different forms of visual entertainment that have been rated on IMDb, 
 an online database of information related to films, television series etc. 
 Each record is described by 23 attributes, both numerical and non-numerical. 
@@ -12,7 +11,7 @@ Each record is described by 23 attributes, both numerical and non-numerical.
 % This section will give an overview about the distribution of variables that has been carried on to understand patterns, 
 % detect meaningful statistics and assess their relevance to the project. 
 
-\subsection{Discrete attributes}
+\section{Discrete attributes}
 Table~\ref{tab:attributes} shows the discrete attributes of the dataset,
 their types and a brief description of each attribute.
 \begin{table}[h]
@@ -37,16 +36,16 @@ their types and a brief description of each attribute.
         \texttt{isAdult} & Binary & Whether or not the title is for adults \\ 
         & & \texttt{0}: non-adult title; \texttt{1}: adult title \\ 
         \hline
-        \texttt{countryOfOrigin} & Categorical & The country(ies) where the title was produced \\ 
+        \texttt{countryOfOrigin} & List & The country(ies) where the title was produced \\ 
         \hline
-        \texttt{genres} & Categorical & The genre(s) associated with the title \\ 
+        \texttt{genres} & List & The genre(s) associated with the title (3 at most) \\ 
         \hline
     \end{tabular}
     \caption{Description of discrete attributes}
     \label{tab:attributes}
 \end{table}
 
-
+\subsection{Discrete attributes analysis}
 In this paragraph, the most informative discrete attributes of the dataset are examined to provide an overview of their statistics and frequencies. \\
 From figure~\ref{fig:sub1} it is observed that the classes of the \texttt{titleType} attribute are unbalanced, with \textit{movie} being 
 the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). 
@@ -118,9 +117,62 @@ reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as t
 \end{figure}
 
 
+\subsection{Variable elimination}\label{subsec:var_elim_discrete}
+Because of redundancy and irrelevance, the following categorical variables were removed from the dataset:
+\begin{itemize}
+    \item \texttt{originalTitle} was removed because it is not relevant for the analysis;
+    \item \texttt{isRatable} variable was removed because all the titles in the dataset are ratable;
+\end{itemize}
+
+Additionally, the \texttt{isAdult} feature is highly correlated with the presence or absence of
+\textit{Adult} as a genre, so the two were merged with a logical OR operation.
 
 
-\subsection{Continuous attributes}
+\subsection{Features transformations}
+% \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into 
+% lists of strings to facilitate further analysis.
+% This transformation was necessary because some records contain multiple genres or countries as values for
+% these variables.
+The attribute \texttt{rating} was converted into an ordinal variable by taking the upper bound of each rating
+interval's string representation. This approach was chosen because the minimum rating is 1, meaning the
+lowest interval corresponds only to ratings of 1. For consistency, the same transformation was applied
+to all other intervals.\\
+
+The attribute \texttt{genre} was represented through one-hot encoding. This generated 27 new attributes
+(without counting the \textit{Adult} genre, mentioned in section~\ref{subsec:var_elim_discrete}).
+Rows with no genres were assigned a vector of all zeros, indicating the absence of any genres.\\
+
+% After that, multi-label one-hot encoding was applied to the
+% \texttt{genres} column; each unique genre was represented as a binary feature, 
+% allowing records that belong to multiple genres simultaneously to maintain this information.
+The attribute \texttt{countryOfOrigin} was represented by grouping the countries by continent.
+The following variables have been created: 
+\begin{multicols}{2}
+\begin{itemize}
+    \item \texttt{countryOfOrigin\_AF} (Africa);
+    \item \texttt{countryOfOrigin\_AS} (Asia);
+    \item \texttt{countryOfOrigin\_EU} (Europe);
+    \item \texttt{countryOfOrigin\_NA} (North America);
+    \item \texttt{countryOfOrigin\_SA} (South America);
+    \item \texttt{countryOfOrigin\_OC} (Oceania);
+    \item \texttt{countryOfOrigin\_UNK} (Unknown country).
+\end{itemize}
+\end{multicols}
+
+Each of the previous features provides the number of countries in the corresponding continent.
+\texttt{countryOfOrigin\_UNK} is used to represent the strings that are not chategorized as being part of a
+continent.\\
+
+The feature \texttt{countryOfOrigin\_freq\_enc} is also created, providing the frequency encoding of the
+original list as a whole. In summary, the original feature is represented by the listed 8 attributes.\\
+
+This representation was chosen as it allows to keep a lot of the original information, while using
+a small number of new features.\\
+
+
+
+
+\section{Continuous attributes}
 Table~\ref{tab:numerical_attributes} shows the continuous attributes of the dataset,
 a brief description of each attribute and their type.
 \begin{table}[h]
@@ -165,6 +217,44 @@ a brief description of each attribute and their type.
 \end{table}
 
 
+\subsection{Variable elimination and creation}\label{sec:var_elim_creation}
+
+
+% \begin{minipage}{0.48\textwidth}
+% \centering
+% \includegraphics[width=0.6]{plots/correlation_matrix.png}
+% \captionof{figure}{Correlation matrix}
+% \label{fig:correlation_matrix} % Add a label for referencing
+% \end{minipage}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{plots/correlation_matrix.png}
+    \caption{Correlation matrix of the numerical features}
+    \label{fig:correlation_matrix}
+\end{figure}
+
+% \hfill
+% \begin{minipage}{0.48\textwidth}
+    The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
+    account the continuous variables of the dataset.
+For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
+For this reason it has been decided to drop \texttt{ratingCount}.
+Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
+
+On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
+they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
+% \end{minipage}
+While examining the dataset, some variables were found to be redundant or irrelevant for the analysis.
+Those variables were removed to simplify the dataset and improve the performance of the data mining
+techniques.
+The following variables were removed:
+
+\begin{itemize}
+    \item \texttt{isRatable}: this variable was removed because all the titles in the dataset are ratable;
+    \item \texttt{ratingCount}: this variable was removed because it is perfectly correlated with the \texttt{numVotes} variable;
+\end{itemize}
+
+
 \section{Data Quality}\label{sec:data_quality}
 In this phase, a proper evaluation of the observed data was conducted in preparation for the analysis.
 Once having checked that there are no duplicates and no incomplete rows in the dataset, 
@@ -202,13 +292,13 @@ also represented in percentages for a better understanding:
 
 
 
-\subsection{Outliers detection}
-While examining the dataset, it became apparent that some attributes have outliers. 
-The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} 
-and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
-these might be considered variables with many outliers 
-(as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) 
-but they actually have less outliers compared to the other variables.
+\subsection{Outliers detection and variable Transformation}
+% While examining the dataset, it became apparent that some attributes have outliers. 
+% The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} 
+% and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
+% these might be considered variables with many outliers 
+% (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) 
+% but they actually have less outliers compared to the other variables.
 For the other attributes \textbf{CONTINUARE......}
 \textbf{VALORI OUTLIERS SU TRAIN IN \%: 86.7 , 90.2 , 87.8}
 \textbf{VALORI OUTLIERS SU DF\_PP IN \%: 88.7 , 90.2 , 87.8}
@@ -217,7 +307,7 @@ because of the fundamentally different titletype compared to the other title typ
 seemed erroneous since they have an undefined or irrelevant runtime.
 
 
-\section{Variable Transformation}\label{sec:var_Transformation}
+% \section{Variable Transformation}\label{sec:var_Transformation}
 As a first step in the variable transformation process, the \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into 
 lists of strings to facilitate further analysis. This transformation was necessary because some records contain multiple genres or countries as values for these variables.
 After that, multi-label one-hot encoding was applied to the \texttt{genres} column; each unique genre was represented as a binary feature, 
@@ -269,36 +359,36 @@ The decision to apply one or the other was again made based on the specific requ
 \textbf{CONTROLLARE SE IN OGNI SEZIONE C'E' SPECIFICA SULLE DUE NORMALIZZAZIONI USATE!!!}.
 
 
-\section{Pairwise correlations and elimination of variables}\label{sec:correlation}
-%The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.
+% \section{Pairwise correlations and elimination of variables}\label{sec:correlation}
+% %The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.
+% % For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
+% % For this reason it has been decided to drop \texttt{ratingCount}.
+% % Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
+
+% % On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
+% % they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
+
+% % \begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
+% %     \centering % Centers the figure
+% %     \includegraphics[width=0.7\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
+% %     \caption{Correlation matrix} % Add a caption
+% %     \label{fig:correlation_matrix} % Add a label for referencing
+% % \end{figure}
+
+% \noindent
+% \begin{minipage}{0.48\textwidth}
+%     \centering
+%     \includegraphics[width=\linewidth]{plots/correlation_matrix.png}
+%     \captionof{figure}{Correlation matrix}
+%     \label{fig:correlation_matrix} % Add a label for referencing
+% \end{minipage}
+% \hfill
+% \begin{minipage}{0.48\textwidth}
+%     The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.
 % For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
 % For this reason it has been decided to drop \texttt{ratingCount}.
 % Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
 
 % On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
 % they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
-
-% \begin{figure}[h!] % Positioning options: h (here), t (top), b (bottom), p (page)
-%     \centering % Centers the figure
-%     \includegraphics[width=0.7\textwidth]{plots/correlation_matrix.png} % Specify the file name and scaling options
-%     \caption{Correlation matrix} % Add a caption
-%     \label{fig:correlation_matrix} % Add a label for referencing
-% \end{figure}
-
-\noindent
-\begin{minipage}{0.48\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{plots/correlation_matrix.png}
-    \captionof{figure}{Correlation matrix}
-    \label{fig:correlation_matrix} % Add a label for referencing
-\end{minipage}
-\hfill
-\begin{minipage}{0.48\textwidth}
-    The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into account the continuous variables of the dataset.
-For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
-For this reason it has been decided to drop \texttt{ratingCount}.
-Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
-
-On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
-they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
-\end{minipage}
+% \end{minipage}

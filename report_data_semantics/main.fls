@@ -217,13 +217,13 @@ OUTPUT main.toc
 INPUT ./capitolo1.tex
 INPUT ./capitolo1.tex
 INPUT capitolo1.tex
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmtt10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT ./plots/fig1_a.png
 INPUT ./plots/fig1_a.png
 INPUT ./plots/fig1_a.png
