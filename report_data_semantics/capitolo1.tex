@@ -1,87 +1,52 @@
 \chapter{Data Understanding and Preparation}
 \label{ch:capitolo1}
 
-\section{Data Semantics}\label{sec:data_semantics}
+\section{Initial Dataset}\label{sec:data_semantics}
 The dataset \textit{train.csv} contains 16431 titles of different forms of visual entertainment that have been rated on IMDb, 
 an online database of information related to films, television series etc. 
 Each record is described by 23 attributes, both numerical and non-numerical. 
-All the variables of the dataset are introduced and explained in Table 1.1 and Table 1.2.
+% All the variables of the dataset are introduced and explained in Table 1.1 and Table 1.2.
+
+
+% \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
+% This section will give an overview about the distribution of variables that has been carried on to understand patterns, 
+% detect meaningful statistics and assess their relevance to the project. 
+
+\subsection{Discrete attributes}
+Table~\ref{tab:attributes} shows the discrete attributes of the dataset,
+their types and a brief description of each attribute.
 \begin{table}[h]
     \centering
     \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
         \hline
         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
         \hline
-        originalTitle & Categorical & Title in its original language \\  
+        \texttt{originalTitle} & Categorical & Title in its original language \\  
         \hline
-        rating & Ordinal & IMDB title rating class \\
-        & & The range is from (0,1] to (9,10] \\ 
+        \texttt{rating} & Ordinal & IMDB title rating class \\
+        & & The range is from \texttt{(0,1]} to \texttt{(9,10]} \\ 
         \hline
-        worstRating & Ordinal & Worst title rating \\ 
+        \texttt{titleType} & Categorical & The format of the title \\ 
         \hline
-        bestRating & Ordinal & Best title rating \\ 
+        \texttt{canHaveEpisodes} & Binary & Whether or not the title can have episodes \\ 
+        & & \texttt{True}: can have episodes; \texttt{False}: cannot have episodes \\ 
         \hline
-        titleType & Categorical & The format of the title \\ 
+        \texttt{isRatable} & Binary & Whether or not the title can be rated by users \\ 
+        & & \texttt{True}: it can be rated; \texttt{False}: cannot be rated \\ 
         \hline
-        canHaveEpisodes & Binary & Whether or not the title can have episodes \\ 
-        & & True: can have episodes; False: cannot have episodes \\ 
+        \texttt{isAdult} & Binary & Whether or not the title is for adults \\ 
+        & & \texttt{0}: non-adult title; \texttt{1}: adult title \\ 
         \hline
-        isRatable & Binary & Whether or not the title can be rated by users \\ 
-        & & True: it can be rated; False: cannot be rated \\ 
+        \texttt{countryOfOrigin} & Categorical & The country(ies) where the title was produced \\ 
         \hline
-        isAdult & Binary & Whether or not the title is for adults \\ 
-        & & 0: non-adult title; 1: adult title \\ 
-        \hline
-        countryOfOrigin & Categorical & The country(ies) where the title was produced \\ 
-        \hline
-        genres & Categorical & The genre(s) associated with the title \\ 
+        \texttt{genres} & Categorical & The genre(s) associated with the title \\ 
         \hline
     \end{tabular}
     \caption{Description of discrete attributes}
     \label{tab:attributes}
 \end{table}
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
-        \hline
-        \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
-        \hline
-        runtimeMinutes & Numeric & Runtime of the title expressed in minutes \\ 
-        \hline
-        startYear & Interval & Release/start year of a title \\ 
-        \hline
-        endYear & Interval & TV Series end year \\
-        \hline
-        awardWins & Numeric & Number of awards the title won \\ 
-        \hline
-        numVotes & Numeric & Number of votes the title has received \\ 
-        \hline
-        totalImages & Numeric & Number of Images on the IMDb title page \\ 
-        \hline
-        totalVideos & Numeric & Number of Videos on the IMDb title page \\ 
-        \hline
-        totalCredits & Numeric & Number of Credits for the title \\ 
-        \hline
-        criticReviewsTotal & Numeric & Total Number of Critic Reviews \\ 
-        \hline
-        awardNominationsExcludeWins & Numeric & Number of award nominations excluding wins \\ 
-        \hline
-        numRegions & Numeric & The regions number for this version of the title \\ 
-        \hline
-        userReviewsTotal & Numeric & Number of User Reviews \\ 
-        \hline
-        ratingCount & Numeric & The total number of user ratings for the title \\ 
-        \hline
-    \end{tabular}
-    \caption{Description of continuous attributes}
-    \label{tab:numerical_attributes}
-\end{table}
-\section{Distribution of the variables and statistics}\label{sec:variable_distrib}
-This section will give an overview about the distribution of variables that has been carried on to understand patterns, 
-detect meaningful statistics and assess their relevance to the project. 
 
-\subsection{Discrete attributes}
-\textbf{DA CAMBIARE IN BASE AI GRAFICI CHE DECIDIAMO DI TENERE}
+
 In this paragraph, the most informative discrete attributes of the dataset are examined to provide an overview of their statistics and frequencies. \\
 From figure~\ref{fig:sub1} it is observed that the classes of the \texttt{titleType} attribute are unbalanced, with \textit{movie} being 
 the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). 
@@ -152,8 +117,52 @@ reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as t
     \label{fig:bar-charts}
 \end{figure}
 
+
+
+
 \subsection{Continuous attributes}
-\textbf{ANCORA DA FARE!!! plot + descrizione ...content...content...content...content...content...content...}
+Table~\ref{tab:numerical_attributes} shows the continuous attributes of the dataset,
+a brief description of each attribute and their type.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
+        \hline
+        \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
+        \hline
+        \texttt{worstRating} & Float & Worst title rating \\ 
+        \hline
+        \texttt{bestRating} & Float & Best title rating \\ 
+        \hline
+        \texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\ 
+        \hline
+        \texttt{startYear} & Integer & Release/start year of a title \\ 
+        \hline
+        \texttt{endYear} & Integer & TV Series end year \\
+        \hline
+        \texttt{awardWins} & Integer & Number of awards the title won \\ 
+        \hline
+        \texttt{numVotes} & Integer & Number of votes the title has received \\ 
+        \hline
+        \texttt{totalImages} & Integer & Number of Images on the IMDb title page \\ 
+        \hline
+        \texttt{totalVideos} & Integer & Number of Videos on the IMDb title page \\ 
+        \hline
+        \texttt{totalCredits} & Integer & Number of Credits for the title \\ 
+        \hline
+        \texttt{criticReviewsTotal} & Integer & Total Number of Critic Reviews \\ 
+        \hline
+        \texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\ 
+        \hline
+        \texttt{numRegions} & Integer & The regions number for this version of the title \\ 
+        \hline
+        \texttt{userReviewsTotal} & Integer & Number of User Reviews \\ 
+        \hline
+        \texttt{ratingCount} & Integer & The total number of user ratings for the title \\ 
+        \hline
+    \end{tabular}
+    \caption{Description of continuous attributes}
+    \label{tab:numerical_attributes}
+\end{table}
 
 
 \section{Data Quality}\label{sec:data_quality}
@@ -164,12 +173,12 @@ attention was given at identifying missing values and outliers within the column
 
 
 \subsection{Syntactic Inconsistencies}
-In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}.
-However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), 
-but they were indicated with the string "\textbackslash N".
-To avoid this inconsistency that might have caused problems during data preparation, these values have been replaced with \texttt{NaN}.
-By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} columns 
-that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
+% In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}.
+% However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), 
+% but they were indicated with the string "\textbackslash N".
+% To avoid this inconsistency that might have caused problems during data preparation, these values have been replaced with \texttt{NaN}.
+% By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} columns 
+% that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
 
 
 
@@ -179,7 +188,11 @@ also represented in percentages for a better understanding:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). For this reason and due to the lack of reliable imputation methods, the entire feature has been removed;
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two different ways according to the data mining task in hand. More details are provided in the specific sections \textbf{SPECIFICARE NEI PARAGRAFI DOVE ABBIAMO USATO \_Bruno e dove \_notitletype};
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two
+    different ways: Two imputation strategies were used: one leverages the titleType feature to guide
+    the imputation,
+    while the other imputes the missing values independently of any other features.
+    Depending on the task at hand, one or the other was chosen;
     % by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype; anche se questo causa problemi nel momento in cui andiamo a classificare un nuovo record che non ha titletype};
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
