@@ -118,7 +118,7 @@ reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as t
 
 
 \subsection{Variable elimination}\label{subsec:var_elim_discrete}
-Because of redundancy and irrelevance, the following categorical variables were removed from the dataset:
+The following categorical variables were removed from the dataset:
 \begin{itemize}
     \item \texttt{originalTitle} was removed because it is not relevant for the analysis;
     \item \texttt{isRatable} variable was removed because all the titles in the dataset are ratable;
@@ -129,7 +129,7 @@ Additionally, the \texttt{isAdult} feature is highly correlated with the presenc
 with a logical OR operation.
 
 
-\subsection{Features transformations}
+\subsection{Feature transformations}
 % \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into 
 % lists of strings to facilitate further analysis.
 % This transformation was necessary because some records contain multiple genres or countries as values for
@@ -139,8 +139,7 @@ interval's string representation. This approach was chosen because the minimum r
 lowest interval corresponds only to ratings of 1. For consistency, the same transformation was applied
 to all other intervals.\\
 
-The attribute \texttt{genre} was represented through one-hot encoding. This generated 27 new attributes
-(without counting the \textit{Adult} genre, mentioned in section~\ref{subsec:var_elim_discrete}).
+The attribute \texttt{genre} was represented through one-hot encoding. This generated 28 new attributes.
 Rows with no genres were assigned a vector of all zeros, indicating the absence of any genres.\\
 
 % After that, multi-label one-hot encoding was applied to the
@@ -149,26 +148,27 @@ Rows with no genres were assigned a vector of all zeros, indicating the absence 
 The attribute \texttt{countryOfOrigin} was represented by grouping the countries by continent.
 The following variables have been created: 
 \begin{multicols}{2}
-\begin{itemize}
-    \item \texttt{countryOfOrigin\_AF} (Africa);
-    \item \texttt{countryOfOrigin\_AS} (Asia);
-    \item \texttt{countryOfOrigin\_EU} (Europe);
-    \item \texttt{countryOfOrigin\_NA} (North America);
-    \item \texttt{countryOfOrigin\_SA} (South America);
-    \item \texttt{countryOfOrigin\_OC} (Oceania);
-    \item \texttt{countryOfOrigin\_UNK} (Unknown country).
-\end{itemize}
+    \begin{itemize}
+        \item \texttt{countryOfOrigin\_AF} (Africa);
+        \item \texttt{countryOfOrigin\_AS} (Asia);
+        \item \texttt{countryOfOrigin\_EU} (Europe);
+        \item \texttt{countryOfOrigin\_NA} (North America);
+        \item \texttt{countryOfOrigin\_SA} (South America);
+        \item \texttt{countryOfOrigin\_OC} (Oceania);
+        \item \texttt{countryOfOrigin\_UNK} (Unknown country);
+        \item texttt{countryOfOrigin\_freq\_enc} (Frequency encoding of the original list).
+    \end{itemize}
 \end{multicols}
 
-Each of the previous features provides the number of countries in the corresponding continent.
+Each of the first six features provides the number of countries in the corresponding continent.
 \texttt{countryOfOrigin\_UNK} is used to represent the strings that are not chategorized as being part of a
-continent.\\
+continent, by again counting the strings that are not recognized.
+The feature \texttt{countryOfOrigin\_freq\_enc} provides the frequency encoding of the
+original list as a whole.\\
 
-The feature \texttt{countryOfOrigin\_freq\_enc} is also created, providing the frequency encoding of the
-original list as a whole. In summary, the original feature is represented by the listed 8 attributes.\\
-
-This representation was chosen as it allows to keep a lot of the original information, while using
-a small number of new features.\\
+In summary, the original feature is represented by the seven attributes regarding
+the continents, plus 1 representing the frequency encoding. This representation was chosen as it allows to
+keep a lot of the original information, while limiting the number of new features.\\
 
 
 
@@ -218,7 +218,9 @@ a brief description of each attribute and their type.
 \end{table}
 
 
-\subsection{Variable elimination and creation}\label{sec:var_elim_creation}
+\subsection{Variable elimination, merge and creation}\label{sec:var_elim_creation}
+The \texttt{worstRating} and \texttt{bestRating} attributes were removed from the dataset because they
+assume the same values for all records of the dataset (1 and 10 respectively).\\
 
 
 % \begin{minipage}{0.48\textwidth}
@@ -229,31 +231,33 @@ a brief description of each attribute and their type.
 % \end{minipage}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{plots/correlation_matrix.png}
+    \includegraphics[width=0.8\textwidth]{plots/correlation_matrix.png}
     \caption{Correlation matrix of the numerical features}
     \label{fig:correlation_matrix}
 \end{figure}
 
 % \hfill
 % \begin{minipage}{0.48\textwidth}
-    The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
-    account the continuous variables of the dataset.
-For what can be observed, \texttt{numVotes} and \texttt{ratingCount} have a perfect positive correlation, making it redundant to keep both of them.
-For this reason it has been decided to drop \texttt{ratingCount}.
-Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
+The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
+account the continuous variables of the dataset.\\
+% Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
 
-On the other hand, regarding categorial attributes, after having analized all of them, \texttt{bestRating}, \texttt{worstRating}, and \texttt{isRatable} were discarded because 
-they were found to have, as unique values, respectively 10, 1 and True, resulting in variables with a limited contribution based on their distributions.
 % \end{minipage}
-While examining the dataset, some variables were found to be redundant or irrelevant for the analysis.
-Those variables were removed to simplify the dataset and improve the performance of the data mining
-techniques.
-The following variables were removed:
+The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
+for their redundancy, \texttt{ratingCount} was discarded.\\
 
-\begin{itemize}
-    \item \texttt{isRatable}: this variable was removed because all the titles in the dataset are ratable;
-    \item \texttt{ratingCount}: this variable was removed because it is perfectly correlated with the \texttt{numVotes} variable;
-\end{itemize}
+The \texttt{awardWins} and \texttt{awardNominationsExcludeWins} attributes were combined into a single
+attribute, \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
+The new attribute represents the sum of the two original variables. This transformation also helps
+mitigate the impact of their heavy left skew, resulting in a more meaningful and interpretable feature.\\
+
+
+Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
+attribute, \texttt{totalMedia}, representing the total number of media items associated with a title.
+Although the original attributes are not highly correlated, both exhibit heavily left-skewed distributions.
+Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
+interpretable feature.
+
 
 
 \section{Data Quality}\label{sec:data_quality}
@@ -277,18 +281,25 @@ attention was given at identifying missing values and outliers within the column
 Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, 
 also represented in percentages for a better understanding:
 \begin{itemize}
-    \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%). For this reason and due to the lack of reliable imputation methods, the entire feature has been removed;
+    \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%).
+    Although the feature is only relevant for \textit{TVSeries} and \textit{TVMiniSeries} titles, it still
+    had approximately 50\% missing values within those categories, limiting its usefulness even in the
+    appropriate context. For this reason, the feature was discarded;
     
-    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%) that have been handled in two
-    different ways: Two imputation strategies were used: one leverages the titleType feature to guide
+    \item \texttt{runtimeMinutes}: it has 4852 missing values (29.5\%).
+    Two imputation strategies were used: one leverages the titleType feature to guide
     the imputation,
     while the other imputes the missing values independently of any other features.
     Depending on the task at hand, one or the other was chosen;
     % by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype; anche se questo causa problemi nel momento in cui andiamo a classificare un nuovo record che non ha titletype};
     
-    \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%). Since the mode associated with this variable is 0, it has been decided to substitute the missing values with 0;
+    \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%).
+    Since the mode associated with this variable is 0, it has been decided to substitute the missing
+    values with 0;
 
-    \item \texttt{genres}: it has 382 missing values (2.3\%). Having dealt this variable with a multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation} section), a vector of all zeros is assigned to record with missing genres values.
+    \item \texttt{genres}: it has 382 missing values (2.3\%). Having dealt this variable with a
+    multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation}
+    section), a vector of all zeros is assigned to record with missing genres values.
 \end{itemize}
 
 
