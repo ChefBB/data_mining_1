@@ -256,6 +256,17 @@ INPUT ./plots/correlation_matrix.png
 INPUT ./plots/correlation_matrix.png
 INPUT ./plots/correlation_matrix.png
 INPUT ./plots/correlation_matrix.png
+INPUT ./plots/nominations_distrib.png
+INPUT ./plots/nominations_distrib.png
+INPUT ./plots/nominations_distrib.png
+INPUT ./plots/nominations_distrib.png
+INPUT ./plots/nominations_distrib.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmtt10.tfm
+INPUT ./plots/totalVideos_Images_distrib.png
+INPUT ./plots/totalVideos_Images_distrib.png
+INPUT ./plots/totalVideos_Images_distrib.png
+INPUT ./plots/totalVideos_Images_distrib.png
+INPUT ./plots/totalVideos_Images_distrib.png
 INPUT ./capitolo2.tex
 INPUT ./capitolo2.tex
 INPUT capitolo2.tex

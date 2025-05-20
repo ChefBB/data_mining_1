@@ -222,13 +222,6 @@ a brief description of each attribute and their type.
 The \texttt{worstRating} and \texttt{bestRating} attributes were removed from the dataset because they
 assume the same values for all records of the dataset (1 and 10 respectively).\\
 
-
-% \begin{minipage}{0.48\textwidth}
-% \centering
-% \includegraphics[width=0.6]{plots/correlation_matrix.png}
-% \captionof{figure}{Correlation matrix}
-% \label{fig:correlation_matrix} % Add a label for referencing
-% \end{minipage}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{plots/correlation_matrix.png}
@@ -236,27 +229,41 @@ assume the same values for all records of the dataset (1 and 10 respectively).\\
     \label{fig:correlation_matrix}
 \end{figure}
 
-% \hfill
-% \begin{minipage}{0.48\textwidth}
 The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
 account the continuous variables of the dataset.\\
-% Another variable that was removed, but for different reasons, is \texttt{endYear}; as mentioned in the \textit{Missing Values} subsection, this variable was discarded due to the lack of reliable imputation methods for its numerous missing values.\\
 
-% \end{minipage}
 The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
 The \texttt{awardWins} and \texttt{awardNominationsExcludeWins} attributes were combined into a single
 attribute, \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
 The new attribute represents the sum of the two original variables. This transformation also helps
-mitigate the impact of their heavy left skew, resulting in a more meaningful and interpretable feature.\\
+mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\
 
 
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 attribute, \texttt{totalMedia}, representing the total number of media items associated with a title.
-Although the original attributes are not highly correlated, both exhibit heavily left-skewed distributions.
+Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), the first
+in particular.
 Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
+
+\begin{figure}[H]
+    \centering
+    % First subfigure
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{plots/nominations_distrib.png}
+        \caption{Logarithmic distribution of the \texttt{totalNominations} attribute}
+        \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{plots/totalVideos_Images_distrib.png}
+        \caption{Logarithmic distribution of the \texttt{totalNominations} attribute}
+        \label{fig:sub2}
+    \end{subfigure}
+    \caption{Distribution of the \texttt{totalNominations} and \texttt{totalMedia} attributes}
+    \label{fig:distrib}
+\end{figure}
 
 
 
