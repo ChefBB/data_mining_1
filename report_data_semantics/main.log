@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  20 MAY 2025 15:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  20 MAY 2025 16:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -807,32 +807,32 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 12
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 136--140
+Underfull \hbox (badness 10000) in paragraph at lines 137--141
 
  []
 
 [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./plots/fig1_a.png> <./plots/fig1_b.png> <./plots/fig1_c.png> <./plots/fig1_d.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 141--144
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
  []
 
 
-Overfull \hbox (21.2011pt too wide) in paragraph at lines 162--165
+Overfull \hbox (21.2011pt too wide) in paragraph at lines 163--166
 []\OT1/lmr/m/n/10.95 Each of the pre-vi-ous fea-tures pro-vides the num-ber of coun-tries in the cor-re-spond-ing con-ti-nent. \OT1/lmtt/m/n/10.95 countryOfOrigin[]UNK
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
+Underfull \hbox (badness 10000) in paragraph at lines 163--166
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--168
+Underfull \hbox (badness 10000) in paragraph at lines 167--169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--171
+Underfull \hbox (badness 10000) in paragraph at lines 170--172
 
  []
 
@@ -842,15 +842,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <plots/correlation_matrix.png, id=32, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 231.
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 232.
 (pdftex.def)             Requested size: 317.36526pt x 280.33438pt.
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 238--243
+Underfull \hbox (badness 10000) in paragraph at lines 239--244
 
  []
 
 [5 <./plots/correlation_matrix.png>] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 338--353
+Underfull \hbox (badness 10000) in paragraph at lines 339--354
 
  []
 
@@ -934,7 +934,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1223b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (16 pages, 1909016 bytes).
+Output written on main.pdf (16 pages, 1909080 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream
