@@ -11,7 +11,7 @@ Each record is described by 23 attributes, both numerical and non-numerical.
 % This section will give an overview about the distribution of variables that has been carried on to understand patterns, 
 % detect meaningful statistics and assess their relevance to the project. 
 
-\section{Discrete attributes}
+\section{Discrete Attributes}
 Table~\ref{tab:attributes} shows the discrete attributes of the dataset,
 their types and a brief description of each attribute.
 \begin{table}[h]
@@ -24,6 +24,10 @@ their types and a brief description of each attribute.
         \hline
         \texttt{rating} & Ordinal & IMDB title rating class \\
         & & The range is from \texttt{(0,1]} to \texttt{(9,10]} \\ 
+        \hline
+        \texttt{worstRating} & Ordinal & Worst title rating \\ 
+        \hline
+        \texttt{bestRating} & Ordinal & Best title rating \\ 
         \hline
         \texttt{titleType} & Categorical & The format of the title \\ 
         \hline
@@ -45,8 +49,8 @@ their types and a brief description of each attribute.
     \label{tab:attributes}
 \end{table}
 
-\subsection{Merging and Removal of Categorical Attributes}\label{subsec:var_elim_discrete}
-The following categorical attributes were removed from the dataset:
+\subsection{Merging and Removal of Discrete Attributes}\label{subsec:var_elim_discrete}
+The following discrete attributes were removed from the dataset:
 \begin{itemize}
     \item \texttt{originalTitle} was removed because it is not relevant for the analysis;
     \item the \texttt{isRatable} variable was removed because all the titles in the dataset are ratable;
@@ -59,21 +63,42 @@ merged with a logical OR operation.
 
 
 
-\subsection{Discrete attributes analysis}
-This paragraph provides an overview of the discrete attributes in the dataset, focusing on their distributions and statistics.\\
-The following figure~\ref{fig:titleType_distrib} shows an histogram of \texttt{titleType}.
+\subsection{Discrete Attributes Analysis}
+This paragraph provides an overview of the discrete attributes in the dataset, focusing on their distributions and statistics.
+The following figures~\ref{fig:titleType_distrib} and~\ref{fig:rating_distrib} show bar plots of \texttt{titleType} and \texttt{rating} attributes, respectively.\\
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
-    \caption{Distribution of the \texttt{titleType} attribute}
-    \label{fig:titleType_distrib}
+    % First subfigure
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
+        \caption{Distribution of \texttt{titleType}}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \label{fig:titleType_distrib}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{plots/rating_distrib.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
+        \caption{Distribution of \texttt{rating}}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \label{fig:rating_distrib}
+    \end{subfigure}
+    \captionsetup{justification=centering}
+    \caption{Distribution of the \texttt{titleType} and \texttt{rating} attributes}
+    \label{fig:distrib}
 \end{figure}
+
+
+From figure~\ref{fig:titleType_distrib} it is observed that the classes of the titleType attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records).
 It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
-The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively).
+The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively). \\
+
+As shown in figure~\ref{fig:rating_distrib}, the \texttt{rating} attribute distribution is not uniform: a significant number of titles falls within the (6,7] and (7, 8] ranges (4565 and 4822 titles, respectively) while only a total amount of 67 titles falls within (0,1] and (1,2]. \\
 
 
 \subsection{Encoding and Transformation of Categorical Attributes}
-The attribute \texttt{rating} was converted into an ordinal variable by taking the upper bound of each rating
+The attribute \texttt{rating} was transformed by taking the upper bound of each rating
 interval's string representation. This approach was chosen because the minimum rating is 1, meaning the
 lowest interval corresponds only to ratings of 1. For consistency, the same transformation was applied
 to all other intervals.\\
@@ -102,22 +127,25 @@ The following variables have been created:
     \end{itemize}
 \end{multicols}
 
-Each of the first six features provides the number of countries in the corresponding continent.\\
-\texttt{countryOfOrigin\_UNK} is used to represent the strings that are not categorized as being part of a
-continent, by counting the strings that are not recognized.
-The feature \texttt{countryOfOrigin\_freq\_enc} provides the frequency encoding of the
-original list as a whole.
+
+For each record, the first six features provide the number of countries for each continent.\\
+The \texttt{countryOfOrigin\_UNK} variable counts the number of countries that are not recognized as belonging to a continent for that record.
+
+% Each of the first six features provides the number of countries in the corresponding continent.\\
+% \texttt{countryOfOrigin\_UNK} is used to represent the strings that are not categorized as being part of a
+% continent, by counting the strings that are not recognized.
+Additionally, \texttt{countryOfOrigin\_freq\_enc} provides the frequency encoding of the original list of countries as a whole, 
+showing how frequently a specific combination of countries appears across the entire dataset.
 % In summary, the original attribute is represented by the seven features regarding
 % the continents, plus 1 representing the frequency encoding.
-This representation was chosen as it allows to
-keep a lot of the original information, while limiting the number of new features.
+These transformations allow to keep a most of the original information, while limiting the number of new features.
 
 
 
 
 \section{Continuous Attributes}
-Table~\ref{tab:numerical_attributes} shows the continuous attributes of the dataset,
-a brief description as well as their type.
+Table~\ref{tab:numerical_attributes} shows the continuous attributes of the dataset, their type and
+a brief description.
 \begin{table}[h]
     \centering             
     
@@ -127,17 +155,13 @@ a brief description as well as their type.
         \hline
         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
         \hline
-        \texttt{worstRating} & Float & Worst title rating \\ 
-        \hline
-        \texttt{bestRating} & Float & Best title rating \\ 
-        \hline
         \texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\ 
         \hline
         \texttt{startYear} & Integer & Release/start year of a title \\ 
         \hline
         \texttt{endYear} & Integer & TV Series end year \\
         \hline
-        \texttt{awardWins} & Integer & Number of awards the title won \\ 
+        \texttt{awardWins} & Float & Number of awards the title won \\ 
         \hline
         \texttt{numVotes} & Integer & Number of votes the title has received \\ 
         \hline
@@ -162,47 +186,78 @@ a brief description as well as their type.
     \label{tab:numerical_attributes}
 \end{table}
 
-
+% \vspace{2em}
 \subsection{Removal and Merging of Continuous Attributes}\label{sec:var_elim_creation}
-% The \texttt{worstRating} and \texttt{bestRating} attributes were removed from the dataset because they
-% assume the same values for all records of the dataset (1 and 10 respectively).\\
-%                       questi li ho messi in 1.1.2 dato che sono ordinal anche loro mi sa
+% The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
+% account the continuous attributes of the dataset.\\
 
-The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\textwidth]{plots/correlation_matrix.png}
+%     \caption{Correlation matrix}
+%     \label{fig:correlation_matrix}
+% \end{figure}
+
+% The correlation matrix of the continuous features shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
+% for their redundancy, \texttt{ratingCount} was discarded.\\
+
+ The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
 account the continuous attributes of the dataset.\\
 
-\begin{figure}[H]
+% codice due colonne
+\noindent
+\begin{minipage}{0.50\textwidth}
     \centering
-    \includegraphics[width=0.65\textwidth]{plots/correlation_matrix.png}
-    \caption{Correlation matrix of the numerical features}
+    \includegraphics[width=0.90\textwidth]{plots/correlation_matrix.png}
+    \captionof{figure}{Correlation matrix}
     \label{fig:correlation_matrix}
-\end{figure}
-
-
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
 The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
-The attributes \texttt{awardWins} and \texttt{awardNominationsExcludeWins} were combined into a single
+The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
 feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
+    % correlazione da matrix è 69
 The new feature represents the sum of the two original attributes. This transformation also helps
-mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\
+mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\\\
+\end{minipage}
+\hfill
 
+\vspace{1em}
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
-Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
-Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
-interpretable feature.\\
+Although the original attributes are not highly correlated, both exhibit skewed distributions (as in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
+Due to this, and to their similar semantic meaning, they were merged to form a more consolidated and
+interpretable feature.
+
+
+%     The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
+%     feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
+%     % correlazione da matrix è 69
+%     The new feature represents the sum of the two original attributes. This transformation also helps
+%     mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\\\
+% Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
+% feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
+
+% Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
+% Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
+% interpretable feature.\\
+
+
+
 
 \begin{figure}[H]
     \centering
     % First subfigure
-    \begin{subfigure}{0.48\textwidth}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\textwidth]{plots/nominations_distrib.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \caption{Kernel Density Estimation of \texttt{awardWins} and \texttt{awardNominationsExcludeWins}}
         \label{fig:sub1}
     \end{subfigure}
-    \begin{subfigure}{0.48\textwidth}
+    \begin{subfigure}{0.43\textwidth}
         \includegraphics[width=\textwidth]{plots/totalVideos_Images_distrib.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \caption{Kernel Density Estimation of \texttt{totalVideos} and \texttt{totalImages}}
@@ -222,11 +277,18 @@ Next, a proper evaluation of the observed data was conducted in preparation for 
 Once having checked that there are no duplicates and no incomplete rows in the dataset,
 attention was given at identifying missing values and outliers.
 
+% parte che ci sembrava importante per far vedere che ce ne siamo accorti
+\subsection{Syntactic Inconsistencies} 
+Even though \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}, 
+it has been noticed that there were missing values also in other columns - \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} -
+marked with the string "\textbackslash N" instead.
+To avoid this inconsistency those values have been replaced with \texttt{NaN}.
+
 
 \subsection{Missing Values}
-These attributes were found to have missing values:
+The missing values in the above-mentioned attributes were handled as follows:
 \begin{itemize}
-    \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%).
+    \item \texttt{endYear}: it is the feature with the highest number of \texttt{NaN} values (15617; about 95\%).
     Although the feature is only relevant for \textit{TVSeries} and \textit{TVMiniSeries} titles, it still
     had approximately 50\% missing values within those categories, limiting its usefulness even in the
     appropriate context. For this reason, the feature was discarded.
@@ -235,23 +297,22 @@ These attributes were found to have missing values:
     One strategy used the \texttt{titleType} feature to define the range, while the other imputed values independently of any other features. 
     The choice of which of the two strategies to use depends on the specific task, and will be specified in the corresponding sections.
     
-    \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%).
+    \item \texttt{awardWins}: this feature has 2618 \texttt{NaN} values (about 16\%).
     Since the mode associated with this variable is 0, it has been decided to substitute the missing
     values with 0.
 
     \item \texttt{genres}: it has 382 missing values (2.3\%). Having dealt this variable with a
-    multi-label one-hot encoding process (as will be described in the \textit{Variable Transformation}
+    multi-label one-hot encoding process (as has been described in the \textit{Encoding and Transformation of categorical attributes}
     section), a vector of all zeros is assigned to record with missing genres values.
 \end{itemize}
 
 
 
 \subsection{Semantic Inconsistencies, Feature Transformations and Outlier detection}
-While analyzing the dataset, it was observed that the \textit{Videogame} type of the \texttt{titleType} attribute (which consists of 259
-records - around 1.58\% of the dataset) was not consistent with the other attributes. 
-Other then the semantic inconsistency, these rows
-generated problems for some of the other attributes, such as \texttt{runtimeMinutes}, resulting in most
-values being missing (and difficult to impute). Because of this problem, as well as the meaning discrepancy, the samples were removed from the dataset because it was deemed to be semantically inconsistent with the other title types.\\
+While analyzing the dataset, it was observed that the \textit{Videogame} type of the \texttt{titleType} attribute (259 records - around 1.58\% of the dataset) 
+was not consistent with the other values of the same feature, being \textit{Videogame} a fundamentally different titleType.
+Other then this semantic inconsistency, these rows generated problems for some of the other attributes, such as \texttt{runtimeMinutes}, resulting in most values being missing and difficult to impute. 
+Because of this, the samples were removed from the dataset. \\
 
 
 Some features showed a heavy left-skewed distribution, with typical traits of Power-Law Distributions. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
@@ -273,7 +334,9 @@ Some features showed a heavy left-skewed distribution, with typical traits of Po
     \label{fig:left_skewed}
 \end{figure}
 
-The decay of these features is exponential in linear space (~\ref{fig:sub1_KDE_left_skew}), while in logarithmic space there is a decline that can be approximated to a linear trend (~\ref{fig:sub2_KDE_left_skew}). For this reason, a log-transformation was applied to these attributes to reduce the skewness and make them more suitable for analysis. Because of left-skewness (without a power-law distribution), other attributes were also log transformed:
+The decay of these features is exponential in linear space (~\ref{fig:sub1_KDE_left_skew}), while in logarithmic space there is a decline that can be approximated to a linear trend (~\ref{fig:sub2_KDE_left_skew}). 
+For this reason, a log-transformation was applied to these attributes to reduce the skewness and make them more suitable for analysis.
+ Because of left-skewness (without a power-law distribution), other attributes were also log-transformed:
 \begin{itemize}
     \item \texttt{numVotes};
     \item \texttt{totalCredits};
@@ -285,13 +348,14 @@ Regarding outliers, the feature that was found to be more problematic was \textt
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/outliers.png}
+    \includegraphics[width=0.65\textwidth]{plots/outliers.png}
     \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each titleType}
     \label{fig:runtimeMinutes_boxplot}
 \end{figure}
 
 The boxplot shows that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}. This might be because of an inconsistency with the understanding of the meaning of the attribute, and it might be possible that in those cases, the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
 
-An other interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
+% Another interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
+Another interesting observation regards the presence of a record with a runtime of 0 minutes for the \textit{short} type; although it was not considered an outlier, the record was removed from the dataset because it was regarded as a mistake.\\
 
 In this phase, outliers were not removed from the dataset, as it was decided to proceed on a case-by-case basis, depending on the task to be performed.\\

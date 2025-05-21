@@ -1,14 +1,15 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Data Understanding and Preparation}{2}{}%
-\contentsline {section}{\numberline {1.1}Discrete attributes}{2}{}%
-\contentsline {subsection}{\numberline {1.1.1}Merging and Removal of Categorical Attributes}{2}{}%
-\contentsline {subsection}{\numberline {1.1.2}Discrete attributes analysis}{3}{}%
+\contentsline {section}{\numberline {1.1}Discrete Attributes}{2}{}%
+\contentsline {subsection}{\numberline {1.1.1}Merging and Removal of Discrete Attributes}{2}{}%
+\contentsline {subsection}{\numberline {1.1.2}Discrete Attributes Analysis}{3}{}%
 \contentsline {subsection}{\numberline {1.1.3}Encoding and Transformation of Categorical Attributes}{3}{}%
 \contentsline {section}{\numberline {1.2}Continuous Attributes}{4}{}%
 \contentsline {subsection}{\numberline {1.2.1}Removal and Merging of Continuous Attributes}{4}{}%
 \contentsline {section}{\numberline {1.3}Data Quality}{6}{}%
-\contentsline {subsection}{\numberline {1.3.1}Missing Values}{6}{}%
-\contentsline {subsection}{\numberline {1.3.2}Semantic Inconsistencies, Feature Transformations and Outlier detection}{7}{}%
+\contentsline {subsection}{\numberline {1.3.1}Syntactic Inconsistencies}{6}{}%
+\contentsline {subsection}{\numberline {1.3.2}Missing Values}{6}{}%
+\contentsline {subsection}{\numberline {1.3.3}Semantic Inconsistencies, Feature Transformations and Outlier detection}{6}{}%
 \contentsline {chapter}{\numberline {2}Clustering}{9}{}%
 \contentsline {section}{\numberline {2.1}K-means}{10}{}%
 \contentsline {section}{\numberline {2.2}DBSCAN}{10}{}%
