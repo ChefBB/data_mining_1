@@ -70,16 +70,16 @@ The following figures~\ref{fig:titleType_distrib} and~\ref{fig:rating_distrib} s
 \begin{figure}[H]
     \centering
     % First subfigure
-    \begin{subfigure}{0.48\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.95\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
+        \includegraphics[width=0.98\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
         \caption{Distribution of \texttt{titleType}}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \label{fig:titleType_distrib}
     \end{subfigure}
-    \begin{subfigure}{0.48\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \centering
-        \includegraphics[width=0.95\textwidth]{plots/rating_distrib.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
+        \includegraphics[width=0.98\textwidth]{plots/rating_distrib.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
         \caption{Distribution of \texttt{rating}}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \label{fig:rating_distrib}
@@ -112,6 +112,7 @@ Rows with no genres were assigned a vector of all zeros, indicating the absence 
 % After that, multi-label one-hot encoding was applied to the
 % \texttt{genres} column; each unique genre was represented as a binary feature, 
 % allowing records that belong to multiple genres simultaneously to maintain this information.
+\vspace{1em}
 The attribute \texttt{countryOfOrigin} was represented by grouping the countries by continent.
 The following variables have been created: 
 \begin{multicols}{2}
@@ -146,6 +147,7 @@ These transformations allow to keep a most of the original information, while li
 \section{Continuous Attributes}
 Table~\ref{tab:numerical_attributes} shows the continuous attributes of the dataset, their type and
 a brief description.
+\vspace{1em}
 \begin{table}[h]
     \centering             
     
@@ -186,7 +188,7 @@ a brief description.
     \label{tab:numerical_attributes}
 \end{table}
 
-% \vspace{2em}
+\vspace{2em}
 \subsection{Removal and Merging of Continuous Attributes}\label{sec:var_elim_creation}
 % The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
 % account the continuous attributes of the dataset.\\
@@ -225,13 +227,13 @@ mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), r
 \end{minipage}
 \hfill
 
-\vspace{1em}
+\vspace{2em}
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
 Although the original attributes are not highly correlated, both exhibit skewed distributions (as in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
 Due to this, and to their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
-
+\vspace{1em}
 
 %     The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
 %     feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
@@ -316,18 +318,19 @@ Because of this, the samples were removed from the dataset. \\
 
 
 Some features showed a heavy left-skewed distribution, with typical traits of Power-Law Distributions. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
+\vspace{1em}
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\textwidth]{plots/left_skew_distribs.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
-        \caption{Kernel Density Estimation of left-skewed attributes}
+        \caption{KDE of left-skewed attributes}
         \label{fig:sub1_KDE_left_skew}
     \end{subfigure}
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\textwidth]{plots/left_skew_distribs_log.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
-        \caption{Kernel Density Estimation of left-skewed attributes with logarithmic density}
+        \caption{KDE of left-skewed attributes with log density}
         \label{fig:sub2_KDE_left_skew}
     \end{subfigure}
     \caption{Kernel Density Estimation of the left-skewed attributes}
@@ -344,7 +347,7 @@ For this reason, a log-transformation was applied to these attributes to reduce 
 \end{itemize}
 
 
-Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}. Figure~\ref{fig:runtimeMinutes_boxplot} reports an analysis of the feature through the IQR method, on each titleType separately.
+Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}. Figure~\ref{fig:runtimeMinutes_boxplot} reports an analysis of the feature through the IQR method, on each titleType separately. The boxplot shows that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}. This might be because of an inconsistency with the understanding of the meaning of the attribute, and it might be possible that in those cases, the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
 
 \begin{figure}[H]
     \centering
@@ -353,7 +356,6 @@ Regarding outliers, the feature that was found to be more problematic was \textt
     \label{fig:runtimeMinutes_boxplot}
 \end{figure}
 
-The boxplot shows that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}. This might be because of an inconsistency with the understanding of the meaning of the attribute, and it might be possible that in those cases, the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
 
 % Another interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
 Another interesting observation regards the presence of a record with a runtime of 0 minutes for the \textit{short} type; although it was not considered an outlier, the record was removed from the dataset because it was regarded as a mistake.\\

@@ -1,27 +1,27 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Data Understanding and Preparation}{2}{}%
-\contentsline {section}{\numberline {1.1}Discrete Attributes}{2}{}%
-\contentsline {subsection}{\numberline {1.1.1}Merging and Removal of Discrete Attributes}{2}{}%
-\contentsline {subsection}{\numberline {1.1.2}Discrete Attributes Analysis}{3}{}%
-\contentsline {subsection}{\numberline {1.1.3}Encoding and Transformation of Categorical Attributes}{3}{}%
-\contentsline {section}{\numberline {1.2}Continuous Attributes}{4}{}%
+\contentsline {chapter}{\numberline {1}Data Understanding and Preparation}{1}{}%
+\contentsline {section}{\numberline {1.1}Discrete Attributes}{1}{}%
+\contentsline {subsection}{\numberline {1.1.1}Merging and Removal of Discrete Attributes}{1}{}%
+\contentsline {subsection}{\numberline {1.1.2}Discrete Attributes Analysis}{2}{}%
+\contentsline {subsection}{\numberline {1.1.3}Encoding and Transformation of Categorical Attributes}{2}{}%
+\contentsline {section}{\numberline {1.2}Continuous Attributes}{3}{}%
 \contentsline {subsection}{\numberline {1.2.1}Removal and Merging of Continuous Attributes}{4}{}%
-\contentsline {section}{\numberline {1.3}Data Quality}{6}{}%
-\contentsline {subsection}{\numberline {1.3.1}Syntactic Inconsistencies}{6}{}%
-\contentsline {subsection}{\numberline {1.3.2}Missing Values}{6}{}%
-\contentsline {subsection}{\numberline {1.3.3}Semantic Inconsistencies, Feature Transformations and Outlier detection}{6}{}%
-\contentsline {chapter}{\numberline {2}Clustering}{9}{}%
-\contentsline {section}{\numberline {2.1}K-means}{10}{}%
-\contentsline {section}{\numberline {2.2}DBSCAN}{10}{}%
-\contentsline {section}{\numberline {2.3}Hierarchical clustering}{11}{}%
-\contentsline {section}{\numberline {2.4}General considerations}{11}{}%
-\contentsline {chapter}{\numberline {3}Classification}{12}{}%
-\contentsline {section}{\numberline {3.1}Binary classification}{12}{}%
-\contentsline {section}{\numberline {3.2}Multiclass classification}{12}{}%
-\contentsline {section}{\numberline {3.3}General considerations}{13}{}%
-\contentsline {chapter}{\numberline {4}Regression}{14}{}%
-\contentsline {section}{\numberline {4.1}General considerations}{14}{}%
-\contentsline {chapter}{\numberline {5}Pattern Mining}{15}{}%
-\contentsline {section}{\numberline {5.1}Extraction of frequent patterns}{15}{}%
-\contentsline {section}{\numberline {5.2}Extraction of rules}{15}{}%
-\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{15}{}%
+\contentsline {section}{\numberline {1.3}Data Quality}{5}{}%
+\contentsline {subsection}{\numberline {1.3.1}Syntactic Inconsistencies}{5}{}%
+\contentsline {subsection}{\numberline {1.3.2}Missing Values}{5}{}%
+\contentsline {subsection}{\numberline {1.3.3}Semantic Inconsistencies, Feature Transformations and Outlier detection}{5}{}%
+\contentsline {chapter}{\numberline {2}Clustering}{8}{}%
+\contentsline {section}{\numberline {2.1}K-means}{9}{}%
+\contentsline {section}{\numberline {2.2}DBSCAN}{9}{}%
+\contentsline {section}{\numberline {2.3}Hierarchical clustering}{10}{}%
+\contentsline {section}{\numberline {2.4}General considerations}{10}{}%
+\contentsline {chapter}{\numberline {3}Classification}{11}{}%
+\contentsline {section}{\numberline {3.1}Binary classification}{11}{}%
+\contentsline {section}{\numberline {3.2}Multiclass classification}{11}{}%
+\contentsline {section}{\numberline {3.3}General considerations}{12}{}%
+\contentsline {chapter}{\numberline {4}Regression}{13}{}%
+\contentsline {section}{\numberline {4.1}General considerations}{13}{}%
+\contentsline {chapter}{\numberline {5}Pattern Mining}{14}{}%
+\contentsline {section}{\numberline {5.1}Extraction of frequent patterns}{14}{}%
+\contentsline {section}{\numberline {5.2}Extraction of rules}{14}{}%
+\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{14}{}%

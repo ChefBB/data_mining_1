@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  21 MAY 2025 23:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  22 MAY 2025 00:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -746,24 +746,32 @@ Package biblatex Info: Reference segment=0 on input line 100.
 \c@lstlisting=\count442
 
 
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 139.
-(C:\Users\noemi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+[1
+
+{C:/Users/noemi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (main.toc
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3.
+ (C:\Users\noemi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 139.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 3.
  (C:\Users\noemi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 139.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 3.
  (C:\Users\noemi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 139.
+(Font)              <10.95> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 139.
+(Font)              <8> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 139.
+(Font)              <6> on input line 3.
+)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
 
 
 Package scrlayer-scrpage Warning: \headheight to low.
@@ -773,22 +781,15 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=16.31995pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 139.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 143.
 
 
 Overfull \vbox (4.31995pt too high) has occurred while \output is active []
 
- [1
+ [2
 
-{C:/Users/noemi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}] (main.toc)
-\tf@toc=\write4
-\openout4 = `main.toc'.
 
- (capitolo1.tex
-
-[1
-
-]
+] (capitolo1.tex
 Chapter 1.
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 23.
 (C:\Users\noemi\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
@@ -804,19 +805,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--69
 
 
 
-[2
+[1
+
 
 {C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
 <plots/types_count.png, id=19, 570.933pt x 354.123pt>
 File: plots/types_count.png Graphic file (type png)
 <use plots/types_count.png>
 Package pdftex.def Info: plots/types_count.png  used on input line 75.
-(pdftex.def)             Requested size: 241.19223pt x 149.60059pt.
+(pdftex.def)             Requested size: 253.99715pt x 157.5437pt.
 <plots/rating_distrib.png, id=21, 570.933pt x 354.123pt>
 File: plots/rating_distrib.png Graphic file (type png)
 <use plots/rating_distrib.png>
 Package pdftex.def Info: plots/rating_distrib.png  used on input line 82.
-(pdftex.def)             Requested size: 241.19223pt x 149.60059pt.
+(pdftex.def)             Requested size: 253.99715pt x 157.5437pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
@@ -839,101 +841,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--111
 
 
 
-[3 <./plots/types_count.png> <./plots/rating_distrib.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 204--206
+[2 <./plots/types_count.png> <./plots/rating_distrib.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 206--208
 
  []
 
-<plots/correlation_matrix.png, id=27, 706.0779pt x 623.6901pt>
+
+
+[3]
+<plots/correlation_matrix.png, id=30, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 211.
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 213.
 (pdftex.def)             Requested size: 238.01991pt x 210.24364pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--219
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
 
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 220--225
+Underfull \hbox (badness 1320) in paragraph at lines 222--227
 \OT1/lmr/m/n/10.95 fea-ture rep-re-sents the sum of the two orig-i-nal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--225
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--225
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
 
  []
 
-
-
-[4]
 <plots/nominations_distrib.png, id=31, 403.2666pt x 339.669pt>
 File: plots/nominations_distrib.png Graphic file (type png)
 <use plots/nominations_distrib.png>
-Package pdftex.def Info: plots/nominations_distrib.png  used on input line 255.
+Package pdftex.def Info: plots/nominations_distrib.png  used on input line 257.
 (pdftex.def)             Requested size: 227.43892pt x 191.57645pt.
 <plots/totalVideos_Images_distrib.png, id=32, 403.2666pt x 339.669pt>
 File: plots/totalVideos_Images_distrib.png Graphic file (type png)
 <use plots/totalVideos_Images_distrib.png>
-Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 261.
+Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 263.
 (pdftex.def)             Requested size: 227.43892pt x 191.57645pt.
 
 
-[5 <./plots/correlation_matrix.png> <./plots/nominations_distrib.png> <./plots/totalVideos_Images_distrib.png>]
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 284.
+[4 <./plots/correlation_matrix.png> <./plots/nominations_distrib.png> <./plots/totalVideos_Images_distrib.png>]
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 286.
  (C:\Users\noemi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 284.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 286.
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
+Underfull \hbox (badness 10000) in paragraph at lines 314--318
 
  []
 
-<plots/left_skew_distribs.png, id=39, 409.0482pt x 339.669pt>
+
+
+[5{C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<plots/left_skew_distribs.png, id=44, 409.0482pt x 339.669pt>
 File: plots/left_skew_distribs.png Graphic file (type png)
 <use plots/left_skew_distribs.png>
-Package pdftex.def Info: plots/left_skew_distribs.png  used on input line 322.
+Package pdftex.def Info: plots/left_skew_distribs.png  used on input line 325.
 (pdftex.def)             Requested size: 253.88737pt x 210.82065pt.
-<plots/left_skew_distribs_log.png, id=40, 404.712pt x 339.669pt>
+<plots/left_skew_distribs_log.png, id=45, 404.712pt x 339.669pt>
 File: plots/left_skew_distribs_log.png Graphic file (type png)
 <use plots/left_skew_distribs_log.png>
-Package pdftex.def Info: plots/left_skew_distribs_log.png  used on input line 328.
+Package pdftex.def Info: plots/left_skew_distribs_log.png  used on input line 331.
 (pdftex.def)             Requested size: 253.88737pt x 213.08559pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
-[6{C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
+ []
+
 <plots/outliers.png, id=46, 563.706pt x 426.393pt>
 File: plots/outliers.png Graphic file (type png)
 <use plots/outliers.png>
-Package pdftex.def Info: plots/outliers.png  used on input line 351.
+Package pdftex.def Info: plots/outliers.png  used on input line 354.
 (pdftex.def)             Requested size: 343.80565pt x 260.0603pt.
 
 
-[7 <./plots/left_skew_distribs.png> <./plots/left_skew_distribs_log.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 356--357
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+[6 <./plots/left_skew_distribs.png> <./plots/left_skew_distribs_log.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 361--147
+Underfull \hbox (badness 10000) in paragraph at lines 363--155
 
  []
 
 (capitolo2.tex
 
-[8 <./plots/outliers.png>]
+[7 <./plots/outliers.png>]
 Chapter 2.
 <plots/pca_kmeans.png, id=56, 499.3857pt x 379.4175pt>
 File: plots/pca_kmeans.png Graphic file (type png)
@@ -947,7 +949,7 @@ Package pdftex.def Info: plots/pca5.png  used on input line 29.
 (pdftex.def)             Requested size: 211.57147pt x 160.74371pt.
 
 
-[9
+[8
 
  <./plots/pca_kmeans.png> <./plots/pca5.png>]
 <plots/sse_silh_kmeans.png, id=63, 462.528pt x 346.896pt>
@@ -962,7 +964,7 @@ Package pdftex.def Info: plots/pairplot_kmeans.png  used on input line 66.
 (pdftex.def)             Requested size: 259.1819pt x 242.23125pt.
 
 
-[10 <./plots/sse_silh_kmeans.png> <./plots/pairplot_kmeans.png>]
+[9 <./plots/sse_silh_kmeans.png> <./plots/pairplot_kmeans.png>]
 <plots/DBSCAN_kth_graph.png, id=72, 711.1368pt x 422.0568pt>
 File: plots/DBSCAN_kth_graph.png Graphic file (type png)
 <use plots/DBSCAN_kth_graph.png>
@@ -981,29 +983,29 @@ Package pdftex.def Info: plots/DBSCAN_provvisoria.png  used on input line 111.
 (pdftex.def)             Requested size: 259.1819pt x 243.14247pt.
 ) (capitolo3.tex
 
-[11 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png>]
+[10 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png>]
 Chapter 3.
 
 
-[12
+[11
 
 ]) (capitolo4.tex
 
-[13]
+[12]
 Chapter 4.
 ) (capitolo5.tex
 
-[14
+[13
 
 ]
 Chapter 5.
 )
 
-[15
+[14
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 163.
+LaTeX Warning: Empty bibliography on input line 171.
 
 (main.aux)
  ***********
@@ -1021,13 +1023,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  17816 strings out of 473897
  354345 string characters out of 5726462
- 1237557 words of memory out of 5000000
+ 1236551 words of memory out of 5000000
  40464 multiletter control sequences out of 15000+600000
  613224 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,20n,121p,1238b,1791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,20n,121p,1238b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/noemi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (16 pages, 2055472 bytes).
+Output written on main.pdf (16 pages, 2055512 bytes).
 PDF statistics:
  145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

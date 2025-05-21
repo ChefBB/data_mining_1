@@ -99,12 +99,14 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 
 \begin{document}
 
+
 % Frontespizio
 % \begin{titlepage}
 % \begin{figure}
 %     \centering\includegraphics[scale=0.5]{immagini/cherubino_pant541.png}
 % \end{figure}
-
+\pagestyle{empty}         % niente numero di pagina
+\pagenumbering{gobble}    % disattiva numerazione
 \begin{center}  
      {\LARGE { Data Mining: Fundamentals}}\\
      \vspace{2cm}
@@ -135,14 +137,20 @@ After the data understanding and preparation phase, clustering, classification, 
 % \centering{\large{\bf ANNO ACCADEMICO 20xx/20xx }}
 % \end{titlepage}
 % Fine frontespizio
+\clearpage
 
 \tableofcontents
+\clearpage
+
+\pagenumbering{arabic}  % numerazione araba
+\setcounter{page}{1}    % riparti da pagina 1
+\pagestyle{scrplain}    % stile pagina con numeri al centr
 
 % \addtocontents{toc}{\protect\thispagestyle{empty}}
 % \addcontentsline{toc}{chapter}{Introduction} % Capitolo non numerato
 %\input{introduzione.tex}
 
-\setcounter{page}{1}
+
 \input{capitolo1.tex} %data preparation
 
 \input{capitolo2.tex} %clustering
