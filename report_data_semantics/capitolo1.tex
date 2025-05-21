@@ -45,67 +45,6 @@ their types and a brief description of each attribute.
     \label{tab:attributes}
 \end{table}
 
-\subsection{Discrete attributes analysis}
-This paragraph provides an overview of the discrete attributes in the dataset, focusing on their distributions and statistics.\\
-The following figure~\ref{fig:titleType_distrib} shows an histogram of \texttt{titleType}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
-    \caption{Distribution of the \texttt{titleType} attribute}
-    \label{fig:titleType_distrib}
-\end{figure}
-It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
-The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively).\\
-
-
-% In this paragraph, the most informative discrete attributes of the dataset are examined to provide an overview of their statistics and frequencies. \\
-% From figure~\ref{fig:sub1} it is observed that the classes of the \texttt{titleType} attribute are unbalanced, with \textit{movie} being 
-% the most frequent class (5535 records) and \textit{tvShort} the least frequent (40 records). 
-% By analyzing the \texttt{canHaveEpisodes} attribute within these \texttt{titleType} values, it is found that only \textit{tvSeries} and 
-% \textit{tvMiniSeries} can have episodes, as expected.
-% As shown in figure~\ref{fig:sub2}, the frequency of rating classes is slighly skewed toward higher values, with the most frequent rating 
-% class being (7, 8], which is the rating of 4822 titles.
-% Another important aspect is that all 16341 titles are ratable and the vast majority of them (16005) are non-adults contents, as shown 
-% in figure~\ref{fig:sub3}
-% Finally, as indicated in figure~\ref{fig:sub4}, an analysis of the \texttt{genres} variable across different \texttt{titleType} values 
-% reveals that \textit{Drama} and \textit{Comedy} are the most common genres, as they appear in the top 3 genres of nearly every \texttt{titleType} category.
-
-
-% \begin{figure}[H]
-%     \centering
-%     % First subfigure
-%     \begin{subfigure}{0.48\textwidth}
-%         \includegraphics[width=\textwidth]{plots/fig1_a.png}
-%         \caption{Counting of the title types frequencies} %  combined with the canHaveEpisodes variable
-%         \label{fig:sub1}
-%     \end{subfigure}
-%     \hfill
-%     % Second subfigure
-%     \begin{subfigure}{0.48\textwidth}
-%         \includegraphics[width=\textwidth]{plots/fig1_b.png}
-%         \caption{Counting of ratings frequencies}
-%         \label{fig:sub2}
-%     \end{subfigure}
-    
-%     % Third subfigure
-%     \begin{subfigure}{0.48\textwidth}
-%         \includegraphics[width=\textwidth]{plots/fig1_c.png}
-%         \caption{Counting of the adult and non-adult per type}
-%         \label{fig:sub3}
-%     \end{subfigure}
-%     \hfill
-%     % Fourth subfigure
-%     \begin{subfigure}{0.48\textwidth}
-%         \includegraphics[width=\textwidth]{plots/fig1_d.png}
-%         \caption{types per genre}
-%         \label{fig:sub4}
-%     \end{subfigure}
-    
-%     \caption{Bar chart of the discrete attributes.}
-%     \label{fig:bar-charts}
-% \end{figure}
-
-
 \subsection{Merging and Removal of Categorical Attributes}\label{subsec:var_elim_discrete}
 The following categorical attributes were removed from the dataset:
 \begin{itemize}
@@ -119,11 +58,21 @@ Additionally, the \texttt{isAdult} attribute is highly correlated with the prese
 merged with a logical OR operation.
 
 
+
+\subsection{Discrete attributes analysis}
+This paragraph provides an overview of the discrete attributes in the dataset, focusing on their distributions and statistics.\\
+The following figure~\ref{fig:titleType_distrib} shows an histogram of \texttt{titleType}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
+    \caption{Distribution of the \texttt{titleType} attribute}
+    \label{fig:titleType_distrib}
+\end{figure}
+It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
+The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively).
+
+
 \subsection{Encoding and Transformation of Categorical Attributes}
-% \texttt{countryOfOrigin} and \texttt{genres} variables (datatypes: strings) were converted into 
-% lists of strings to facilitate further analysis.
-% This transformation was necessary because some records contain multiple genres or countries as values for
-% these variables.
 The attribute \texttt{rating} was converted into an ordinal variable by taking the upper bound of each rating
 interval's string representation. This approach was chosen because the minimum rating is 1, meaning the
 lowest interval corresponds only to ratings of 1. For consistency, the same transformation was applied
@@ -161,7 +110,7 @@ original list as a whole.
 % In summary, the original attribute is represented by the seven features regarding
 % the continents, plus 1 representing the frequency encoding.
 This representation was chosen as it allows to
-keep a lot of the original information, while limiting the number of new features.\\
+keep a lot of the original information, while limiting the number of new features.
 
 
 
@@ -233,7 +182,7 @@ account the continuous attributes of the dataset.\\
 The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
-The two attributes \texttt{awardWins} and \texttt{awardNominationsExcludeWins} were combined into a single
+The attributes \texttt{awardWins} and \texttt{awardNominationsExcludeWins} were combined into a single
 feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
 The new feature represents the sum of the two original attributes. This transformation also helps
 mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\
@@ -242,7 +191,7 @@ Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were com
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
 Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
 Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
-interpretable feature.
+interpretable feature.\\
 
 \begin{figure}[H]
     \centering
@@ -264,7 +213,6 @@ interpretable feature.
     \label{fig:distrib}
 \end{figure}
 
-
 Although \texttt{criticReviewsTotal} and \texttt{userReviewsTotal} also have a relatively high correlation (0.65), as well as a left-skewed distribution, it was decided that the two attributes should be kept separate because of their relevance in meaning. It is also worth noting that the two have high correlations with \texttt{numVotes} (0.67 and 0.75 respectively), but they were all kept because of the difference between votes and reviews.
 
 
@@ -275,21 +223,7 @@ Once having checked that there are no duplicates and no incomplete rows in the d
 attention was given at identifying missing values and outliers.
 
 
-
-% \subsection{Syntactic Inconsistencies}
-% In the exploration of the dataset it has been noticed that \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}.
-% However, there were missing values also in other columns (\texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres}), 
-% but they were indicated with the string "\textbackslash N".
-% To avoid this inconsistency that might have caused problems during data preparation, these values have been replaced with \texttt{NaN}.
-% By doing so, any cell in the \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} columns 
-% that previously contained the string "\textbackslash N" is now considered a proper missing value, detectable and manageable using Pandas' functions.
-
-
-
 \subsection{Missing Values}
-% Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, 
-% also represented in percentages for a better understanding:
-% After the changes mentioned in previous sections, the dataset was checked for missing values.
 These attributes were found to have missing values:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%).
@@ -300,7 +234,6 @@ These attributes were found to have missing values:
     \item \texttt{runtimeMinutes}: this attribute has 4,852 missing values (29.5\%). Two imputation strategies were employed, both based on random sampling within the interquartile range. 
     One strategy used the \texttt{titleType} feature to define the range, while the other imputed values independently of any other features. 
     The choice of which of the two strategies to use depends on the specific task, and will be specified in the corresponding sections.
-    % by grouping the records by \texttt{titleType} and substituting the NaN value with the median of each group \textbf{ALTRIMENTI prendere valore random tra il 30\% - 70\% per titletype; anche se questo causa problemi nel momento in cui andiamo a classificare un nuovo record che non ha titletype};
     
     \item \texttt{awardWins}: this feature has 2618 NaN values (about 16\%).
     Since the mode associated with this variable is 0, it has been decided to substitute the missing
@@ -321,7 +254,7 @@ generated problems for some of the other attributes, such as \texttt{runtimeMinu
 values being missing (and difficult to impute). Because of this problem, as well as the meaning discrepancy, the samples were removed from the dataset because it was deemed to be semantically inconsistent with the other title types.\\
 
 
-Some features showed a heavy left-skewed distribution. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
+Some features showed a heavy left-skewed distribution, with typical traits of Power-Law Distributions. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.48\textwidth}
@@ -340,39 +273,25 @@ Some features showed a heavy left-skewed distribution. Their Kernel Density Esti
     \label{fig:left_skewed}
 \end{figure}
 
-All of these attributes exhibit a power-law distribution, where the majority of records have low values, while a small number possess extremely high values. This behavior is also illustrated in Figure~\ref{fig:sub2_KDE_left_skew}, where the logarithmic density plot reveals a decline that approximates a linear trend.\\
-
-% \begin{itemize}
-%     \item \texttt{userReviewsTotal}: 0.1\% of the values are greater than 100;
-%     \item \texttt{criticReviewsTotal}: 0.1\% of the values are greater than 100;
-%     \item \texttt{numRegions}: 0.1\% of the values are greater than 10;
-%     \item \texttt{totalNominations}: 0.1\% of the values are greater than 100;
-%     \item \texttt{totalMedia}: 0.1\% of the values are greater than 100.
-% \end{itemize}
+The decay of these features is exponential in linear space (~\ref{fig:sub1_KDE_left_skew}), while in logarithmic space there is a decline that can be approximated to a linear trend (~\ref{fig:sub2_KDE_left_skew}). For this reason, a log-transformation was applied to these attributes to reduce the skewness and make them more suitable for analysis. Because of left-skewness (without a power-law distribution), other attributes were also log transformed:
+\begin{itemize}
+    \item \texttt{numVotes};
+    \item \texttt{totalCredits};
+    \item \texttt{totalMedia}.
+\end{itemize}
 
 
+Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}. Figure~\ref{fig:runtimeMinutes_boxplot} reports an analysis of the feature through the IQR method, on each titleType separately.
 
-The feature \texttt{endYear} presented a right-skewed, normal distribution, as shown in figure ...
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/outliers.png}
+    \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each titleType}
+    \label{fig:runtimeMinutes_boxplot}
+\end{figure}
 
+The boxplot shows that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}. This might be because of an inconsistency with the understanding of the meaning of the attribute, and it might be possible that in those cases, the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
 
+An other interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
 
-
-% While examining the dataset, it became apparent that some attributes have outliers. 
-% The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} 
-% and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
-% these might be considered variables with many outliers 
-% (as seen in Figure \textbf{METTERE GRAFICO che rappresenti in qualche modo il result di DETECT\_OULIERS\_MULTI\_ATTRIBUTES in data\_quality noemi}) 
-% but they actually have less outliers compared to the other variables.
-% For the other attributes \textbf{CONTINUARE......}
-% \textbf{VALORI OUTLIERS SU TRAIN IN \%: 86.7 , 90.2 , 87.8}
-% \textbf{VALORI OUTLIERS SU DF\_PP IN \%: 88.7 , 90.2 , 87.8}
-
-
-% As for the continuous attributes, it was observed that they required a stronger transformation due to their highly positively skewed distributions. 
-% Specifically, when required by the data mining method, a log-transformation was applied to all the numeric attributes, since their skewness was highly greater than 1. 
-% Following the log-transformation, standard normalization techniques - \texttt{MinMaxScaler} and \texttt{StandardScaler} - have then been applied (when scaling was necessary); 
-% respectively to scale each feature to a given range and to standardize features by removing the mean and scaling to unit variance.
-% The decision to apply one or the other was again made based on the specific requirements of each data mining technique, and so will be specified accordingly in each section.
-% \textbf{CONTROLLARE SE IN OGNI SEZIONE C'E' SPECIFICA SULLE DUE NORMALIZZAZIONI USATE!!!}.
-
-
+In this phase, outliers were not removed from the dataset, as it was decided to proceed on a case-by-case basis, depending on the task to be performed.\\
