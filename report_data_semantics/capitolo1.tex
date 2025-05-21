@@ -130,7 +130,9 @@ lowest interval corresponds only to ratings of 1. For consistency, the same tran
 to all other intervals.\\
 
 Multi-label one-hot encoding was applied to the \texttt{genres} column. 
-Each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information; this generated 28 new attributes.
+Each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information; this generated 28 new features.
+Depending on the task, some were often discarded to avoid overfitting or to reduce the number of features.
+This will be discussed in the corresponding sections.
 Rows with no genres were assigned a vector of all zeros, indicating the absence of any genres.\\
 
 % After that, multi-label one-hot encoding was applied to the
@@ -151,13 +153,14 @@ The following variables have been created:
     \end{itemize}
 \end{multicols}
 
-Each of the first six features provides the number of countries in the corresponding continent.
+Each of the first six features provides the number of countries in the corresponding continent.\\
 \texttt{countryOfOrigin\_UNK} is used to represent the strings that are not categorized as being part of a
-continent, by again counting the strings that are not recognized.
+continent, by counting the strings that are not recognized.
 The feature \texttt{countryOfOrigin\_freq\_enc} provides the frequency encoding of the
 original list as a whole.
-In summary, the original attribute is represented by the seven features regarding
-the continents, plus 1 representing the frequency encoding. This representation was chosen as it allows to
+% In summary, the original attribute is represented by the seven features regarding
+% the continents, plus 1 representing the frequency encoding.
+This representation was chosen as it allows to
 keep a lot of the original information, while limiting the number of new features.\\
 
 
@@ -237,7 +240,7 @@ mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), r
 
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
-Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), the first in particular.
+Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
 Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
 
@@ -246,23 +249,29 @@ interpretable feature.
     % First subfigure
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\textwidth]{plots/nominations_distrib.png}
-        \caption{Logarithmic distribution of the \texttt{totalNominations} attribute}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \caption{Kernel Density Estimation of \texttt{awardWins} and \texttt{awardNominationsExcludeWins}}
         \label{fig:sub1}
     \end{subfigure}
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\textwidth]{plots/totalVideos_Images_distrib.png}
-        \caption{Logarithmic distribution of the \texttt{totalNominations} attribute}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \caption{Kernel Density Estimation of \texttt{totalVideos} and \texttt{totalImages}}
         \label{fig:sub2}
     \end{subfigure}
-    \caption{Distribution of the \texttt{totalNominations} and \texttt{totalMedia} attributes}
+    \captionsetup{justification=centering}
+    \caption{Distribution of the attributes that form the \texttt{totalNominations} and \texttt{totalMedia} features}
     \label{fig:distrib}
 \end{figure}
+
+
+Although \texttt{criticReviewsTotal} and \texttt{userReviewsTotal} also have a relatively high correlation (0.65), as well as a left-skewed distribution, it was decided that the two attributes should be kept separate because of their relevance in meaning. It is also worth noting that the two have high correlations with \texttt{numVotes} (0.67 and 0.75 respectively), but they were all kept because of the difference between votes and reviews.
 
 
 
 \section{Data Quality}\label{sec:data_quality}
 Next, a proper evaluation of the observed data was conducted in preparation for the analysis.
-Once having checked that there are no duplicates and no incomplete rows in the dataset, 
+Once having checked that there are no duplicates and no incomplete rows in the dataset,
 attention was given at identifying missing values and outliers.
 
 
@@ -280,7 +289,7 @@ attention was given at identifying missing values and outliers.
 \subsection{Missing Values}
 % Once having solved the above-mentioned inconsistency, the resulting total amount of the missing values are the following, 
 % also represented in percentages for a better understanding:
-After the previously mentioned changes, the dataset was checked for missing values.
+% After the changes mentioned in previous sections, the dataset was checked for missing values.
 These attributes were found to have missing values:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of NaN values (15617; about 95\%).
@@ -304,12 +313,50 @@ These attributes were found to have missing values:
 
 
 
-\subsection{Semantic Inconsistencies, Outlier detection and Feature Transformations}
+\subsection{Semantic Inconsistencies, Feature Transformations and Outlier detection}
 While analyzing the dataset, it was observed that the \textit{Videogame} type of the \texttt{titleType} attribute (which consists of 259
 records - around 1.58\% of the dataset) was not consistent with the other attributes. 
 Other then the semantic inconsistency, these rows
 generated problems for some of the other attributes, such as \texttt{runtimeMinutes}, resulting in most
 values being missing (and difficult to impute). Because of this problem, as well as the meaning discrepancy, the samples were removed from the dataset because it was deemed to be semantically inconsistent with the other title types.\\
+
+
+Some features showed a heavy left-skewed distribution. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{plots/left_skew_distribs.png}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \caption{Kernel Density Estimation of left-skewed attributes}
+        \label{fig:sub1_KDE_left_skew}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{plots/left_skew_distribs_log.png}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \caption{Kernel Density Estimation of left-skewed attributes with logarithmic density}
+        \label{fig:sub2_KDE_left_skew}
+    \end{subfigure}
+    \caption{Kernel Density Estimation of the left-skewed attributes}
+    \label{fig:left_skewed}
+\end{figure}
+
+All of these attributes exhibit a power-law distribution, where the majority of records have low values, while a small number possess extremely high values. This behavior is also illustrated in Figure~\ref{fig:sub2_KDE_left_skew}, where the logarithmic density plot reveals a decline that approximates a linear trend.\\
+
+% \begin{itemize}
+%     \item \texttt{userReviewsTotal}: 0.1\% of the values are greater than 100;
+%     \item \texttt{criticReviewsTotal}: 0.1\% of the values are greater than 100;
+%     \item \texttt{numRegions}: 0.1\% of the values are greater than 10;
+%     \item \texttt{totalNominations}: 0.1\% of the values are greater than 100;
+%     \item \texttt{totalMedia}: 0.1\% of the values are greater than 100.
+% \end{itemize}
+
+
+
+The feature \texttt{endYear} presented a right-skewed, normal distribution, as shown in figure ...
+
+
+
+
 % While examining the dataset, it became apparent that some attributes have outliers. 
 % The important aspect to highlight is that since \texttt{awardWins}, \texttt{totalVideos} 
 % and \texttt{awardNominationsExcludeWins} have many values as 0 (respectively 11971, 14821, 14427), 
