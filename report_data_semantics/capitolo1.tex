@@ -94,7 +94,9 @@ From figure~\ref{fig:titleType_distrib} it is observed that the classes of the t
 It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
 The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively). \\
 
-As shown in figure~\ref{fig:rating_distrib}, the \texttt{rating} attribute distribution is not uniform: a significant number of titles falls within the (6,7] and (7, 8] ranges (4565 and 4822 titles, respectively) while only a total amount of 67 titles falls within (0,1] and (1,2]. \\
+As shown in figure~\ref{fig:rating_distrib}, the \texttt{rating} attribute roughly follows a normal distribution, with a slightly asymmetric peak:
+a significant number of titles falls within the (6,7] and (7, 8] ranges (4565 and 4822 titles, respectively) while only a total amount of 67 titles falls within (0,1] and (1,2].
+% The overall distribution resembles a normal distribution, with a slightly asymmetric peak.
 
 
 \subsection{Encoding and Transformation of Categorical Attributes}
@@ -220,10 +222,10 @@ The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
 The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
-feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
+feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
     % correlazione da matrix è 69
 The new feature represents the sum of the two original attributes. This transformation also helps
-mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\\\
+mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\\\
 \end{minipage}
 \hfill
 
@@ -270,7 +272,7 @@ interpretable feature.
     \label{fig:distrib}
 \end{figure}
 
-Although \texttt{criticReviewsTotal} and \texttt{userReviewsTotal} also have a relatively high correlation (0.65), as well as a left-skewed distribution, it was decided that the two attributes should be kept separate because of their relevance in meaning. It is also worth noting that the two have high correlations with \texttt{numVotes} (0.67 and 0.75 respectively), but they were all kept because of the difference between votes and reviews.
+Although \texttt{criticReviewsTotal} and \texttt{userReviewsTotal} also have a relatively high correlation (0.65), as well as a right-skewed distribution, it was decided that the two attributes should be kept separate because of their relevance in meaning. It is also worth noting that the two have high correlations with \texttt{numVotes} (0.67 and 0.75 respectively), but they were all kept because of the difference between votes and reviews.
 
 
 
@@ -317,20 +319,20 @@ Other then this semantic inconsistency, these rows generated problems for some o
 Because of this, the samples were removed from the dataset. \\
 
 
-Some features showed a heavy left-skewed distribution, with typical traits of Power-Law Distributions. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
+Some features showed a heavy right-skewed distribution, with typical traits of Power-Law Distributions. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
 \vspace{1em}
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\textwidth]{plots/left_skew_distribs.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
-        \caption{KDE of left-skewed attributes}
+        \caption{KDE of right-skewed attributes}
         \label{fig:sub1_KDE_left_skew}
     \end{subfigure}
     \begin{subfigure}{0.48\textwidth}
         \includegraphics[width=\textwidth]{plots/left_skew_distribs_log.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
-        \caption{KDE of left-skewed attributes with log density}
+        \caption{KDE of right-skewed attributes with log density}
         \label{fig:sub2_KDE_left_skew}
     \end{subfigure}
     \caption{Kernel Density Estimation of the left-skewed attributes}
@@ -339,7 +341,7 @@ Some features showed a heavy left-skewed distribution, with typical traits of Po
 
 The decay of these features is exponential in linear space (~\ref{fig:sub1_KDE_left_skew}), while in logarithmic space there is a decline that can be approximated to a linear trend (~\ref{fig:sub2_KDE_left_skew}). 
 For this reason, a log-transformation was applied to these attributes to reduce the skewness and make them more suitable for analysis.
- Because of left-skewness (without a power-law distribution), other attributes were also log-transformed:
+Because of right-skewness (without a power-law distribution), other attributes were also log-transformed:
 \begin{itemize}
     \item \texttt{numVotes};
     \item \texttt{totalCredits};
