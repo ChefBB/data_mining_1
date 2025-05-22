@@ -310,14 +310,16 @@ def impute_plaw_distrib_feat(df: pd.DataFrame, feat: str, perc: float=0.995) -> 
     return impute_feat
 
 
-def impute_outliers(df, lower_thresh, upper_thresh, feature):
+def impute_outliers(train, test, lower_thresh, upper_thresh, feature):
     """
     Impute outliers in the DataFrame by replacing them with randomly sampled values from interquartile range.
     
     Parameters
     ----------
-    df : pd.DataFrame
-        The input DataFrame containing the data to be imputed.
+    train : pd.DataFrame
+        The train DataFrame containing the data to be imputed.
+    test : pd.DataFrame
+        The test DataFrame containing the data to be imputed.
     lower_thresh : float
         The lower threshold for outlier detection.
     upper_thresh : float
@@ -330,21 +332,18 @@ def impute_outliers(df, lower_thresh, upper_thresh, feature):
     pd.DataFrame
         A DataFrame with the imputed values for the specified feature.
     """
-    # Create a copy of the original column to preserve order
-    imputed_df = df.copy()
-    
     # Count the outliers
-    outliers_count = imputed_df[
-        (imputed_df[feature] < lower_thresh) | 
-        (imputed_df[feature] > upper_thresh)
+    outliers_count_train = train[
+        (train[feature] < lower_thresh) | 
+        (train[feature] > upper_thresh)
     ].shape[0]
     
     # Set up the interquartile range random sampling
-    first_quartile_threshold = imputed_df[feature].quantile(0.25)
-    third_quartile_threshold = imputed_df[feature].quantile(0.75)
-    interquartile_set = imputed_df[
-        (imputed_df[feature] >= first_quartile_threshold) & 
-        (imputed_df[feature] <= third_quartile_threshold)
+    first_quartile_threshold = train[feature].quantile(0.25)
+    third_quartile_threshold = train[feature].quantile(0.75)
+    interquartile_set = train[
+        (train[feature] >= first_quartile_threshold) & 
+        (train[feature] <= third_quartile_threshold)
     ][feature].dropna()
     
     # Set values below the lower threshold to the lower threshold value

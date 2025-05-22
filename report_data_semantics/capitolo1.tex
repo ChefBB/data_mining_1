@@ -165,7 +165,7 @@ a brief description.
         \hline
         \texttt{endYear} & Integer & TV Series end year \\
         \hline
-        \texttt{awardWins} & Float & Number of awards the title won \\ 
+        \texttt{awardWins} & Integer & Number of awards the title won \\ 
         \hline
         \texttt{numVotes} & Integer & Number of votes the title has received \\ 
         \hline
@@ -289,7 +289,7 @@ marked with the string "\textbackslash N" instead.
 To avoid this inconsistency those values have been replaced with \texttt{NaN}.
 
 
-\subsection{Missing Values}
+\subsection{Missing Values}\label{sec:missing_values}
 The missing values in the above-mentioned attributes were handled as follows:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of \texttt{NaN} values (15617; about 95\%).
@@ -298,7 +298,7 @@ The missing values in the above-mentioned attributes were handled as follows:
     appropriate context. For this reason, the feature was discarded.
     
     \item \texttt{runtimeMinutes}: this attribute has 4,852 missing values (29.5\%). Two imputation strategies were employed, both based on random sampling within the interquartile range. 
-    One strategy used the \texttt{titleType} feature to define the range, while the other imputed values independently of any other features. 
+    One strategy used the \texttt{titleType} feature to define the range, while the other imputed values using \texttt{canHaveEpisodes} and the \textit{Short} genre. 
     The choice of which of the two strategies to use depends on the specific task, and will be specified in the corresponding sections.
     
     \item \texttt{awardWins}: this feature has 2618 \texttt{NaN} values (about 16\%).
@@ -349,17 +349,39 @@ Because of right-skewness (without a power-law distribution), other attributes w
 \end{itemize}
 
 
-Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}. Figure~\ref{fig:runtimeMinutes_boxplot} reports an analysis of the feature through the IQR method, on each titleType separately. The boxplot shows that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}. This might be because of an inconsistency with the understanding of the meaning of the attribute, and it might be possible that in those cases, the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
+Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}.
+Figures~\ref{fig:outliers} report an analysis of the feature through the IQR method. Similarly to missing values imputation (~\ref{sec:missing_values}),
+outlier detection was performed using two different strategies.
+Figure~\ref{fig:runtimeMinutes_boxplot} shows the first approach, which computes outliers on each \texttt{titleType} separately.
+Figure ~\ref{fig:runtimeMinutes_boxplot_no_type} shows the second, which computes them based on \texttt{canHaveEpisodes} attribute and \textit{Short} genre.
+The boxplots show that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries};
+the same can be observed on the second plot on the \textit{Has episodes} box plot.
+This might be because of an inconsistency with the understanding of the meaning of the attribute, and it might be possible that in those cases,
+the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
+
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.65\textwidth]{plots/outliers.png}
-    \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each titleType}
-    \label{fig:runtimeMinutes_boxplot}
+    \begin{subfigure}{0.58\textwidth}
+        \includegraphics[width=\textwidth]{plots/outliers.png}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each \texttt{titleType}}
+        \label{fig:runtimeMinutes_boxplot}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{plots/outliers_notype.png}
+        \captionsetup{width=0.9\linewidth, justification=centering}
+        \caption{Boxplot of the \texttt{runtimeMinutes} attribute without \texttt{titleType}}
+        \label{fig:runtimeMinutes_boxplot_no_type}
+    \end{subfigure}
+    \captionsetup{justification=centering}
+    \caption{Outliers in the \texttt{runtimeMinutes} attribute}
+    \label{fig:outliers}
 \end{figure}
 
 
 % Another interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
-Another interesting observation regards the presence of a record with a runtime of 0 minutes for the \textit{short} type; although it was not considered an outlier, the record was removed from the dataset because it was regarded as a mistake.\\
+Another interesting observation regards the presence of a record with a runtime of 0 minutes for the \textit{short} type; although it was not considered an outlier by the first method, the record was removed from the dataset because it was regarded as a mistake.\\
 
 In this phase, outliers were not removed from the dataset, as it was decided to proceed on a case-by-case basis, depending on the task to be performed.\\
