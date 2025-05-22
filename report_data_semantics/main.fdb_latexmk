@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1747914853.84324 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1747921093.23628 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1747914849.97459 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1747914853.84372 0
+["pdflatex"] 1747921089.68633 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1747921093.23694 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1747905008.68572 6339 3446653da90f9794928ff964ded8e65d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -132,21 +132,21 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "capitolo1.tex" 1747914849.59314 22006 0958125081c96172ac6d7aeabaf056e2 ""
+  "capitolo1.tex" 1747921089.37568 22233 c3ca1a1974eb409e0fa45cb074420db9 ""
   "capitolo2.tex" 1747737678.87002 8283 7cac6ad51624bd96db5308fb9c2e6eb0 ""
   "capitolo3.tex" 1747739417.76362 4296 11387774e65aa755de59155d1511ec1e ""
   "capitolo4.tex" 1747651054.96212 116 1a780615ce691177d1e8e2e21502247c ""
   "capitolo5.tex" 1747651054.96319 1614 e14200f13025297fead7c64dafbafd00 ""
-  "main.aux" 1747914853.32059 10516 5938400eb3a9e0b89ba5698aede7e451 "pdflatex"
+  "main.aux" 1747921092.76355 10516 4a812b649136ac5c2eb37e3f2fbd8b0e "pdflatex"
   "main.bbl" 1736953031.27595 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1747914853.32697 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1747921092.76856 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1747905008.68572 6339 3446653da90f9794928ff964ded8e65d ""
-  "main.toc" 1747914853.32717 1988 6d70b3a556d3be48eb8151472e61dbfd "pdflatex"
+  "main.toc" 1747921092.7687 1988 b94f92d03efec3e4eaa21e45bcb090fb "pdflatex"
   "plots/DBSCAN_kth_graph.png" 1739616101.55029 40213 68dae530b25492a54f22d7845e290394 ""
   "plots/DBSCAN_provvisoria.png" 1739616101.55496 893140 a9d3a3eba26c66b4cd6971dfbc39ac14 ""
   "plots/correlation_matrix.png" 1738663566.41078 431826 a0f9cce7dceecaf3adadc0850d7ae410 ""
-  "plots/left_skew_distribs.png" 1747826274.09239 59354 07710c8699c49c129bff101386c902b7 ""
-  "plots/left_skew_distribs_log.png" 1747826222.95419 76922 415b08be392646d0ea208dcc1f6af816 ""
+  "plots/left_skew_distribs.png" 1747918311.07423 59989 48d85a129e5066dfe0e12a7431cfa1dc ""
+  "plots/left_skew_distribs_log.png" 1747918363.49378 76815 dc74ea03a4438410935bb258eaccd94b ""
   "plots/nominations_distrib.png" 1747823903.79138 41635 5ea19881b350869e1bec193599cf252f ""
   "plots/outliers.png" 1747830707.33711 47488 ae85b603bcce9d7b0e5b2c9d2a0a9d4a ""
   "plots/outliers_notype.png" 1747913092.78634 40240 b0605f572f79263999708a898cc20bd4 ""

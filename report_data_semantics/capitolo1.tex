@@ -3,7 +3,7 @@
 
 The dataset \textit{train.csv} contains 16431 titles of different forms of visual entertainment that have been rated on IMDb, 
 an online database of information related to films, television series etc. 
-Each record is described by 23 attributes, both numerical and non-numerical. 
+Each record is described by 23 attributes, either discrete or continuous. 
 % All the variables of the dataset are introduced and explained in Table 1.1 and Table 1.2.
 
 
@@ -59,7 +59,8 @@ The following discrete attributes were removed from the dataset:
 
 Additionally, the \texttt{isAdult} attribute is highly correlated with the presence or absence of
 \textit{Adult} in \texttt{genre} (16 records differ in the train set, 1 in the test set), so the two were
-merged with a logical OR operation.
+merged with a logical OR operation. This is not true for the \textit{short} type in \texttt{titleType}, with
+491 records having different values from the obtained feature. For this reason, the two were kept separate.
 
 
 
@@ -132,7 +133,7 @@ The following variables have been created:
 
 
 For each record, the first six features provide the number of countries for each continent.\\
-The \texttt{countryOfOrigin\_UNK} variable counts the number of countries that are not recognized as belonging to a continent for that record.
+The \texttt{countryOfOrigin\_UNK} variable counts the number of countries that are not recognized as belonging to a continent for that record.\\
 
 % Each of the first six features provides the number of countries in the corresponding continent.\\
 % \texttt{countryOfOrigin\_UNK} is used to represent the strings that are not categorized as being part of a
@@ -209,15 +210,17 @@ a brief description.
 account the continuous attributes of the dataset.\\
 
 % codice due colonne
-\noindent
-\begin{minipage}{0.50\textwidth}
+% \noindent
+% \begin{minipage}{0.50\textwidth}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.90\textwidth]{plots/correlation_matrix.png}
+    \includegraphics[width=0.70\textwidth]{plots/correlation_matrix.png}
     \captionof{figure}{Correlation matrix}
     \label{fig:correlation_matrix}
-\end{minipage}
-\hfill
-\begin{minipage}{0.47\textwidth}
+\end{figure}
+% \end{minipage}
+% \hfill
+% \begin{minipage}{0.47\textwidth}
 The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
@@ -225,17 +228,17 @@ The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were 
 feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
     % correlazione da matrix è 69
 The new feature represents the sum of the two original attributes. This transformation also helps
-mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\\\
-\end{minipage}
-\hfill
+mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\
+% \end{minipage}
+% \hfill
 
-\vspace{2em}
+% \vspace{2em}
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
 Although the original attributes are not highly correlated, both exhibit skewed distributions (as in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
 Due to this, and to their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
-\vspace{1em}
+% \vspace{1em}
 
 %     The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
 %     feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
