@@ -115,7 +115,7 @@ Rows with no genres were assigned a vector of all zeros, indicating the absence 
 % After that, multi-label one-hot encoding was applied to the
 % \texttt{genres} column; each unique genre was represented as a binary feature, 
 % allowing records that belong to multiple genres simultaneously to maintain this information.
-\vspace{1em}
+% \vspace{1em}
 The attribute \texttt{countryOfOrigin} was represented by grouping the countries by continent.
 The following variables have been created: 
 \begin{multicols}{2}
@@ -224,8 +224,8 @@ account the continuous attributes of the dataset.\\
 The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
-The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
-feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
+The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into 
+\texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
     % correlazione da matrix è 69
 The new feature represents the sum of the two original attributes. This transformation also helps
 mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\
@@ -285,15 +285,17 @@ Once having checked that there are no duplicates and no incomplete rows in the d
 attention was given at identifying missing values and outliers.
 
 % parte che ci sembrava importante per far vedere che ce ne siamo accorti
-\subsection{Syntactic Inconsistencies} 
-Even though \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}, 
-it has been noticed that there were missing values also in other columns - \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} -
-marked with the string "\textbackslash N" instead.
-To avoid this inconsistency those values have been replaced with \texttt{NaN}.
+% \subsection{Syntactic Inconsistencies} 
+% Even though \texttt{awardWins} was the only feature having missing values marked with \texttt{NaN}, 
+% it has been noticed that there were missing values also in other columns - \texttt{endYear}, \texttt{runtimeMinutes} and \texttt{genres} -
+% marked with the string "\textbackslash N" instead.
+% To avoid this inconsistency those values have been replaced with \texttt{NaN}.
 
 
 \subsection{Missing Values}\label{sec:missing_values}
-The missing values in the above-mentioned attributes were handled as follows:
+% The missing values in the above-mentioned attributes were handled as follows:
+The following attributes were found to have missing values\footnote{\texttt{awardWins} was the only feature with missing values marked as \texttt{NaN}, while the other listed columns had missing values marked as "\textbackslash N", hence they were replaced with \texttt{NaN}.}
+:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of \texttt{NaN} values (15617; about 95\%).
     Although the feature is only relevant for \textit{TVSeries} and \textit{TVMiniSeries} titles, it still
