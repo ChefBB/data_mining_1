@@ -346,6 +346,17 @@ INPUT capitolo4.tex
 INPUT ./capitolo5.tex
 INPUT ./capitolo5.tex
 INPUT capitolo5.tex
+INPUT ./plots/5_min_sup.png
+INPUT ./plots/5_min_sup.png
+INPUT ./plots/5_min_sup.png
+INPUT ./plots/5_min_sup.png
+INPUT ./plots/5_min_sup.png
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm
+INPUT ./plots/5_min_conf.png
+INPUT ./plots/5_min_conf.png
+INPUT ./plots/5_min_conf.png
+INPUT ./plots/5_min_conf.png
+INPUT ./plots/5_min_conf.png
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml
@@ -360,6 +371,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb
