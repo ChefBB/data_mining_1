@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748099446.32364 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748100449.18753 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748099442.5388 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748099446.32425 0
+["pdflatex"] 1748100444.68385 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748100449.188 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1747905008.68572 6339 3446653da90f9794928ff964ded8e65d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -145,11 +145,11 @@
   "capitolo3.tex" 1747739417.76362 4296 11387774e65aa755de59155d1511ec1e ""
   "capitolo4.tex" 1747651054.96212 116 1a780615ce691177d1e8e2e21502247c ""
   "capitolo5.tex" 1748076746.32986 8356 e017e505cddc1c35b14979f34501fe29 ""
-  "main.aux" 1748099445.76743 12087 f863c582567a5de8cb116d86d52dc638 "pdflatex"
+  "main.aux" 1748100448.66927 12087 f863c582567a5de8cb116d86d52dc638 "pdflatex"
   "main.bbl" 1736953031.27595 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1748099445.77431 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748100448.67414 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1747905008.68572 6339 3446653da90f9794928ff964ded8e65d ""
-  "main.toc" 1748099445.77446 1924 f3c2c67dbc5334af95f69beae65f74a3 "pdflatex"
+  "main.toc" 1748100448.67426 1924 f3c2c67dbc5334af95f69beae65f74a3 "pdflatex"
   "plots/5_min_conf.png" 1748076746.33262 44873 3c22ed6101c7a793dd58f4cad2b1b6ab ""
   "plots/5_min_sup.png" 1748076746.33348 33547 4b4570cccc815c0d24faf1cf37ef4949 ""
   "plots/DBSCAN_kth_graph.png" 1739616101.55029 40213 68dae530b25492a54f22d7845e290394 ""
@@ -166,7 +166,7 @@
   "plots/pairplot_kmeans.png" 1739534268.47831 628711 95fe357360e4e185f892600f97ced147 ""
   "plots/rating_distrib.png" 1747905008.68704 28958 46a8061c91b341a87d0f5ff7c2491cb5 ""
   "plots/sil_sse_hierarchical_clust.png" 1748089781.5781 77574 9e4788f9b0cbdbd336799ddda7f6b933 ""
-  "plots/sse_silh_kmeans.png" 1739534268.4819 24879 5f6105157a7487e5b1a54f3e1e34d3f6 ""
+  "plots/sse_silh_kmeans.png" 1748100443.56599 63894 8c3bbd4a7c2add0a168188b219b1092b ""
   "plots/totalVideos_Images_distrib.png" 1747823931.19834 42659 2b583d5db83a5c32e17191791f3a605b ""
   "plots/types_count.png" 1747760730.13917 36798 a5b14c6db3ae4ff15110e17a68a8e33f ""
   (generated)
