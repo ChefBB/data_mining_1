@@ -120,24 +120,39 @@ To conclude, by adjusting \textit{eps} and \textit{Minpts} appropriately, the cl
 
 
 \section{Hierarchical clustering}\label{sec:hierarchical}
-
+Hierarchical clustering was performed using all linkages (Ward, Average, Complete, Single), with the Euclidean distance metric.
+Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which includes the Silhouette and SSE scores, as well as the maximum and minimum percentage of points per cluster.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+
+    % Left: Tall figure (a)
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/sil_scores_hierarchical_w_outliers.png}
-        \caption{Clustering scores with outliers}
-        \label{fig:hier_sil_scores_outliers}
+        \includegraphics[width=0.95\textwidth]{plots/sil_sse_hierarchical_clust.png}
+        \subcaption{Silhouette and SSE scores}
+        \label{fig:sil_sse_hierarchical_clust}
     \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
+    \hfill
+    \begin{subfigure}[t]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/sil_scores_hierarchical_no_outliers.png}
-        \caption{Clustering scores without outliers}
-        \label{fig:hier_sil_scores_no_outliers}
+        \includegraphics[width=0.95\textwidth]{plots/max_min_pctg.png}
+        \subcaption{Max/Min percentage of points per cluster}
+        \label{fig:max_min_pctg}
     \end{subfigure}
-    \caption{Silhouette scores for hierarchical clustering with different linkage methods}
-    \label{fig:three_subplots}
+    \caption{Hierarchical clustering metrics for different numbers of clusters}
+    \label{fig:hier_clust_stats}
 \end{figure}
+
+From figure~\ref{fig:max_min_pctg}, it can be observed that Single linkage produces a single cluster which contains basically all data points. This makes it unsuitable for this use case.
+Average and Complete linkages produce a cluster with a high maximum cluster size (above 90\% of the dataset for all the number of clusters tested for Average, and 80\% for Complete).
+These results are likely due to a few different causes: 
+\begin{itemize}
+    \item High density of points in a certain area of the feature space, which leads to the formation of large clusters;
+    \item Presence of outliers (other than the ones that were removed), which can skew the clustering results by pulling the centroids towards them, resulting in larger clusters;
+    \item High dimensionality of the dataset, which makes it more difficult to separate clusters effectively.
+\end{itemize}
+
+These issues are mitigated by Ward linkage, which produces less dominant biggest clusters for all numbers of clusters tested. The minimum cluster size is also consistently more balanced across different numbers of clusters.
 
 
 \section{General considerations}\label{sec:considerations}
