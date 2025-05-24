@@ -144,47 +144,52 @@ Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which inclu
 
 From figure~\ref{fig:max_min_pctg}, it can be observed that Single linkage produces a single cluster which contains basically all data points. This makes it unsuitable for this use case.
 Average and Complete linkages produce a cluster with a high maximum cluster size (above 90\% of the dataset for all the number of clusters tested for Average, and 80\% for Complete).
-These results are likely due to a few different causes: 
+These results are likely due to two main causes: 
 \begin{itemize}
-    \item High density of points in a certain area of the feature space, which leads to the formation of large clusters;
-    \item Usage of skewed features or presence of outliers (other than the ones that were removed), which can skew the clustering results by pulling the centroids towards them, resulting in larger clusters;
+    \item Usage of skewed features, which lead to areas with a very high density of points;
     \item High dimensionality of the dataset, which makes it more difficult to separate clusters effectively.
 \end{itemize}
 
-These issues are mitigated by Ward linkage, which produces less dominant biggest clusters for
+These issues are mitigated by Ward's method, which doesn't show a dominant biggest cluster, for
 all numbers of clusters tested. The minimum cluster size is also consistently more balanced
 across different numbers of clusters.\\
 
 Since Ward's method is based on Squared Error, it's not surprising how its SSE is consistently lower than other linkages, as shown in the second graph of figure~\ref{fig:sil_sse_hierarchical_clust}.
 What's more interesting is that Ward's method has the lowest Silhouette scores for all numbers
 of clusters tested, which indicates that the clusters are not well separated. This is due to
-the fact that Ward's method tends to group the data which resides in the high-density area
+the fact that Ward's method groups the data which resides in the high-density area
 mentioned above into smaller clusters, leading to less well-defined boundaries between them.\\
 
-By looking at Ward's statistics, the more interesting numbers of clusters to analyze are 4 and 5.
-The first one corresponds to a big decline in maximum cluster size (from 74 to 44\%),
-with a minimum cluster size of around 11\%; the second one has the same maximum cluster size but a smaller minimum cluster size (around 6\%), but has slightly higher Silhouette score
-(17.1\% against 16.8\% for 4 clusters) and a lower SSE. Figure~\ref{fig:dendrograms_ward} shows
-the dendrograms for the two.
-
-
+% By looking at Ward's statistics, the more interesting numbers of clusters to analyze are 4 and 5.
+% The first one corresponds to a big decline in maximum cluster size (from 74 to 44\%),
+% with a minimum cluster size of around 11\%; the second one has the same maximum cluster size but a smaller minimum cluster size (around 6\%), but has slightly higher Silhouette score
+% (17.1\% against 16.8\% for 4 clusters) and a lower SSE. Figure~\ref{fig:dendrograms_ward} shows
+% the dendrograms for the two clusterings.
+Figure~\ref{fig:dendrograms_ward} shows the dendrograms for two clusterings: the first was
+obtained with Ward's method, while the second one was obtained with Complete Linkage.
+Both clusterings are set to have 4 clusters, which in both cases leads to better 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/dendrogram_4.png}
-        \caption{4 Clusters}
+        \caption{Ward's Method Dendrogram}
         \label{fig:pairplot_ward}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/dendrogram_5.png}
-        \caption{5 Clusters}
+        \includegraphics[width=\textwidth]{plots/dendrogram_complete.png}
+        \caption{Complete Linkage Dendrogram}
         \label{fig:pairplot_ward_5}
     \end{subfigure}
     \caption{Dendrograms for hierarchical clustering with Ward's method}
     \label{fig:dendrograms_ward}
 \end{figure}
+
+Setting the distance threshold so that 4 clusters are formed creates a dendrogram with a clear
+separation between the clusters, as shown in figure~\ref{fig:pairplot_ward}.
+The clusters all form at a similar distance (around 12), which indicates the data in each cluster
+
 
 
 
