@@ -11,28 +11,28 @@ In addition, an attempt was made to incorporate categorical variables to the ana
 Distances were then calculated using the Euclidean distance for numerical (log-tranformed and scaled) features and the Jaccard similarity for binary ones. 
 However, this approach was computationally expensive and did not lead to any improvement in the results.
 
-\textbf{RIVEDERE PARTE PCA}
-Principal Component Analysis (PCA) was applied to the preprocessed data just for clusters visualization purposes. 
-Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
-These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
-The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches. \textbf{IN REALTA' NON SI VEDE TROPPO LA DIFFERENZA, QUINDI MAGARI NON FARE PCA MA SOLO VISUALIZZAZIONE CON ISTOGRAMMI??? oppure semplicemente tenere solo uno dei due plot?}
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.40\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
-        \caption{PCA excluding variables}
-        \label{fig:sse_silh_kmeans}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.40\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{plots/pca5.png}
-        \caption{PCA with all variables}
-        \label{fig:pca5}
-    \end{subfigure}
-    \caption{Principal Component Analysis}
-    \label{fig:pca_diff}
-\end{figure}
+% \textbf{RIVEDERE PARTE PCA}
+% Principal Component Analysis (PCA) was applied to the preprocessed data just for clusters visualization purposes. 
+% Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
+% These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
+% The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches. \textbf{IN REALTA' NON SI VEDE TROPPO LA DIFFERENZA, QUINDI MAGARI NON FARE PCA MA SOLO VISUALIZZAZIONE CON ISTOGRAMMI??? oppure semplicemente tenere solo uno dei due plot?}
+% \begin{figure}[H]
+%     \centering
+%     \begin{subfigure}[b]{0.40\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
+%         \caption{PCA excluding variables}
+%         \label{fig:sse_silh_kmeans}
+%     \end{subfigure}
+%     \begin{subfigure}[b]{0.40\textwidth}
+%         \centering
+%         \includegraphics[width=\textwidth]{plots/pca5.png}
+%         \caption{PCA with all variables}
+%         \label{fig:pca5}
+%     \end{subfigure}
+%     \caption{Principal Component Analysis}
+%     \label{fig:pca_diff}
+% \end{figure}
 
 \section{K-means}\label{sec:centroid_based}
 %The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, which negatively affected cluster formation. 
@@ -161,23 +161,59 @@ of clusters tested, which indicates that the clusters are not well separated. Th
 the fact that Ward's method tends to group the data which resides in the high-density area
 mentioned above into smaller clusters, leading to less well-defined boundaries between them.\\
 
-\begin{minipage}{0.4\textwidth}
-    Figure~\ref{fig:pairplot_ward} shows Hierarchical clustering through Ward's method applied to the dataset, visualized using PCA.
-    The plot shows how the higher density area is split among clusters 1, 2 and 4, while
-    cluster 3 has an overall lower density.
-\end{minipage}
-\hfill
-\begin{minipage}{0.55\textwidth}
+By looking at Ward's statistics, the more interesting numbers of clusters to analyze are 4 and 5.
+The first one corresponds to a big decline in maximum cluster size (from 74 to 44\%),
+with a minimum cluster size of around 11\%; the second one has the same maximum cluster size but a smaller minimum cluster size (around 6\%), but has slightly higher Silhouette score
+(17.1\% against 16.8\% for 4 clusters) and a lower SSE. Figure~\ref{fig:dendrograms_ward} shows
+the dendrograms for the two.
+
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/pairplot_hierarchical.png}
-    \captionsetup{width=0.9\linewidth, justification=centering}
-    \captionof{figure}{PCA visualization for hierarchical clustering with Ward's method}
-    \label{fig:pairplot_ward}
-\end{minipage}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/dendrogram_4.png}
+        \caption{4 Clusters}
+        \label{fig:pairplot_ward}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/dendrogram_5.png}
+        \caption{5 Clusters}
+        \label{fig:pairplot_ward_5}
+    \end{subfigure}
+    \caption{Dendrograms for hierarchical clustering with Ward's method}
+    \label{fig:dendrograms_ward}
+\end{figure}
 
 
 
+% \begin{minipage}{0.4\textwidth}
+%     Figure~\ref{fig:pairplot_ward} shows Hierarchical clustering through Ward's method applied to the dataset, visualized using PCA.
+%     The plot shows how the higher density area is split among clusters 1, 2 and 4, while
+%     cluster 3 has an overall lower density.
+% \end{minipage}
+% \hfill
+% \begin{minipage}{0.55\textwidth}
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/pairplot_hierarchical.png}
+%     \captionsetup{width=0.9\linewidth, justification=centering}
+%     \captionof{figure}{PCA visualization for hierarchical clustering with Ward's method}
+%     \label{fig:pairplot_ward}
+% \end{minipage}
 
 
+% k = 4:
+% Cluster 1: SSE = 340.29
+% Cluster 2: SSE = 282.12
+% Cluster 3: SSE = 464.36
+% Cluster 4: SSE = 426.15
+
+% k = 5:
+% Cluster 1: SSE = 340.29
+% Cluster 2: SSE = 66.31
+% Cluster 3: SSE = 119.49
+% Cluster 4: SSE = 464.36
+% Cluster 5: SSE = 426.15
 
 \section{General considerations}\label{sec:considerations}
