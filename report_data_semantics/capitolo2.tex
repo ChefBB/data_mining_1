@@ -124,20 +124,19 @@ Hierarchical clustering was performed using all linkages (Ward, Average, Complet
 Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which includes the Silhouette and SSE scores, as well as the maximum and minimum percentage of points per cluster.
 \begin{figure}[H]
     \centering
-
     % Left: Tall figure (a)
-    \begin{subfigure}[t]{0.49\textwidth}
-        \centering
-        \includegraphics[width=0.95\textwidth]{plots/sil_sse_hierarchical_clust.png}
-        \subcaption{Silhouette and SSE scores}
-        \label{fig:sil_sse_hierarchical_clust}
-    \end{subfigure}
-    \hfill
     \begin{subfigure}[t]{0.49\textwidth}
         \centering
         \includegraphics[width=0.95\textwidth]{plots/max_min_pctg.png}
         \subcaption{Max/Min percentage of points per cluster}
         \label{fig:max_min_pctg}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.95\textwidth]{plots/sil_sse_hierarchical_clust.png}
+        \subcaption{Silhouette and SSE scores}
+        \label{fig:sil_sse_hierarchical_clust}
     \end{subfigure}
     \caption{Hierarchical clustering metrics for different numbers of clusters}
     \label{fig:hier_clust_stats}
@@ -148,11 +147,37 @@ Average and Complete linkages produce a cluster with a high maximum cluster size
 These results are likely due to a few different causes: 
 \begin{itemize}
     \item High density of points in a certain area of the feature space, which leads to the formation of large clusters;
-    \item Presence of outliers (other than the ones that were removed), which can skew the clustering results by pulling the centroids towards them, resulting in larger clusters;
+    \item Usage of skewed features or presence of outliers (other than the ones that were removed), which can skew the clustering results by pulling the centroids towards them, resulting in larger clusters;
     \item High dimensionality of the dataset, which makes it more difficult to separate clusters effectively.
 \end{itemize}
 
-These issues are mitigated by Ward linkage, which produces less dominant biggest clusters for all numbers of clusters tested. The minimum cluster size is also consistently more balanced across different numbers of clusters.
+These issues are mitigated by Ward linkage, which produces less dominant biggest clusters for
+all numbers of clusters tested. The minimum cluster size is also consistently more balanced
+across different numbers of clusters.\\
+
+Since Ward's method is based on Squared Error, it's not surprising how its SSE is consistently lower than other linkages, as shown in the second graph of figure~\ref{fig:sil_sse_hierarchical_clust}.
+What's more interesting is that Ward's method has the lowest Silhouette scores for all numbers
+of clusters tested, which indicates that the clusters are not well separated. This is due to
+the fact that Ward's method tends to group the data which resides in the high-density area
+mentioned above into smaller clusters, leading to less well-defined boundaries between them.\\
+
+\begin{minipage}{0.4\textwidth}
+    Figure~\ref{fig:pairplot_ward} shows Hierarchical clustering through Ward's method applied to the dataset, visualized using PCA.
+    The plot shows how the higher density area is split among clusters 1, 2 and 4, while
+    cluster 3 has an overall lower density.
+\end{minipage}
+\hfill
+\begin{minipage}{0.55\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{plots/pairplot_hierarchical.png}
+    \captionsetup{width=0.9\linewidth, justification=centering}
+    \captionof{figure}{PCA visualization for hierarchical clustering with Ward's method}
+    \label{fig:pairplot_ward}
+\end{minipage}
+
+
+
+
 
 
 \section{General considerations}\label{sec:considerations}

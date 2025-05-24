@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  24 MAY 2025 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  24 MAY 2025 16:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -951,32 +951,57 @@ File: plots/DBSCAN_provvisoria.png Graphic file (type png)
 <use plots/DBSCAN_provvisoria.png>
 Package pdftex.def Info: plots/DBSCAN_provvisoria.png  used on input line 111.
 (pdftex.def)             Requested size: 259.1819pt x 243.14247pt.
-<plots/sil_sse_hierarchical_clust.png, id=80, 354.123pt x 426.393pt>
-File: plots/sil_sse_hierarchical_clust.png Graphic file (type png)
-<use plots/sil_sse_hierarchical_clust.png>
-Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 131.
-(pdftex.def)             Requested size: 246.222pt x 296.47565pt.
-<plots/max_min_pctg.png, id=81, 354.123pt x 426.393pt>
+<plots/max_min_pctg.png, id=80, 354.123pt x 426.393pt>
 File: plots/max_min_pctg.png Graphic file (type png)
 <use plots/max_min_pctg.png>
-Package pdftex.def Info: plots/max_min_pctg.png  used on input line 138.
+Package pdftex.def Info: plots/max_min_pctg.png  used on input line 130.
 (pdftex.def)             Requested size: 246.222pt x 296.47565pt.
- [10 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png>]) (./capitolo3.tex [11 <./plots/sil_sse_hierarchical_clust.png> <./plots/max_min_pctg.png>]
-Chapter 3.
-[12
+<plots/sil_sse_hierarchical_clust.png, id=81, 354.123pt x 426.393pt>
+File: plots/sil_sse_hierarchical_clust.png Graphic file (type png)
+<use plots/sil_sse_hierarchical_clust.png>
+Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 137.
+(pdftex.def)             Requested size: 246.222pt x 296.47565pt.
+ [10 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
-]) (./capitolo4.tex [13]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--163
+
+ []
+
+
+Underfull \hbox (badness 2277) in paragraph at lines 165--168
+[]\OT1/lmr/m/n/10.95 Figure 2.5[] shows Hi-er-ar-chi-cal clus-ter-ing
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 165--168
+\OT1/lmr/m/n/10.95 through Ward's method ap-plied to the
+ []
+
+<plots/pairplot_hierarchical.png, id=88, 432.1746pt x 386.6445pt>
+File: plots/pairplot_hierarchical.png Graphic file (type png)
+<use plots/pairplot_hierarchical.png>
+Package pdftex.def Info: plots/pairplot_hierarchical.png  used on input line 172.
+(pdftex.def)             Requested size: 290.91682pt x 260.2776pt.
+[11 <./plots/max_min_pctg.png> <./plots/sil_sse_hierarchical_clust.png>]) (./capitolo3.tex [12 <./plots/pairplot_hierarchical.png>]
+Chapter 3.
+[13
+
+]) (./capitolo4.tex [14]
 Chapter 4.
-) (./capitolo5.tex [14
+) (./capitolo5.tex [15
 
 ]
 Chapter 5.
-<plots/5_min_sup.png, id=103, 614.295pt x 395.3169pt>
+<plots/5_min_sup.png, id=108, 614.295pt x 395.3169pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 33.
 (pdftex.def)             Requested size: 253.99715pt x 163.45627pt.
-<plots/5_min_conf.png, id=104, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=109, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 40.
@@ -986,14 +1011,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
  []
 
-[15
+[16
 
  <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 126--130
 
  []
 
-[16]) [17]
+[17]) [18]
 
 LaTeX Warning: Empty bibliography on input line 171.
 
@@ -1011,18 +1036,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17868 strings out of 474116
- 353351 string characters out of 5743682
+ 17876 strings out of 474116
+ 353635 string characters out of 5743682
  1948187 words of memory out of 5000000
- 40002 multiletter control sequences out of 15000+600000
+ 40010 multiletter control sequences out of 15000+600000
  621359 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (19 pages, 2288304 bytes).
+Output written on main.pdf (20 pages, 2441333 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 192 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
