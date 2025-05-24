@@ -16,7 +16,7 @@ Principal Component Analysis (PCA) was applied to the preprocessed data just for
 Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
 These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
 The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches. \textbf{IN REALTA' NON SI VEDE TROPPO LA DIFFERENZA, QUINDI MAGARI NON FARE PCA MA SOLO VISUALIZZAZIONE CON ISTOGRAMMI??? oppure semplicemente tenere solo uno dei due plot?}
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.40\textwidth}
         \centering
@@ -45,7 +45,7 @@ The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = ??? 
 % To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
 The cluster results are presented in figure~\ref{fig:pairplot_kmeans}. 
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
@@ -90,7 +90,7 @@ respectively.The  results are shown in figure~\ref{fig:DBSCAN_provvisoria}
 
 To conclude, by adjusting \textit{eps} and \textit{Minpts} appropriately, the clustering results achieved a Silhouette score of 0.139 \textbf{(SIL CONTANDO OUTLIERS)}, indicating little improved cluster separation and reduced noise, which is considered good enough for an unbalanced, high-dimensional dataset.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
@@ -121,7 +121,7 @@ To conclude, by adjusting \textit{eps} and \textit{Minpts} appropriately, the cl
 
 \section{Hierarchical clustering}\label{sec:hierarchical}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering

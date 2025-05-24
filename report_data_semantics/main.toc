@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {2.1}K-means}{9}{}%
 \contentsline {section}{\numberline {2.2}DBSCAN}{9}{}%
 \contentsline {section}{\numberline {2.3}Hierarchical clustering}{10}{}%
-\contentsline {section}{\numberline {2.4}General considerations}{10}{}%
+\contentsline {section}{\numberline {2.4}General considerations}{11}{}%
 \contentsline {chapter}{\numberline {3}Classification}{12}{}%
 \contentsline {section}{\numberline {3.1}Binary classification}{12}{}%
 \contentsline {section}{\numberline {3.2}Multiclass classification}{12}{}%
