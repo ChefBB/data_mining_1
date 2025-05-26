@@ -355,19 +355,13 @@ Because of right-skewness (without a power-law distribution), other attributes w
 
 
 Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}.
-Figure~\ref{fig:outliers} report an analysis of the feature through the IQR method.
 Similarly to missing values imputation (~\ref{sec:missing_values}),
 outlier detection was performed using two different strategies:
 % Figure~\ref{fig:runtimeMinutes_boxplot} shows the first approach, which computes outliers on each \texttt{titleType} separately.
 the first approach computes outliers on each \texttt{titleType} separately,
 while the second is based on the distribution of the \texttt{runtimeMinutes} attribute alone.
+Figure~\ref{fig:outliers} reports an analysis of the feature through the IQR method separately on each type.
 % Figure ~\ref{fig:runtimeMinutes_boxplot_no_type} shows the second, which computes them based on \texttt{canHaveEpisodes} attribute and \textit{Short} genre.
-The boxplots show that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}.
-% the same can be observed on the second plot on the \textit{Has episodes} box plot.
-This might be because of an inconsistency with the understanding of the meaning of the attribute, and in those cases it might be possible that
-the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
-
-
 
 \begin{figure}[H]
     \centering
@@ -388,6 +382,11 @@ the value refers to the total runtime of the series, rather than the runtime of 
     % \caption{Outliers in the \texttt{runtimeMinutes} attribute}
     \label{fig:outliers}
 \end{figure}
+
+The boxplots show that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}.
+% the same can be observed on the second plot on the \textit{Has episodes} box plot.
+This might be because of an inconsistency with the understanding of the meaning of the attribute, and in those cases it might be possible that
+the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
 
 
 % Another interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\

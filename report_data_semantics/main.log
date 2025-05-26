@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 MAY 2025 11:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 MAY 2025 12:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -879,19 +879,19 @@ File: plots/left_skew_distribs_log.png Graphic file (type png)
 <use plots/left_skew_distribs_log.png>
 Package pdftex.def Info: plots/left_skew_distribs_log.png  used on input line 338.
 (pdftex.def)             Requested size: 253.88737pt x 213.08559pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--369
-
- []
-
 [6 <./plots/left_skew_distribs.png> <./plots/left_skew_distribs_log.png>]
 <plots/outliers.png, id=56, 563.706pt x 426.393pt>
 File: plots/outliers.png Graphic file (type png)
 <use plots/outliers.png>
-Package pdftex.def Info: plots/outliers.png  used on input line 376.
+Package pdftex.def Info: plots/outliers.png  used on input line 370.
 (pdftex.def)             Requested size: 317.36526pt x 240.06017pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--397
+Underfull \hbox (badness 10000) in paragraph at lines 386--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--396
 
  []
 
@@ -1013,7 +1013,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (20 pages, 2261464 bytes).
+Output written on main.pdf (20 pages, 2261477 bytes).
 PDF statistics:
  188 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
