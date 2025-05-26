@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748255217.45183 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748261975.98581 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748255213.19603 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748255217.4523 0
+["pdflatex"] 1748261972.03699 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748261975.98628 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748255214.99997 7921 0c1fbbf18d94aed9dfaf69aa457a0218 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -141,22 +141,22 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "capitolo1.tex" 1748254138.32317 22901 49819e1e99d2bdab591c200714d2977b ""
-  "capitolo2.tex" 1748105383.57374 13368 9665e782f31624043a002d9402be08a4 ""
+  "capitolo2.tex" 1748261971.51799 16109 2a83a7cc8e2b54b94768ce0c1c611067 ""
   "capitolo3.tex" 1747739417.76362 4296 11387774e65aa755de59155d1511ec1e ""
   "capitolo4.tex" 1747651054.96212 116 1a780615ce691177d1e8e2e21502247c ""
   "capitolo5.tex" 1748076746.32986 8356 e017e505cddc1c35b14979f34501fe29 ""
-  "main.aux" 1748255216.96153 11331 a28f40069c24bc96d66acb7c6aced54b "pdflatex"
+  "main.aux" 1748261975.4999 11972 54084c57dd12cbc4488d5ac366312353 "pdflatex"
   "main.bbl" 1736953031.27595 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1748255216.96684 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748261975.50596 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748255214.99997 7921 0c1fbbf18d94aed9dfaf69aa457a0218 ""
-  "main.toc" 1748255216.96701 1923 fac1d0df5438c00d049c78548531ff4b "pdflatex"
+  "main.toc" 1748261975.50609 2062 4d3bf0050720cf7230c9d1d1ed126ae0 "pdflatex"
   "plots/5_min_conf.png" 1748076746.33262 44873 3c22ed6101c7a793dd58f4cad2b1b6ab ""
   "plots/5_min_sup.png" 1748076746.33348 33547 4b4570cccc815c0d24faf1cf37ef4949 ""
   "plots/DBSCAN_kth_graph.png" 1739616101.55029 40213 68dae530b25492a54f22d7845e290394 ""
   "plots/DBSCAN_provvisoria.png" 1739616101.55496 893140 a9d3a3eba26c66b4cd6971dfbc39ac14 ""
   "plots/correlation_matrix.png" 1738663566.41078 431826 a0f9cce7dceecaf3adadc0850d7ae410 ""
   "plots/dendrogram_4.png" 1748098454.4865 22684 ddaa9f71ad4c29b0b12d892d94fd8d7d ""
-  "plots/dendrogram_complete.png" 1748082529.57928 22189 d6c9085ddea3cd5133ed50990d27d263 ""
+  "plots/dendrogram_complete.png" 1748261066.46021 25972 ec0a13c64eea97c48c1f13cf0b3f00c6 ""
   "plots/left_skew_distribs.png" 1747918311.07423 59989 48d85a129e5066dfe0e12a7431cfa1dc ""
   "plots/left_skew_distribs_log.png" 1747918363.49378 76815 dc74ea03a4438410935bb258eaccd94b ""
   "plots/max_min_pctg.png" 1748100575.37453 52591 a1c56af192b871687ff4d73b63401897 ""
@@ -164,6 +164,8 @@
   "plots/outliers.png" 1747830707.33711 47488 ae85b603bcce9d7b0e5b2c9d2a0a9d4a ""
   "plots/pairplot_kmeans.png" 1739534268.47831 628711 95fe357360e4e185f892600f97ced147 ""
   "plots/rating_distrib.png" 1747905008.68704 28958 46a8061c91b341a87d0f5ff7c2491cb5 ""
+  "plots/scatter_complete.png" 1748258484.19747 132148 ba2dd386fbf649a07d73263d6cae6f25 ""
+  "plots/scatter_ward.png" 1748258557.97813 144550 fbbf1591440ba8107d54d060725b4a74 ""
   "plots/sil_sse_hierarchical_clust.png" 1748100727.19942 62222 93703fe08205068fa724c5ef093be07f ""
   "plots/sse_silh_kmeans.png" 1748100443.56599 63894 8c3bbd4a7c2add0a168188b219b1092b ""
   "plots/totalVideos_Images_distrib.png" 1747823931.19834 42659 2b583d5db83a5c32e17191791f3a605b ""

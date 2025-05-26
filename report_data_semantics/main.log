@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 MAY 2025 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 MAY 2025 14:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -933,47 +933,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--156
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--162
-
- []
-
 <plots/dendrogram_4.png, id=79, 328.8285pt x 258.0039pt>
 File: plots/dendrogram_4.png Graphic file (type png)
 <use plots/dendrogram_4.png>
-Package pdftex.def Info: plots/dendrogram_4.png  used on input line 175.
+Package pdftex.def Info: plots/dendrogram_4.png  used on input line 178.
 (pdftex.def)             Requested size: 259.1819pt x 203.36417pt.
-<plots/dendrogram_complete.png, id=80, 377.9721pt x 210.3057pt>
+<plots/scatter_ward.png, id=80, 353.4003pt x 281.853pt>
+File: plots/scatter_ward.png Graphic file (type png)
+<use plots/scatter_ward.png>
+Package pdftex.def Info: plots/scatter_ward.png  used on input line 184.
+(pdftex.def)             Requested size: 259.1819pt x 206.72293pt.
+[10 <./plots/max_min_pctg.png> <./plots/sil_sse_hierarchical_clust.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 213--220
+
+ []
+
+<plots/dendrogram_complete.png, id=86, 341.8371pt x 265.9536pt>
 File: plots/dendrogram_complete.png Graphic file (type png)
 <use plots/dendrogram_complete.png>
-Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 181.
-(pdftex.def)             Requested size: 259.1819pt x 144.20935pt.
-[10 <./plots/max_min_pctg.png> <./plots/sil_sse_hierarchical_clust.png>]) (./capitolo3.tex [11 <./plots/dendrogram_4.png> <./plots/dendrogram_complete.png>]
+Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 227.
+(pdftex.def)             Requested size: 259.1819pt x 201.66014pt.
+<plots/scatter_complete.png, id=87, 353.4003pt x 281.853pt>
+File: plots/scatter_complete.png Graphic file (type png)
+<use plots/scatter_complete.png>
+Package pdftex.def Info: plots/scatter_complete.png  used on input line 233.
+(pdftex.def)             Requested size: 259.1819pt x 206.72293pt.
+[11 <./plots/dendrogram_4.png> <./plots/scatter_ward.png>]) (./capitolo3.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./capitolo4.tex) (./capitolo5.tex [12] [13]
-<plots/5_min_sup.png, id=98, 614.295pt x 395.3169pt>
+[12 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./capitolo4.tex) (./capitolo5.tex [13]
+<plots/5_min_sup.png, id=102, 614.295pt x 395.3169pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 33.
 (pdftex.def)             Requested size: 253.99715pt x 163.45627pt.
-<plots/5_min_conf.png, id=99, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=103, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 40.
 (pdftex.def)             Requested size: 253.99715pt x 157.5437pt.
-
+ [14]
 Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
  []
 
-[14 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 126--130
 
  []
 
-) [15]
+[15 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]) [16]
 
 LaTeX Warning: Empty bibliography on input line 221.
 
@@ -991,18 +1008,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17859 strings out of 474116
- 353193 string characters out of 5743682
- 1950187 words of memory out of 5000000
- 39993 multiletter control sequences out of 15000+600000
+ 17878 strings out of 474116
+ 353749 string characters out of 5743682
+ 1949187 words of memory out of 5000000
+ 40012 multiletter control sequences out of 15000+600000
  618413 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (17 pages, 2260215 bytes).
+Output written on main.pdf (18 pages, 2484780 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 185 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

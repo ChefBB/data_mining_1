@@ -154,42 +154,89 @@ These issues are mitigated by Ward's method, which doesn't show a dominant bigge
 all numbers of clusters tested. The minimum cluster size is also consistently more balanced
 across different numbers of clusters.\\
 
+
 Since Ward's method is based on Squared Error, it's not surprising how its SSE is consistently lower than other linkages, as shown in the second graph of figure~\ref{fig:sil_sse_hierarchical_clust}.
 What's more interesting is that Ward's method has the lowest Silhouette scores for all numbers
 of clusters tested, which indicates that the clusters are not well separated. This is due to
 the fact that Ward's method groups the data which resides in the high-density area
-mentioned above into smaller clusters, leading to less well-defined boundaries between them.\\
+mentioned above into smaller clusters, leading to less well-defined boundaries between them.
 
 % By looking at Ward's statistics, the more interesting numbers of clusters to analyze are 4 and 5.
 % The first one corresponds to a big decline in maximum cluster size (from 74 to 44\%),
 % with a minimum cluster size of around 11\%; the second one has the same maximum cluster size but a smaller minimum cluster size (around 6\%), but has slightly higher Silhouette score
 % (17.1\% against 16.8\% for 4 clusters) and a lower SSE. Figure~\ref{fig:dendrograms_ward} shows
 % the dendrograms for the two clusterings.
-Figure~\ref{fig:dendrograms_ward} shows the dendrograms for two clusterings: the first was
-obtained with Ward's method, while the second one was obtained with Complete Linkage.
-Both clusterings are set to have 4 clusters, which in both cases leads to better 
+\subsection{Ward's method}
+Figure~\ref{fig:dendrograms_ward} a dendrogram and a scatter plot for a clustering obtained through
+Ward's Method. Because of the parameters observed in the previous section, cleaner dendrograms,
+as well as consistency with other clustering methods, the hierarchical clustering is cut at 4 clusters.
+% Both clusterings are set to have 4 clusters, which in both cases leads to cleaner dendrograms.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/dendrogram_4.png}
         \caption{Ward's Method Dendrogram}
-        \label{fig:pairplot_ward}
+        \label{fig:dendrogram_ward}
     \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/scatter_ward.png}
+        \caption{Ward's Method Scatter plot}
+        \label{fig:scatter_ward}
+    \end{subfigure}
+    \caption{Ward's method clustering}
+    \label{fig:dendrograms_ward}
+\end{figure}
+
+% The obtained dendrogram has clearly separated clusters, as shown in figure~\ref{fig:dendrogram_ward}.
+% The clusters all form at a similar distance (around 12), meaning the SSE increase is similar for
+% all clusters.
+% It is interesting to note how the smallest cluster is merged with the others at the last merge; this,
+% as can be observed in figure~\ref{fig:scatter_ward}, is the cluster which resides in the less dense area of the dataset.
+% The other three clusters are closer to each other, as they are a result of the split of the higher density
+% area of the dataset. Compared to K-Means, the clusters are not as cleanly separated in the PCA space,
+% leading to overlapping areas between them.
+The dendrogram in Figure~\ref{fig:dendrogram_ward} reveals well-separated clusters, all of which merge at a
+similar linkage distance (approximately 12). This indicates that the increase in within-cluster sum of
+squares (SSE) is relatively consistent across all cluster merges, as expected from Ward's method.
+Notably, the smallest cluster is the last to be merged, which suggests it is more distinct from the others.
+As shown in Figure~\ref{fig:scatter_ward}, this cluster lies in a sparser region of the dataset.
+In contrast, the remaining three clusters originate from the denser region and are therefore spatially
+closer to one another.
+Compared to K-Means, the clusters identified by Ward's method appear less clearly separated in the PCA
+projection, resulting in some overlap between adjacent groups.
+
+
+
+\subsection{Complete Linkage}
+Figure~\ref{fig:dendrograms_complete} shows the dendrogram and scatter plot for a clustering obtained
+through Complete Linkage.
+Since the tendency of this linkage is to merge into a single cluster, the clustering is cut at 4 clusters,
+which helps mitigating the issue. While selecting five clusters would have introduced an additional split
+within the largest cluster with similar SSE and Silhouette scores, the resulting group was found to be
+poorly separated and lacked meaningful distinction.
+As such, it was not considered a valuable contribution to the overall clustering structure.\\
+
+As shown in the dendrogram in figure~\ref{fig:dendrogram_complete}, the clusters form at a similar distance
+(around 1.26).
+\begin{figure}[H]
+    \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/dendrogram_complete.png}
         \caption{Complete Linkage Dendrogram}
+        \label{fig:dendrogram_complete}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/scatter_complete.png}
+        \caption{Complete Linkage Scatter plot}
         \label{fig:pairplot_ward_5}
     \end{subfigure}
-    \caption{Dendrograms for hierarchical clustering with Ward's method}
-    \label{fig:dendrograms_ward}
+    \caption{Dendrograms for hierarchical clustering with Complete Linkage}
+    \label{fig:dendrograms_complete}
 \end{figure}
-
-Setting the distance threshold so that 4 clusters are formed creates a dendrogram with a clear
-separation between the clusters, as shown in figure~\ref{fig:pairplot_ward}.
-The clusters all form at a similar distance (around 12), which indicates the data in each cluster
-
 
 
 
