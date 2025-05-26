@@ -11,6 +11,7 @@ to_log = [
     'numRegions',
     'totalMedia',
     'totalNominations', 'totalCredits',
+    'numVotes',
     # 'regions_freq_enc', 'regions_EU', 'regions_NA', 'regions_AS',
     # 'regions_AF', 'regions_OC', 'regions_SA', 'regions_UNK',
     # 'countryOfOrigin_freq_enc', 'countryOfOrigin_NA', 'countryOfOrigin_AF',

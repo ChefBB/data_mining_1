@@ -15,9 +15,8 @@ It identifies records where the \texttt{numVotes} attribute is less than 100.
 \subsection*{K-NN}
 \subsection*{Naïve Bayes}
 \subsection*{Decision Trees}
-\begin{table}[h!]
+\begin{table}[H]
     \centering
-    \caption{Classification report for binary classification (\texttt{has\_LowEngagement})}
     \begin{tabular}{lcccc}
         \toprule
         \bf{Class} & \bf{Precision} & \bf{Recall} & \bf{F1-score} & \bf{Support} \\
@@ -31,6 +30,7 @@ It identifies records where the \texttt{numVotes} attribute is less than 100.
         \bf{Accuracy}  &  &  & 0.83 & 5384 \\
         \bottomrule
     \end{tabular}
+    \caption{Classification report for binary classification (\texttt{has\_LowEngagement})}
     \label{tab:binary_classification_report}
 \end{table}
 
@@ -50,9 +50,8 @@ imputation for an attribute when \texttt{titleType} itself is the target variabl
 \subsection*{K-NN}
 \subsection*{Naïve Bayes}
 \subsection*{Decision Trees}
-\begin{table}[h!]
+\begin{table}[H]
     \centering
-    \caption{Classification report for multiclass classification (\texttt{titleType})}
     \begin{tabular}{lcccc}
         \toprule
         \bf{Class} & \bf{Precision} & \bf{Recall} & \bf{F1-score} & \bf{Support} \\
@@ -73,6 +72,7 @@ imputation for an attribute when \texttt{titleType} itself is the target variabl
         \bf{Accuracy}      &      &      & 0.84 & 5384 \\
         \bottomrule
     \end{tabular}
+    \caption{Classification report for multiclass classification (\texttt{titleType})}
     \label{tab:multiclass_classification_report}
 \end{table}
 

@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748265830.25753 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748266424.27909 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748265826.45937 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748265830.25803 0
+["pdflatex"] 1748266420.15168 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748266424.27959 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748255214.99997 7921 0c1fbbf18d94aed9dfaf69aa457a0218 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -142,14 +142,14 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "capitolo1.tex" 1748254138.32317 22901 49819e1e99d2bdab591c200714d2977b ""
   "capitolo2.tex" 1748265826.05514 16941 9ac2b79173b5c87f0f8cf6e3caa21091 ""
-  "capitolo3.tex" 1747739417.76362 4296 11387774e65aa755de59155d1511ec1e ""
+  "capitolo3.tex" 1748266419.8058 4294 c5c8098e3291f19039b74eadfb013af8 ""
   "capitolo4.tex" 1747651054.96212 116 1a780615ce691177d1e8e2e21502247c ""
   "capitolo5.tex" 1748076746.32986 8356 e017e505cddc1c35b14979f34501fe29 ""
-  "main.aux" 1748265829.77031 11972 54084c57dd12cbc4488d5ac366312353 "pdflatex"
+  "main.aux" 1748266423.77736 11972 d3ad382a08bc8d121c6105120d011522 "pdflatex"
   "main.bbl" 1736953031.27595 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1748265829.77589 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748266423.78232 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748255214.99997 7921 0c1fbbf18d94aed9dfaf69aa457a0218 ""
-  "main.toc" 1748265829.77602 2062 4d3bf0050720cf7230c9d1d1ed126ae0 "pdflatex"
+  "main.toc" 1748266423.78245 2062 89adab6f63368b276a782c9b5b13a911 "pdflatex"
   "plots/5_min_conf.png" 1748076746.33262 44873 3c22ed6101c7a793dd58f4cad2b1b6ab ""
   "plots/5_min_sup.png" 1748076746.33348 33547 4b4570cccc815c0d24faf1cf37ef4949 ""
   "plots/DBSCAN_kth_graph.png" 1739616101.55029 40213 68dae530b25492a54f22d7845e290394 ""

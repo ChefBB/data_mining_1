@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 MAY 2025 15:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  26 MAY 2025 15:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -963,39 +963,28 @@ File: plots/scatter_complete.png Graphic file (type png)
 <use plots/scatter_complete.png>
 Package pdftex.def Info: plots/scatter_complete.png  used on input line 244.
 (pdftex.def)             Requested size: 259.1819pt x 206.72293pt.
-[11 <./plots/dendrogram_4.png> <./plots/scatter_ward.png>]) (./capitolo3.tex
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./capitolo4.tex) (./capitolo5.tex [13]
-<plots/5_min_sup.png, id=102, 614.295pt x 395.3169pt>
+[11 <./plots/dendrogram_4.png> <./plots/scatter_ward.png>]) (./capitolo3.tex [12 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>] [13]) (./capitolo4.tex) (./capitolo5.tex [14]
+<plots/5_min_sup.png, id=105, 614.295pt x 395.3169pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 33.
 (pdftex.def)             Requested size: 253.99715pt x 163.45627pt.
-<plots/5_min_conf.png, id=103, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=106, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 40.
 (pdftex.def)             Requested size: 253.99715pt x 157.5437pt.
- [14]
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+[15 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 126--130
 
  []
 
-[15 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]) [16]
+) [16]
 
 LaTeX Warning: Empty bibliography on input line 221.
 
@@ -1013,15 +1002,15 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17878 strings out of 474116
- 353749 string characters out of 5743682
- 1949187 words of memory out of 5000000
- 40012 multiletter control sequences out of 15000+600000
+ 17879 strings out of 474116
+ 353758 string characters out of 5743682
+ 1950187 words of memory out of 5000000
+ 40013 multiletter control sequences out of 15000+600000
  618413 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,19n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (18 pages, 2494960 bytes).
+Output written on main.pdf (18 pages, 2495022 bytes).
 PDF statistics:
  185 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream

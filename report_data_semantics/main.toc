@@ -19,10 +19,10 @@
 \contentsline {chapter}{\numberline {3}Classification}{12}{}%
 \contentsline {section}{\numberline {3.1}Binary classification}{12}{}%
 \contentsline {section}{\numberline {3.2}Multiclass classification}{13}{}%
-\contentsline {section}{\numberline {3.3}General considerations}{13}{}%
-\contentsline {chapter}{\numberline {4}Regression}{13}{}%
-\contentsline {section}{\numberline {4.1}General considerations}{13}{}%
-\contentsline {chapter}{\numberline {5}Pattern Mining}{13}{}%
+\contentsline {section}{\numberline {3.3}General considerations}{14}{}%
+\contentsline {chapter}{\numberline {4}Regression}{14}{}%
+\contentsline {section}{\numberline {4.1}General considerations}{14}{}%
+\contentsline {chapter}{\numberline {5}Pattern Mining}{14}{}%
 \contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{15}{}%
 \contentsline {section}{\numberline {5.2}Extraction of rules}{15}{}%
-\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{15}{}%
+\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{16}{}%
