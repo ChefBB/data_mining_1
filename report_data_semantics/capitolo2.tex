@@ -218,8 +218,19 @@ within the largest cluster with similar SSE and Silhouette scores, the resulting
 poorly separated and lacked meaningful distinction.
 As such, it was not considered a valuable contribution to the overall clustering structure.\\
 
-As shown in the dendrogram in figure~\ref{fig:dendrogram_complete}, the clusters form at a similar distance
-(around 1.26).
+As shown in the dendrogram in Figure~\ref{fig:dendrogram_complete}, the clusters merge at similar linkage
+distances (approximately between 1.2 and 1.4), indicating that the maximum within-cluster distances are
+comparable across clusters. With respect to the clustering obtained through Ward's method, the clusters
+have clearer boundaries along the PCA axes, as the denser area of the dataset is not split into multiple
+clusters.\\
+
+It is also interesting to observe how the dendrogram structure differs from that of Ward's method.
+In the previous case, the smallest cluster was the last to be merged, reflecting its distinctiveness in
+terms of within-cluster variance. In contrast, the Complete Linkage dendrogram shows the two smaller
+clusters being merged before the root.
+% This suggests that, under this criterion, their relative
+% proximity in terms of maximum inter-point distance makes them more similar to each other than to the
+% remaining data.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
