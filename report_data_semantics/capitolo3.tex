@@ -13,40 +13,81 @@ These will be discussed in more detail in the corresponding sections below.
 The binary target variable used in this task, \texttt{has\_LowEngagement}, was specifically defined for this purpose. 
 It identifies records where the \texttt{numVotes} attribute is less than 100.
 \subsection*{K-NN}
+
+
 \subsection*{Naïve Bayes}
+
+
 \subsection*{Decision Trees}
+To identify the optimal hyperparameters for the Decision Tree model, a Randomized Search with
+Cross-Validation was conducted on the training set.
+The best configuration found used the Gini index as the splitting criterion,
+a maximum tree depth of 26, and a minimum of 3 samples per leaf.
+Post-pruning did not yield any performance improvement and was therefore not applied.
+The classification performance of the final model is summarized in
+Table~\ref{tab:binary_classification_report}.
+
 \begin{table}[H]
     \centering
     \begin{tabular}{lcccc}
         \toprule
         \bf{Class} & \bf{Precision} & \bf{Recall} & \bf{F1-score} & \bf{Support} \\
+        % \midrule
+        % \bf{Train set} & & & & \\
+        % \midrule
+        % \bf{Low engagement} & 0.87 & 0.91 & 0.89 & 4668 \\
+        % \bf{High engagement} & 0.78 & 0.70 & 0.74 & 10287 \\
+        % \midrule
+        % \bf{Test set} & & & & \\
         \midrule
-        \bf{Low engagement} & 0.86 & 0.91 & 0.88 & 3686 \\
-        \bf{High engagement} & 0.78 & 0.66 & 0.72 & 1698 \\
+        \bf{Low engagement} & 0.86 & 0.90 & 0.88 & 3416 \\
+        \bf{High engagement} & 0.75 & 0.68 & 0.71 & 1561 \\
         \midrule
-        \bf{Macro avg} & 0.82 & 0.79 & 0.80 & 5384 \\
-        \bf{Weighted avg} & 0.83 & 0.83 & 0.83 & 5384 \\
+        \bf{Macro avg} & 0.80 & 0.79 & 0.80 & \\
+        \bf{Weighted avg} & 0.83 & 0.83 & 0.83 & \\
         \midrule
-        \bf{Accuracy}  &  &  & 0.83 & 5384 \\
+        \bf{Accuracy}  &  &  & 0.83 & \\
         \bottomrule
     \end{tabular}
-    \caption{Classification report for binary classification (\texttt{has\_LowEngagement})}
+    \caption{Classification report for binary classification}
     \label{tab:binary_classification_report}
 \end{table}
 
 
+\begin{figure}[h]
+    \begin{minipage}{0.58\textwidth}
+        Figure~\ref{fig:conf_matr_binary_dt} shows the confusion matrix for the obtained
+        Decision Tree, with results regarding the test set.
+        As can be seen, a significant number of \textit{High Engagement} records was misclassified,
+        leading to a low Recall.
+        This might be a consequence of class imbalance, as well as the possible presence
+        of noise in the data.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.38\textwidth}
+        \includegraphics[width=\linewidth]{plots/binary_dt_confusion_matrix.png}
+        \captionsetup{justification=centering, width=0.9\linewidth}
+        \caption{Confusion matrix for binary classification}
+        \label{fig:conf_matr_binary_dt}
+    \end{minipage}
+\end{figure}
+
+
 \section{Multiclass classification}\label{sec:multiclass_classification}
-Among the multiclass features of the training set, \texttt{titleType} 
-was chosen as the target variable for this task due to its relevance in the dataset.\\
-An important aspect to highlight is the usage of \texttt{fill\_runtimeMinutes\_notitleType}
-as one of the variables to train the models. 
-This feature was created to impute the missing values of the original \texttt{runtimeMinutes} variable,
-but without using the median value according to the titleType. Instead, the missing values were imputed using the help of two variables: \texttt{canHaveEpisodes} and \texttt{is\_Short}
-(as one of the resulting variables of the multi-label one-hot encoding process of the \texttt{genres} attribute).
-In particular, 
-\textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT - con canhaveepisodes e is\_short preso dai generi}.
-This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
-imputation for an attribute when \texttt{titleType} itself is the target variable to predict.
+Among the multiclass features of the training set, \texttt{titleType}
+was chosen as the target variable for this task due to its relevance in the dataset.
+Since \texttt{runtimeMinutes} main imputation method for missing values was done
+with the aid of the target variable, to avoid data leakage, the feature was re-imputed
+by simply sampling from the distribution of its values, without considering the \texttt{titleType}
+feature.\\
+
+% This feature was created to impute the missing values of the original \texttt{runtimeMinutes} variable,
+% but without using the median value according to the titleType. Instead, the missing values were imputed using the help of two variables: \texttt{canHaveEpisodes} and \texttt{is\_Short}
+% (as one of the resulting variables of the multi-label one-hot encoding process of the \texttt{genres} attribute).
+% In particular, 
+% \textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT - con canhaveepisodes e is\_short preso dai generi}.
+% This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
+% imputation for an attribute when \texttt{titleType} itself is the target variable to predict.
 \subsection*{K-NN}
 \subsection*{Naïve Bayes}
 \subsection*{Decision Trees}
