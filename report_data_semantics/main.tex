@@ -90,11 +90,61 @@ title=\lstname % show the filename of files included with \lstinputlisting; also
 
 
 % Formato delle intestazioni
-\titleformat{\chapter}[hang]
-  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
-\titlespacing*{\chapter}{0pt}{25pt}{20pt}
+% \titleformat{\chapter}[hang]{\normalfont\Large\bfseries}{\thechapter.}{0.5em}{}
 
 
+\makeatletter
+\renewcommand{\chapter}{\@startsection{chapter}{0}{0pt}
+  {-7ex plus -1ex minus -.2ex}
+  {2ex plus .2ex}
+  {\normalfont\Large\bfseries}}
+\makeatother
+
+% \titlespacing*{\chapter}{0pt}{3em}{1.5em}
+
+
+\titleformat{\chapter}[hang]          % no "Chapter", just number and title
+  {\normalfont\Large\bfseries}       % formatting of the whole line
+  {\thechapter.}                     % numbered like "1."
+  {0.5em}                            % spacing between number and title
+  {}                                 % what to put before the title text
+
+\titlespacing*{\chapter}             % controls vertical spacing
+  {0pt}                              % left margin
+  {3em}                              % space *before* chapter title
+  {1.5em} 
+
+
+% % Prevent chapters from starting on a new page
+% \makeatletter
+% \renewcommand{\@makechapterhead}[1]{%
+%   {\parindent \z@ \raggedright \normalfont
+%   \interlinepenalty\@M
+%   \Huge\bfseries \thechapter. #1\par\nobreak
+%   \vskip 20pt }}
+% \makeatother
+
+% % Optional: If you also want unnumbered chapters to not start on a new page:
+% \makeatletter
+% \renewcommand{\@makeschapterhead}[1]{%
+%   {\parindent \z@ \raggedright
+%   \normalfont
+%   \Huge\bfseries #1\par\nobreak
+%   \vskip 20pt }}
+% \makeatother
+
+% % Chapter format: no "Chapter" word, just "1. Title"
+% \titleformat{\chapter}[hang]
+%   {\normalfont\Large\bfseries}
+%   {\thechapter.}
+%   {0.5em}
+%   {}
+
+% % Spacing: left indent, before title, after title
+% \titlespacing*{\chapter}
+%   {0pt}
+%   {5em}  % space *before* title
+%   {2em}  % space *after* title
 
 
 \begin{document}

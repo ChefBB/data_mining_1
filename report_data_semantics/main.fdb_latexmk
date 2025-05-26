@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748254142.78641 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748255217.45183 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748254138.82651 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748254142.7869 0
-  "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1747905008.68572 6339 3446653da90f9794928ff964ded8e65d ""
+["pdflatex"] 1748255213.19603 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748255217.4523 0
+  "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748255214.99997 7921 0c1fbbf18d94aed9dfaf69aa457a0218 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc" 1254269338 2359 de53213020575850c8f8debc35095765 ""
@@ -145,11 +145,11 @@
   "capitolo3.tex" 1747739417.76362 4296 11387774e65aa755de59155d1511ec1e ""
   "capitolo4.tex" 1747651054.96212 116 1a780615ce691177d1e8e2e21502247c ""
   "capitolo5.tex" 1748076746.32986 8356 e017e505cddc1c35b14979f34501fe29 ""
-  "main.aux" 1748254142.2927 11719 5e09ed29d55c7bc7a934dbc815b1647b "pdflatex"
+  "main.aux" 1748255216.96153 11331 a28f40069c24bc96d66acb7c6aced54b "pdflatex"
   "main.bbl" 1736953031.27595 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1748254142.29774 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
-  "main.tex" 1747905008.68572 6339 3446653da90f9794928ff964ded8e65d ""
-  "main.toc" 1748254142.29789 1924 f3c2c67dbc5334af95f69beae65f74a3 "pdflatex"
+  "main.run.xml" 1748255216.96684 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.tex" 1748255214.99997 7921 0c1fbbf18d94aed9dfaf69aa457a0218 ""
+  "main.toc" 1748255216.96701 1923 fac1d0df5438c00d049c78548531ff4b "pdflatex"
   "plots/5_min_conf.png" 1748076746.33262 44873 3c22ed6101c7a793dd58f4cad2b1b6ab ""
   "plots/5_min_sup.png" 1748076746.33348 33547 4b4570cccc815c0d24faf1cf37ef4949 ""
   "plots/DBSCAN_kth_graph.png" 1739616101.55029 40213 68dae530b25492a54f22d7845e290394 ""

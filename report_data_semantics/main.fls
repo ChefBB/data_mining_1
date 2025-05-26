@@ -213,12 +213,10 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/lmex10.tfm
 OUTPUT main.toc
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmro10.tfm
 INPUT ./capitolo1.tex
 INPUT ./capitolo1.tex
 INPUT capitolo1.tex
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmtt.fd
@@ -228,6 +226,7 @@ INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/lm/rm-lmro10.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
 INPUT ./plots/types_count.png
