@@ -42,7 +42,6 @@ using Repeated Stratified 5-Fold Cross-Validation with 10 repeats on the trainin
 the macro-averaged F1-score.
 The best configuration found used Gini index as the splitting criterion,
 a maximum tree depth of 26, and a minimum of 3 samples per leaf.
-Post-pruning did not yield any performance improvement and was therefore not applied.
 The obtained decision tree is shown in figure~\ref{fig:binary_dt}.
 \begin{figure}[H]
     \centering
@@ -82,6 +81,8 @@ two splits shown in the Decision Tree.\\
 % \end{table}
 Train performance was overall similar to the test performance; in particular, the respective accuracies
 were of 0.83 and 0.84, and macro-F1 scores were 0.82 and 0.80.
+In any case, post-pruning was tested, but did not yield any performance improvement, and was therefore
+not applied.
 The \textit{High Engagement} class showed low Recall values (0.71 on train set, 0.68 on test set).
 This might be a consequence of class imbalance, as well as poor separability of the two classes.
 This assumption is further supported by the
@@ -111,7 +112,7 @@ Precision scores of the class (0.78 on train, 0.75 on test).
 \section{Multiclass classification}\label{sec:multiclass_classification}
 Among the multiclass features in the training set, \texttt{titleType} was selected as the target variable
 for this task, due to its relevance within the dataset. Because of their strong correlation with
-\texttt{titleType}, the features \texttt{canHaveEpisodes} and \texttt{is\_Short} were excluded from the
+\texttt{titleType}, the feature \texttt{canHaveEpisodes} and the genre \textit{Short} were excluded from the
 feature set. Furthermore, since the primary imputation method for missing values in \texttt{runtimeMinutes}
 relied on information from the target variable, these values were re-imputed to avoid data leakage.
 Specifically, missing entries were filled by sampling from the overall distribution of
@@ -134,6 +135,26 @@ a key metric for model evaluation, as it provides a balance between each class's
 \subsection{K-NN}
 \subsection{Naïve Bayes}
 \subsection{Decision Trees}
+Like for the binary classification task, the Decision Tree model was trained without normalizing or
+transforming the features, making the model more interpretable.
+To identify the optimal hyperparameters, a Randomized Search was performed
+using Repeated Stratified 5-Fold Cross-Validation with 5 repeats on the training set, optimized for
+the macro-averaged F1-score.
+The best configuration found used Entropy as splitting criterion, had a max depth of 14, a minimum of
+5 samples per leaf, and a minimum of 8 samples in order to split an internal node.
+Regarding overfitting, many configurations were tested.\\
+
+The models, applied to the task, showed a general tendency towards overfitting,
+observed with all configurations. Although the accuracy doesn't show a significant drop (from 0.86 on the
+train set, to 0.75 on the test set), the macro-averaged F1-score dropped from 0.65 to 0.52.
+This was given from the \textit{tvMiniSeries} and \textit{tvSpecial} classes: these had f1-scores of
+0.35, 0.22 respectively on the train set, and both had 0.10 on the test set. Since they were by far
+the least represented classes, they required a trade-off between low-represented classes classification
+and generalization.
+In order to mitigate this, post-pruning was tested, but did not give particular benefits.
+Higher values for the parameter $\alpha$ had minor positive effects on the generalization
+capabilities of the models, but drastically hindered the performances on the less represented classes.
+
 % \begin{table}[H]
 %     \centering
 %     \begin{tabular}{lcccc}

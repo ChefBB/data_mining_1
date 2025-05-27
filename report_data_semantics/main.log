@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  27 MAY 2025 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  27 MAY 2025 19:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -990,43 +990,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--39
 <plots/binary_dt.png, id=100, 686.565pt x 237.0456pt>
 File: plots/binary_dt.png Graphic file (type png)
 <use plots/binary_dt.png>
-Package pdftex.def Info: plots/binary_dt.png  used on input line 49.
+Package pdftex.def Info: plots/binary_dt.png  used on input line 48.
 (pdftex.def)             Requested size: 400.38872pt x 138.23886pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--61
+Underfull \hbox (badness 10000) in paragraph at lines 54--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--119
+Underfull \hbox (badness 10000) in paragraph at lines 113--120
 
  []
 
-[13 <./plots/binary_dt.png>]) (./capitolo4.tex) (./capitolo5.tex
-<plots/5_min_sup.png, id=105, 614.295pt x 395.3169pt>
+[13 <./plots/binary_dt.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 138--146
+
+ []
+
+) (./capitolo4.tex) (./capitolo5.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+<plots/5_min_sup.png, id=109, 614.295pt x 395.3169pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 33.
 (pdftex.def)             Requested size: 240.33405pt x 154.66156pt.
-<plots/5_min_conf.png, id=106, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=110, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 40.
 (pdftex.def)             Requested size: 240.33405pt x 149.06564pt.
- [14]
+
 Underfull \hbox (badness 10000) in paragraph at lines 49--52
 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+[15 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 126--130
 
  []
 
-) [15 <./plots/5_min_sup.png> <./plots/5_min_conf.png>] [16]
+) [16]
 
 LaTeX Warning: Empty bibliography on input line 223.
 
@@ -1045,17 +1051,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  17947 strings out of 474116
- 354866 string characters out of 5743682
- 1950187 words of memory out of 5000000
- 40075 multiletter control sequences out of 15000+600000
+ 354851 string characters out of 5743682
+ 1951187 words of memory out of 5000000
+ 40074 multiletter control sequences out of 15000+600000
  614512 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (18 pages, 2699659 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (18 pages, 2704405 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 204 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
