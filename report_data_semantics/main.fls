@@ -346,11 +346,11 @@ INPUT ./plots/scatter_complete.png
 INPUT ./capitolo3.tex
 INPUT ./capitolo3.tex
 INPUT capitolo3.tex
-INPUT ./plots/binary_dt_confusion_matrix.png
-INPUT ./plots/binary_dt_confusion_matrix.png
-INPUT ./plots/binary_dt_confusion_matrix.png
-INPUT ./plots/binary_dt_confusion_matrix.png
-INPUT ./plots/binary_dt_confusion_matrix.png
+INPUT ./plots/binary_dt.png
+INPUT ./plots/binary_dt.png
+INPUT ./plots/binary_dt.png
+INPUT ./plots/binary_dt.png
+INPUT ./plots/binary_dt.png
 INPUT ./capitolo4.tex
 INPUT ./capitolo4.tex
 INPUT capitolo4.tex
