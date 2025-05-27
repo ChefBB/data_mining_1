@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  27 MAY 2025 20:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  27 MAY 2025 21:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -634,6 +634,15 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Warning: Label `fig:distrib' multiply defined.
 
 
+LaTeX Warning: Label `fig:kmeans_visualization' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:kmeans_visualization' multiply defined.
+
+
+LaTeX Warning: Label `fig:subplots_kmeans' multiply defined.
+
+
 LaTeX Warning: Label `ch:capitolo2' multiply defined.
 
 
@@ -739,8 +748,9 @@ Package biblatex Info: Automatic encoding selection.
 \openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'main.bbl' found.
- (main.bbl)
+Package biblatex Info: ... file 'main.bbl' not found.
+
+No file main.bbl.
 Package biblatex Info: Reference section=0 on input line 152.
 Package biblatex Info: Reference segment=0 on input line 152.
 \c@lstlisting=\count443
@@ -780,24 +790,25 @@ LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 2
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 55.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 76.
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
-
- []
-
 <plots/types_count.png, id=13, 570.933pt x 354.123pt>
 File: plots/types_count.png Graphic file (type png)
 <use plots/types_count.png>
-Package pdftex.def Info: plots/types_count.png  used on input line 76.
+Package pdftex.def Info: plots/types_count.png  used on input line 99.
 (pdftex.def)             Requested size: 240.33405pt x 149.06564pt.
 <plots/rating_distrib.png, id=15, 570.933pt x 354.123pt>
 File: plots/rating_distrib.png Graphic file (type png)
 <use plots/rating_distrib.png>
-Package pdftex.def Info: plots/rating_distrib.png  used on input line 83.
+Package pdftex.def Info: plots/rating_distrib.png  used on input line 106.
 (pdftex.def)             Requested size: 240.33405pt x 149.06564pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--114
+
+ []
+
 
 
 
@@ -808,7 +819,7 @@ Package scrlayer-scrpage Warning: \headheight to low.
 (scrlayer-scrpage)                processing, but you should do this yourself,
 (scrlayer-scrpage)                e.g., setting geometry's option
 (scrlayer-scrpage)                `head=14.39995pt'.
-(scrlayer-scrpage)                I'll also decrease \topmargin on input line 92.
+(scrlayer-scrpage)                I'll also decrease \topmargin on input line 115.
 
 
 Overfull \vbox (2.39995pt too high) has occurred while \output is active []
@@ -816,103 +827,95 @@ Overfull \vbox (2.39995pt too high) has occurred while \output is active []
  [1
 
 {C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rmtt.enc}{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 122--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--108
+Underfull \hbox (badness 10000) in paragraph at lines 127--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 135--137
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
 
 
 [2 <./plots/types_count.png> <./plots/rating_distrib.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 209--211
+Underfull \hbox (badness 10000) in paragraph at lines 251--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--263
 
  []
 
 <plots/correlation_matrix.png, id=29, 706.0779pt x 623.6901pt>
 File: plots/correlation_matrix.png Graphic file (type png)
 <use plots/correlation_matrix.png>
-Package pdftex.def Info: plots/correlation_matrix.png  used on input line 217.
+Package pdftex.def Info: plots/correlation_matrix.png  used on input line 278.
 (pdftex.def)             Requested size: 350.33727pt x 309.45558pt.
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 224--226
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 227--234
-
- []
-
 <plots/nominations_distrib.png, id=33, 403.2666pt x 339.669pt>
 File: plots/nominations_distrib.png Graphic file (type png)
 <use plots/nominations_distrib.png>
-Package pdftex.def Info: plots/nominations_distrib.png  used on input line 262.
+Package pdftex.def Info: plots/nominations_distrib.png  used on input line 306.
 (pdftex.def)             Requested size: 215.20444pt x 181.26761pt.
 <plots/totalVideos_Images_distrib.png, id=34, 403.2666pt x 339.669pt>
 File: plots/totalVideos_Images_distrib.png Graphic file (type png)
 <use plots/totalVideos_Images_distrib.png>
-Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 268.
+Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 312.
 (pdftex.def)             Requested size: 215.20444pt x 181.26761pt.
 
 
-[4 <./plots/correlation_matrix.png>]
+[4 <./plots/correlation_matrix.png> <./plots/nominations_distrib.png> <./plots/totalVideos_Images_distrib.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 297.
+(Font)              <8> on input line 341.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 297.
-LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 297.
+(Font)              <6> on input line 341.
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 341.
  (C:\Users\Gagia\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 297.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 341.
 
-
-[5{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./plots/nominations_distrib.png> <./plots/totalVideos_Images_distrib.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 321--325
+Underfull \hbox (badness 10000) in paragraph at lines 365--369
 
  []
 
-<plots/left_skew_distribs.png, id=50, 409.0482pt x 339.669pt>
+<plots/left_skew_distribs.png, id=41, 409.0482pt x 339.669pt>
 File: plots/left_skew_distribs.png Graphic file (type png)
 <use plots/left_skew_distribs.png>
-Package pdftex.def Info: plots/left_skew_distribs.png  used on input line 332.
+Package pdftex.def Info: plots/left_skew_distribs.png  used on input line 376.
 (pdftex.def)             Requested size: 240.23016pt x 199.48041pt.
-<plots/left_skew_distribs_log.png, id=51, 404.712pt x 339.669pt>
+<plots/left_skew_distribs_log.png, id=42, 404.712pt x 339.669pt>
 File: plots/left_skew_distribs_log.png Graphic file (type png)
 <use plots/left_skew_distribs_log.png>
-Package pdftex.def Info: plots/left_skew_distribs_log.png  used on input line 338.
+Package pdftex.def Info: plots/left_skew_distribs_log.png  used on input line 382.
 (pdftex.def)             Requested size: 240.23016pt x 201.62096pt.
+
+
+[5{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
 <plots/outliers.png, id=52, 563.706pt x 426.393pt>
 File: plots/outliers.png Graphic file (type png)
 <use plots/outliers.png>
-Package pdftex.def Info: plots/outliers.png  used on input line 371.
+Package pdftex.def Info: plots/outliers.png  used on input line 415.
 (pdftex.def)             Requested size: 300.29344pt x 227.15182pt.
 
 
 [6 <./plots/left_skew_distribs.png> <./plots/left_skew_distribs_log.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 387--391
+Underfull \hbox (badness 10000) in paragraph at lines 431--435
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--397
+Underfull \hbox (badness 10000) in paragraph at lines 438--441
 
  []
 
@@ -929,78 +932,90 @@ File: plots/kmeans_clusters.png Graphic file (type png)
 <use plots/kmeans_clusters.png>
 Package pdftex.def Info: plots/kmeans_clusters.png  used on input line 51.
 (pdftex.def)             Requested size: 240.23016pt x 191.59729pt.
-<plots/DBSCAN_kth_graph.png, id=64, 711.1368pt x 422.0568pt>
-File: plots/DBSCAN_kth_graph.png Graphic file (type png)
-<use plots/DBSCAN_kth_graph.png>
-Package pdftex.def Info: plots/DBSCAN_kth_graph.png  used on input line 82.
-(pdftex.def)             Requested size: 245.2399pt x 145.54535pt.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 83.
-<plots/DBSCAN_provvisoria.png, id=65, 946.0143pt x 887.4756pt>
-File: plots/DBSCAN_provvisoria.png Graphic file (type png)
-<use plots/DBSCAN_provvisoria.png>
-Package pdftex.def Info: plots/DBSCAN_provvisoria.png  used on input line 96.
-(pdftex.def)             Requested size: 245.2399pt x 230.06113pt.
+<plots/2_dbscan_eps.jpg, id=64, 744.53156pt x 444.15938pt>
+File: plots/2_dbscan_eps.jpg Graphic file (type jpg)
+<use plots/2_dbscan_eps.jpg>
+Package pdftex.def Info: plots/2_dbscan_eps.jpg  used on input line 73.
+(pdftex.def)             Requested size: 240.23016pt x 143.31314pt.
+<plots/2_dbscan_scatterplot.jpg, id=65, 593.96906pt x 444.15938pt>
+File: plots/2_dbscan_scatterplot.jpg Graphic file (type jpg)
+<use plots/2_dbscan_scatterplot.jpg>
+Package pdftex.def Info: plots/2_dbscan_scatterplot.jpg  used on input line 79.
+(pdftex.def)             Requested size: 240.23016pt x 179.63957pt.
 
 
-[8 <./plots/sse_silh_kmeans_def.png> <./plots/kmeans_clusters.png>]
-<plots/max_min_pctg.png, id=72, 354.123pt x 354.123pt>
+[8 <./plots/sse_silh_kmeans_def.png> <./plots/kmeans_clusters.png> <./plots/2_dbscan_eps.jpg> <./plots/2_dbscan_scatterplot.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 96--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+<plots/max_min_pctg.png, id=71, 354.123pt x 354.123pt>
 File: plots/max_min_pctg.png Graphic file (type png)
 <use plots/max_min_pctg.png>
-Package pdftex.def Info: plots/max_min_pctg.png  used on input line 115.
+Package pdftex.def Info: plots/max_min_pctg.png  used on input line 161.
 (pdftex.def)             Requested size: 232.97714pt x 232.98161pt.
-<plots/sil_sse_hierarchical_clust.png, id=73, 354.123pt x 354.123pt>
+<plots/sil_sse_hierarchical_clust.png, id=72, 354.123pt x 354.123pt>
 File: plots/sil_sse_hierarchical_clust.png Graphic file (type png)
 <use plots/sil_sse_hierarchical_clust.png>
-Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 122.
+Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 168.
 (pdftex.def)             Requested size: 232.97714pt x 232.98161pt.
 
 
-[9 <./plots/DBSCAN_kth_graph.png> <./plots/DBSCAN_provvisoria.png> <./plots/max_min_pctg.png> <./plots/sil_sse_hierarchical_clust.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 138--141
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
 
  []
 
-<plots/dendrogram_4.png, id=81, 328.8285pt x 258.0039pt>
+<plots/dendrogram_4.png, id=76, 328.8285pt x 258.0039pt>
 File: plots/dendrogram_4.png Graphic file (type png)
 <use plots/dendrogram_4.png>
-Package pdftex.def Info: plots/dendrogram_4.png  used on input line 163.
+Package pdftex.def Info: plots/dendrogram_4.png  used on input line 209.
 (pdftex.def)             Requested size: 245.2399pt x 192.42769pt.
-<plots/scatter_ward.png, id=82, 353.4003pt x 281.853pt>
+<plots/scatter_ward.png, id=77, 353.4003pt x 281.853pt>
 File: plots/scatter_ward.png Graphic file (type png)
 <use plots/scatter_ward.png>
-Package pdftex.def Info: plots/scatter_ward.png  used on input line 169.
+Package pdftex.def Info: plots/scatter_ward.png  used on input line 215.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--205
+
+[10 <./plots/max_min_pctg.png> <./plots/sil_sse_hierarchical_clust.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 244--251
 
  []
 
 
-
-[10 <./plots/dendrogram_4.png> <./plots/scatter_ward.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 206--211
+Underfull \hbox (badness 10000) in paragraph at lines 252--257
 
  []
 
-<plots/dendrogram_complete.png, id=88, 341.8371pt x 265.9536pt>
+<plots/dendrogram_complete.png, id=83, 341.8371pt x 265.9536pt>
 File: plots/dendrogram_complete.png Graphic file (type png)
 <use plots/dendrogram_complete.png>
-Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 223.
+Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 269.
 (pdftex.def)             Requested size: 245.2399pt x 190.80061pt.
-<plots/scatter_complete.png, id=89, 353.4003pt x 281.853pt>
+<plots/scatter_complete.png, id=84, 353.4003pt x 281.853pt>
 File: plots/scatter_complete.png Graphic file (type png)
 <use plots/scatter_complete.png>
-Package pdftex.def Info: plots/scatter_complete.png  used on input line 229.
+Package pdftex.def Info: plots/scatter_complete.png  used on input line 275.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
-) (capitolo3.tex
+
+
+[11 <./plots/dendrogram_4.png> <./plots/scatter_ward.png>]) (capitolo3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--15
 
  []
 
 
-
-[11 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 16--23
 
  []
@@ -1015,6 +1030,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
  []
 
+
+
+[12 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]
 <plots/binary_dt.png, id=96, 686.565pt x 237.0456pt>
 File: plots/binary_dt.png Graphic file (type png)
 <use plots/binary_dt.png>
@@ -1026,45 +1044,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--60
  []
 
 
-
-[12 <./plots/binary_dt.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 113--120
 
  []
 
 
+
+[13 <./plots/binary_dt.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 138--146
 
  []
 
 ) (capitolo4.tex) (capitolo5.tex
 
-[13{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
-<plots/5_min_sup.png, id=105, 614.295pt x 395.3169pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+[14{C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+<plots/5_min_sup.png, id=105, 621.522pt x 403.9893pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
-Package pdftex.def Info: plots/5_min_sup.png  used on input line 33.
-(pdftex.def)             Requested size: 240.33405pt x 154.66156pt.
+Package pdftex.def Info: plots/5_min_sup.png  used on input line 34.
+(pdftex.def)             Requested size: 240.33405pt x 156.21751pt.
 <plots/5_min_conf.png, id=106, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
-Package pdftex.def Info: plots/5_min_conf.png  used on input line 40.
+Package pdftex.def Info: plots/5_min_conf.png  used on input line 41.
 (pdftex.def)             Requested size: 240.33405pt x 149.06564pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--52
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
  []
 
 
 
-[14 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--130
+[15 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
 
  []
 
 )
-
-[15]
 
 [16]
 
@@ -1084,17 +1104,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17958 strings out of 473897
- 358258 string characters out of 5726462
- 1248603 words of memory out of 5000000
- 40593 multiletter control sequences out of 15000+600000
- 614512 words of font info for 69 fonts, out of 8000000 for 9000
+ 17946 strings out of 473897
+ 357961 string characters out of 5726462
+ 1246517 words of memory out of 5000000
+ 40586 multiletter control sequences out of 15000+600000
+ 609631 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,20n,121p,1289b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (18 pages, 2317193 bytes).
+ 123i,19n,121p,1289b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (18 pages, 1812093 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
+ 194 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  106 words of extra memory for PDF output out of 10000 (max. 10000000)
 

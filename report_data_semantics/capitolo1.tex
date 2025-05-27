@@ -15,40 +15,61 @@ Each record is described by 23 attributes, either discrete or continuous.
 Table~\ref{tab:attributes} shows the discrete attributes of the dataset,
 their types and a brief description of each attribute.
 \begin{table}[h]
-    \centering
-    \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
-        \hline
-        \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
-        \hline
-        \texttt{originalTitle} & Categorical & Title in its original language \\  
-        \hline
-        \texttt{rating} & Ordinal & IMDB title rating class \\
-        & & The range is from \texttt{(0,1]} to \texttt{(9,10]} \\ 
-        \hline
-        \texttt{worstRating} & Ordinal & Worst title rating \\ 
-        \hline
-        \texttt{bestRating} & Ordinal & Best title rating \\ 
-        \hline
-        \texttt{titleType} & Categorical & The format of the title \\ 
-        \hline
-        \texttt{canHaveEpisodes} & Binary & Whether or not the title can have episodes \\ 
-        & & \texttt{True}: can have episodes; \texttt{False}: cannot have episodes \\ 
-        \hline
-        \texttt{isRatable} & Binary & Whether or not the title can be rated by users \\ 
-        & & \texttt{True}: it can be rated; \texttt{False}: cannot be rated \\ 
-        \hline
-        \texttt{isAdult} & Binary & Whether or not the title is for adults \\ 
-        & & \texttt{0}: non-adult title; \texttt{1}: adult title \\ 
-        \hline
-        \texttt{countryOfOrigin} & List & The country(ies) where the title was produced \\ 
-        \hline
-        \texttt{genres} & List & The genre(s) associated with the title (3 at most) \\ 
-        \hline
-    \end{tabular}
-    \caption{Description of discrete attributes}
-    \label{tab:attributes}
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
+\midrule
+\texttt{originalTitle} & Categorical & Title in its original language \\
+\texttt{rating} & Ordinal & IMDB title rating class, from \texttt{(0,1]} to \texttt{(9,10]} \\
+\texttt{worstRating} & Ordinal & Worst title rating \\
+\texttt{bestRating} & Ordinal & Best title rating \\
+\texttt{titleType} & Categorical & The format of the title \\
+\texttt{canHaveEpisodes} & Binary & Whether the title can have episodes: \texttt{True}/\texttt{False} \\
+\texttt{isRatable} & Binary & Whether the title can be rated: \texttt{True}/\texttt{False} \\
+\texttt{isAdult} & Binary & Whether the title is adult content: \texttt{0} (non-adult), \texttt{1} (adult) \\
+\texttt{countryOfOrigin} & List & Countries where the title was produced \\
+\texttt{genres} & List & Genre(s) associated with the title (up to 3) \\
+\bottomrule
+\end{tabular}
+\caption{Description of discrete attributes}
+\label{tab:attributes}
 \end{table}
 
+% \begin{table}[h]
+%     \centering
+%     \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
+%         \hline
+%         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
+%         \hline
+%         \texttt{originalTitle} & Categorical & Title in its original language \\  
+%         \hline
+%         \texttt{rating} & Ordinal & IMDB title rating class \\
+%         & & The range is from \texttt{(0,1]} to \texttt{(9,10]} \\ 
+%         \hline
+%         \texttt{worstRating} & Ordinal & Worst title rating \\ 
+%         \hline
+%         \texttt{bestRating} & Ordinal & Best title rating \\ 
+%         \hline
+%         \texttt{titleType} & Categorical & The format of the title \\ 
+%         \hline
+%         \texttt{canHaveEpisodes} & Binary & Whether or not the title can have episodes \\ 
+%         & & \texttt{True}: can have episodes; \texttt{False}: cannot have episodes \\ 
+%         \hline
+%         \texttt{isRatable} & Binary & Whether or not the title can be rated by users \\ 
+%         & & \texttt{True}: it can be rated; \texttt{False}: cannot be rated \\ 
+%         \hline
+%         \texttt{isAdult} & Binary & Whether or not the title is for adults \\ 
+%         & & \texttt{0}: non-adult title; \texttt{1}: adult title \\ 
+%         \hline
+%         \texttt{countryOfOrigin} & List & The country(ies) where the title was produced \\ 
+%         \hline
+%         \texttt{genres} & List & The genre(s) associated with the title (3 at most) \\ 
+%         \hline
+%     \end{tabular}
+%     \caption{Description of discrete attributes}
+%     \label{tab:attributes}
+% \end{table}
 \subsection{Merging and Removal of Discrete Attributes}\label{subsec:var_elim_discrete}
 The following discrete attributes were removed from the dataset:
 \begin{itemize}
@@ -67,7 +88,9 @@ merged with a logical OR operation. This is not true for the \textit{short} type
 \subsection{Discrete Attributes Analysis}
 This paragraph provides an overview of the discrete attributes in the dataset, focusing on their distributions and statistics.
 The following figures~\ref{fig:titleType_distrib} and~\ref{fig:rating_distrib} show bar plots of \texttt{titleType} and \texttt{rating} attributes, respectively.\\
-
+From figure~\ref{fig:titleType_distrib} it is observed that the classes of the titleType attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records).
+It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
+The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively). \\
 \begin{figure}[H]
     \centering
     % First subfigure
@@ -89,11 +112,6 @@ The following figures~\ref{fig:titleType_distrib} and~\ref{fig:rating_distrib} s
     \caption{Distribution of the \texttt{titleType} and \texttt{rating} attributes}
     \label{fig:distrib}
 \end{figure}
-
-
-From figure~\ref{fig:titleType_distrib} it is observed that the classes of the titleType attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records).
-It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
-The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively). \\
 
 As shown in figure~\ref{fig:rating_distrib}, the \texttt{rating} attribute roughly follows a normal distribution, with a slightly asymmetric peak:
 a significant number of titles falls within the (6,7] and (7, 8] ranges (4565 and 4822 titles, respectively) while only a total amount of 67 titles falls within (0,1] and (1,2].
@@ -152,46 +170,70 @@ Table~\ref{tab:numerical_attributes} shows the continuous attributes of the data
 a brief description.
 \vspace{1em}
 \begin{table}[h]
-    \centering             
+\centering
+\begin{tabular}{lll}
+\toprule
+\textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
+\midrule
+\texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\
+\texttt{startYear} & Integer & Release/start year of a title \\
+\texttt{endYear} & Integer & TV Series end year \\
+\texttt{awardWins} & Integer & Number of awards the title won \\
+\texttt{numVotes} & Integer & Number of votes the title has received \\
+\texttt{totalImages} & Integer & Number of images on the IMDb title page \\
+\texttt{totalVideos} & Integer & Number of videos on the IMDb title page \\
+\texttt{totalCredits} & Integer & Number of credits for the title \\
+\texttt{criticReviewsTotal} & Integer & Total number of critic reviews \\
+\texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\
+\texttt{numRegions} & Integer & Number of regions for this version of the title \\
+\texttt{userReviewsTotal} & Integer & Number of user reviews \\
+\texttt{ratingCount} & Integer & Total number of user ratings for the title \\
+\bottomrule
+\end{tabular}
+\caption{Description of continuous attributes}
+\label{tab:numerical_attributes}
+\end{table}
+
+% \begin{table}[h]
+%     \centering             
     
     %nel type secondo me ha senso mettere il tipo di variabile continua (quindi interval, ratio ecc.)        
 
-    \begin{tabular}{|l|l|l|} 
-        \hline
-        \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
-        \hline
-        \texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\ 
-        \hline
-        \texttt{startYear} & Integer & Release/start year of a title \\ 
-        \hline
-        \texttt{endYear} & Integer & TV Series end year \\
-        \hline
-        \texttt{awardWins} & Integer & Number of awards the title won \\ 
-        \hline
-        \texttt{numVotes} & Integer & Number of votes the title has received \\ 
-        \hline
-        \texttt{totalImages} & Integer & Number of Images on the IMDb title page \\ 
-        \hline
-        \texttt{totalVideos} & Integer & Number of Videos on the IMDb title page \\ 
-        \hline
-        \texttt{totalCredits} & Integer & Number of Credits for the title \\ 
-        \hline
-        \texttt{criticReviewsTotal} & Integer & Total Number of Critic Reviews \\ 
-        \hline
-        \texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\ 
-        \hline
-        \texttt{numRegions} & Integer & The regions number for this version of the title \\ 
-        \hline
-        \texttt{userReviewsTotal} & Integer & Number of User Reviews \\ 
-        \hline
-        \texttt{ratingCount} & Integer & The total number of user ratings for the title \\ 
-        \hline
-    \end{tabular}
-    \caption{Description of continuous attributes}
-    \label{tab:numerical_attributes}
-\end{table}
+%     \begin{tabular}{|l|l|l|} 
+%         \hline
+%         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
+%         \hline
+%         \texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\ 
+%         \hline
+%         \texttt{startYear} & Integer & Release/start year of a title \\ 
+%         \hline
+%         \texttt{endYear} & Integer & TV Series end year \\
+%         \hline
+%         \texttt{awardWins} & Integer & Number of awards the title won \\ 
+%         \hline
+%         \texttt{numVotes} & Integer & Number of votes the title has received \\ 
+%         \hline
+%         \texttt{totalImages} & Integer & Number of Images on the IMDb title page \\ 
+%         \hline
+%         \texttt{totalVideos} & Integer & Number of Videos on the IMDb title page \\ 
+%         \hline
+%         \texttt{totalCredits} & Integer & Number of Credits for the title \\ 
+%         \hline
+%         \texttt{criticReviewsTotal} & Integer & Total Number of Critic Reviews \\ 
+%         \hline
+%         \texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\ 
+%         \hline
+%         \texttt{numRegions} & Integer & The regions number for this version of the title \\ 
+%         \hline
+%         \texttt{userReviewsTotal} & Integer & Number of User Reviews \\ 
+%         \hline
+%         \texttt{ratingCount} & Integer & The total number of user ratings for the title \\ 
+%         \hline
+%     \end{tabular}
+%     \caption{Description of continuous attributes}
+%     \label{tab:numerical_attributes}
+% \end{table}
 
-\vspace{2em}
 \subsection{Removal and Merging of Continuous Attributes}\label{sec:var_elim_creation}
 % The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
 % account the continuous attributes of the dataset.\\
@@ -206,22 +248,9 @@ a brief description.
 % The correlation matrix of the continuous features shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 % for their redundancy, \texttt{ratingCount} was discarded.\\
 
- The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
-account the continuous attributes of the dataset.\\
-
-% codice due colonne
-% \noindent
-% \begin{minipage}{0.50\textwidth}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.70\textwidth]{plots/correlation_matrix.png}
-    \captionof{figure}{Correlation matrix}
-    \label{fig:correlation_matrix}
-\end{figure}
-% \end{minipage}
-% \hfill
-% \begin{minipage}{0.47\textwidth}
-The correlation matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
+The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
+account the continuous attributes of the dataset.
+The matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
 The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into 
@@ -239,6 +268,21 @@ Although the original attributes are not highly correlated, both exhibit skewed 
 Due to this, and to their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
 % \vspace{1em}
+
+
+% codice due colonne
+% \noindent
+% \begin{minipage}{0.50\textwidth}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.70\textwidth]{plots/correlation_matrix.png}
+    \captionof{figure}{Correlation matrix}
+    \label{fig:correlation_matrix}
+\end{figure}
+% \end{minipage}
+% \hfill
+% \begin{minipage}{0.47\textwidth}
+
 
 %     The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
 %     feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
