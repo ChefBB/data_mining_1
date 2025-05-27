@@ -2,7 +2,7 @@
 \contentsline {chapter}{\numberline {1}Data Understanding and Preparation}{1}{}%
 \contentsline {section}{\numberline {1.1}Discrete Attributes}{1}{}%
 \contentsline {subsection}{\numberline {1.1.1}Merging and Removal of Discrete Attributes}{1}{}%
-\contentsline {subsection}{\numberline {1.1.2}Discrete Attributes Analysis}{2}{}%
+\contentsline {subsection}{\numberline {1.1.2}Discrete Attributes Analysis}{1}{}%
 \contentsline {subsection}{\numberline {1.1.3}Encoding and Transformation of Categorical Attributes}{2}{}%
 \contentsline {section}{\numberline {1.2}Continuous Attributes}{3}{}%
 \contentsline {subsection}{\numberline {1.2.1}Removal and Merging of Continuous Attributes}{3}{}%
@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {1.3.2}Semantic Inconsistencies, Feature Transformations and Outlier detection}{6}{}%
 \contentsline {chapter}{\numberline {2}Clustering}{7}{}%
 \contentsline {section}{\numberline {2.1}K-means}{8}{}%
-\contentsline {section}{\numberline {2.2}DBSCAN}{9}{}%
+\contentsline {section}{\numberline {2.2}DBSCAN}{8}{}%
 \contentsline {section}{\numberline {2.3}Hierarchical clustering}{9}{}%
 \contentsline {subsection}{\numberline {2.3.1}Ward's method}{10}{}%
 \contentsline {subsection}{\numberline {2.3.2}Complete Linkage}{11}{}%
@@ -21,8 +21,8 @@
 \contentsline {subsection}{\numberline {3.1.1}K-NN}{13}{}%
 \contentsline {subsection}{\numberline {3.1.2}Naïve Bayes}{13}{}%
 \contentsline {subsection}{\numberline {3.1.3}Decision Trees}{13}{}%
-\contentsline {subsection}{\numberline {3.1.4}Model Comparison}{14}{}%
-\contentsline {section}{\numberline {3.2}Multiclass classification}{14}{}%
+\contentsline {subsection}{\numberline {3.1.4}Model Comparison}{13}{}%
+\contentsline {section}{\numberline {3.2}Multiclass classification}{13}{}%
 \contentsline {subsection}{\numberline {3.2.1}K-NN}{14}{}%
 \contentsline {subsection}{\numberline {3.2.2}Naïve Bayes}{14}{}%
 \contentsline {subsection}{\numberline {3.2.3}Decision Trees}{14}{}%
@@ -31,5 +31,5 @@
 \contentsline {section}{\numberline {4.1}General considerations}{14}{}%
 \contentsline {chapter}{\numberline {5}Pattern Mining}{14}{}%
 \contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{15}{}%
-\contentsline {section}{\numberline {5.2}Extraction of rules}{16}{}%
-\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{16}{}%
+\contentsline {section}{\numberline {5.2}Extraction of rules}{15}{}%
+\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{15}{}%

@@ -110,7 +110,7 @@ Precision scores of the class (0.78 on train, 0.75 on test).
 
 \section{Multiclass classification}\label{sec:multiclass_classification}
 Among the multiclass features in the training set, \texttt{titleType} was selected as the target variable
-for this task due to its relevance within the dataset. Because of their strong correlation with
+for this task, due to its relevance within the dataset. Because of their strong correlation with
 \texttt{titleType}, the features \texttt{canHaveEpisodes} and \texttt{is\_Short} were excluded from the
 feature set. Furthermore, since the primary imputation method for missing values in \texttt{runtimeMinutes}
 relied on information from the target variable, these values were re-imputed to avoid data leakage.
