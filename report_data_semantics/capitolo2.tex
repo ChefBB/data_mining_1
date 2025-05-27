@@ -4,73 +4,58 @@
 This chapter of the report aims at illustrating the clustering analysis performed on the dataset at hand.
 The employed clustering techniques are K-means (Centroid-based), DBSCAN (density-based) and hierarchical clustering.
 
-The analysis conducted using these methods focused only exclusively on the dataset's numerical attributes, which were appropriately log-transformed (as mentioned in the \textit{Variable Transformation} section) and normalized using \texttt{MinMaxScaler}.  
-For the K-means algorithm, \texttt{totalNominations} and \texttt{totalMedia} were excluded due to their high proportion of zero values, which negatively affected cluster formation.
+The analysis conducted using these methods focused on a selection of the continuous attributes of the dataset, which were appropriately log-transformed (when needed - as mentioned in subsection 1.3.2), and normalized using \texttt{MinMaxScaler}. 
 
-In addition, an attempt was made to incorporate categorical variables to the analysis with the K-means algorithm by converting them into binary attributes and constructing a mixed-distances matrix. 
-Distances were then calculated using the Euclidean distance for numerical (log-tranformed and scaled) features and the Jaccard similarity for binary ones. 
-However, this approach was computationally expensive and did not lead to any improvement in the results.
+% For the K-means algorithm, \texttt{totalNominations} and \texttt{totalMedia} were excluded due to their high proportion of zero values, which negatively affected cluster formation.
+% In addition, an attempt was made to incorporate categorical variables to the analysis with the K-means algorithm by converting them into binary attributes and constructing a mixed-distances matrix. 
+% Distances were then calculated using the Euclidean distance for numerical (log-tranformed and scaled) features and the Jaccard similarity for binary ones. 
+% However, this approach was computationally expensive and did not lead to any improvement in the results.
 
-% \textbf{RIVEDERE PARTE PCA}
-% Principal Component Analysis (PCA) was applied to the preprocessed data just for clusters visualization purposes. 
-% Analysis of the numerical attributes reveals that 4 principal components are optimal when excluding variables with many zero values, while 5 components are needed when including all variables. 
-% These numbers of components capture the maximum meaningful variance, as shown by the point in the plots where where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly. 
-% The plots in figure~\ref{fig:pca_diff} show the differences between these two approaches. \textbf{IN REALTA' NON SI VEDE TROPPO LA DIFFERENZA, QUINDI MAGARI NON FARE PCA MA SOLO VISUALIZZAZIONE CON ISTOGRAMMI??? oppure semplicemente tenere solo uno dei due plot?}
-% \begin{figure}[H]
-%     \centering
-%     \begin{subfigure}[b]{0.40\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
-%         \caption{PCA excluding variables}
-%         \label{fig:sse_silh_kmeans}
-%     \end{subfigure}
-%     \begin{subfigure}[b]{0.40\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{plots/pca5.png}
-%         \caption{PCA with all variables}
-%         \label{fig:pca5}
-%     \end{subfigure}
-%     \caption{Principal Component Analysis}
-%     \label{fig:pca_diff}
-% \end{figure}
 
 \section{K-means}\label{sec:centroid_based}
-%The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, which negatively affected cluster formation. 
+%The clustering analysis performed with the K-means algorithm focused on the numeric variables of the dataset, excluding \texttt{awardWins}, \texttt{awardNominationsExcludeWins}, and \texttt{totalCredits} due to their high proportion of zero values, 
+% which negatively affected cluster formation. 
 %The variables have been appropriately log-transformed (as illustrated in the \textit{Variable Transformation} section) and normalized with \texttt{StandardScaler}.
 
-To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score and a proper \textit{k}. 
-The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = ??? provides the optimal balance between these metrics. Choosing \textit{k} = ??? returns a SSE score of ??? and Silhouette score of ???. 
-\textbf{VALORI TROPPO ALTI, VEDERE SE CAMBIANO CAMBIANDO SCALING E/O TOGLIENDO OUTLIER}
+Clustering analysis with K-means was performed using a carefully selected subset of features. 
+This step was motivated by the algorithm's sensitivity to the curse of dimensionality, as including too many variables can negatively affect SSE and Silhouette scores.
+For this reason, although only \texttt{numVotes}, \texttt{totalCredits}, \texttt{userReviewsTotal}, \texttt{runtimeMinutes}, and \texttt{criticReviewsTotal},
+were chosen for this task, they proved to be a solid choice due to their ability to represent meaningful aspects of the data.
+To identify the proper number of clusters, both SSE and Silhouette scores were evaluated. 
+The objective was to find a configuration that reduces the SSE while maintaining a robust Silhouette score and a proper \textit{k}. 
+The plots in Figure X show that \textit{k} = 4 provides a balance between the two values (obtaining SSE equal to 535.51 and 0.315 for the Silhouette score).
+Only for visualization purposes, Principal Component Analysis (PCA) was employed. 
+The first two components account for 58.01\% and 21.48\% of the total variance, indicating that this projection provides a fairly informative view of the clustering structure. 
+The cluster results are presented in figure~\ref{fig:subplots_kmeans}. 
+The 4 distinct clusters appear well-separated, suggesting that K-means managed to capture meaningful groupings in the data.
+
+
+
+% To identify the optimal number of clusters, both the SSE and Silhouette scores were computed. The goal was to find a configuration that minimizes the SSE while maintaining a robust Silhouette score and a proper \textit{k}. 
+% The plots in figure~\ref{fig:sse_silh_kmeans} demonstrate that \textit{k} = ??? provides the optimal balance between these metrics. Choosing \textit{k} = ??? returns a SSE score of ??? and Silhouette score of ???. 
+% \textbf{VALORI TROPPO ALTI, VEDERE SE CAMBIANO CAMBIANDO SCALING E/O TOGLIENDO OUTLIER}
 
 % To visualize the clustering results, Principal Component Analysis (PCA) was employed. The plot in figure~\ref{fig:pca_kmeans} reveals that 4 principal components are enough to capture the optimal amount of variance for the selected variables, as evidenced by the the point where the line starts to flatten, indicating that adding more components doesn't increase explained variance significantly.
-The cluster results are presented in figure~\ref{fig:pairplot_kmeans}. 
+ 
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/sse_silh_kmeans.png}
+        \includegraphics[width=\textwidth]{plots/sse_silh_kmeans_def.png}
         \caption{SSE and Silhouette scores}
         \label{fig:sse_silh_kmeans}
     \end{subfigure}
-    % \hfill
-    % \begin{subfigure}[b]{0.3\textwidth}
-    %     \centering
-    %     \includegraphics[width=\textwidth]{plots/pca_kmeans.png}
-    %     \caption{PCA Analysis}
-    %     \label{fig:pca_kmeans}
-    % \end{subfigure}
-    % \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/pairplot_kmeans.png}
-        \caption{K-means Visualization}
-        \label{fig:pairplot_kmeans}
+        \includegraphics[width=\textwidth]{plots/kmeans_clusters.png}
+        \caption{Clustering Visualization with PCA}
+        \label{fig:kmeans_visualization}
     \end{subfigure}
-    \caption{K-means clustering analysis}
-    \label{fig:three_subplots}
+    \caption{K-means - Cluster analysis}
+    \label{fig:subplots_kmeans}
 \end{figure}
-The distribution of data points across the four clusters is as follows (shown in percentage of data points per cluster):
+% The distribution of data points across the four clusters is as follows (shown in percentage of data points per cluster):
 % Red (0): 51.68\%, Blue (1): 7.42\%, Green (2): 24.22\%, Orange (3): 16.68\%.
 % The clusters are not as well-separated in most Principal Component combinations as they are with PC1. 
 % In fact, in the other combinations, the clusters tend to overlap and their boundaries are not always clearly distinct.
