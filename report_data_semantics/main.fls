@@ -357,6 +357,8 @@ INPUT capitolo4.tex
 INPUT ./capitolo5.tex
 INPUT ./capitolo5.tex
 INPUT capitolo5.tex
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT ./plots/5_min_sup.png
 INPUT ./plots/5_min_sup.png
 INPUT ./plots/5_min_sup.png
@@ -368,8 +370,6 @@ INPUT ./plots/5_min_conf.png
 INPUT ./plots/5_min_conf.png
 INPUT ./plots/5_min_conf.png
 INPUT ./plots/5_min_conf.png
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml

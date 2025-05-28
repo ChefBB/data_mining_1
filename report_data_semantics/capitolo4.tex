@@ -1,9 +1,22 @@
 \chapter{Regression}
 \label{ch:capitolo4}
+Different regression techniques were applied to the dataset, testing
+on different combinations of attributes. The target variable chosen for
+Univariate and Multiple regression was \texttt{criticReviewsTotal}, while
+for Multivariate regression, the target variables were both
+\texttt{userReviewsTotal} and \texttt{criticReviewsTotal}.
 
 
-\section{Univariate Regression}
-
-\section{Multiple Regression}
+\section{Univariate and Multiple Regression}
+For Univariate Regression, the attribute
+\texttt{criticReviewsTotal} was chosen
+as the target variable. This choice was made because it has a high correlation
+with the attribute \texttt{userReviewsTotal}, allowing univariate regression
+to be performed, while maintaining a clear separate semantic meaning.
+For Multiple Regression, the target variable was kept the same, in order to
+allow for a direct comparison of the results obtained with the two techniques.
+The feature also has an important semantic meaning, strictly related to the
+engagement towards the product, which links this analysis to the binary
+classification performed in section~\ref{sec:binary_classification}.
 
 \section{Multivariate Regression}
