@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  28 MAY 2025 17:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  28 MAY 2025 18:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1066,30 +1066,30 @@ Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line
 <plots/linear.png, id=126, 221.8689pt x 287.6346pt>
 File: plots/linear.png Graphic file (type png)
 <use plots/linear.png>
-Package pdftex.def Info: plots/linear.png  used on input line 26.
+Package pdftex.def Info: plots/linear.png  used on input line 27.
 (pdftex.def)             Requested size: 128.37425pt x 166.43317pt.
 <plots/ridge.png, id=127, 207.4149pt x 287.6346pt>
 File: plots/ridge.png Graphic file (type png)
 <use plots/ridge.png>
-Package pdftex.def Info: plots/ridge.png  used on input line 33.
+Package pdftex.def Info: plots/ridge.png  used on input line 34.
 (pdftex.def)             Requested size: 120.1189pt x 166.57361pt.
 <plots/lasso.png, id=128, 207.4149pt x 287.6346pt>
 File: plots/lasso.png Graphic file (type png)
 <use plots/lasso.png>
-Package pdftex.def Info: plots/lasso.png  used on input line 40.
+Package pdftex.def Info: plots/lasso.png  used on input line 41.
 (pdftex.def)             Requested size: 120.1189pt x 166.57361pt.
 <plots/dt_regressor.png, id=129, 207.4149pt x 287.6346pt>
 File: plots/dt_regressor.png Graphic file (type png)
 <use plots/dt_regressor.png>
-Package pdftex.def Info: plots/dt_regressor.png  used on input line 47.
+Package pdftex.def Info: plots/dt_regressor.png  used on input line 48.
 (pdftex.def)             Requested size: 120.1189pt x 166.57361pt.
  [17 <./plots/linear.png> <./plots/ridge.png> <./plots/lasso.png> <./plots/dt_regressor.png>]) (./capitolo5.tex
-<plots/5_min_sup.png, id=138, 621.522pt x 403.9893pt>
+<plots/5_min_sup.png, id=139, 621.522pt x 403.9893pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 34.
 (pdftex.def)             Requested size: 240.33405pt x 156.21751pt.
-<plots/5_min_conf.png, id=139, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=140, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 41.
@@ -1132,11 +1132,11 @@ Here is how much of TeX's memory you used:
  610197 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (22 pages, 2301188 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (22 pages, 2305546 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 235 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

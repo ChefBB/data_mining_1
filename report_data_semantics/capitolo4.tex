@@ -6,8 +6,9 @@ Univariate and Multiple regression was \texttt{criticReviewsTotal}, while
 for Multivariate regression, the target variables were both
 \texttt{userReviewsTotal} and \texttt{criticReviewsTotal}.
 These were chosen because they offer important insights into the engagement
-that a product can generate, which also was the focus of the binary
-classification task in section~\ref{sec:binary_classification}.
+that a product can generate within the public and the critics. Public engagement was also the focus
+of the binary classification task in section~\ref{sec:binary_classification}, so this study
+is an attempt at gaining further insights on this topic.
 
 
 \section{Univariate and Multiple Regression}
@@ -62,19 +63,19 @@ all models but KNN, which doesn't provide an interesting visualization.
         \midrule
         \textbf{Univariate} & & & & & \\
         \midrule
-        Linear & 1.76 & 0.13 & 0.007 & 0.25 & 0.36 & 0.007 & 0.33 \\
-        Ridge & 1.76 & 0.13 & 0.007 & 0.25 & 0.36 & 0.007 & 0.33 \\
-        Lasso & 1.76 & 0.13 & 0.007 & 0.25 & 0.36 & 0.007 & 0.33 \\
-        DT & - & - & 0.005 & 0.12 & 0.69 & 0.004 & 0.19 \\
-        20-NN & - & - & 0.005 & 0.14 & 0.66 & 0.004 & 0.22 \\
+        Linear & 1.760 & 0.126 & 0.007 & 0.253 & 0.357 & 0.007 & 0.334 \\
+        Ridge & 1.760 & 0.126 & 0.007 & 0.253 & 0.357 & 0.006 & 0.334 \\ % alpha=100
+        Lasso & 1.924 & 0.100 & 0.007 & 0.259 & 0.342 & 0.006 & 0.376 \\ % alpha=100
+        DT & - & - & 0.005 & 0.127 & 0.678 & 0.004 & 0.194 \\ % {'ccp_alpha': 0.07533781852589416, 'criterion': 'friedman_mse', 'max_depth': 18, 'max_leaf_nodes': 12, 'min_impurity_decrease': 0.05584042497358051, 'min_samples_leaf': 10, 'min_samples_split': 20}
+        20-NN & - & - & 0.005 & 0.135 & 0.657 & 0.004 & 0.221 \\
         \midrule
         \textbf{Multiple} & & & & & \\
         \midrule
-        Linear & - & - & 0.000 & 0.000 & 1.000 \\
-        Ridge & - & - & 0.000 & 0.000 & 1.000 \\
-        Lasso & - & - & 0.000 & 0.000 & 1.000 \\
-        DT & - & - & 0.000 & 0.000 & 1.000 \\
-        KNN & - & - & 0.000 & 0.000 & 1.000 \\
+        Linear & - & - & 0.006 & 0.157 & 0.601 & 0.006 & 0.220 \\
+        Ridge & - & - & 0.006 & 0.157 & 0.601 & 0.006 & 0.220 \\ % alpha=0.1
+        Lasso & - & - & 0.006 & 0.161 & 0.590 & 0.005 & 0.241 \\ % alpha=1
+        DT & - & - & 0.004 & 0.085 & 0.784 & 0.004 & 0.196 \\ % ccp_alpha=0.004666566321361543, criterion='poisson', max_depth=16, min_samples_leaf=15, min_samples_split=16
+        13-KNN & - & - & $8\times10^-5$ & $9\times10^-5$ & $\approx 1$ & 0.003 & 0.176 \\
         \bottomrule
     \end{tabular}
     \caption{Classification report for binary classification}

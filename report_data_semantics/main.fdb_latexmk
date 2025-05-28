@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748444711.59703 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748451264.487 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748444707.07447 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748444711.59752 0
+["pdflatex"] 1748451260.29588 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748451264.4875 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -58,6 +58,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb" 1255129361 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb" 1255129361 109598 cb570392cb143ca78182169795feed7a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1254269338 27863 09ce3735688ffde955e72da27c95b61a ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb" 1254269338 27941 d1f5d03f61a46c3fcc3a2ba904ddda52 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb" 1255129361 113227 1010e11451afc2822c95dae77c390042 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb" 1255129361 115291 2ae7034c644e971beb573b1e6606f863 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb" 1255129361 108480 ee1de99df36ee0a16b36023b9c9d8a58 ""
@@ -146,13 +147,13 @@
   "capitolo1.tex" 1748444604.35983 19896 cac6d6d009b8ca725e4590a6e91a0429 ""
   "capitolo2.tex" 1748435626.53137 21346 33b3ed39b6d9902a985019e1ae71925c ""
   "capitolo3.tex" 1748444706.62618 26694 2809745f2243d147237dcd9c469777af ""
-  "capitolo4.tex" 1748442714.77585 3876 70404c4dac29dbbe17c2154e7b828f69 ""
+  "capitolo4.tex" 1748451259.90261 4479 5bf5cb1f0d09366a9de4548cb5e12fb7 ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748444710.95638 14867 15a1920ebb42c04b48d4c82e84ffd54c "pdflatex"
+  "main.aux" 1748451263.95757 14867 15a1920ebb42c04b48d4c82e84ffd54c "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1748444710.96217 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748451263.96321 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
-  "main.toc" 1748444710.96232 2607 64d3b699eabc39e4b3bbcb4020426a75 "pdflatex"
+  "main.toc" 1748451263.96338 2607 64d3b699eabc39e4b3bbcb4020426a75 "pdflatex"
   "plots/5_min_conf.png" 1748423396.27224 51666 247bb2898aca798f5d782fdc39fa8499 ""
   "plots/5_min_sup.png" 1748423396.27512 40859 adff69002735abb7bb8cfad7309abeed ""
   "plots/binary_dt.png" 1748339665.29033 207375 08ae0ff6de7b8b83409efbb775ecc0b2 ""
