@@ -2,42 +2,49 @@
 \chapter{Classification}
 \label{ch:capitolo3}
 Classification was performed on the available training set using three different algorithms: K-NN (\textit{K-Nearest Neighbours}), Naïve Bayes and Decision Trees.
-For K-NN \textbf{and Naïve Bayes}, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters \textbf{each} model.
-The features used in K-NN and Naïve Bayes were normalized, as these models are sensitive to unscaled values.
-In particular, a log-transformation (when needed) and \textbf{StandardScaler} were applied to data.
-After training, the models were evaluated on the test set using standard performance metrics. 
-The target variables chosen for this task are 2: \texttt{titleType}, and \texttt{has\_LowEngagement}.
+The target variables chosen for this task are 2: \texttt{titleType} and \texttt{has\_LowEngagement}.
 These will be discussed in more detail in the corresponding sections below.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DA VEDERE SE METTERE SOLO QUESTO AL POSTO CHE IN OGNUNA DELLE SEZIONI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For K-NN and Naïve Bayes, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters for the first model (used as an external validation 
+% after internal cross-validation with RandomizedSearch) and to choose the best feature set for the second one. 
+% Instead, to identify the optimal hyperparameters for Decision Trees, a Randomized Search was performed
+% using Repeated Stratified 5-Fold Cross-Validation with 10 repeats on the training set for binary classification, and 5 repeats for multiclass classification, both optimized for the macro-averaged F1-score.\\
 
+% After training, the models were evaluated on the test set using standard performance metrics. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Binary classification}\label{sec:binary_classification}
 The binary target variable used in this task, \texttt{has\_LowEngagement}, was specifically defined for this purpose. 
 It identifies records where the \texttt{numVotes} attribute is less than 100.\\
 
-An analysis of semantically related features was run, in order to decide whether to discard any other feature.
-\texttt{userReviewsTotal} showed a 75\% correlation with
+An analysis of semantically related features was run to decide whether to discard any.
+\texttt{userReviewsTotal} has a 75\% correlation with
 \texttt{numVotes}, while \texttt{criticReviewsTotal} has 67\% correlation.
-Despite the similarity in correlation
-values, \texttt{userReviewsTotal} was deemed too semantically similar to \texttt{numVotes}, whereas
-\texttt{criticReviewsTotal} was considered to provide distinct and complementary information.
-The correlation value of the second considered not sufficiently high to make the problem trivial.\\
+Due to its semantic similarity with \texttt{numVotes}, \texttt{userReviewsTotal} was discarded for this task.
+In contrast, \texttt{criticReviewsTotal} was retained as it was deemed to provide distinct and complementary information. 
+Moreover, its correlation with other features was not considered sufficiently high to make the problem trivial.\\
 
 An important aspect of the chosen binary classification task is the class imbalance, with 10287 records
 classified as \textit{Low Engagement} and 4668 as \textit{High Engagement} in the training set.
 This imbalance was taken into account during model training and evaluation, with a focus on
 macro-averaged F1-score to mitigate its impact on the results.\\
 
-\subsection{K-NN}
+\subsection{K-NN - Binary Classification}
 \begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.60\textwidth}
         \vspace{0pt}
-        \small
-        To perform this task using the K-NN algorithm, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality. 
+        The features used for the K-NN algorithm were normalized, as the model is sensitive to unscaled values: log-transformation (when needed) and StandardScaler were applied to data. 
+
+        Then, to perform this task, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality.
+    
         For example, to provide the model with information about the origin of the titles, without introducing all 7 \texttt{countryOfOrigin\_[continent code]} attributes, only \texttt{countryOfOrigin\_freq\_enc} was kept. 
         The remaining variables of the dataset were maintained as they offered diverse and non-redundant insights.\\
 
-        Then, a randomized hyperparameter search (each configuration evaluated with a stratified 5-fold cross-validation) was performed to identify the proper value of \textit{k}. 
-        This process included the exploration of additional parameters of the algorithm, resulting in: \texttt{weights:'uniform', n\_neighbors:9, metric:'cityblock'}, as it provided the best performance for the selected feature set.\\
+       For this algorithm, a portion of the training set was held out as a validation set to enable external validation after internal cross-validation. 
+       A randomized hyperparameter search was indeed performed on the reduced training set, with each configuration evaluated using stratified 5-fold cross-validation. 
+       This process aimed to identify the optimal value of \textit{k} and explore additional algorithm parameters. 
+       The best configuration found is: \texttt{weights: 'uniform', n\_neighbors: 9, metric: 'cityblock'}, which achieved the highest accuracy on the selected feature set.\\
 
         The resulting model shows solid performance, achieving a test accuracy of 0.85. As expected, it performs better on the \textit{Low Engagement} class, with a high recall (0.94) and F1-score (0.89). 
         In contrast, the \textit{High Engagement} class is more challenging for the model; while precision is reasonable (0.83), recall (0.65) indicates that a significant number of instances are misclassified as 
@@ -112,7 +119,9 @@ To summarize, the macro average F1-score is 0.81 suggesting that the model maint
 
 
 
-\subsection{Naïve Bayes}
+\subsection{Naïve Bayes - Binary Classification}
+% For Naïve Bayes, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters for the first model (used as an external validation 
+% after internal cross-validation with RandomizedSearch) and to choose the best feature set for the second one.
 To use Categorical Naïve Bayes, specific preprocessing steps were required: continuous attributes were discretized using semantically meaningful binning and \textbf{Country\_orig} feature was binarized into a (0 / >0) format; 
 however, only the from\_America\_bin  and from\_Europe\_bin were used for this particular task. 
 All binning strategies applied here are consistent with those described in Subsection X of pattern mining section. 
@@ -132,7 +141,7 @@ Finally, the macro F1 average of 0.80 indicates a good balance overall, but some
 \end{figure}
 
 
-\subsection{Decision Trees}
+\subsection{Decision Trees - Binary Classification}
 For explainability purposes, features were not normalized nor transformed for the Decision Tree model,
 as it does not require such preprocessing because it's not based on distance measures, but rather on
 decision thresholds.\\
@@ -207,8 +216,59 @@ Precision scores of the class (0.78 on train, 0.75 on test).
 %     \end{minipage}
 % \end{figure}
 
-\subsection{Model Comparison}
+\subsection{Model Comparison - Binary Classification}
+After having performed the task using the three algorithms, some interesting aspects emerged.
+As expected, all the models, to a different extent, struggle to identify the minority class, \textit{High Engagement}, resuling in lower recall values
+- 0.65 for K-NN, 0.70 for Naïve Bayes, and 0.68 for Decision Trees.
+This is evident in the confusion matrices, where a significant number of \textit{High Engagement} records are misclassified as \textit{Low Engagement}.
+In particular, K-NN handled the minority class the best in terms of precision and F1-score, achieving respectively 0.83 and 0.73.
+However, the fact that Naïve Bayes performed better in terms of recall (0.70) makes it a more valid alternative
+in scenarios where preventing high-engagement titles from being misclassified as low-engagement ones is a priority.
+Decision Trees are located in the middle, showing similar performances to Naïve Bayes, but having a slightly lower recall.
+In conclusion, considering all these aspects, K-NN is still considered the most efficient model for this task, as it also performs best globally. 
+In the table~\ref{tab:best_model_binary_classification} its overall results are summarized.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{cccc}
+        \toprule
+        \bf{Accuracy} & \bf{Precision Macro Avg} & \bf{Recall Macro Avg} & \bf{F1-score Macro Avg} \\
+        \midrule
+         0.85 & 0.84 & 0.79 & 0.81 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Overall metrics - K-NN}
+    \label{tab:best_model_binary_classification}
+\end{table}
 
+
+
+
+
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{lcccccc}
+%         \toprule
+%         \bf{Model} & \bf{Precision} & \bf{Recall} & \bf{F1-score} & \bf{Accuracy} \\
+%         \midrule
+%         K-NN (Low Eng) & 0.83 & 0.65 & 0.72 & 0.85 \\
+%         K-NN (High Eng) & 0.87 & 0.94 & 0.89 & 0.85 \\
+%         \midrule
+%         Naïve Bayes (Low Eng) & 0.74 & 0.70 & 0.72 & 0.83 \\
+%         Naïve Bayes (High Eng) & 0.87 & 0.89 & 0.88 & 0.83 \\
+%         \midrule    
+%         Decision Tree (Low Eng) & 0.86 & 0.90 & 0.88 & 0.84 \\
+%         Decision Tree (High Eng) & 0.75 & 0.68 & 0.72 & 0.84 \\
+%         \bottomrule
+%     \end{tabular}
+%     \caption{Binary classification - performance comparison}
+%     \label{tab:binary_classification_comparison}
+% \end{table}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
 \section{Multiclass classification}\label{sec:multiclass_classification}
 Among the multiclass features in the training set, \texttt{titleType} was selected as the target variable
 for this task, due to its relevance within the dataset. Because of their strong correlation with
@@ -232,7 +292,7 @@ a key metric for model evaluation, as it provides a balance between each class's
 % \textbf{SCRIVERE COME E' STATA IMPUTATA NO\_TT - con canhaveepisodes e is\_short preso dai generi}.
 % This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
 % imputation for an attribute when \texttt{titleType} itself is the target variable to predict.
-\subsection{K-NN}
+\subsection{K-NN - Multiclass Classification}
 For the multiclass classification task using the K-NN algorithm, the inclusion of a broad set of 
 features is necessary and justified, as it was found to help the model to better distinguish between 
 underrepresented classes - even if the results in their classification are not optimal. 
@@ -288,7 +348,7 @@ Classes with a larger support, like \textit{tvEpisode} (1596) and \textit{movie}
 
 
 
-\subsection{Naïve Bayes}
+\subsection{Naïve Bayes - Multiclass Classification}    
 Also for the Multiclass Classification task the features has been preprocessed as explained in paragraph X, 
 in order to use Categorical NB. For this task it has been interesting to note that the inclusion of genre features enhanced classification performance 
 for all classes but especially for the ones with limited support: tvMiniSeries (68 objects) was not classified at all and tvMovie (288) and tvSpecial (42) 
@@ -311,7 +371,7 @@ On the other hand, the F1 weighted average results of 0.71, suggesting that the 
 
 
 
-\subsection{Decision Trees}
+\subsection{Decision Trees - Multiclass Classification}
 Like for the binary classification task, the Decision Tree model was trained without normalizing or
 transforming the features, making the model more interpretable. Feature selection was performed by studying
 feature importance, while hyperparameters were optimized with a Randomized Search,
@@ -362,6 +422,6 @@ of the \textit{tvMiniSeries} records being misclassified as \textit{tvSeries}.
 
 
 
-\subsection{Model Comparison}
+\subsection{Model Comparison - Multiclass Classification}
 Because of class imbalance, for evaluation purposes,
 macro-averaged F1-score was heavily considered.
