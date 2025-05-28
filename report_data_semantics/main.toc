@@ -29,8 +29,8 @@
 \contentsline {subsection}{\numberline {3.2.4}Model Comparison}{14}{}%
 \contentsline {chapter}{\numberline {4}Regression}{14}{}%
 \contentsline {section}{\numberline {4.1}Univariate and Multiple Regression}{14}{}%
-\contentsline {section}{\numberline {4.2}Multivariate Regression}{14}{}%
-\contentsline {chapter}{\numberline {5}Pattern Mining}{14}{}%
-\contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{15}{}%
-\contentsline {section}{\numberline {5.2}Extraction of rules}{15}{}%
-\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{16}{}%
+\contentsline {section}{\numberline {4.2}Multivariate Regression}{15}{}%
+\contentsline {chapter}{\numberline {5}Pattern Mining}{15}{}%
+\contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{16}{}%
+\contentsline {section}{\numberline {5.2}Extraction of rules}{17}{}%
+\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{17}{}%
