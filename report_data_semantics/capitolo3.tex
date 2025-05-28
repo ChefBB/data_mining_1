@@ -327,18 +327,19 @@ The best configuration found used Entropy as splitting criterion, had a max dept
     \label{fig:multiclass_dt}
 \end{figure}
 
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{r}{0.4\textwidth}
     \centering
-    \includegraphics[width=0.48\textwidth]{plots/multiclass_dt_conf_matrix.png}
+    \captionsetup{justification=raggedleft, width=1\linewidth}
     \caption{Confusion matrix for the model}
     \label{fig:multiclass_dt_conf_matrix}
+    \includegraphics[width=0.9\linewidth]{plots/multiclass_dt_conf_matrix.png}
 \end{wrapfigure}
 Figure~\ref{fig:multiclass_dt} shows the Decision Tree obtained for the multiclass classification task.
 The most important feature for the model was\texttt{runtimeMinutes}, on which the first two levels
 of the tree are based, with a feature importance of 0.45.
 Three out of the four splits in the following level are based on \texttt{numRegions} being smaller than
 2, giving the feature an importance of 0.13; the fourth is based on the \textit{Adventure} genre,
-which has an importance of 0.01.
+which has an importance of 0.01.\\
 The model showed a general tendency towards overfitting, and many configurations were tested to prevent
 this.
 The overall accuracy shows a significant drop (from 0.86 on the train set, to 0.75 on the test set),
@@ -347,8 +348,8 @@ This was given from the \textit{tvMiniSeries} and \textit{tvSpecial} classes: th
 0.35, 0.22 respectively on the train set, and both had 0.10 on the test set. Since they were by far
 the least represented classes, they required a trade-off between low-represented classes classification
 and generalization. This can be seen in figure~\ref{fig:multiclass_dt_conf_matrix}, which shows the fact
-that most predictions for these classes were misclassified.
-In order to mitigate this, post-pruning was tested, but did not give particular benefits.
+that most predictions for these classes were misclassified.\\
+In order to mitigate overfitting, post-pruning was tested, but did not give particular benefits.
 Higher values for the parameter $\alpha$ had minor positive effects on the generalization
 capabilities of the models, at the cost of losing predictions on the less represented classes.
 Another aspect highlighted by the confusion matrix is the fact that \textit{tvMovie} was often
