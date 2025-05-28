@@ -136,51 +136,51 @@ a key metric for model evaluation, as it provides a balance between each class's
 \subsection{Naïve Bayes}
 \subsection{Decision Trees}
 Like for the binary classification task, the Decision Tree model was trained without normalizing or
-transforming the features, making the model more interpretable.
-To identify the optimal hyperparameters, a Randomized Search was performed
-using Repeated Stratified 5-Fold Cross-Validation with 5 repeats on the training set, optimized for
+transforming the features, making the model more interpretable. Feature selection was performed by studying
+feature importance, while hyperparameters were optimized with a Randomized Search,
+which used Repeated Stratified 5-Fold Cross-Validation with 5 repeats on the training set, optimized for
 the macro-averaged F1-score.
 The best configuration found used Entropy as splitting criterion, had a max depth of 14, a minimum of
 5 samples per leaf, and a minimum of 8 samples in order to split an internal node.
-Regarding overfitting, many configurations were tested.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\linewidth]{plots/multiclass_tree.png}
+    \captionsetup{justification=centering, width=0.9\linewidth}
+    \caption{Decision Tree for multiclass classification}
+    \label{fig:multiclass_dt}
+\end{figure}
 
-The models, applied to the task, showed a general tendency towards overfitting,
-observed with all configurations. Although the accuracy doesn't show a significant drop (from 0.86 on the
-train set, to 0.75 on the test set), the macro-averaged F1-score dropped from 0.65 to 0.52.
+\begin{wrapfigure}{r}{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{plots/multiclass_dt_conf_matrix.png}
+    \caption{Confusion matrix for the model}
+    \label{fig:multiclass_dt_conf_matrix}
+\end{wrapfigure}
+Figure~\ref{fig:multiclass_dt} shows the Decision Tree obtained for the multiclass classification task.
+The most important feature for the model was\texttt{runtimeMinutes}, on which the first two levels
+of the tree are based, with a feature importance of 0.45.
+Three out of the four splits in the following level are based on \texttt{numRegions} being smaller than
+2, giving the feature an importance of 0.13; the fourth is based on the \textit{Adventure} genre,
+which has an importance of 0.01.
+The model showed a general tendency towards overfitting, and many configurations were tested to prevent
+this.
+The overall accuracy shows a significant drop (from 0.86 on the train set, to 0.75 on the test set),
+as well the macro-averaged F1-score, going from 0.65 to 0.52.
 This was given from the \textit{tvMiniSeries} and \textit{tvSpecial} classes: these had f1-scores of
 0.35, 0.22 respectively on the train set, and both had 0.10 on the test set. Since they were by far
 the least represented classes, they required a trade-off between low-represented classes classification
-and generalization.
+and generalization. This can be seen in figure~\ref{fig:multiclass_dt_conf_matrix}, which shows the fact
+that most predictions for these classes were misclassified.
 In order to mitigate this, post-pruning was tested, but did not give particular benefits.
 Higher values for the parameter $\alpha$ had minor positive effects on the generalization
-capabilities of the models, but drastically hindered the performances on the less represented classes.
-
-% \begin{table}[H]
-%     \centering
-%     \begin{tabular}{lcccc}
-%         \toprule
-%         \bf{Class} & \bf{Precision} & \bf{Recall} & \bf{F1-score} & \bf{Support} \\
-%         \midrule
-%         \bf{movie}         & 0.85 & 0.88 & 0.87 & 1877 \\
-%         \bf{short}         & 0.92 & 0.94 & 0.93 & 766 \\
-%         \bf{tvEpisode}     & 0.89 & 0.92 & 0.90 & 1599 \\
-%         \bf{tvMiniSeries}  & 0.51 & 0.35 & 0.41 & 81 \\
-%         \bf{tvMovie}       & 0.36 & 0.29 & 0.32 & 299 \\
-%         \bf{tvSeries}      & 0.89 & 0.94 & 0.91 & 447 \\
-%         \bf{tvShort}       & 0.00 & 0.00 & 0.00 & 16 \\
-%         \bf{tvSpecial}     & 0.32 & 0.12 & 0.18 & 49 \\
-%         \bf{video}         & 0.55 & 0.46 & 0.50 & 250 \\
-%         \midrule
-%         \bf{Macro avg}     & 0.59 & 0.54 & 0.56 & 5384 \\
-%         \bf{Weighted avg}  & 0.82 & 0.84 & 0.83 & 5384 \\
-%         \midrule
-%         \bf{Accuracy}      &      &      & 0.84 & 5384 \\
-%         \bottomrule
-%     \end{tabular}
-%     \caption{Classification report for multiclass classification (\texttt{titleType})}
-%     \label{tab:multiclass_classification_report}
-% \end{table}
-
+capabilities of the models, at the cost of losing predictions on the less represented classes.
+Another aspect highlighted by the confusion matrix is the fact that \textit{tvMovie} was often
+classified as \textit{movie}, leading to a Recall value of 0.26 on the test set.
+This is likely due to the fact that the two classes are overlapping, since they are semantically related,
+and is further supported by the fact that the most common misclassification for \textit{movie} was
+\textit{tvMovie}, albeit with a low number of occurrences, likely due to it being the biggest class.
+A similar case can be made for \textit{tvSeries} and \textit{tvMiniSeries}, with 37 out of the total 68
+of the \textit{tvMiniSeries} records being misclassified as \textit{tvSeries}.
 
 
 

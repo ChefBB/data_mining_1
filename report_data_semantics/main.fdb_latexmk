@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748418740.36601 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748423352.73686 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748418736.64516 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748418740.36651 0
+["pdflatex"] 1748423348.79086 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748423352.73734 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -144,14 +144,14 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "capitolo1.tex" 1748416161.13611 19895 d0a0af5c4ad6545c3237ae5a9797f3b4 ""
   "capitolo2.tex" 1748418736.26878 18424 c7bac3342e3be76d21985dca779fa9fa ""
-  "capitolo3.tex" 1748365243.96372 10828 fb5ea009f3f5f4ed2dd19381811d02d2 ""
+  "capitolo3.tex" 1748423348.4242 11490 cc090887d88c52402ba8237184031997 ""
   "capitolo4.tex" 1748358686.67944 151 3318f648ccf77207f09c1a601e5b4e6c ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748418739.84532 12492 f0e3029b45bb20f6422b06b40e004c66 "pdflatex"
+  "main.aux" 1748423352.19091 12909 180cc056363c895007cce62185e12e6c "pdflatex"
   "main.bbl" 1736953031.27595 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.run.xml" 1748418739.85071 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748423352.1968 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
-  "main.toc" 1748418739.85087 2663 79016768199c4a83e3b321b50b7740f4 "pdflatex"
+  "main.toc" 1748423352.19696 2663 faeffeb65a22a5df037c5e926a575fd0 "pdflatex"
   "plots/2_dbscan_eps.jpg" 1748414884.86977 72392 2658b07ae0e95a06a368bbe59c1ecf46 ""
   "plots/2_dbscan_scatterplot.jpg" 1748414884.87129 94939 3e255817af16f688c983dda224e0f6b8 ""
   "plots/5_min_conf.png" 1748076746.33262 44873 3c22ed6101c7a793dd58f4cad2b1b6ab ""
@@ -164,6 +164,8 @@
   "plots/left_skew_distribs.png" 1747918311.07423 59989 48d85a129e5066dfe0e12a7431cfa1dc ""
   "plots/left_skew_distribs_log.png" 1747918363.49378 76815 dc74ea03a4438410935bb258eaccd94b ""
   "plots/max_min_pctg.png" 1748100575.37453 52591 a1c56af192b871687ff4d73b63401897 ""
+  "plots/multiclass_dt_conf_matrix.png" 1748419698.05216 54373 cfcdc1c324f7856436140924cb283c01 ""
+  "plots/multiclass_tree.png" 1748422428.8584 230296 df72c835598017cef61805445698626b ""
   "plots/nominations_distrib.png" 1747823903.79138 41635 5ea19881b350869e1bec193599cf252f ""
   "plots/outliers.png" 1747830707.33711 47488 ae85b603bcce9d7b0e5b2c9d2a0a9d4a ""
   "plots/rating_distrib.png" 1747905008.68704 28958 46a8061c91b341a87d0f5ff7c2491cb5 ""
