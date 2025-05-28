@@ -65,53 +65,95 @@ The 4 distinct clusters appear well-separated, suggesting that K-means managed t
 
 \section{DBSCAN}\label{sec:density_based}
 To determine suitable DBSCAN parameters, the k-th distance plot was used as starting point (Figure~\ref{fig:dbscan_kth}). 
-By varying \textit{k} (\textit{MinPts}) and observing the corresponding distance curves, the range between 0.8 and 0.2 was identified for a possible \textit{Eps} value. \textbf{mettere  curve k edue linee per racchiuderla}
+By varying \textit{k} (\textit{MinPts}) and observing the corresponding distance curves, the range between 0.08 and 0.2 was identified for a possible \textit{Eps} value.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/2_dbscan_eps.jpg}
+        \includegraphics[width=\textwidth]{plots/dbscan_kth.png}
         \caption{K-th distance plot}
         \label{fig:dbscan_kth}
     \end{subfigure}
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{plots/2_dbscan_scatterplot.jpg}
+        \includegraphics[width=\textwidth]{plots/dbscan_scatterplot.png}
         \caption{Visualization with PCA}
-        \label{fig:kmeans_visualization}
+        \label{fig:dbscan_visualization}
     \end{subfigure}
-    \caption{K-means - Cluster analysis}
-    \label{fig:subplots_kmeans}
+    \caption{DBSCAN - Cluster analysis}
+    \label{fig:subplots_DBSCAN}
 \end{figure}
 
-From initial attempts DBSCAN's sensibility towards high-sparsed and imbalanced dataset emerged clearly,
-\textbf{often resulting in the formation of a single cluster in correspondence of the dominant dense region, while sparser regions remained largely unstructured}. 
-To try to overcome this and achieve a meaningful clustering structure, different parameters were tested, 
-using different combination of \texttt{min\_eps} and \texttt{min\_points} in the following ranges:
+Initial experiments clearly revealed DBSCAN's sensibility towards high-sparsed and imbalanced dataset;
+in most cases the algorithm produced an highly populated single cluster in correspondence of the dominant dense region, leaving sparser regions largely unstructured. 
+To address this issue and obtain more meaningful clustering, different combination of \texttt{min\_eps} and \texttt{min\_points} in the following ranges were tested:
 \begin{itemize}
-    \item \texttt{eps\_list} =  [0.8, 0.9, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.3, 0.4, 1.0];
+    \item \texttt{eps\_list} =  [0.08, 0.09, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.3, 0.4, 1.0];
     \item \texttt{min\_points\_list} =  [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20].
 \end{itemize}
 
-Each parameter combination was evaluated based on the number of clusters (with a minimum threshold of 2), size of the clusters, noise points, and silhouette score 
-(filtered for values > 0.1), excluding the cases where only one cluster was created, or where the silhouette value was really low
-However, even the best configurations did not yield fully satisfactory results.
-First of all it is interesting to report that setting \textit{Eps} value > 0.16 never led to the formation of more than one cluster. 
-Similarly, eps value between 0.13 and 0.16 consistently led to the collapse of most points into a single large cluster, with, occasionally, one/two minor residual clusters. \\
+Each combination was evaluated based on the number of clusters (with a minimum threshold of 2), size of the clusters, noise points, and silhouette score 
+(filtered for values $>$ 0.1), excluding the cases where only one cluster was created, or where the silhouette value was consisidered too low.
 
-Note that, in this context, the high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
-On the other side the combination of lower epsilon values (as 0.10) and few \texttt{min\_pts} (4-5) 
-often resulted in over-fragmentation, producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups.
-In general with \textit{Eps} values (between 0.09-0.12) the algorithm was able to differentiate between regions of varying density, as \textit{Eps} = 0.13 was identified as the threshold below which DBSCAN starts splitting the big cluster in two different ones.
-\textbf{- EVENT METTI GRAFICO-  as Shown in Figure X}\\
+% First of all it is interesting to report that setting \textit{Eps} value > 0.16 never led to the formation of more than one cluster, (for any \texttt{min\_points} tested). 
+% Similarly, eps value between 0.13 and 0.16 consistently led to the collapse of most points into a single large cluster, with, occasionally, one/two minor residual clusters, (for any \texttt{min\_points} tested). \\
 
-One of the most interesting compromise (though still suboptimal in absolute terms, with max Silhouette score = 0.2699) was found with \textit{Eps} = 0.11, \texttt{min\_samples} = 7:
-\begin{itemize}
-    \item eps=0.11, min\_samples=7 → Clusters: 3, Noise: 219,  Composition: [219,4347, 10378,11], Silhouette Score: 0.2699, \textbf{eventualmente mettere composition nel grafico}
-\end{itemize}
-As shown in Figure X, this setting resulted in  a 3 cluster structure, with a  compact cluster extracted from the densest region (1), a broader one capturing intermediate-density areas or mild outliers (0), 
-and one very small but well-separated cluster (2) that may represent meaningful local patterns. \\
+% Note that, in this context, the high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
+% On the other side the combination of lower epsilon values (as 0.10) and few \texttt{min\_pts} (4-5) 
+% often resulted in over-fragmentation, producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups.
+% In general with \textit{Eps} values (between 0.09-0.12) the algorithm was able to differentiate between regions of varying density, as \textit{Eps} = 0.13 was identified as the threshold below which DBSCAN starts splitting the big cluster in two different ones.
+% \textbf{- EVENT METTI GRAFICO-  as Shown in Figure X}\\
 
+% In Table~\ref{tab:eps} the most interesting results are summarized.
+% \begin{table}[h]
+% \centering
+% \begin{tabular}{llll}
+% \toprule
+% \textbf{eps threshold} & \textbf{Min points} & \textbf{Silhouette} & \textbf{Cluster composition}  \\
+% \midrule
+% \texttt{\textbf{$\varepsilon$} > 0.16} & for any tested \texttt{min\_points}  & valori  & never led to the formation of more than one cluster (for any \texttt{min\_points} tested) \\
+% \texttt{0.13 $\leq$ \textbf{$\varepsilon$} < 0.16 } & for any tested \texttt{min\_points}&  valori  & consistently led to a single large cluster, with, occasionally, one/two minor residual clusters (for any \texttt{min\_points} tested)\\
+% \texttt{0.11 $\leq$ \textbf{$\varepsilon$} < 0.13 } & for any tested \texttt{min\_points} & valori &  DBSCAN starts splitting the big cluster in two different ones, starting to differentiate differentiate between regions of varying density\\
+% \texttt{\textbf{$\varepsilon$} < 0.11} & with lower \texttt{min\_points} (4, 5)& valori  & often resulted in over-fragmentation, producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups.  \\
+
+% \bottomrule
+% \end{tabular}
+% \caption{title}
+% \label{tab:eps}
+% \end{table}
+
+Even if the configurations did not yield fully satisfactory results, in Table~\ref{tab:eps} the most interesting ones are summarized.
+Note that, in this context, an high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
+\begin{table}[h]
+% \hspace*{-0.5cm}
+\centering
+\begin{tabular}{llll}
+\toprule
+\textbf{eps threshold} & \textbf{Min points} & \textbf{Silhouette} & \textbf{Cluster composition}  \\
+\midrule
+\texttt{\textbf{$\varepsilon$} $>$ 0.16} & for any tested value &  $>$ 0.51  & never led to more than one cluster \\
+\texttt{0.13 $\leq$ \textbf{$\varepsilon$} $<$ 0.16 } & for any tested value &  $[0.49,\ 0.51]$  & led to one cluster and, occasionally, 1 or 2 minor ones\\
+\texttt{\textbf{$\varepsilon$} $<$ 0.13 }& for any tested value & $[0.10,\ 0.28]$ & the big cluster it's splitted in two different ones \\
+\texttt{\textbf{$\varepsilon$} $\leq$ 0.10} & lower values $[4,\ 5]$& $[0.10,\ 0.22]$  & led to several, not meaningful, clusters of 5/6 points\\
+
+\bottomrule
+\end{tabular}
+\caption{Relevant DBSCAN parameters configurations}
+\label{tab:eps}
+\end{table}
+
+
+
+Exlcuding the combination with higher \textit{Eps} value, that made the points collaps into one cluster, and the ones with low \textit{Eps} and few \texttt{min\_pts} ,that resulted in over-fragmentation, 
+the analysis focused on \textit{Eps} in the range $[0.11,\ 0.13)$.
+Despite the limitations of the dataset structure, in this range the algorithm was able to differentiate between regions of varying density, 
+% producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups, 
+
+One of the most interesting compromise (though still suboptimal in absolute terms) was found with \textit{Eps} = 0.11, \texttt{min\_points} = 7: 
+As shown in (Figure~\ref{fig:dbscan_visualization}), this setting resulted in a 3 cluster structure: a compact cluster of 10378 points was extracted from the densest region, a less dense cluster with fewer points (4347) captured intermediate-density areas or mild outliers, 
+and a very small one (only 11 points), but well-separated, cluster effectively captured a potential relevant local pattern. Only 219 points were labeled as noise, and the Silhouette Score was 0.2699.\\
+
+\textbf{QUESTA PARTE VOLENDO PUò ANDARE NELLE CONSIDERAZIONI GENERALI}\\
 To conclude, these observations highlight DBSCAN's limitations when applied to datasets with skewed feature distributions and unbalanced local densities.
 Nonetheless, the exploration helped isolate parameter ranges where meaningful subclusters begin to emerge,beyond the dominant density mass.
 
