@@ -4,7 +4,7 @@
 Classification was performed on the available training set using three different algorithms: K-NN (\textit{K-Nearest Neighbours}), Naïve Bayes and Decision Trees.
 For K-NN \textbf{and Naïve Bayes}, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters \textbf{each} model.
 The features used in K-NN and Naïve Bayes were normalized, as these models are sensitive to unscaled values.
-In particular, a log-transformation and \textbf{SCRIVERE SE StandardScaler O MINMAX} were applied to data.
+In particular, a log-transformation (when needed) and \textbf{StandardScaler} were applied to data.
 After training, the models were evaluated on the test set using standard performance metrics. 
 The target variables chosen for this task are 2: \texttt{titleType}, and \texttt{has\_LowEngagement}.
 These will be discussed in more detail in the corresponding sections below.
@@ -27,9 +27,109 @@ This imbalance was taken into account during model training and evaluation, with
 macro-averaged F1-score to mitigate its impact on the results.\\
 
 \subsection{K-NN}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.60\textwidth}
+        \vspace{0pt}
+        \small
+        To perform this task using the K-NN algorithm, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality. 
+        For example, to provide the model with information about the origin of the titles, without introducing all 7 \texttt{countryOfOrigin\_[continent code]} attributes, only \texttt{countryOfOrigin\_freq\_enc} was kept. 
+        The remaining variables of the dataset were maintained as they offered diverse and non-redundant insights.\\
+
+        Then, a randomized hyperparameter search (each configuration evaluated with a stratified 5-fold cross-validation) was performed to identify the proper value of \textit{k}. 
+        This process included the exploration of additional parameters of the algorithm, resulting in: \texttt{weights:'uniform', n\_neighbors:9, metric:'cityblock'}, as it provided the best performance for the selected feature set.\\
+
+        The resulting model shows solid performance, achieving a test accuracy of 0.85. As expected, it performs better on the \textit{Low Engagement} class, with a high recall (0.94) and F1-score (0.89). 
+        In contrast, the \textit{High Engagement} class is more challenging for the model; while precision is reasonable (0.83), recall (0.65) indicates that a significant number of instances are misclassified as 
+        \textit{Low Engagement}.
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.35\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth]{plots/knn_binary_confmatrix.png}
+        \captionsetup{justification=centering, width=0.90\linewidth}
+        \caption{K-NN binary classification}
+        \label{fig:binary_knn_confusion_matrix}
+    \end{minipage}
+\end{figure}
+% \vspace{-0.8em} % <-- riduce lo spazio dopo la figura
+
+This analysis is reflected in the confusion matrix in Figure~\ref{fig:binary_knn_confusion_matrix}, where 550 out of 1561 \textit{High Engagement} samples were incorrectly labeled as \textit{Low Engagement}.\\
+
+To summarize, the macro average F1-score is 0.81 suggesting that the model maintains a balanced performance across both classes.
+
+% \begin{figure}[H]
+%     \centering
+%     \begin{minipage}[t]{0.60\textwidth}
+%         \vspace{0pt}
+%         \small
+%         To perform this task using the K-NN algorithm, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality. 
+%         For example, to provide the model with information about the origin of the titles, without introducing all 7 \texttt{countryOfOrigin\_[continent code]} attributes, only \texttt{countryOfOrigin\_freq\_enc} was kept. 
+%         The remaining variables of the dataset were maintained as they offered diverse and non-redundant insights.\\
+
+%         Then, a randomized hyperparameter search (each configuration evaluated with a stratified 5-fold cross-validation) was performed to identify the proper value of \textit{k}. 
+%         This process included the exploration of additional parameters of the algorithm, resulting in: \texttt{weights:'uniform', n\_neighbors:9, metric:'cityblock'}, as it provided the best performance for the selected feature set.\\
+%     \end{minipage}
+%     \hfill
+%     \begin{minipage}[t]{0.35\textwidth}
+%         \vspace{0pt}
+%         \centering
+%         \includegraphics[width=\linewidth]{plots/knn_binary_confmatrix.png}
+%         \captionsetup{justification=centering, width=0.90\linewidth}
+%         \caption{Confusion matrix - K-NN binary classification}
+%         \label{fig:binary_knn_confusion_matrix}
+%     \end{minipage}
+% \end{figure}
+% The resulting model shows solid performance, achieving a test accuracy of 0.85. As expected, it performs better on the \textit{Low Engagement} class, with a high recall (0.94) and F1-score (0.89). 
+% In contrast, the \textit{High Engagement} class is more challenging for the model; while precision is reasonable (0.83), recall (0.65) indicates that a significant number of instances are misclassified as 
+% \textit{Low Engagement}. This analysis is reflected in the confusion matrix in Figure~\ref{fig:binary_knn_confusion_matrix}, where 550 out of 1561 \textit{High Engagement} samples were incorrectly labeled as \textit{Low Engagement}.\\
+
+% However, the macro average F1-score is 0.81 suggesting that the model maintains a balanced performance across both classes.
+
+
+
+
+% To perform this task using the K-NN algorithm, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality. 
+% For example, to provide the model with information about the origin of the titles, without introducing all 7 \texttt{countryOfOrigin\_[continent code]} attributes, only \texttt{countryOfOrigin\_freq\_enc} was kept. 
+% The remaining variables of the dataset were maintained as they offered diverse and non-redundant insights.\\
+% Then, a randomized hyperparameter search (each configuration evaluated with a stratified 5-fold cross-validation) was performed to identify the proper value of \textit{k}. 
+% This process included the exploration of additional parameters of the algorithm, resulting in: \texttt{{weights:'uniform', n\_neighbors:9, metric:'cityblock'}}, as it provided the best performance for the selected feature set.\\
+% The resulting model shows solid performance, achieving a test accuracy of 0.85. 
+% As expected, it performs better on the \textit{Low Engagement} class, with a high recall (0.94) and F1-score (0.89). 
+% In contrast, the \textit{High Engagement} class is more challenging for the model; while precision is reasonable (0.83), recall (0.65) indicates that a significant number of instances are misclassified as 
+% \textit{Low Engagement}. This analysis is reflected in the confusion matrix in Figure~\ref{fig:binary_knn_confusion_matrix}, where 550 out of 1561 \textit{High Engagement} samples were incorrectly labeled as \textit{Low Engagement}.
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.35\linewidth]{plots/knn_binary_confmatrix.png}
+%     \captionsetup{justification=centering, width=0.9\linewidth}
+%     \caption{Confusion matrix - K-NN binary classification}
+%     \label{fig:binary_knn_confusion_matrix}
+% \end{figure}
+% However, the macro average F1-score is 0.81 suggesting that the model maintains a balanced performance across both classes.
+
+
+
 
 
 \subsection{Naïve Bayes}
+To use Categorical Naïve Bayes, specific preprocessing steps were required: continuous attributes were discretized using semantically meaningful binning and \textbf{Country\_orig} feature was binarized into a (0 / >0) format; 
+however, only the from\_America\_bin  and from\_Europe\_bin were used for this particular task. 
+All binning strategies applied here are consistent with those described in Subsection X of pattern mining section. 
+Finally, the resulting categorical features were numerically encoded using OrdinalEncoder, as required by the CategoricalNB.\\
+The results show good classification performance with an overall accuracy of 0.83, a solid outcome given the simplicity of the NB model.
+However, differences between classes emerged: the low engagement class performed better, with precision 0.87, recall 0.89, and F1 score 0.88, while the high engagement class had lower results 
+(precision of 0.74, recall of 0.70 and F1 score of 0.72), 
+Actually, the model struggles more to identify high engagement examples, as confirmed by the low recall (0.70) and by the 481 false negatives in the confusion matrix. 
+Conversely, the low engagement class is recognized with greater reliability, with 3063 correct predictions out of 3416.
+Finally, the macro F1 average of 0.80 indicates a good balance overall, but some difficulty remains in handling the minority class.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.30\linewidth]{plots/nb_binary_confmatrix.jpg}
+    \captionsetup{justification=centering, width=0.9\linewidth}
+    \caption{Naïve Bayes binary classification}
+    \label{fig:nb_binary}
+\end{figure}
 
 
 \subsection{Decision Trees}
@@ -133,7 +233,84 @@ a key metric for model evaluation, as it provides a balance between each class's
 % This approach prevents a significant error, as it would be methodologically incorrect to use \texttt{titleType}-based 
 % imputation for an attribute when \texttt{titleType} itself is the target variable to predict.
 \subsection{K-NN}
+For the multiclass classification task using the K-NN algorithm, the inclusion of a broad set of 
+features is necessary and justified, as it was found to help the model to better distinguish between 
+underrepresented classes - even if the results in their classification are not optimal. 
+Even though this choice lowers the overall performance (accuracy) of the model, 
+it is a trade-off in favor of larger coverage and sensitivity across all classes.\\
+The hyperparameter tuning strategy that was employed is the same as in binary classification with K-NN. 
+The configuration that achieved the best performances is: \texttt{{weights:'uniform', n\_neighbors:12, metric:'cityblock'}}.\\ 
+As expected, the model shows mixed performances across the different classes. 
+The overall test accuracy reaches 0.76, which is a respectable result for a multiclass problem. 
+However, since accuracy is a global metric, more attention should be paied to the performances of the single classes. 
+Classes with a larger support, like \textit{tvEpisode} (1596) and \textit{movie} (1848), are handled quite well: \textit{tvEpisode} reaches an F1-score of 0.83 and \textit{movie} 0.84, both supported by high recall values (respectively 0.93 and 0.87). 
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.59\textwidth}
+        \vspace{0pt}
+        \small
+        This is also clearly visible in the confusion matrix of Figure~\ref{fig:multiclass_knn_confusion_matrix}, where these classes dominate with a high count of correct predictions. 
+        On the other hand, the model struggles with 3 classes in particular: \textit{tvMiniSeries} and \textit{tvSpecial}, i.e. the classes with the least support (respectively 68 and 42). 
+        In particular, \textit{tvMiniSeries} shows a very low recall (0.03), meaning that it is rarely correctly identified. 
+        Similarly, \textit{tvMovie} is mostly misclassified, showing a low F1-score of 0.29.\\
+        
+        An interesting trend to notice in the confusion matrix is how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}. 
+        This is likely due to the similar nature between the two, as both refer to television content and often share overlapping characteristics, considering also that a tv episode is basically part of a tv series. 
+        A similar confusion occurs between \textit{tvMovie} and \textit{movie}.\\
+
+        To summarize, since the model achieves a macro average F1-score of 0.50, this reflects clearly this imbalance in performance: while the model performs well on the majority classes, it fails to generalize well especially the minority ones.
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.40\textwidth}
+        \vspace{0pt}
+        \centering
+        \includegraphics[width=\linewidth]{plots/knn_multiclass_confmatrix.png}
+        \captionsetup{justification=centering, width=0.65\linewidth}
+        \caption{K-NN multiclass classification}
+        \label{fig:multiclass_knn_confusion_matrix}
+    \end{minipage}
+\end{figure}
+\vspace{-0.8em}
+
+% This is also clearly visible in the confusion matrix of Figure~\ref{fig:multiclass_knn_confusion_matrix}, where these classes dominate with a high count of correct predictions.
+% On the other hand, the model struggles with 3 classes in particular: \textit{tvMiniSeries} and \textit{tvSpecial} , i.e. the classes with the least support (respectively 68 and 42). 
+% In particular, \textit{tvMiniSeries} shows a very low recall (0.03), meaning that it is rarely correctly identified. Similarly, \textit{tvMovie} is mostly misclassified, showing a low F1-score of 0.29.\\
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.45\linewidth]{plots/knn_multiclass_confmatrix.png}
+%     \captionsetup{justification=centering, width=0.9\linewidth}
+%     \caption{Confusion matrix - K-NN muticlass classification}
+%     \label{fig:multiclass_knn_confusion_matrix}
+% \end{figure} 
+% An interesting trend to notice in the confusion matrix is how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}. 
+% This is likely due to the similar nature between the two, as both refer to television content and often share overlapping characteristics, considering also that a tv episode is being basically part of a tv series. 
+% A similar confusion occurs between \textit{tvMovie} and \textit{movie}.\\
+
+
+
 \subsection{Naïve Bayes}
+Also for the Multiclass Classification task the features has been preprocessed as explained in paragraph X, 
+in order to use Categorical NB. For this task it has been interesting to note that the inclusion of genre features enhanced classification performance 
+for all classes but especially for the ones with limited support: tvMiniSeries (68 objects) was not classified at all and tvMovie (288) and tvSpecial (42) 
+were poorly classified. This confirmed the choice of CategoricalNB over GaussianNB; being the first the most indicated to handle categorical features.\\
+The model achieves an overall accuracy of 0.73, acceptable for a multiclass task but indicative of difficulties in handling all categories equally well. 
+High F1-scores for the most represented classes—movie (0.83), tvEpisode (0.79), and short (0.81)—suggest effective recognition, likely due to their frequency in the dataset and the presence of more easily distinctive traits. The movie class also shows strong precision (0.82) and recall (0.84), 
+confirming the model's reliability on this category.\\
+As expected, performances drop significantly for underrepresented classes. tvMiniSeries (0.02), tvSpecial (0.21), and tvMovie (0.17) exhibit low F1-scores, indicating that the model has significant difficulties distinguishing correctly these examples. 
+Other than their low support, this is probably linked to the presence of common features with more dominant classes, such as Movie or tvEpisode. This is supported by the confusion matrix, which shows, for example, tha 140 tvMovie instances are  misclassified as movie, highlighting a strong confusion between these two categories.\\
+The tvSeries class also presents issues, with moderate precision (0.52) but a rather low recall (0.40): indicating many missed instances
+To conclude, the very low F1 macro average score, actually reflects the inability of the model to perform in a balanced way on all the classes. 
+On the other hand, the F1 weighted average results of 0.71, suggesting that the majority classes have a greater influence on overall performance than the minorities.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.30\linewidth]{plots/nb_multiclass_confmatrix.jpg}
+    \captionsetup{justification=centering, width=0.9\linewidth}
+    \caption{Naïve Bayes multiclass classification}
+    \label{fig:nb_multiclass}
+\end{figure}
+
+
+
 \subsection{Decision Trees}
 Like for the binary classification task, the Decision Tree model was trained without normalizing or
 transforming the features, making the model more interpretable. Feature selection was performed by studying
