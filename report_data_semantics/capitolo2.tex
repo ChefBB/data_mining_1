@@ -151,8 +151,11 @@ Nonetheless, the exploration helped isolate parameter ranges where meaningful su
 
 
 \section{Hierarchical clustering}\label{sec:hierarchical}
-Hierarchical clustering was performed using all linkages (Ward, Average, Complete, Single), with the Euclidean distance metric.
-Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which includes the Silhouette and SSE scores, as well as the maximum and minimum percentage of points per cluster.
+Hierarchical clustering was performed using all linkages (Ward, Average, Complete, Single), with the Euclidean
+distance metric. After a careful analysis of multiple clusterings, it was decided to procede with
+all remaining numerical features, log transformed and normalized with \texttt{MinMaxScaler}.
+Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which includes the Silhouette and SSE
+scores, as well as the maximum and minimum percentage of points per cluster.
 \begin{figure}[H]
     \centering
     % Left: Tall figure (a)
@@ -174,7 +177,8 @@ Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which inclu
 \end{figure}
 
 From figure~\ref{fig:max_min_pctg}, it can be observed that Single linkage produces a single cluster which contains basically all data points. This makes it unsuitable for this use case.
-Average and Complete linkages produce a cluster with a high maximum cluster size (above 90\% of the dataset for all the number of clusters tested for Average, and 80\% for Complete).
+Average and Complete linkages produce a cluster with a high maximum cluster size (above 90\% of the dataset for most
+of the number of clusters tested for Average, and 80\% for Complete).
 These results are likely due to two main causes: 
 \begin{itemize}
     \item Usage of skewed features, which lead to areas with a very high density of points;
@@ -191,6 +195,8 @@ What's more interesting is that Ward's method has the lowest Silhouette scores f
 of clusters tested, which indicates that the clusters are not well separated. This is due to
 the fact that Ward's method groups the data which resides in the high-density area
 mentioned above into smaller clusters, leading to less well-defined boundaries between them.
+In the next two sections, the results of Ward's method and Complete Linkage will be analyzed;
+the other two will not be discussed further, as they provide limited insights on the dataset.
 
 % By looking at Ward's statistics, the more interesting numbers of clusters to analyze are 4 and 5.
 % The first one corresponds to a big decline in maximum cluster size (from 74 to 44\%),
@@ -233,7 +239,7 @@ similar linkage distance (approximately 12). This indicates that the increase in
 squares (SSE) is relatively consistent across all cluster merges, as expected from Ward's method.
 Notably, the smallest cluster is the last to be merged, which suggests it is more distinct from the others.
 As shown in Figure~\ref{fig:scatter_ward}, this cluster lies in a sparser region of the dataset.
-In contrast, the remaining three clusters originate from the denser region and are therefore spatially
+In contrast, the remaining three clusters originate from the denser region, and are therefore spatially
 closer to one another.
 Compared to K-Means, the clusters identified by Ward's method appear less clearly separated in the PCA
 projection, resulting in some overlap between adjacent groups.
@@ -258,8 +264,8 @@ clusters.\\
 It is also interesting to observe how the dendrogram structure differs from that of Ward's method.
 In the previous case, the smallest cluster was the last to be merged, reflecting its distinctiveness in
 terms of within-cluster variance. In contrast, the Complete Linkage dendrogram shows the two smaller
-clusters being merged before the root.
-% This suggests that, under this criterion, their relative
+clusters being merged before the root. This is observed with Single and Average Linkages as well, and
+is a product of the sparsity of these clusters' regions.
 % proximity in terms of maximum inter-point distance makes them more similar to each other than to the
 % remaining data.
 \begin{figure}[H]
@@ -279,35 +285,5 @@ clusters being merged before the root.
     \caption{Dendrograms for hierarchical clustering with Complete Linkage}
     \label{fig:dendrograms_complete}
 \end{figure}
-
-
-
-% \begin{minipage}{0.4\textwidth}
-%     Figure~\ref{fig:pairplot_ward} shows Hierarchical clustering through Ward's method applied to the dataset, visualized using PCA.
-%     The plot shows how the higher density area is split among clusters 1, 2 and 4, while
-%     cluster 3 has an overall lower density.
-% \end{minipage}
-% \hfill
-% \begin{minipage}{0.55\textwidth}
-%     \centering
-%     \includegraphics[width=\textwidth]{plots/pairplot_hierarchical.png}
-%     \captionsetup{width=0.9\linewidth, justification=centering}
-%     \captionof{figure}{PCA visualization for hierarchical clustering with Ward's method}
-%     \label{fig:pairplot_ward}
-% \end{minipage}
-
-
-% k = 4:
-% Cluster 1: SSE = 340.29
-% Cluster 2: SSE = 282.12
-% Cluster 3: SSE = 464.36
-% Cluster 4: SSE = 426.15
-
-% k = 5:
-% Cluster 1: SSE = 340.29
-% Cluster 2: SSE = 66.31
-% Cluster 3: SSE = 119.49
-% Cluster 4: SSE = 464.36
-% Cluster 5: SSE = 426.15
 
 \section{General considerations}\label{sec:considerations}

@@ -312,13 +312,10 @@ Figure~\ref{fig:outliers} reports an analysis of the feature through the IQR met
 The boxplots show that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}.
 % the same can be observed on the second plot on the \textit{Has episodes} box plot.
 This might be because of an inconsistency with the understanding of the meaning of the attribute, and in those cases it might be possible that
-the value refers to the total runtime of the series, rather than the runtime of a single episode.\\
-
-
+the value refers to the total runtime of the series, rather than the runtime of a single episode.
 % Another interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
 Another interesting observation regards the presence of a record with a runtime of 0 minutes for the \textit{short} type;
 % although it was not considered an outlier by the first method,
-the record was removed from the dataset because it was regarded as an erroneous sample.\\
-
-In this phase, outliers were not removed from the dataset by default. Instead, a case-by-case approach was adopted,
+the record was removed from the dataset because it was regarded as an erroneous sample.
+Other than this sample, other outliers were not removed from the dataset by default. Instead, a case-by-case approach was adopted,
 testing each task and analysis both with and without the outliers. Notably, in every case, better results were obtained when outliers were excluded.
