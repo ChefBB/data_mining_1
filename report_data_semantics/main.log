@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  28 MAY 2025 14:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  28 MAY 2025 14:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -628,15 +628,6 @@ File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Warning: Label `fig:distrib' multiply defined.
 
 
-LaTeX Warning: Label `fig:kmeans_visualization' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:kmeans_visualization' multiply defined.
-
-
-LaTeX Warning: Label `fig:subplots_kmeans' multiply defined.
-
-
 LaTeX Warning: Label `ch:capitolo2' multiply defined.
 
 
@@ -883,77 +874,75 @@ File: plots/kmeans_clusters.png Graphic file (type png)
 <use plots/kmeans_clusters.png>
 Package pdftex.def Info: plots/kmeans_clusters.png  used on input line 51.
 (pdftex.def)             Requested size: 240.23016pt x 191.59729pt.
-<plots/2_dbscan_eps.jpg, id=62, 744.53156pt x 444.15938pt>
-File: plots/2_dbscan_eps.jpg Graphic file (type jpg)
-<use plots/2_dbscan_eps.jpg>
-Package pdftex.def Info: plots/2_dbscan_eps.jpg  used on input line 73.
-(pdftex.def)             Requested size: 240.23016pt x 143.31314pt.
-<plots/2_dbscan_scatterplot.jpg, id=63, 593.96906pt x 444.15938pt>
-File: plots/2_dbscan_scatterplot.jpg Graphic file (type jpg)
-<use plots/2_dbscan_scatterplot.jpg>
-Package pdftex.def Info: plots/2_dbscan_scatterplot.jpg  used on input line 79.
-(pdftex.def)             Requested size: 240.23016pt x 179.63957pt.
+<plots/dbscan_kth.png, id=62, 642.4803pt x 426.393pt>
+File: plots/dbscan_kth.png Graphic file (type png)
+<use plots/dbscan_kth.png>
+Package pdftex.def Info: plots/dbscan_kth.png  used on input line 73.
+(pdftex.def)             Requested size: 240.23016pt x 159.43503pt.
+<plots/dbscan_scatterplot.png, id=63, 642.4803pt x 426.393pt>
+File: plots/dbscan_scatterplot.png Graphic file (type png)
+<use plots/dbscan_scatterplot.png>
+Package pdftex.def Info: plots/dbscan_scatterplot.png  used on input line 79.
+(pdftex.def)             Requested size: 240.23016pt x 159.43503pt.
  [7 <./plots/sse_silh_kmeans_def.png> <./plots/kmeans_clusters.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 96--101
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 134.
 
+Overfull \hbox (8.4994pt too wide) in paragraph at lines 130--141
+ [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--107
+Underfull \hbox (badness 10000) in paragraph at lines 152--155
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
-
- []
-
-[8 <./plots/2_dbscan_eps.jpg> <./plots/2_dbscan_scatterplot.jpg>]
-<plots/max_min_pctg.png, id=72, 354.123pt x 354.123pt>
+[8{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./plots/dbscan_kth.png> <./plots/dbscan_scatterplot.png>]
+<plots/max_min_pctg.png, id=76, 354.123pt x 354.123pt>
 File: plots/max_min_pctg.png Graphic file (type png)
 <use plots/max_min_pctg.png>
-Package pdftex.def Info: plots/max_min_pctg.png  used on input line 164.
+Package pdftex.def Info: plots/max_min_pctg.png  used on input line 206.
 (pdftex.def)             Requested size: 232.97714pt x 232.98161pt.
-<plots/sil_sse_hierarchical_clust.png, id=73, 354.123pt x 354.123pt>
+<plots/sil_sse_hierarchical_clust.png, id=77, 354.123pt x 354.123pt>
 File: plots/sil_sse_hierarchical_clust.png Graphic file (type png)
 <use plots/sil_sse_hierarchical_clust.png>
-Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 171.
+Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 213.
 (pdftex.def)             Requested size: 232.97714pt x 232.98161pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
 
  []
 
 [9 <./plots/max_min_pctg.png> <./plots/sil_sse_hierarchical_clust.png>]
-<plots/dendrogram_4.png, id=79, 328.8285pt x 258.0039pt>
+<plots/dendrogram_4.png, id=83, 328.8285pt x 258.0039pt>
 File: plots/dendrogram_4.png Graphic file (type png)
 <use plots/dendrogram_4.png>
-Package pdftex.def Info: plots/dendrogram_4.png  used on input line 215.
+Package pdftex.def Info: plots/dendrogram_4.png  used on input line 257.
 (pdftex.def)             Requested size: 245.2399pt x 192.42769pt.
-<plots/scatter_ward.png, id=80, 353.4003pt x 281.853pt>
+<plots/scatter_ward.png, id=84, 353.4003pt x 281.853pt>
 File: plots/scatter_ward.png Graphic file (type png)
 <use plots/scatter_ward.png>
-Package pdftex.def Info: plots/scatter_ward.png  used on input line 221.
+Package pdftex.def Info: plots/scatter_ward.png  used on input line 263.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--257
+Underfull \hbox (badness 10000) in paragraph at lines 292--299
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
+Underfull \hbox (badness 10000) in paragraph at lines 300--305
 
  []
 
-<plots/dendrogram_complete.png, id=81, 341.8371pt x 265.9536pt>
+<plots/dendrogram_complete.png, id=85, 341.8371pt x 265.9536pt>
 File: plots/dendrogram_complete.png Graphic file (type png)
 <use plots/dendrogram_complete.png>
-Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 275.
+Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 317.
 (pdftex.def)             Requested size: 245.2399pt x 190.80061pt.
-<plots/scatter_complete.png, id=82, 353.4003pt x 281.853pt>
+<plots/scatter_complete.png, id=86, 353.4003pt x 281.853pt>
 File: plots/scatter_complete.png Graphic file (type png)
 <use plots/scatter_complete.png>
-Package pdftex.def Info: plots/scatter_complete.png  used on input line 281.
+Package pdftex.def Info: plots/scatter_complete.png  used on input line 323.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 [10 <./plots/dendrogram_4.png> <./plots/scatter_ward.png>]) (./capitolo3.tex
 Underfull \hbox (badness 10000) in paragraph at lines 13--15
@@ -975,7 +964,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
  []
 
-<plots/binary_dt.png, id=94, 686.565pt x 237.0456pt>
+<plots/binary_dt.png, id=98, 686.565pt x 237.0456pt>
 File: plots/binary_dt.png Graphic file (type png)
 <use plots/binary_dt.png>
 Package pdftex.def Info: plots/binary_dt.png  used on input line 48.
@@ -991,16 +980,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 113--120
  []
 
 [12 <./plots/binary_dt.png>]
-<plots/multiclass_tree.png, id=99, 808.7013pt x 237.0456pt>
+<plots/multiclass_tree.png, id=103, 808.7013pt x 237.0456pt>
 File: plots/multiclass_tree.png Graphic file (type png)
 <use plots/multiclass_tree.png>
 Package pdftex.def Info: plots/multiclass_tree.png  used on input line 147.
 (pdftex.def)             Requested size: 440.42834pt x 129.09866pt.
-<plots/multiclass_dt_conf_matrix.png, id=100, 427.1157pt x 379.4175pt>
+<plots/multiclass_dt_conf_matrix.png, id=104, 363.5181pt x 379.4175pt>
 File: plots/multiclass_dt_conf_matrix.png Graphic file (type png)
 <use plots/multiclass_dt_conf_matrix.png>
 Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 155.
-(pdftex.def)             Requested size: 240.23016pt x 213.40445pt.
+(pdftex.def)             Requested size: 240.23016pt x 250.73474pt.
 
 Overfull \hbox (15.0139pt too wide) in paragraph at lines 155--156
  [][] 
@@ -1010,13 +999,13 @@ Overfull \hbox (15.0139pt too wide) in paragraph at lines 155--156
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<plots/5_min_sup.png, id=111, 621.522pt x 403.9893pt>
+[14]
+<plots/5_min_sup.png, id=113, 621.522pt x 403.9893pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 34.
 (pdftex.def)             Requested size: 240.33405pt x 156.21751pt.
-<plots/5_min_conf.png, id=112, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=114, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 41.
@@ -1052,17 +1041,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17949 strings out of 474116
- 355199 string characters out of 5743682
+ 17956 strings out of 474116
+ 355287 string characters out of 5743682
  1950187 words of memory out of 5000000
- 40081 multiletter control sequences out of 15000+600000
- 609887 words of font info for 67 fonts, out of 8000000 for 9000
+ 40087 multiletter control sequences out of 15000+600000
+ 610197 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,19n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (18 pages, 2004715 bytes).
+Output written on main.pdf (18 pages, 2068705 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
+ 202 PDF objects out of 1000 (max. 8388607)
  100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  116 words of extra memory for PDF output out of 10000 (max. 10000000)
