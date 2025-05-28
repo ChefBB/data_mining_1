@@ -3,13 +3,7 @@
 
 The dataset \textit{train.csv} contains 16431 titles of different forms of visual entertainment that have been rated on IMDb, 
 an online database of information related to films, television series etc. 
-Each record is described by 23 attributes, either discrete or continuous. 
-% All the variables of the dataset are introduced and explained in Table 1.1 and Table 1.2.
-
-
-% \section{Distribution of the variables and statistics}\label{sec:variable_distrib}
-% This section will give an overview about the distribution of variables that has been carried on to understand patterns, 
-% detect meaningful statistics and assess their relevance to the project. 
+Each record is described by 23 attributes, either discrete or continuous.
 
 \section{Discrete Attributes}
 Table~\ref{tab:attributes} shows the discrete attributes of the dataset,
@@ -36,40 +30,6 @@ their types and a brief description of each attribute.
 \label{tab:attributes}
 \end{table}
 
-% \begin{table}[h]
-%     \centering
-%     \begin{tabular}{|l|l|l|} % Using 'l' for left alignment of columns
-%         \hline
-%         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\ 
-%         \hline
-%         \texttt{originalTitle} & Categorical & Title in its original language \\  
-%         \hline
-%         \texttt{rating} & Ordinal & IMDB title rating class \\
-%         & & The range is from \texttt{(0,1]} to \texttt{(9,10]} \\ 
-%         \hline
-%         \texttt{worstRating} & Ordinal & Worst title rating \\ 
-%         \hline
-%         \texttt{bestRating} & Ordinal & Best title rating \\ 
-%         \hline
-%         \texttt{titleType} & Categorical & The format of the title \\ 
-%         \hline
-%         \texttt{canHaveEpisodes} & Binary & Whether or not the title can have episodes \\ 
-%         & & \texttt{True}: can have episodes; \texttt{False}: cannot have episodes \\ 
-%         \hline
-%         \texttt{isRatable} & Binary & Whether or not the title can be rated by users \\ 
-%         & & \texttt{True}: it can be rated; \texttt{False}: cannot be rated \\ 
-%         \hline
-%         \texttt{isAdult} & Binary & Whether or not the title is for adults \\ 
-%         & & \texttt{0}: non-adult title; \texttt{1}: adult title \\ 
-%         \hline
-%         \texttt{countryOfOrigin} & List & The country(ies) where the title was produced \\ 
-%         \hline
-%         \texttt{genres} & List & The genre(s) associated with the title (3 at most) \\ 
-%         \hline
-%     \end{tabular}
-%     \caption{Description of discrete attributes}
-%     \label{tab:attributes}
-% \end{table}
 \subsection{Merging and Removal of Discrete Attributes}\label{subsec:var_elim_discrete}
 The following discrete attributes were removed from the dataset:
 \begin{itemize}
@@ -122,8 +82,7 @@ a significant number of titles falls within the (6,7] and (7, 8] ranges (4565 an
 The attribute \texttt{rating} was transformed by taking the upper bound of each rating
 interval's string representation. This approach was chosen because the minimum rating is 1, meaning the
 lowest interval corresponds only to ratings of 1. For consistency, the same transformation was applied
-to all other intervals.\\
-
+to all other intervals.
 Multi-label one-hot encoding was applied to the \texttt{genres} column. 
 Each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information; this generated 28 new features.
 Depending on the task, some were often discarded to avoid overfitting or to reduce the number of features.
@@ -150,9 +109,9 @@ The following variables have been created:
 \end{multicols}
 
 
-For each record, the first six features provide the number of countries for each continent.\\
-The \texttt{countryOfOrigin\_UNK} variable counts the number of countries that are not recognized as belonging to a continent for that record.\\
-
+For each record, the first six features provide the number of countries for each continent.
+The \texttt{countryOfOrigin\_UNK} variable counts the number of countries that are not recognized as
+belonging to a continent for that record.
 % Each of the first six features provides the number of countries in the corresponding continent.\\
 % \texttt{countryOfOrigin\_UNK} is used to represent the strings that are not categorized as being part of a
 % continent, by counting the strings that are not recognized.
@@ -160,7 +119,7 @@ Additionally, \texttt{countryOfOrigin\_freq\_enc} provides the frequency encodin
 showing how frequently a specific combination of countries appears across the entire dataset.
 % In summary, the original attribute is represented by the seven features regarding
 % the continents, plus 1 representing the frequency encoding.
-These transformations allow to keep a most of the original information, while limiting the number of new features.
+These transformations allow to keep most of the original information, while limiting the number of new features.
 
 
 
@@ -169,135 +128,56 @@ These transformations allow to keep a most of the original information, while li
 Table~\ref{tab:numerical_attributes} shows the continuous attributes of the dataset, their type and
 a brief description.
 \vspace{1em}
-\begin{table}[h]
-\centering
-\begin{tabular}{lll}
-\toprule
-\textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
-\midrule
-\texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\
-\texttt{startYear} & Integer & Release/start year of a title \\
-\texttt{endYear} & Integer & TV Series end year \\
-\texttt{awardWins} & Integer & Number of awards the title won \\
-\texttt{numVotes} & Integer & Number of votes the title has received \\
-\texttt{totalImages} & Integer & Number of images on the IMDb title page \\
-\texttt{totalVideos} & Integer & Number of videos on the IMDb title page \\
-\texttt{totalCredits} & Integer & Number of credits for the title \\
-\texttt{criticReviewsTotal} & Integer & Total number of critic reviews \\
-\texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\
-\texttt{numRegions} & Integer & Number of regions for this version of the title \\
-\texttt{userReviewsTotal} & Integer & Number of user reviews \\
-\texttt{ratingCount} & Integer & Total number of user ratings for the title \\
-\bottomrule
-\end{tabular}
-\caption{Description of continuous attributes}
-\label{tab:numerical_attributes}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lll}
+        \toprule
+        \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
+        \midrule
+        \texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\
+        \texttt{startYear} & Integer & Release/start year of a title \\
+        \texttt{endYear} & Integer & TV Series end year \\
+        \texttt{awardWins} & Integer & Number of awards the title won \\
+        \texttt{numVotes} & Integer & Number of votes the title has received \\
+        \texttt{totalImages} & Integer & Number of images on the IMDb title page \\
+        \texttt{totalVideos} & Integer & Number of videos on the IMDb title page \\
+        \texttt{totalCredits} & Integer & Number of credits for the title \\
+        \texttt{criticReviewsTotal} & Integer & Total number of critic reviews \\
+        \texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\
+        \texttt{numRegions} & Integer & Number of regions for this version of the title \\
+        \texttt{userReviewsTotal} & Integer & Number of user reviews \\
+        \texttt{ratingCount} & Integer & Total number of user ratings for the title \\
+        \bottomrule
+    \end{tabular}
+    \caption{Description of continuous attributes}
+    \label{tab:numerical_attributes}
 \end{table}
 
-% \begin{table}[h]
-%     \centering             
-    
-    %nel type secondo me ha senso mettere il tipo di variabile continua (quindi interval, ratio ecc.)        
-
-%     \begin{tabular}{|l|l|l|} 
-%         \hline
-%         \textbf{Attribute} & \textbf{Type} & \textbf{Description} \\
-%         \hline
-%         \texttt{runtimeMinutes} & Integer & Runtime of the title expressed in minutes \\ 
-%         \hline
-%         \texttt{startYear} & Integer & Release/start year of a title \\ 
-%         \hline
-%         \texttt{endYear} & Integer & TV Series end year \\
-%         \hline
-%         \texttt{awardWins} & Integer & Number of awards the title won \\ 
-%         \hline
-%         \texttt{numVotes} & Integer & Number of votes the title has received \\ 
-%         \hline
-%         \texttt{totalImages} & Integer & Number of Images on the IMDb title page \\ 
-%         \hline
-%         \texttt{totalVideos} & Integer & Number of Videos on the IMDb title page \\ 
-%         \hline
-%         \texttt{totalCredits} & Integer & Number of Credits for the title \\ 
-%         \hline
-%         \texttt{criticReviewsTotal} & Integer & Total Number of Critic Reviews \\ 
-%         \hline
-%         \texttt{awardNominationsExcludeWins} & Integer & Number of award nominations excluding wins \\ 
-%         \hline
-%         \texttt{numRegions} & Integer & The regions number for this version of the title \\ 
-%         \hline
-%         \texttt{userReviewsTotal} & Integer & Number of User Reviews \\ 
-%         \hline
-%         \texttt{ratingCount} & Integer & The total number of user ratings for the title \\ 
-%         \hline
-%     \end{tabular}
-%     \caption{Description of continuous attributes}
-%     \label{tab:numerical_attributes}
-% \end{table}
-
 \subsection{Removal and Merging of Continuous Attributes}\label{sec:var_elim_creation}
-% The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
-% account the continuous attributes of the dataset.\\
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.65\textwidth]{plots/correlation_matrix.png}
-%     \caption{Correlation matrix}
-%     \label{fig:correlation_matrix}
-% \end{figure}
-
-% The correlation matrix of the continuous features shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
-% for their redundancy, \texttt{ratingCount} was discarded.\\
-
 The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matrix that takes into
 account the continuous attributes of the dataset.
 The matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{plots/correlation_matrix.png}
+    \captionof{figure}{Correlation matrix}
+    \label{fig:correlation_matrix}
+\end{figure}
+
+
+
 The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into 
 \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
-    % correlazione da matrix è 69
 The new feature represents the sum of the two original attributes. This transformation also helps
-mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\
-% \end{minipage}
-% \hfill
-
-% \vspace{2em}
+mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
 Although the original attributes are not highly correlated, both exhibit skewed distributions (as in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
 Due to this, and to their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
-% \vspace{1em}
-
-
-% codice due colonne
-% \noindent
-% \begin{minipage}{0.50\textwidth}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.70\textwidth]{plots/correlation_matrix.png}
-    \captionof{figure}{Correlation matrix}
-    \label{fig:correlation_matrix}
-\end{figure}
-% \end{minipage}
-% \hfill
-% \begin{minipage}{0.47\textwidth}
-
-
-%     The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into a single
-%     feature, i.e. \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.95).
-%     % correlazione da matrix è 69
-%     The new feature represents the sum of the two original attributes. This transformation also helps
-%     mitigate the impact of their heavy left skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.\\\\
-% Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
-% feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
-
-% Although the original attributes are not highly correlated, both exhibit skewed distributions (as shown in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
-% Due to this, and their similar semantic meaning, they were merged to form a more consolidated and
-% interpretable feature.\\
-
-
-
 
 \begin{figure}[H]
     \centering
@@ -338,8 +218,9 @@ attention was given at identifying missing values and outliers.
 
 \subsection{Missing Values}\label{sec:missing_values}
 % The missing values in the above-mentioned attributes were handled as follows:
-The following attributes were found to have missing values\footnote{\texttt{awardWins} was the only feature with missing values marked as \texttt{NaN}, while the other listed columns had missing values marked as "\textbackslash N", hence they were replaced with \texttt{NaN}.}
-:
+The following attributes were found to have missing values\footnote{\texttt{awardWins}
+was the only feature with missing values marked as \texttt{NaN}, while the other listed columns had missing
+values marked as \texttt{"\textbackslash N"}, hence they were replaced with \texttt{NaN}.}:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of \texttt{NaN} values (15617; about 95\%).
     Although the feature is only relevant for \textit{TVSeries} and \textit{TVMiniSeries} titles, it still
