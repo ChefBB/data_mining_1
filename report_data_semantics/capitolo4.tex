@@ -21,12 +21,42 @@ Multivariate Regression was performed with \texttt{numVotes}, \texttt{numRegions
 \texttt{totalMedia} as additional features, because of their high correlations with the target variable.
 All models' parameters
 were optimized using Cross-Validation, using Negative Mean Squared Error as scoring criterion.
-Table~\ref{tab:uni_multi_regression_report} shows the test performances of the different regressors.
+Table~\ref{tab:side_by_side_regression} shows the test performances of the different regressors.
+% \begin{table}[H]
+%     \centering
+%     \begin{tabular}{lc@{\hskip 30pt}ccc}
+%         \toprule
+%         % mae, mse normalized over target variable range
+%          & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} \\
+%         \midrule
+%         \multicolumn{4}{c}{\textbf{Univariate}} \\
+%         \midrule
+%         Linear & 0.465 & 3.419 & 189.543 \\
+%         Ridge & 0.465 & 3.419 & 189.550 \\
+%         Lasso & 0.279 & 3.948 & 255.732 \\
+%         DT & 0.700 & 2.313 & 106.531 \\ % max_depth=35
+%         47-NN & 0.643 & 2.221 & 126.539 \\ % k=24
+%         \midrule
+%         \multicolumn{4}{c}{\textbf{Multiple}} \\
+%         \midrule
+%         Linear & 0.628 & 3.125 & 132.002 \\
+%         Ridge & 0.627 & 3.071 & 132.119 \\ % alpha=1000
+%         Lasso & 0.610 & 2.731 & 138.249 \\ % alpha=10
+%         DT & 0.702 & 2.119 & 105.854 \\ % max depth=8
+%         15-NN & 0.673 & 2.268 & 105.864 \\ % 15 neighbors
+%         \bottomrule
+%     \end{tabular}
+%     \caption{Performance report for Univariate and Multiple Regression}
+%     \label{tab:uni_multi_regression_report}
+% \end{table}
+
 \begin{table}[H]
+\centering
+\makebox[\textwidth][c]{ % Centro forzato su tutta la larghezza
+\begin{minipage}{0.44\textwidth}
     \centering
-    \begin{tabular}{lc@{\hskip 30pt}ccc}
+    \begin{tabular}{lc@{\hskip 5pt}cc}
         \toprule
-        % mae, mse normalized over target variable range
          & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} \\
         \midrule
         \multicolumn{4}{c}{\textbf{Univariate}} \\
@@ -34,21 +64,36 @@ Table~\ref{tab:uni_multi_regression_report} shows the test performances of the d
         Linear & 0.465 & 3.419 & 189.543 \\
         Ridge & 0.465 & 3.419 & 189.550 \\
         Lasso & 0.279 & 3.948 & 255.732 \\
-        DT & 0.700 & 2.313 & 106.531 \\ % max_depth=35
-        47-NN & 0.643 & 2.221 & 126.539 \\ % k=24
+        DT & 0.700 & 2.313 & 106.531 \\
+        47-NN & 0.643 & 2.221 & 126.539 \\
+        \bottomrule
+    \end{tabular}
+    \caption*{(a) Univariate Regression}
+\end{minipage}
+\hspace{1pt} % distanza quasi nulla
+\begin{minipage}{0.44\textwidth}
+    \centering
+    \begin{tabular}{lc@{\hskip 5pt}cc}
+        \toprule
+         & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} \\
         \midrule
         \multicolumn{4}{c}{\textbf{Multiple}} \\
         \midrule
         Linear & 0.628 & 3.125 & 132.002 \\
-        Ridge & 0.627 & 3.071 & 132.119 \\ % alpha=1000
-        Lasso & 0.610 & 2.731 & 138.249 \\ % alpha=10
-        DT & 0.702 & 2.119 & 105.854 \\ % max depth=8
-        15-NN & 0.673 & 2.268 & 105.864 \\ % 15 neighbors
+        Ridge & 0.627 & 3.071 & 132.119 \\
+        Lasso & 0.610 & 2.731 & 138.249 \\
+        DT & 0.702 & 2.119 & 105.854 \\
+        15-NN & 0.673 & 2.268 & 105.864 \\
         \bottomrule
     \end{tabular}
-    \caption{Performance report for Univariate and Multiple Regression}
-    \label{tab:uni_multi_regression_report}
+    \caption*{(b) Multiple Regression}
+\end{minipage}
+}
+\caption{Performance comparison between Univariate and Multiple Regression}
+\label{tab:side_by_side_regression}
 \end{table}
+
+
 The linear models underperformed compared to both Decision
 Tree and K-Nearest Neighbors regressors in both tasks. In the first regression, neither L1 nor L2
 regularization improved performances, with Lasso performing worse than the other linear models.
@@ -61,7 +106,7 @@ K-NN regressors had solid performances, with a slight increase in Multiple Regre
 but a significantly lower Mean Squared Error.
 The best performing model in both tasks was the Decision Tree regressor, although the additional features
 offered a slight improvement in performance. An interesting observation is that the Cross-Validation
-best hyperparameters for Univariate Regression indicated a high maximum depth of 35 for Univariate Regression,
+best hyperparameters for Univariate Regression indicated a high maximum depth of 35,
 while the best hyperparameter for Multiple Regression was a maximum depth of 8; a similar trend was observed
 in the K-NN regressors, where the optimal number of neighbors was 47 for Univariate Regression and 15 for Multiple Regression.
 This suggests that the additional features in Multiple Regression allowed the model to generalize better,
