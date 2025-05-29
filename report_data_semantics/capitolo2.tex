@@ -136,10 +136,10 @@ Note that, in this context, an high Silhouette score is misleading, as it tends 
 \toprule
 \textbf{eps threshold} & \textbf{Min points} & \textbf{Silhouette} & \textbf{Cluster composition}  \\
 \midrule
-\texttt{\textbf{$\varepsilon$} $>$ 0.16} & for any tested value &  $>$ 0.51  & never led to more than one cluster \\
-\texttt{0.13 $\leq$ \textbf{$\varepsilon$} $<$ 0.16 } & for any tested value &  $[0.49,\ 0.51]$  & led to one cluster and, occasionally, 1 or 2 minor ones\\
-\texttt{\textbf{$\varepsilon$} $<$ 0.13 }& for any tested value & $[0.10,\ 0.28]$ & the big cluster it's splitted in two different ones \\
-\texttt{\textbf{$\varepsilon$} $\leq$ 0.10} & lower values $[4,\ 5]$& $[0.10,\ 0.22]$  & led to several, not meaningful, clusters of 5/6 points\\
+\texttt{\textbf{$\varepsilon$} $>$ $0.16$} & for any tested value &  $>$ 0.51  & never led to more than one cluster \\
+\texttt{$0.13$ $\leq$ \textbf{$\varepsilon$} $<$ $0.16$} & for any tested value &  $[0.49,\ 0.51]$  & led to one cluster and, occasionally, 1 or 2 minor ones\\
+\texttt{\textbf{$\varepsilon$} $<$ $0.13$}& for any tested value & $[0.10,\ 0.28]$ & the big cluster it's splitted in two different ones \\
+\texttt{\textbf{$\varepsilon$} $\leq$ $0.10$} & lower values $[4,\ 5]$& $[0.10,\ 0.22]$  & led to several, not meaningful, clusters of 5/6 points\\
 
 \bottomrule
 \end{tabular}
@@ -334,3 +334,35 @@ is a product of the sparsity of these clusters' regions.
 \end{figure}
 
 \section{General considerations}\label{sec:considerations}
+\textbf{PUNTI TRATTABILI (non in ordine):}
+
+- k-means raggiunge valori alti di silhouette ma perchè le variabili usate sono poche - questo può essere
+confrontato con ward's che usa invece più variabili (ma paragonabile per valore di silhouette? altrimenti fare confronto con metodo di hierarchical
+che raggiunge performance simili a kmeans- anche se meno paragonabile rispetto a ward's perchè lui + simile a kmeans dato che usa sse)
+--> vedere se dire in general considerations o se in k-means
+
+- considerazioni generali su dataset, il clustering riesce a far emergere qualcosa riguardo alla struttura dei dati?
+
+- k-means algoritmo più lineare mentre dbscan e hierarchical più complessi, che magari fanno emergere cose più interessanti
+
+- confronto con titletype?
+
+- se mettiamo hierarchical clustering come prima subsection, spiegare il perchè
+
+- kmeans:
+    - obiettivo → trovare cluster ben separati, con silhouette onesta e SSE bassa
+    - risultato → 4 cluster ben separati, silhouette score di 0.315, SSE di 535.51
+    - confrontabile con metodi di hierarchical?
+
+- DBSCAN:
+        OBIETTIVO → trovare miglior compromesso tra struttura interpretabile (almeno 2 cluster), poco rumore e silhouette onesta.  
+        → e con cluster che anche se piccoli siano "effettivamente separati" 
+        problema →per caratteristiche del dataset stesso → DBSCAN tende a formare un cluster dominante nella zona densa che "cattura" la maggior parte dei dati 
+        (la classe maggioritaria) mentre dati + dispersi sono rappr come rumore o come micro-custer non significativi
+        Spesso epsilon alta →  porta a un comportamento più "aggressivo" nell'unire punti, risultando nel "cluster gigante" 
+        Tendenzialmente con epsilon più basso, l'algoritmo riesce a distinguere meglio le diverse densità,catturando sia la struttura principale che 
+        eventuali sottogruppi significativi.
+        "To conclude, these observations highlight DBSCAN's limitations when applied to datasets with skewed feature
+        distributions and unbalanced local densities. Nonetheless, the exploration helped isolate parameter ranges where
+        meaningful subclusters begin to emerge,beyond the dominant density mass."
+

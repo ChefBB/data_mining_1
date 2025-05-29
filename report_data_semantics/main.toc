@@ -16,21 +16,21 @@
 \contentsline {subsection}{\numberline {2.3.1}Ward's method}{10}{}%
 \contentsline {subsection}{\numberline {2.3.2}Complete Linkage}{10}{}%
 \contentsline {section}{\numberline {2.4}General considerations}{11}{}%
-\contentsline {chapter}{\numberline {3}Classification}{11}{}%
-\contentsline {section}{\numberline {3.1}Binary classification}{11}{}%
+\contentsline {chapter}{\numberline {3}Classification}{12}{}%
+\contentsline {section}{\numberline {3.1}Binary classification}{12}{}%
 \contentsline {subsection}{\numberline {3.1.1}K-NN - Binary Classification}{12}{}%
-\contentsline {subsection}{\numberline {3.1.2}Naïve Bayes - Binary Classification}{12}{}%
+\contentsline {subsection}{\numberline {3.1.2}Naïve Bayes - Binary Classification}{13}{}%
 \contentsline {subsection}{\numberline {3.1.3}Decision Trees - Binary Classification}{13}{}%
-\contentsline {subsection}{\numberline {3.1.4}Model Comparison - Binary Classification}{13}{}%
+\contentsline {subsection}{\numberline {3.1.4}Model Comparison - Binary Classification}{14}{}%
 \contentsline {section}{\numberline {3.2}Multiclass classification}{14}{}%
-\contentsline {subsection}{\numberline {3.2.1}K-NN - Multiclass Classification}{14}{}%
+\contentsline {subsection}{\numberline {3.2.1}K-NN - Multiclass Classification}{15}{}%
 \contentsline {subsection}{\numberline {3.2.2}Naïve Bayes - Multiclass Classification}{15}{}%
-\contentsline {subsection}{\numberline {3.2.3}Decision Trees - Multiclass Classification}{15}{}%
-\contentsline {subsection}{\numberline {3.2.4}Model Comparison - Multiclass Classification}{16}{}%
-\contentsline {chapter}{\numberline {4}Regression}{17}{}%
-\contentsline {section}{\numberline {4.1}Univariate and Multiple Regression}{17}{}%
-\contentsline {section}{\numberline {4.2}Multivariate Regression}{18}{}%
-\contentsline {chapter}{\numberline {5}Pattern Mining}{18}{}%
-\contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{19}{}%
+\contentsline {subsection}{\numberline {3.2.3}Decision Trees - Multiclass Classification}{16}{}%
+\contentsline {subsection}{\numberline {3.2.4}Model Comparison - Multiclass Classification}{17}{}%
+\contentsline {chapter}{\numberline {4}Regression}{18}{}%
+\contentsline {section}{\numberline {4.1}Univariate and Multiple Regression}{18}{}%
+\contentsline {section}{\numberline {4.2}Multivariate Regression}{19}{}%
+\contentsline {chapter}{\numberline {5}Pattern Mining}{19}{}%
+\contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{20}{}%
 \contentsline {section}{\numberline {5.2}Extraction of rules}{20}{}%
 \contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{20}{}%
