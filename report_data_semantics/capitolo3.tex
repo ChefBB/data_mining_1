@@ -44,7 +44,7 @@ The remaining variables of the dataset were maintained as they offered diverse a
 For this algorithm, a portion of the training set was held out as a validation set to enable external validation after internal cross-validation. 
 A randomized hyperparameter search was indeed performed on the reduced training set, with each configuration evaluated using stratified 5-fold cross-validation. 
 This process aimed to identify the optimal value of \textit{k} and explore additional algorithm parameters. 
-The best configuration found is: \texttt{weights: 'uniform', n\_neighbors: 9, metric: 'cityblock'}, which achieved the highest accuracy on the selected feature set.\\
+The best configuration found is: \texttt{weights:'uniform', n\_neighbors:9, metric:'cityblock'}, which achieved the highest accuracy on the selected feature set.\\
 
 The resulting model shows solid performance, achieving a test accuracy of 0.85. As expected, it performs better on the \textit{Low Engagement} class, with a high recall (0.94) and F1-score (0.89). 
 In contrast, the \textit{High Engagement} class is more challenging for the model; while precision is reasonable (0.83), recall (0.65) indicates that a significant number of instances are misclassified as 
@@ -56,24 +56,24 @@ To summarize, the macro average F1-score of 0.81 is suggesting that the model ma
 
 
 \subsection{Naïve Bayes - Binary Classification}
-% For Naïve Bayes, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters for the first model (used as an external validation 
-% % after internal cross-validation with RandomizedSearch) and to choose the best feature set for the second one.
+
 \begin{wrapfigure}{l}{0.40\textwidth}
     \centering
     \includegraphics[width=0.30\textwidth]{plots/nb_binary_confmatrix.png}
     \caption{NB binary classification}
     \label{fig:nb_binary}
 \end{wrapfigure}
-To use Categorical Naïve Bayes, specific preprocessing steps were required: continuous attributes were discretized using semantically meaningful binning and \textbf{Country\_orig} feature was binarized into a (0 / $>$ 0) format; 
-however, only the from\_America\_bin  and from\_Europe\_bin were used for this particular task. 
-All binning strategies applied here are consistent with those described in Subsection X of pattern mining section. 
-Finally, the resulting categorical features were numerically encoded using OrdinalEncoder, as required by the CategoricalNB.\\
+For Naïve Bayes, a validation set was used to select the best feature set. Two variants were evaluated: GaussianNB and CategoricalNB. 
+However, skewed distribution of continuous attributes and the relevance of discrete features (e.g., genres), made GaussianNB less suitable 
+for the task, resulting in a slightly lower performance, in terms of accuracy and classification of underrepresented classes. 
+Therefore, only CategoricalNB results are reported. 
+To apply CategoricalNB, continuous features were discretized using meaningful bins, and each \texttt{countryOfOrigin\_[continent code]} feature was binarized (0 / $>$0), to maintain the only significant information; 
+only \texttt{is\_from\_America\_bin} and \texttt{is\_from\_Europe\_bin} were used. Final features were encoded with OrdinalEncoder as required.
 The results show good classification performance with an overall accuracy of 0.83, a solid outcome given the simplicity of the NB model.
-However, differences between classes emerged: the low engagement class performed better, with precision 0.87, recall 0.89, and F1 score 0.88, while the high engagement class had lower results 
-(precision of 0.74, recall of 0.70 and F1 score of 0.72), 
-Actually, the model struggles more to identify high engagement examples, as confirmed by the low recall (0.70) and by the 481 false negatives in the confusion matrix. 
-Conversely, the low engagement class is recognized with greater reliability, with 3063 correct predictions out of 3416.
-Finally, the macro F1 average of 0.80 indicates a good balance overall, but some difficulty remains in handling the minority class.
+However, differences between classes emerged: the \textit{Low Engagement} class performed better, with precision 0.87, recall 0.89, and F1 score 0.88, 
+while the model struggled more identifying  \textit{High Engagement} examples, as confirmed by the low recall (0.70) for that value and by the 481 false 
+negatives in the confusion matrix. The macro F1 average of 0.80, actually indicates a good balance overall, but some difficulty remains in handling the minority class.
+
 % \begin{figure}[H]
 %     \centering
 %     \includegraphics[width=0.30\linewidth]{plots/nb_binary_confmatrix.png}
@@ -306,10 +306,10 @@ To summarize, since the model achieves a macro average F1-score of 0.50, this re
 
 
 \subsection{Naïve Bayes - Multiclass Classification} 
-Also for the Multiclass Classification task the features has been preprocessed as explained in paragraph X, 
-in order to use Categorical NB. For this task it has been interesting to note that the inclusion of genre features enhanced classification performance 
-for all classes but especially for the ones with limited support: tvMiniSeries (186 records in the training set) was not classified at all and tvMovie (844) and tvSpecial (158) 
-were poorly classified. This confirmed the choice of CategoricalNB over GaussianNB; being the first the most indicated to handle categorical features.\\   
+For the multiclass classification task, the same procedure as binary classification (explained in Subsection 3.1.2) were applied. 
+Note that including genre features, significantly improved classification across all classes, particularly those with limited support in the training set. 
+Under GaussianNB, tvMiniSeries (68 objects) was not classified at all, and tvMovie (288) and tvSpecial (42) were poorly classified. 
+With CategoricalNB, which better handles categorical data, these classes showed improvements, confirming its suitability for this task.\\   
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
     \captionsetup{justification=raggedleft, width=1\linewidth}
@@ -317,14 +317,15 @@ were poorly classified. This confirmed the choice of CategoricalNB over Gaussian
     \label{fig:nb_multiclass}
     \includegraphics[width=0.9\linewidth]{plots/nb_multiclass_confmatrix.jpg}
 \end{wrapfigure}
-The model achieves an overall accuracy of 0.73, acceptable for a multiclass task but indicative of difficulties in handling all categories equally well. 
-High F1-scores for the most represented classes—movie (0.83), tvEpisode (0.79), and short (0.81) — suggest effective recognition, likely due to their frequency in the dataset and the presence of more easily distinctive traits. The movie class also shows strong precision (0.82) and recall (0.84), 
-confirming the model's reliability on this category.\\
-As expected, performances drop significantly for underrepresented classes. tvMiniSeries (0.02), tvSpecial (0.21), and tvMovie (0.17) exhibit low F1-scores, indicating that the model has significant difficulties distinguishing correctly these examples. 
-Other than their low support, this is probably linked to the presence of common features with more dominant classes, such as Movie or tvEpisode. This is supported by the confusion matrix, which shows, for example, that 140 tvMovie instances are  misclassified as movie, highlighting a strong confusion between these two categories.\\
-The tvSeries class also presents issues, with moderate precision (0.52) but a rather low recall (0.40): indicating many missed instances
-To conclude, the very low F1 macro average score, actually reflects the inability of the model to perform in a balanced way on all the classes. 
-On the other hand, the F1 weighted average results of 0.71, suggesting that the majority classes have a greater influence on overall performance than the minorities.
+The model achieves an overall accuracy of 0.73, reasonable for multiclass classification, but indicative of difficulties in handling all categories equally. 
+High F1-scores (about 0.80) for frequent classes like \texttt{movie}, \texttt{tvEpisode}, and \texttt{short} suggest effective recognition, likely due to their prevalence and distinctive traits. 
+The \texttt{movie} class also shows strong precision (0.82) and recall (0.84), confirming the model’s reliability on this category.
+As expected, performance drops for underrepresented classes: \texttt{tvMiniSeries}, \texttt{tvSpecial}, and \texttt{tvMovie}  have low F1-scores (respectivly 0.02, 0.21, 0.17). 
+Other than their low support, this is probably linked to the presence of common features with more dominant classes, such as \texttt{tvEpisode} or \texttt{Movie} (e.g., 140 \texttt{tvMovie} instances misclassified as movie). 
+The \texttt{tvSeries} class also shows issues, with moderate precision (0.52) but low recall (0.40), indicating many missed instances.
+The very low macro F1-score actually reflects the inability of the model to perform in a balanced way on all the classes, 
+while the higher weighted F1-score (0.71) , suggests that the majority classes have a greater influence on overall performance than the minorities.
+
 % \begin{figure}[H]
 %     \centering
 %     \includegraphics[width=0.30\linewidth]{plots/nb_multiclass_confmatrix.jpg}
