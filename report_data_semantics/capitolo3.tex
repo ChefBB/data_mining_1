@@ -158,23 +158,36 @@ Precision scores of the class (0.78 on train, 0.75 on test).
 % \end{figure}
 
 \subsection{Model Comparison - Binary Classification}
-After having performed the task using the three algorithms, some interesting aspects emerged.
-As expected, all the models, to a different extent, struggle to identify the minority class, \textit{High Engagement}, resuling in lower recall values
-- 0.65 for K-NN, 0.70 for Naïve Bayes, and 0.68 for Decision Trees.
-This is evident in the confusion matrices, where a significant number of \textit{High Engagement} records are misclassified as \textit{Low Engagement}.
-In particular, K-NN handled the minority class the best in terms of precision and F1-score, achieving respectively 0.83 and 0.73.
-However, the fact that Naïve Bayes performed better in terms of recall (0.70) makes it a more valid alternative
-in scenarios where preventing high-engagement titles from being misclassified as low-engagement ones is a priority.
-Decision Trees are located in the middle, showing similar performances to Naïve Bayes, but having a slightly lower recall.
-In conclusion, considering all these aspects, K-NN is still considered the most efficient model for this task, as it also performs best globally. 
-In the table~\ref{tab:best_model_binary_classification} its overall results are summarized.
+After applying the three algorithms to the binary classification task, it emerged that all models struggle to identify the minority class, 
+\textit{High Engagement}, leading to lower recall values: 0.65 for K-NN, 0.70 for Naïve Bayes, and 0.69 for Decision Trees. 
+This is confirmed by the confusion matrices, where many \textit{High Engagement} records are misclassified as \textit{Low Engagement}.\\
+
+Among the models, K-NN handled the minority class best in terms of precision (0.83) and F1-score (0.73). 
+However, the fact that Naïve Bayes performed the highest in terms of recall (0.70) makes it a more valid alternative in scenarios where preventing 
+high-engagement titles from being misclassified as low-engagement ones is a priority. In general, Decision Trees show similar performances to Naïve Bayes for all metrics
+In conclusion, K-NN is still considered the most efficient model for this task, as it also achieves the highest overall accuracy, 
+the best macro-average F1-score and the most balanced results across both classes. 
+The macro-average ROC AUC scores for all three models are also quite similar, with K-NN showing the highest value (0.89), 
+followed by Naïve Bayes (0.88) and Decision Trees (0.87).
+A summary of the results of the best model is presented in Table~\ref{tab:best_model_binary_classification}.
+
+% After having performed the task using the three algorithms, some interesting aspects emerged.
+% As expected, all the models, to a different extent, struggle to identify the minority class, \textit{High Engagement}, resuling in lower recall values
+% - 0.65 for K-NN, 0.70 for Naïve Bayes, and 0.68 for Decision Trees.
+% This is evident in the confusion matrices, where a significant number of \textit{High Engagement} records are misclassified as \textit{Low Engagement}.
+% In particular, K-NN handled the minority class the best in terms of precision and F1-score, achieving respectively 0.83 and 0.73.
+% However, the fact that Naïve Bayes performed better in terms of recall (0.70) makes it a more valid alternative
+% in scenarios where preventing high-engagement titles from being misclassified as low-engagement ones is a priority.
+% Decision Trees are located in the middle, showing similar performances to Naïve Bayes, but having a slightly lower recall.
+% In conclusion, considering all these aspects, K-NN is still considered the most efficient model for this task, as it also performs best globally. 
+% In the table~\ref{tab:best_model_binary_classification} its overall results are summarized.
 \begin{table}[H]
     \centering
-    \begin{tabular}{cccc}
+    \begin{tabular}{cccccc}
         \toprule
-        \bf{Accuracy} & \bf{Precision Macro Avg} & \bf{Recall Macro Avg} & \bf{F1-score Macro Avg} \\
+        \bf{} & \bf{Accuracy} & \bf{Precision Macro Avg} & \bf{Recall Macro Avg} & \bf{F1-score Macro Avg} & \bf{AUC} \\
         \midrule
-         0.85 & 0.84 & 0.79 & 0.81 \\
+        \textbf{K-NN} & 0.85 & 0.84 & 0.79 & 0.81 & 0.89\\
         \bottomrule
     \end{tabular}
     \caption{Overall metrics - K-NN}
@@ -297,7 +310,8 @@ This is also clearly visible in the confusion matrix of Figure~\ref{fig:multicla
 On the other hand, the model struggles with 2 classes in particular: \textit{tvMiniSeries} and \textit{tvSpecial}, i.e. the classes with the least support (respectively 186 and 158). 
 In particular, \textit{tvMiniSeries} shows a very low recall (0.03), meaning that it is rarely correctly identified. 
 Similarly, \textit{tvMovie} is mostly misclassified, showing a low F1-score of 0.29.\\
-% An interesting trend to notice in the confusion matrix is how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}. 
+% forse rimetti i dati -> non messi sotto
+% An interesting trend to notice in the confusion matrix is how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}. This is reflected in a very low recall (0.24) for \textit{tvSeries} and in a quite high precision (0.76) for \textit{tvEpisode}.
 % This is likely due to the similar nature of the two, as both refer to television content and often share overlapping characteristics, considering also that a tv episode is can be considered part of a tv series. 
 % A similar confusion occurs between \textit{tvMovie} and \textit{movie}.\\
 To summarize, since the model achieves a macro average F1-score of 0.50, this reflects clearly this imbalance in performance: while the model performs well on the majority classes, it fails to generalize well especially the minority ones.
@@ -386,36 +400,34 @@ of the \textit{tvMiniSeries} records being misclassified as \textit{tvSeries}.
 
 
 \subsection{Model Comparison - Multiclass Classification}
-The analysis of Decision Tree, Categorical Naïve Bayes, and K-NN models reveals several consistent patterns in their performance across this multiclass classification task. 
-As expected, a common issue that was observed is the difficulty in correctly classifying underrepresented classes.
-Classes such as \textit{tvMiniSeries} (186 records in the training set), \textit{tvMovie} (844), and \textit{tvSpecial} (158) consistently show low recall and F1-scores across all models.
-The poorest performance is observed for the first one, with recall values ranging from 0.01 (Naïve Bayes) to 0.07 (Decision Trees), and a maximum F1-score of 0.10 (Decision Trees).
-On the other hand, well represented classes, such as \textit{movie} (5442 records in the training set) and \textit{tvEpisode} (4690), are generally classified accurately, as previously discussed.\\
-However, class imbalance alone does not fully explain the misclassifications. 
-The confusion matrices showed systematic misclassification patterns, 
+% As expected, a common issue that was observed is the difficulty in correctly classifying underrepresented classes.
+% Classes such as \textit{tvMiniSeries} (186 records in the training set), \textit{tvMovie} (844), and \textit{tvSpecial} (158) consistently show low recall and F1-scores across all models.
+% The poorest performance is observed for the first one, with recall values ranging from 0.01 (Naïve Bayes) to 0.07 (Decision Trees), and a maximum F1-score of 0.10 (Decision Trees).
+% On the other hand, well represented classes, such as \textit{movie} (5442 records in the training set) and \textit{tvEpisode} (4690), are generally classified accurately, as previously discussed.\\
+The analysis of Decision Tree, Categorical Naïve Bayes, and K-NN models reveals several consistent patterns in their performances. 
+As expected, underrepresented classes like  \textit{tvMiniSeries} (186 records in the training set), \textit{tvMovie} (844), and \textit{tvSpecial} (158) show consistently low recall and F1-scores across all models.
+ \textit{tvMiniSeries} performs worst, with recall between 0.01 (Naïve Bayes) and 0.07 (Decision Trees), and a maximum F1-score of 0.10. 
+ In contrast, well-represented classes like  \textit{movie} (5442) and\textit{tvEpisode}(4690) are always classified accurately. However, class imbalance alone does not fully explain the misclassifications. The confusion matrices showed systematic misclassification patterns, 
 where minority classes were frequently absorbed into semantically related but more dominant categories. 
-Across all models, but at different extent, \textit{tvMovie} is frequently confused with \textit{movie}; for instance, Naïve Bayes misclassifies 136 instances, resulting in a recall of 0.17.
-Similarly, \textit{tvMiniSeries} is often predicted as \textit{tvSeries}, e.g. resulting in 37 out of 68 instances misclassified by Decision Trees.
-K-NN also shows a tendency to predict \textit{tvSeries} as \textit{tvEpisode}.
-This is reflected in a very low recall (0.24) for \textit{tvSeries} and in a quite high precision (0.76) for \textit{tvEpisode}.\\
-Putting these issues aside, Decision Trees achieved the best overall performance, with an accuracy of 0.79 and 
-the highest value for macro average F1-score (0.52). 
-Although all models performed well on the most represented classes, Decision Tree maintained greater stability even on the less represented classes,
-where the other models experienced a significant drop in performance.
-In the table~\ref{tab:best_model_multiclass_classification} its overall results are summarized.
+Across all models, but at different extent, \textit{tvMovie} is frequently confused with \textit{movie}, and \textit{tvMiniSeries} is often predicted as \textit{tvSeries}, e.g. resulting in 37 out of 68 instances misclassified by Decision Trees.
+K-NN also shows a tendency to predict \textit{tvSeries} as \textit{tvEpisode}.\\
+Decision Tree achieved the best overall performance (0.79 accuracy, 0.52 macro average F1), followed by K-NN and Naïve Bayes. 
+However, the ROC analysis reveals an apparent paradox: Naïve Bayes showed the highest macro-average AUC (0.91), despite poorer classification results.
+Despite this, Decision Tree remains the optimal choice, effectively balancing overall accuracy with minority class performance, 
+since relying only on AUC can be misleading in imbalanced multiclass scenarios.
+In Table~\ref{tab:best_model_multiclass_classification} its overall results are summarized.
 \begin{table}[H]
     \centering
-    \begin{tabular}{cccc}
+    \begin{tabular}{cccccc}
         \toprule
-        \bf{Accuracy} & \bf{Precision Macro Avg} & \bf{Recall Macro Avg} & \bf{F1-score Macro Avg} \\
+        \bf{ } & \bf{Accuracy} & \bf{Precision Macro Avg} & \bf{Recall Macro Avg} & \bf{F1-score Macro Avg} & \bf{AUC} \\
         \midrule
-         0.79 & 0.55 & 0.51 & 0.52 \\
+        \bf{DT} & 0.79 & 0.55 & 0.51 & 0.52 & 0.84 \\
         \bottomrule
     \end{tabular}
     \caption{Overall metrics - Decision Tree}
     \label{tab:best_model_multiclass_classification}
 \end{table}
-In summary, although these models struggle with minority classes, not discarding them represents a trade-off in favor of larger coverage and sensitivity across all classes.
 
 
  
