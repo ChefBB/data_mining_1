@@ -54,7 +54,8 @@ Tree and K-Nearest Neighbors regressors in both tasks. In the first regression, 
 regularization improved performances, with Lasso performing worse than the other linear models.
 The same goes for Multiple Regression, but in this case L1 regularization had a slightly lower Mean Absolute Error
 than the other linear models.
-All linear models had a boost in performance with the additional features in Multiple Regression.
+All linear models had a significant boost in all performance metrics with the additional features in Multiple Regression.
+Here, although performances were still worse than the other two, Lasso regression had a lower Mean Absolute Error.
 
 K-NN regressors had solid performances, with a slight increase in Multiple Regression for the Mean Absolute Error,
 but a significantly lower Mean Squared Error.
@@ -94,19 +95,20 @@ Table~\ref{tab:multi_regression_report} shows the test performances of the diffe
     \caption{Performance report for Multivariate Regression}
     \label{tab:multi_regression_report}
 \end{table}
-
 The linear models had generally similar performances. Regularization seemed to provide some improvements
 on some metrics, but overall the differences were not particularly significant, and both $\alpha$ parameters
 were kept low by the Cross-Validation.
-This suggests that the Linear model did not necessitate particular regularization to perform at its best.
+This suggests that the Linear model did not need particular regularization to perform at its best.
 Similarly to the previous task, the linear models had worse performances than the Decision Tree and K-NN
 regressors on the \texttt{criticReviewsTotal} target variable.
-For \texttt{userReviewsTotal}, they all had higher R$^2$ scores, with Lasso and Linear regression
-performing the best, as well as a lower Mean Squared Error; however,
-their MAE was higher than both Decision Tree and K-NN regressors.
-This suggests that the linear models were able to
-express most of the variance in the target variable, they were not able to
-provide accurate estimates for individual Titles. This suggests the presence of outliers and noise
-in the dataset, likely due to a non-linear relationship between the features and the target variables.
-This is further confirmed by the complexity of the Decision Tree, which had a maximum depth of 45,
-and the K-NN regressor, which had 22 neighbors.
+The performance on this variable shows that all models achieved lower R$^2$ scores compared to those for
+\texttt{userReviewsTotal}, suggesting that its variance is more difficult to explain.\\
+For \texttt{userReviewsTotal}, all linear models achieved higher R$^2$ scores than the Decision Tree and
+K-Nearest Neighbors models, with the Lasso and Linear regressors performing best and yielding lower Mean Squared
+Errors. However, their Mean Absolute Errors were higher than those of both the Decision Tree and K-NN regressors.
+This suggests that the linear models were able to capture a substantial portion of the variance in the target variable,
+but struggled to provide accurate predictions for individual titles. This may be due to the presence of outliers and
+noise in the dataset, as indicated by the generally high Mean Squared Error across all models.
+Additionally, the linear models may be limited by underlying non-linear relationships between features and the target variable.
+This last hypothesis is further supported by the high complexity of the Decision Tree (maximum depth of 45) and the K-NN regressor
+(which considered 22 neighbors), both of which adapted to more complex patterns in the data.
