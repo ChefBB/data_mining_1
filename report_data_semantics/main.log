@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  28 MAY 2025 21:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.1)  29 MAY 2025 02:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -900,25 +900,25 @@ Package pdftex.def Info: plots/kmeans_clusters.png  used on input line 51.
 <plots/dbscan_kth.png, id=61, 642.4803pt x 426.393pt>
 File: plots/dbscan_kth.png Graphic file (type png)
 <use plots/dbscan_kth.png>
-Package pdftex.def Info: plots/dbscan_kth.png  used on input line 73.
+Package pdftex.def Info: plots/dbscan_kth.png  used on input line 78.
 (pdftex.def)             Requested size: 240.23016pt x 159.43503pt.
 <plots/dbscan_scatterplot.png, id=62, 642.4803pt x 426.393pt>
 File: plots/dbscan_scatterplot.png Graphic file (type png)
 <use plots/dbscan_scatterplot.png>
-Package pdftex.def Info: plots/dbscan_scatterplot.png  used on input line 79.
+Package pdftex.def Info: plots/dbscan_scatterplot.png  used on input line 84.
 (pdftex.def)             Requested size: 240.23016pt x 159.43503pt.
 
 
 [7 <./plots/sse_silh_kmeans_def.png> <./plots/kmeans_clusters.png>]
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 134.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 139.
 
-Overfull \hbox (8.4994pt too wide) in paragraph at lines 130--141
+Overfull \hbox (8.4994pt too wide) in paragraph at lines 135--146
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--155
+Underfull \hbox (badness 10000) in paragraph at lines 157--160
 
  []
 
@@ -928,15 +928,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--155
 <plots/max_min_pctg.png, id=75, 354.123pt x 354.123pt>
 File: plots/max_min_pctg.png Graphic file (type png)
 <use plots/max_min_pctg.png>
-Package pdftex.def Info: plots/max_min_pctg.png  used on input line 206.
+Package pdftex.def Info: plots/max_min_pctg.png  used on input line 211.
 (pdftex.def)             Requested size: 232.97714pt x 232.98161pt.
 <plots/sil_sse_hierarchical_clust.png, id=76, 354.123pt x 354.123pt>
 File: plots/sil_sse_hierarchical_clust.png Graphic file (type png)
 <use plots/sil_sse_hierarchical_clust.png>
-Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 213.
+Package pdftex.def Info: plots/sil_sse_hierarchical_clust.png  used on input line 218.
 (pdftex.def)             Requested size: 232.97714pt x 232.98161pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--233
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
 
@@ -946,32 +946,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 230--233
 <plots/dendrogram_4.png, id=82, 328.8285pt x 258.0039pt>
 File: plots/dendrogram_4.png Graphic file (type png)
 <use plots/dendrogram_4.png>
-Package pdftex.def Info: plots/dendrogram_4.png  used on input line 257.
+Package pdftex.def Info: plots/dendrogram_4.png  used on input line 262.
 (pdftex.def)             Requested size: 245.2399pt x 192.42769pt.
 <plots/scatter_ward.png, id=83, 353.4003pt x 281.853pt>
 File: plots/scatter_ward.png Graphic file (type png)
 <use plots/scatter_ward.png>
-Package pdftex.def Info: plots/scatter_ward.png  used on input line 263.
+Package pdftex.def Info: plots/scatter_ward.png  used on input line 268.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--299
+Underfull \hbox (badness 10000) in paragraph at lines 297--304
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--305
+Underfull \hbox (badness 10000) in paragraph at lines 305--310
 
  []
 
 <plots/dendrogram_complete.png, id=84, 341.8371pt x 265.9536pt>
 File: plots/dendrogram_complete.png Graphic file (type png)
 <use plots/dendrogram_complete.png>
-Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 317.
+Package pdftex.def Info: plots/dendrogram_complete.png  used on input line 322.
 (pdftex.def)             Requested size: 245.2399pt x 190.80061pt.
 <plots/scatter_complete.png, id=85, 353.4003pt x 281.853pt>
 File: plots/scatter_complete.png Graphic file (type png)
 <use plots/scatter_complete.png>
-Package pdftex.def Info: plots/scatter_complete.png  used on input line 323.
+Package pdftex.def Info: plots/scatter_complete.png  used on input line 328.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 
 
@@ -990,106 +990,97 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--43
-
- []
-
-
-Underfull \hbox (badness 1117) in paragraph at lines 44--48
-\OT1/lmr/m/n/10 eval-u-ated us-ing strat-i-fied 5-fold cross-validation. This pro-cess
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--48
-\OT1/lmtt/m/n/10 'uniform', n[]neighbors: 9, metric: 'cityblock'\OT1/lmr/m/n/10 , which
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--48
-
- []
-
 <plots/knn_binary_confmatrix.png, id=91, 265.2309pt x 281.853pt>
 File: plots/knn_binary_confmatrix.png Graphic file (type png)
 <use plots/knn_binary_confmatrix.png>
-Package pdftex.def Info: plots/knn_binary_confmatrix.png  used on input line 57.
+Package pdftex.def Info: plots/knn_binary_confmatrix.png  used on input line 36.
 (pdftex.def)             Requested size: 175.17244pt x 186.15688pt.
 
 
 [11 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 40--48
 
  []
 
-<plots/nb_binary_confmatrix.jpg, id=98, 276.28218pt x 293.59688pt>
-File: plots/nb_binary_confmatrix.jpg Graphic file (type jpg)
-<use plots/nb_binary_confmatrix.jpg>
-Package pdftex.def Info: plots/nb_binary_confmatrix.jpg  used on input line 137.
-(pdftex.def)             Requested size: 150.14671pt x 159.5524pt.
 
-
-[12 <./plots/knn_binary_confmatrix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 145--148
+Underfull \hbox (badness 10000) in paragraph at lines 49--53
 
  []
 
-<plots/binary_dt.png, id=103, 686.565pt x 237.0456pt>
+<plots/nb_binary_confmatrix.png, id=98, 265.2309pt x 281.853pt>
+File: plots/nb_binary_confmatrix.png Graphic file (type png)
+<use plots/nb_binary_confmatrix.png>
+Package pdftex.def Info: plots/nb_binary_confmatrix.png  used on input line 63.
+(pdftex.def)             Requested size: 175.17244pt x 186.15688pt.
+
+
+[12 <./plots/knn_binary_confmatrix.png> <./plots/nb_binary_confmatrix.png>]
+<plots/binary_dt.png, id=104, 686.565pt x 237.0456pt>
 File: plots/binary_dt.png Graphic file (type png)
 <use plots/binary_dt.png>
-Package pdftex.def Info: plots/binary_dt.png  used on input line 157.
+Package pdftex.def Info: plots/binary_dt.png  used on input line 98.
 (pdftex.def)             Requested size: 400.38872pt x 138.23886pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--169
+Underfull \hbox (badness 10000) in paragraph at lines 104--110
 
  []
 
 
 
-[13 <./plots/nb_binary_confmatrix.jpg> <./plots/binary_dt.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 273--280
+[13 <./plots/binary_dt.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 214--221
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--316
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--320
-
- []
-
-<plots/knn_multiclass_confmatrix.png, id=108, 565.1514pt x 570.933pt>
+<plots/knn_multiclass_confmatrix.png, id=109, 363.5181pt x 379.4175pt>
 File: plots/knn_multiclass_confmatrix.png Graphic file (type png)
 <use plots/knn_multiclass_confmatrix.png>
-Package pdftex.def Info: plots/knn_multiclass_confmatrix.png  used on input line 327.
-(pdftex.def)             Requested size: 200.19054pt x 202.23398pt.
+Package pdftex.def Info: plots/knn_multiclass_confmatrix.png  used on input line 280.
+(pdftex.def)             Requested size: 200.19054pt x 208.94658pt.
+
+Underfull \hbox (badness 1292) in paragraph at lines 284--291
+\OT1/lmr/m/n/10 even if the re-sults in their clas-si-fi-ca-tion are not op-ti-
+ []
 
 
-[14]
-<plots/nb_multiclass_confmatrix.jpg, id=112, 588.69937pt x 594.72188pt>
+Underfull \hbox (badness 1783) in paragraph at lines 284--291
+\OT1/lmr/m/n/10 per-for-mances is: \OT1/lmtt/m/n/10 weights:'uniform', n[]neighbors:12,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--303
+
+ []
+
+
+
+[14 <./plots/knn_multiclass_confmatrix.png>]
+<plots/nb_multiclass_confmatrix.jpg, id=114, 378.66469pt x 395.22656pt>
 File: plots/nb_multiclass_confmatrix.jpg Graphic file (type jpg)
 <use plots/nb_multiclass_confmatrix.jpg>
-Package pdftex.def Info: plots/nb_multiclass_confmatrix.jpg  used on input line 366.
-(pdftex.def)             Requested size: 150.14671pt x 151.68382pt.
-
-
-[15 <./plots/knn_multiclass_confmatrix.png>]
-<plots/multiclass_tree.png, id=118, 808.7013pt x 237.0456pt>
+Package pdftex.def Info: plots/nb_multiclass_confmatrix.jpg  used on input line 315.
+(pdftex.def)             Requested size: 180.17026pt x 188.05418pt.
+<plots/multiclass_tree.png, id=115, 808.7013pt x 237.0456pt>
 File: plots/multiclass_tree.png Graphic file (type png)
 <use plots/multiclass_tree.png>
-Package pdftex.def Info: plots/multiclass_tree.png  used on input line 384.
+Package pdftex.def Info: plots/multiclass_tree.png  used on input line 349.
 (pdftex.def)             Requested size: 440.42834pt x 129.09866pt.
+
+
+[15 <./plots/nb_multiclass_confmatrix.jpg>]
 <plots/multiclass_dt_conf_matrix.png, id=119, 363.5181pt x 379.4175pt>
 File: plots/multiclass_dt_conf_matrix.png Graphic file (type png)
 <use plots/multiclass_dt_conf_matrix.png>
-Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 395.
+Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 360.
 (pdftex.def)             Requested size: 180.17026pt x 188.0467pt.
 
 
-[16 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png> <./plots/multiclass_dt_conf_matrix.png>]) (capitolo4.tex
+[16 <./plots/multiclass_tree.png> <./plots/multiclass_dt_conf_matrix.png>]) (capitolo4.tex
 <plots/linear.png, id=125, 221.8689pt x 287.6346pt>
 File: plots/linear.png Graphic file (type png)
 <use plots/linear.png>
@@ -1164,17 +1155,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18034 strings out of 473897
- 360555 string characters out of 5726462
- 1247539 words of memory out of 5000000
- 40675 multiletter control sequences out of 15000+600000
+ 18035 strings out of 473897
+ 360597 string characters out of 5726462
+ 1247600 words of memory out of 5000000
+ 40676 multiletter control sequences out of 15000+600000
  610197 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,19n,121p,1289b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Gagia/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (22 pages, 2320022 bytes).
+Output written on main.pdf (22 pages, 2280669 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
+ 228 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

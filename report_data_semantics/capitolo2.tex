@@ -66,6 +66,11 @@ The 4 distinct clusters appear well-separated, suggesting that K-means managed t
 \section{DBSCAN}\label{sec:density_based}
 To determine suitable DBSCAN parameters, the k-th distance plot was used as starting point (Figure~\ref{fig:dbscan_kth}). 
 By varying \textit{k} (\textit{MinPts}) and observing the corresponding distance curves, the range between 0.08 and 0.2 was identified for a possible \textit{Eps} value.
+The algorithm was applied to the following features: \texttt{numVotes}, \texttt{totalCredits}, \texttt{criticReviewsTotal}, \texttt{userReviewsTotal}, and \texttt{runtimeMinutes}. 
+Although different combinations were tested, they all led to similar results. 
+Effectively, initial experiments clearly revealed DBSCAN’s sensitivity to highly sparse and imbalanced datasets; 
+in most cases, the algorithm produced a highly populated single cluster corresponding to the dominant dense region, 
+while leaving the sparser regions largely unstructured.
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}

@@ -380,13 +380,13 @@ INPUT .\plots\knn_binary_confmatrix.png
 INPUT .\plots\knn_binary_confmatrix.png
 INPUT .\plots\knn_binary_confmatrix.png
 INPUT .\plots\knn_binary_confmatrix.png
-INPUT .\plots\nb_binary_confmatrix.jpg
-INPUT .\plots\nb_binary_confmatrix.jpg
-INPUT .\plots\nb_binary_confmatrix.jpg
-INPUT .\plots\nb_binary_confmatrix.jpg
-INPUT .\plots\nb_binary_confmatrix.jpg
-INPUT .\plots\nb_binary_confmatrix.jpg
-INPUT .\plots\nb_binary_confmatrix.jpg
+INPUT .\plots\nb_binary_confmatrix.png
+INPUT .\plots\nb_binary_confmatrix.png
+INPUT .\plots\nb_binary_confmatrix.png
+INPUT .\plots\nb_binary_confmatrix.png
+INPUT .\plots\nb_binary_confmatrix.png
+INPUT .\plots\nb_binary_confmatrix.png
+INPUT .\plots\nb_binary_confmatrix.png
 INPUT .\plots\binary_dt.png
 INPUT .\plots\binary_dt.png
 INPUT .\plots\binary_dt.png
@@ -394,7 +394,6 @@ INPUT .\plots\binary_dt.png
 INPUT .\plots\binary_dt.png
 INPUT .\plots\binary_dt.png
 INPUT .\plots\binary_dt.png
-INPUT C:\Users\Gagia\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmri9.tfm
 INPUT .\plots\knn_multiclass_confmatrix.png
 INPUT .\plots\knn_multiclass_confmatrix.png
 INPUT .\plots\knn_multiclass_confmatrix.png
@@ -464,6 +463,7 @@ INPUT .\plots\5_min_sup.png
 INPUT .\plots\5_min_sup.png
 INPUT .\plots\5_min_sup.png
 INPUT .\plots\5_min_sup.png
+INPUT C:\Users\Gagia\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmri9.tfm
 INPUT .\plots\5_min_conf.png
 INPUT .\plots\5_min_conf.png
 INPUT .\plots\5_min_conf.png
