@@ -29,7 +29,7 @@ their types and a brief description of each attribute.
 \caption{Description of discrete attributes}
 \label{tab:attributes}
 \end{table}
-
+\vspace{-1em}
 \subsection{Merging and Removal of Discrete Attributes}\label{subsec:var_elim_discrete}
 The following discrete attributes were removed from the dataset:
 \begin{itemize}
@@ -54,14 +54,14 @@ The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, 
 \begin{figure}[H]
     \centering
     % First subfigure
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
         \includegraphics[width=0.98\textwidth]{plots/types_count.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
         \caption{Distribution of \texttt{titleType}}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \label{fig:titleType_distrib}
     \end{subfigure}
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.47\textwidth}
         \centering
         \includegraphics[width=0.98\textwidth]{plots/rating_distrib.png}     %se teniamo 0.65 ci sta sotto la tabella delle continuous
         \caption{Distribution of \texttt{rating}}
@@ -97,14 +97,15 @@ The attribute \texttt{countryOfOrigin} was represented by grouping the countries
 The following variables have been created: 
 \begin{multicols}{2}
     \begin{itemize}
+        \item \texttt{countryOfOrigin\_freq\_enc}\\ 
+        (frequency encoding of the original list);
         \item \texttt{countryOfOrigin\_AF} (Africa);
         \item \texttt{countryOfOrigin\_AS} (Asia);
         \item \texttt{countryOfOrigin\_EU} (Europe);
         \item \texttt{countryOfOrigin\_NA} (North America);
         \item \texttt{countryOfOrigin\_SA} (South America);
         \item \texttt{countryOfOrigin\_OC} (Oceania);
-        \item \texttt{countryOfOrigin\_UNK} (Unknown country);
-        \item \texttt{countryOfOrigin\_freq\_enc} (frequency encoding of the original list).
+        \item \texttt{countryOfOrigin\_UNK} (Unknown country).
     \end{itemize}
 \end{multicols}
 
@@ -158,8 +159,6 @@ The plot in figure~\ref{fig:correlation_matrix} is a Pearson's correlation matri
 account the continuous attributes of the dataset.
 The matrix shows that \texttt{ratingCount} and \texttt{numVotes} are perfectly correlated;
 for their redundancy, \texttt{ratingCount} was discarded.\\
-
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.50\textwidth]{plots/correlation_matrix.png}
@@ -177,23 +176,23 @@ for their redundancy, \texttt{ratingCount} was discarded.\\
 The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into 
 \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
 The new feature represents the sum of the two original attributes. This transformation also helps
-mitigate the impact of their heavy right skew (shown in figure \ref{fig:sub1}), resulting in a more meaningful and interpretable feature.
+mitigate the impact of their heavy right skew (shown in figure\ref{fig:sub1}), resulting in a more meaningful and interpretable feature.
 Similarly, the \texttt{totalVideos} and \texttt{totalImages} attributes were combined into a single
 feature, i.e. \texttt{totalMedia}, representing the total number of media items associated with a title.
-Although the original attributes are not highly correlated, both exhibit skewed distributions (as in figure \ref{fig:sub2}), \texttt{totalVideos} in particular.
+Although the original attributes are not highly correlated, both exhibit skewed distributions (as in figure\ref{fig:sub2}), \texttt{totalVideos} in particular.
 Due to this, and to their similar semantic meaning, they were merged to form a more consolidated and
 interpretable feature.
-
+\vspace{-1em}
 \begin{figure}[H]
     \centering
     % First subfigure
-    \begin{subfigure}{0.43\textwidth}
+    \begin{subfigure}{0.41\textwidth}
         \includegraphics[width=\textwidth]{plots/nominations_distrib.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \caption{Kernel Density Estimation of \texttt{awardWins} and \texttt{awardNominationsExcludeWins}}
         \label{fig:sub1}
     \end{subfigure}
-    \begin{subfigure}{0.43\textwidth}
+    \begin{subfigure}{0.41\textwidth}
         \includegraphics[width=\textwidth]{plots/totalVideos_Images_distrib.png}
         \captionsetup{width=0.9\linewidth, justification=centering}
         \caption{Kernel Density Estimation of \texttt{totalVideos} and \texttt{totalImages}}
@@ -204,7 +203,9 @@ interpretable feature.
     \label{fig:distrib}
 \end{figure}
 
-Although \texttt{criticReviewsTotal} and \texttt{userReviewsTotal} also have a relatively high correlation (0.65), as well as a right-skewed distribution, it was decided that the two attributes should be kept separate because of their relevance in meaning. It is also worth noting that the two have high correlations with \texttt{numVotes} (0.67 and 0.75 respectively), but they were all kept because of the difference between votes and reviews.
+Although \texttt{criticReviewsTotal} and \texttt{userReviewsTotal} also have a relatively high correlation (0.65), as well as a right-skewed distribution, 
+it was decided that the two attributes should be kept separate because of their relevance in meaning. It is also worth noting that the two have high correlations with 
+\texttt{numVotes} (0.67 and 0.75 respectively), but they were all kept because of the difference between votes and reviews.
 
 
 
@@ -293,7 +294,7 @@ Because of right-skewness (without a power-law distribution), other attributes w
     \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each \texttt{titleType}}
     \label{fig:outliers}
 \end{wrapfigure}
-Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}.
+Regarding outliers, \texttt{runtimeMinutes} was the most problematic feature.
 Similarly to missing values imputation (~\ref{sec:missing_values}),
 outlier detection was performed using two different strategies:
 % Figure~\ref{fig:runtimeMinutes_boxplot} shows the first approach, which computes outliers on each \texttt{titleType} separately.
@@ -307,6 +308,6 @@ the value refers to the total runtime of the series, rather than the runtime of 
 % Another interesting observation regards the presence of records with a runtime of 0 minutes for the \textit{short} type. This was present in just 1 record, and it was removed from the dataset because it was considered a mistake, although it was not considered an outlier.\\
 Another interesting observation regards the presence of a record with a runtime of 0 minutes for the \textit{short} type;
 % although it was not considered an outlier by the first method,
-the record was removed from the dataset because it was regarded as an erroneous sample.
+the record was removed because it was regarded as an erroneous sample.
 Other than this sample, other outliers were not removed from the dataset by default. Instead, a case-by-case approach was adopted,
 testing each task and analysis both with and without the outliers. Notably, in every case, better results were obtained when outliers were excluded.
