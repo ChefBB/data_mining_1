@@ -406,19 +406,26 @@ of the \textit{tvMiniSeries} records being misclassified as \textit{tvSeries}.
 % Classes such as \textit{tvMiniSeries} (186 records in the training set), \textit{tvMovie} (844), and \textit{tvSpecial} (158) consistently show low recall and F1-scores across all models.
 % The poorest performance is observed for the first one, with recall values ranging from 0.01 (Naïve Bayes) to 0.07 (Decision Trees), and a maximum F1-score of 0.10 (Decision Trees).
 % On the other hand, well represented classes, such as \textit{movie} (5442 records in the training set) and \textit{tvEpisode} (4690), are generally classified accurately, as previously discussed.\\
-The analysis of Decision Tree, Categorical Naïve Bayes, and K-NN models reveals several consistent patterns in their performances. 
-As expected, underrepresented classes like  \textit{tvMiniSeries} (186 records in the training set), \textit{tvMovie} (844), and \textit{tvSpecial} (158) show consistently low recall and F1-scores across all models.
+\begin{wrapfigure}{r}{0.50\textwidth}
+    \centering
+    \captionsetup{justification=raggedleft, width=1\linewidth}
+    \caption{Model comparison - ROC}
+    \label{fig:multiclass_roc}
+    \includegraphics[width=0.9\linewidth]{plots/ROC_multiclass.png}
+\end{wrapfigure}
+The analysis of K-NN, CategoricalNB and Decision Tree models reveals several consistent patterns in their performances. 
+As expected, underrepresented classes show consistently low recall and F1-scores across all models.
 \textit{tvMiniSeries} performs worst, with recall between 0.01 (Naïve Bayes) and 0.07 (Decision Trees), and a maximum F1-score of 0.10. 
-In contrast, well-represented classes like  \textit{movie} (5442) and\textit{tvEpisode}(4690) are always classified accurately. 
-Even though the choice of keeping those classes lowers the overall performance (accuracy) of the model, 
-it is a trade-off in favor of larger coverage and sensitivity across all classes.\\
+In contrast, well-represented classes like \textit{movie} (5442) and \textit{tvEpisode} (4690) are always classified accurately.\\ 
 However, class imbalance alone does not fully explain the misclassifications. The confusion matrices showed systematic misclassification patterns, 
 where minority classes were frequently absorbed into semantically related but more dominant categories. 
-Across all models, but at different extent, \textit{tvMovie} is frequently confused with \textit{movie}, and \textit{tvMiniSeries} is often predicted as \textit{tvSeries}, e.g. resulting in 37 out of 68 instances misclassified by Decision Trees.
-K-NN also shows a tendency to predict \textit{tvSeries} as \textit{tvEpisode}.\\
-Decision Tree achieved the best overall performance (0.79 accuracy, 0.52 macro average F1), followed by K-NN and Naïve Bayes. 
+Across all models, but at different extent, \textit{tvMovie} is frequently confused with \textit{movie}, and \textit{tvMiniSeries} is often predicted as \textit{tvSeries}.
+K-NN also shows a tendency to predict \textit{tvSeries} as \textit{tvEpisode}.
+The choice of keeping those underrepresented classes, even if it lowers the overall performance (accuracy) of the models, 
+is an important trade-off in favor of larger coverage and sensitivity across all classes.\\
+To summarize, Decision Tree achieved the best overall performance (0.79 accuracy, 0.52 macro average F1), followed by K-NN and Naïve Bayes. 
 However, the ROC analysis reveals an apparent paradox: Naïve Bayes showed the highest macro-average AUC (0.91), despite poorer classification results.
-Despite this, Decision Tree remains the optimal choice, effectively balancing overall accuracy with minority class performance, 
+Still, Decision Tree remains the optimal choice, effectively balancing overall accuracy with minority class performance, 
 since relying only on AUC can be misleading in imbalanced multiclass scenarios.
 In Table~\ref{tab:best_model_multiclass_classification} its overall results are summarized.
 \begin{table}[H]
