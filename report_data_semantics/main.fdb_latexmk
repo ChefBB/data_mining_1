@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748554418.86428 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748554875.84828 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748554415.32633 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748554418.86476 0
+["pdflatex"] 1748554872.2544 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748554875.84877 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748545781.52817 7947 9882c73fa50157b6eb1b9cb2de886ebe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -145,16 +145,17 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "capitolo1.tex" 1748549604.86078 19231 8c40bf6d876f415d1005f21e75b2560f ""
   "capitolo2.tex" 1748551485.40205 21030 232dd318d498c2742446ab99e9fbb42f ""
-  "capitolo3.tex" 1748551251.61046 32152 66404fa3c40e8e61e160963c2d49446f ""
-  "capitolo4.tex" 1748554414.95741 7267 8bcfe917fc0d758cf8cf1656044c276f ""
+  "capitolo3.tex" 1748554871.78095 32376 4706a2e5adee524f2ab44a5d8f81067f ""
+  "capitolo4.tex" 1748554446.12562 7267 8bcfe917fc0d758cf8cf1656044c276f ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748554418.34854 14989 4166d6841664a5364f96d3035cafc59e "pdflatex"
+  "main.aux" 1748554875.32324 15208 d5c2d143698dca0e8fe5946ed14ce1ce "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1748554418.35449 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748554875.32953 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748545781.52817 7947 9882c73fa50157b6eb1b9cb2de886ebe ""
-  "main.toc" 1748554418.35465 2814 07756cf2e2cd571c76d39753158449b5 "pdflatex"
+  "main.toc" 1748554875.32977 2814 07756cf2e2cd571c76d39753158449b5 "pdflatex"
   "plots/5_min_conf.png" 1748423396.27224 51666 247bb2898aca798f5d782fdc39fa8499 ""
   "plots/5_min_sup.png" 1748423396.27512 40859 adff69002735abb7bb8cfad7309abeed ""
+  "plots/ROC_multiclass.png" 1748528829.8501 62547 5bb94e735f3ec82ea4ebcd83a52d24b0 ""
   "plots/binary_dt.png" 1748339665.29033 207375 08ae0ff6de7b8b83409efbb775ecc0b2 ""
   "plots/correlation_matrix.png" 1748547909.3452 101841 9536be6c0d8ee75470a7559ae7c33daf ""
   "plots/dbscan_kth.png" 1748504994.72584 66500 40ec345229d92030bacececc70afca20 ""

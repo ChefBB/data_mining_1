@@ -3,6 +3,7 @@
 \label{ch:capitolo3}
 Classification was performed on the available training set using three different algorithms: K-NN (\textit{K-Nearest Neighbours}), Naïve Bayes and Decision Trees.
 A binary classification task and a multiclass one were performed, respectively using the target variables \texttt{has\_LowEngagement} and \texttt{titleType}.
+These were chosen because of their importance in terms of semantic meaning, and centrality in the dataset's structure.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DA VEDERE SE METTERE SOLO QUESTO AL POSTO CHE IN OGNUNA DELLE SEZIONI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % For K-NN and Naïve Bayes, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters for the first model (used as an external validation 
 % after internal cross-validation with RandomizedSearch) and to choose the best feature set for the second one. 
@@ -15,7 +16,6 @@ A binary classification task and a multiclass one were performed, respectively u
 \section{Binary classification}\label{sec:binary_classification}
 The binary target variable used in this task, \texttt{has\_LowEngagement}, was specifically defined for this purpose. 
 It identifies records where the \texttt{numVotes} attribute is less than 100.\\
-
 An analysis of semantically related features was run to decide whether to discard any.
 \texttt{userReviewsTotal} has a 75\% correlation with
 \texttt{numVotes}, while \texttt{criticReviewsTotal} has 67\% correlation.
@@ -104,7 +104,7 @@ Unsurprisingly, the most important feature for the model was \texttt{criticRevie
 which amounted to 0.6 in the feature importance ranking. The following other 3 more important
 features were \texttt{totalCredits} (0.15), \texttt{totalMedia} (0.10) and \texttt{numRegions} (0.09).
 These four features take up around 93\% of the total feature importance, and are all present in the first
-two splits shown in the Decision Tree.\\
+two splits shown in the Decision Tree.
 % Classification performance is summarized in Table~\ref{tab:binary_classification_report}.
 
 % \begin{table}[H]

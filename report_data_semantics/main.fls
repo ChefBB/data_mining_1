@@ -369,6 +369,11 @@ INPUT ./plots/multiclass_dt_conf_matrix.png
 INPUT ./plots/multiclass_dt_conf_matrix.png
 INPUT ./plots/multiclass_dt_conf_matrix.png
 INPUT ./plots/multiclass_dt_conf_matrix.png
+INPUT ./plots/ROC_multiclass.png
+INPUT ./plots/ROC_multiclass.png
+INPUT ./plots/ROC_multiclass.png
+INPUT ./plots/ROC_multiclass.png
+INPUT ./plots/ROC_multiclass.png
 INPUT ./capitolo4.tex
 INPUT ./capitolo4.tex
 INPUT capitolo4.tex

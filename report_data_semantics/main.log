@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 23:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 23:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -947,16 +947,12 @@ File: plots/scatter_complete.png Graphic file (type png)
 Package pdftex.def Info: plots/scatter_complete.png  used on input line 301.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 [10 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]) (./capitolo3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
-
- []
-
 <plots/knn_binary_confmatrix.png, id=91, 265.2309pt x 281.853pt>
 File: plots/knn_binary_confmatrix.png Graphic file (type png)
 <use plots/knn_binary_confmatrix.png>
 Package pdftex.def Info: plots/knn_binary_confmatrix.png  used on input line 35.
 (pdftex.def)             Requested size: 150.14671pt x 159.56119pt.
-[11]
+ [11]
 Underfull \hbox (badness 10000) in paragraph at lines 40--46
 
  []
@@ -977,11 +973,6 @@ File: plots/binary_dt.png Graphic file (type png)
 Package pdftex.def Info: plots/binary_dt.png  used on input line 97.
 (pdftex.def)             Requested size: 400.38872pt x 138.23886pt.
 [12 <./plots/knn_binary_confmatrix.png> <./plots/nb_binary_confmatrix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 103--109
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 160--163
 
  []
@@ -1032,13 +1023,19 @@ File: plots/multiclass_dt_conf_matrix.png Graphic file (type png)
 <use plots/multiclass_dt_conf_matrix.png>
 Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 381.
 (pdftex.def)             Requested size: 180.17026pt x 188.0467pt.
- [15 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png>] [16 <./plots/multiclass_dt_conf_matrix.png>]) (./capitolo4.tex [17]) (./capitolo5.tex [18]
-<plots/5_min_sup.png, id=130, 621.522pt x 403.9893pt>
+ [15 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png>]
+<plots/ROC_multiclass.png, id=119, 443.0151pt x 339.669pt>
+File: plots/ROC_multiclass.png Graphic file (type png)
+<use plots/ROC_multiclass.png>
+Package pdftex.def Info: plots/ROC_multiclass.png  used on input line 414.
+(pdftex.def)             Requested size: 225.21626pt x 172.6795pt.
+ [16 <./plots/multiclass_dt_conf_matrix.png> <./plots/ROC_multiclass.png>]) (./capitolo4.tex [17]) (./capitolo5.tex [18]
+<plots/5_min_sup.png, id=132, 621.522pt x 403.9893pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
 Package pdftex.def Info: plots/5_min_sup.png  used on input line 34.
 (pdftex.def)             Requested size: 240.33405pt x 156.21751pt.
-<plots/5_min_conf.png, id=131, 570.933pt x 354.123pt>
+<plots/5_min_conf.png, id=133, 570.933pt x 354.123pt>
 File: plots/5_min_conf.png Graphic file (type png)
 <use plots/5_min_conf.png>
 Package pdftex.def Info: plots/5_min_conf.png  used on input line 41.
@@ -1078,18 +1075,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17988 strings out of 474116
- 356585 string characters out of 5743682
+ 17996 strings out of 474116
+ 356821 string characters out of 5743682
  1951187 words of memory out of 5000000
- 40121 multiletter control sequences out of 15000+600000
+ 40129 multiletter control sequences out of 15000+600000
  610197 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (23 pages, 1824692 bytes).
+Output written on main.pdf (23 pages, 1870505 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
+ 225 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
