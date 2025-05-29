@@ -40,13 +40,13 @@ The 4 distinct clusters appear well-separated, suggesting that K-means managed t
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.44\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/sse_silh_kmeans_def.png}
         \caption{SSE and Silhouette scores}
         \label{fig:sse_silh_kmeans}
     \end{subfigure}
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.44\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/kmeans_clusters.png}
         \caption{Clustering Visualization with PCA}
@@ -127,8 +127,11 @@ Each combination was evaluated based on the number of clusters (with a minimum t
 % \label{tab:eps}
 % \end{table}
 
-Even if the configurations did not yield fully satisfactory results, in Table~\ref{tab:eps} the most interesting ones are summarized.
-Note that, in this context, an high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
+% Even if the configurations did not yield fully satisfactory results, in Table~\ref{tab:eps} the most interesting ones are summarized.
+% Note that, in this context, an high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
+Even though the configurations did not produce fully satisfactory results, the most relevant ones are summarized in Table~\ref{tab:eps}. 
+The reported Silhouette scores are computed excluding noise points; therefore, no score is provided when only a single cluster is formed. 
+It is important to note that, in this context, a high Silhouette score can be misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity. 
 \begin{table}[h]
 % \hspace*{-0.5cm}
 \centering
@@ -136,11 +139,10 @@ Note that, in this context, an high Silhouette score is misleading, as it tends 
 \toprule
 \textbf{eps threshold} & \textbf{Min points} & \textbf{Silhouette} & \textbf{Cluster composition}  \\
 \midrule
-\texttt{\textbf{$\varepsilon$} $>$ $0.16$} & for any tested value &  $>$ 0.51  & never led to more than one cluster \\
-\texttt{$0.13$ $\leq$ \textbf{$\varepsilon$} $<$ $0.16$} & for any tested value &  $[0.49,\ 0.51]$  & led to one cluster and, occasionally, 1 or 2 minor ones\\
-\texttt{\textbf{$\varepsilon$} $<$ $0.13$}& for any tested value & $[0.10,\ 0.28]$ & the big cluster it's splitted in two different ones \\
-\texttt{\textbf{$\varepsilon$} $\leq$ $0.10$} & lower values $[4,\ 5]$& $[0.10,\ 0.22]$  & led to several, not meaningful, clusters of 5/6 points\\
-
+\texttt{\textbf{$\varepsilon$} $>$ $0.16$} & for any tested value & \texttt{---} & never led to more than one cluster \\
+\texttt{$0.13$ $\leq$ \textbf{$\varepsilon$} $\leq$ $0.16$} & for any tested value &  $[0.54,\ 0.70]$  & led to one cluster and, occasionally, 1 or 2 minor ones\\
+\texttt{\textbf{$\varepsilon$} $<$ $0.13$}& for any tested value & $[0.10,\ 0.31]$ & the big cluster it's splitted in two different ones \\
+\texttt{\textbf{$\varepsilon$} $\leq$ $0.10$} & lower values $[4,\ 5]$& $[0.10,\ 0.25]$  & led to several, not meaningful, clusters of 5/6 points\\
 \bottomrule
 \end{tabular}
 \caption{Relevant DBSCAN parameters configurations}

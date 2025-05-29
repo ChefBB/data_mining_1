@@ -162,13 +162,18 @@ for their redundancy, \texttt{ratingCount} was discarded.\\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{plots/correlation_matrix.png}
+    \includegraphics[width=0.50\textwidth]{plots/correlation_matrix.png}
     \captionof{figure}{Correlation matrix}
     \label{fig:correlation_matrix}
 \end{figure}
 
-
-
+% \begin{wrapfigure}{r}{0.55\textwidth}
+%     \centering
+%     \captionsetup{justification=raggedleft, width=1\linewidth}
+%     \caption{Correlation matrix}
+%     \label{fig:correlation_matrix}
+%     \includegraphics[width=0.9\linewidth]{plots/correlation_matrix.png}
+% \end{wrapfigure}
 The attributes \texttt{awardNominationsExcludeWins} and \texttt{awardWins} were combined into 
 \texttt{totalNominations}, due to their strong semantic similarity and high correlation (0.69).
 The new feature represents the sum of the two original attributes. This transformation also helps
@@ -218,14 +223,14 @@ attention was given at identifying missing values and outliers.
 
 \subsection{Missing Values}\label{sec:missing_values}
 % The missing values in the above-mentioned attributes were handled as follows:
-The following attributes were found to have missing values\footnote{\texttt{awardWins}
-was the only feature with missing values marked as \texttt{NaN}, while the other listed columns had missing
-values marked as \texttt{"\textbackslash N"}, hence they were replaced with \texttt{NaN}.}:
+The following attributes were found to have missing values\footnote{missing values were marked as \texttt{NaN}
+only in \texttt{awardWins}; in the other listed columns \texttt{"\textbackslash N"} was used, so it was then converted to \texttt{NaN}}:
 \begin{itemize}
     \item \texttt{endYear}: it is the feature with the highest number of \texttt{NaN} values (15617; about 95\%).
     Although the feature is only relevant for \textit{TVSeries} and \textit{TVMiniSeries} titles, it still
     had approximately 50\% missing values within those categories, limiting its usefulness even in the
     appropriate context. For this reason, the feature was discarded.
+    \vspace{1em}
     
     \item \texttt{runtimeMinutes}: this attribute has 4,852 missing values (29.5\%). Two imputation strategies were employed, both based on random sampling within the interquartile range. 
     One strategy used the \texttt{titleType} feature to define the range, while the other imputed values based off of the attribute's distribution alone. 

@@ -31,9 +31,9 @@ macro-averaged F1-score to mitigate its impact on the results.\\
 
 \subsection{K-NN - Binary Classification}
 
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{r}{0.40\textwidth}
     \centering
-    \includegraphics[width=0.35\textwidth]{plots/knn_binary_confmatrix.png}
+    \includegraphics[width=0.30\textwidth]{plots/knn_binary_confmatrix.png}
     \caption{K-NN binary classification}
     \label{fig:binary_knn_confusion_matrix}
 \end{wrapfigure}
@@ -58,13 +58,13 @@ To summarize, the macro average F1-score of 0.81 is suggesting that the model ma
 \subsection{Naïve Bayes - Binary Classification}
 % For Naïve Bayes, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters for the first model (used as an external validation 
 % % after internal cross-validation with RandomizedSearch) and to choose the best feature set for the second one.
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{l}{0.40\textwidth}
     \centering
-    \includegraphics[width=0.35\textwidth]{plots/nb_binary_confmatrix.png}
-    \caption{Naïve Bayes binary classification}
+    \includegraphics[width=0.30\textwidth]{plots/nb_binary_confmatrix.png}
+    \caption{NB binary classification}
     \label{fig:nb_binary}
 \end{wrapfigure}
-To use Categorical Naïve Bayes, specific preprocessing steps were required: continuous attributes were discretized using semantically meaningful binning and \textbf{Country\_orig} feature was binarized into a (0 / >0) format; 
+To use Categorical Naïve Bayes, specific preprocessing steps were required: continuous attributes were discretized using semantically meaningful binning and \textbf{Country\_orig} feature was binarized into a (0 / $>$ 0) format; 
 however, only the from\_America\_bin  and from\_Europe\_bin were used for this particular task. 
 All binning strategies applied here are consistent with those described in Subsection X of pattern mining section. 
 Finally, the resulting categorical features were numerically encoded using OrdinalEncoder, as required by the CategoricalNB.\\
@@ -275,10 +275,10 @@ a key metric for model evaluation, as it provides a balance between each class's
 
 
 
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{l}{0.4\textwidth}
     \centering
-    \includegraphics[width=0.40\textwidth]{plots/knn_multiclass_confmatrix.png}
-    \caption{K-NN multiclass classification}
+    \includegraphics[width=0.35\textwidth]{plots/knn_multiclass_confmatrix.png}
+    \caption{K-NN confusion matrix}
     \label{fig:multiclass_knn_confusion_matrix}
 \end{wrapfigure}
 For the multiclass classification task using the K-NN algorithm, the inclusion of a broad set of 
@@ -300,24 +300,23 @@ Similarly, \textit{tvMovie} is mostly misclassified, showing a low F1-score of 0
 % An interesting trend to notice in the confusion matrix is how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}. 
 % This is likely due to the similar nature of the two, as both refer to television content and often share overlapping characteristics, considering also that a tv episode is can be considered part of a tv series. 
 % A similar confusion occurs between \textit{tvMovie} and \textit{movie}.\\
-
 To summarize, since the model achieves a macro average F1-score of 0.50, this reflects clearly this imbalance in performance: while the model performs well on the majority classes, it fails to generalize well especially the minority ones.
 
 
 
 
-\subsection{Naïve Bayes - Multiclass Classification}    
-\begin{wrapfigure}{r}{0.4\textwidth}
-    \centering
-    \captionsetup{justification=raggedleft, width=1\linewidth}
-    \caption{Naïve Bayes multiclass classification}
-    \label{fig:nb_multiclass}
-    \includegraphics[width=0.9\linewidth]{plots/nb_multiclass_confmatrix.jpg}
-\end{wrapfigure}
+\subsection{Naïve Bayes - Multiclass Classification} 
 Also for the Multiclass Classification task the features has been preprocessed as explained in paragraph X, 
 in order to use Categorical NB. For this task it has been interesting to note that the inclusion of genre features enhanced classification performance 
 for all classes but especially for the ones with limited support: tvMiniSeries (186 records in the training set) was not classified at all and tvMovie (844) and tvSpecial (158) 
-were poorly classified. This confirmed the choice of CategoricalNB over GaussianNB; being the first the most indicated to handle categorical features.\\
+were poorly classified. This confirmed the choice of CategoricalNB over GaussianNB; being the first the most indicated to handle categorical features.\\   
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \captionsetup{justification=raggedleft, width=1\linewidth}
+    \caption{NB confusion matrix}
+    \label{fig:nb_multiclass}
+    \includegraphics[width=0.9\linewidth]{plots/nb_multiclass_confmatrix.jpg}
+\end{wrapfigure}
 The model achieves an overall accuracy of 0.73, acceptable for a multiclass task but indicative of difficulties in handling all categories equally well. 
 High F1-scores for the most represented classes—movie (0.83), tvEpisode (0.79), and short (0.81) — suggest effective recognition, likely due to their frequency in the dataset and the presence of more easily distinctive traits. The movie class also shows strong precision (0.82) and recall (0.84), 
 confirming the model's reliability on this category.\\
@@ -351,20 +350,19 @@ The best configuration found used Entropy as splitting criterion, had a max dept
     \caption{Decision Tree for multiclass classification}
     \label{fig:multiclass_dt}
 \end{figure}
-
-\begin{wrapfigure}{r}{0.4\textwidth}
-    \centering
-    \captionsetup{justification=raggedleft, width=1\linewidth}
-    \caption{Confusion matrix for the model}
-    \label{fig:multiclass_dt_conf_matrix}
-    \includegraphics[width=0.9\linewidth]{plots/multiclass_dt_conf_matrix.png}
-\end{wrapfigure}
 Figure~\ref{fig:multiclass_dt} shows the Decision Tree obtained for the multiclass classification task.
 The most important feature for the model was \texttt{runtimeMinutes}, on which the first two levels
 of the tree are based, with a feature importance of 0.45.
 Three out of the four splits in the following level are based on \texttt{numRegions} being smaller than
 2, giving the feature an importance of 0.13; the fourth is based on the \textit{Adventure} genre,
-which has an importance of 0.01.\\
+which has an importance of 0.01.
+\begin{wrapfigure}{r}{0.4\textwidth}
+    \centering
+    \captionsetup{justification=raggedleft, width=1\linewidth}
+    \caption{DT Confusion matrix}
+    \label{fig:multiclass_dt_conf_matrix}
+    \includegraphics[width=0.9\linewidth]{plots/multiclass_dt_conf_matrix.png}
+\end{wrapfigure}
 The model showed a general tendency towards overfitting, and many configurations were tested to prevent
 this.
 The overall accuracy shows a significant drop (from 0.86 on the train set, to 0.75 on the test set),
