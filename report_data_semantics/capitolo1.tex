@@ -286,23 +286,11 @@ Because of right-skewness (without a power-law distribution), other attributes w
 
 
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.45\textwidth}
     \centering
-    % \begin{subfigure}{0.58\textwidth}
-        % \includegraphics[width=\textwidth]{plots/outliers.png}
-        \includegraphics[width=1\linewidth]{plots/outliers.png}
-        \captionsetup{width=0.9\linewidth, justification=raggedleft}
-        \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each \texttt{titleType}}
-        \label{fig:runtimeMinutes_boxplot}
-    % \end{subfigure}
-    % \begin{subfigure}{0.4\textwidth}
-    %     \includegraphics[width=\textwidth]{plots/outliers_notype.png}
-    %     \captionsetup{width=0.9\linewidth, justification=centering}
-    %     \caption{Boxplot of the \texttt{runtimeMinutes} attribute without \texttt{titleType}}
-    %     \label{fig:runtimeMinutes_boxplot_no_type}
-    % \end{subfigure}
-    \captionsetup{justification=centering}
-    % \caption{Outliers in the \texttt{runtimeMinutes} attribute}
+    \includegraphics[width=1\linewidth]{plots/outliers.png}
+    \captionsetup{width=0.9\linewidth, justification=raggedleft}
+    \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each \texttt{titleType}}
     \label{fig:outliers}
 \end{wrapfigure}
 Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}.
@@ -312,14 +300,6 @@ outlier detection was performed using two different strategies:
 the first approach computes outliers on each \texttt{titleType} separately,
 while the second is based on the distribution of the \texttt{runtimeMinutes} attribute alone.
 Figure~\ref{fig:outliers} reports an analysis of the feature through the IQR method separately on each type.
-% Figure ~\ref{fig:runtimeMinutes_boxplot_no_type} shows the second, which computes them based on \texttt{canHaveEpisodes} attribute and \textit{Short} genre.
-% \begin{wrapfigure}{r}{0.4\textwidth}
-%     \centering
-%     \captionsetup{justification=raggedleft, width=1\linewidth}
-%     \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each \texttt{titleType}}
-%     \label{fig:runtimeMinutes_boxplot_no_type}
-%     \includegraphics[width=0.6\linewidth]{plots/outliers.png}
-% \end{wrapfigure}
 The boxplots show that there are samples that have been misreported, with runtimes of over 1000 minutes for \textit{tvSeries}.
 % the same can be observed on the second plot on the \textit{Has episodes} box plot.
 This might be because of an inconsistency with the understanding of the meaning of the attribute, and in those cases it might be possible that

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 10:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -862,8 +862,8 @@ Package pdftex.def Info: plots/left_skew_distribs_log.png  used on input line 26
 <plots/outliers.png, id=54, 346.1733pt x 354.123pt>
 File: plots/outliers.png Graphic file (type png)
 <use plots/outliers.png>
-Package pdftex.def Info: plots/outliers.png  used on input line 293.
-(pdftex.def)             Requested size: 250.24199pt x 255.9842pt.
+Package pdftex.def Info: plots/outliers.png  used on input line 291.
+(pdftex.def)             Requested size: 225.21626pt x 230.38794pt.
 ) (./capitolo2.tex [6 <./plots/outliers.png>]
 <plots/sse_silh_kmeans_def.png, id=59, 350.5095pt x 281.853pt>
 File: plots/sse_silh_kmeans_def.png Graphic file (type png)
@@ -1012,103 +1012,4 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--291
 <plots/nb_multiclass_confmatrix.jpg, id=111, 378.66469pt x 395.22656pt>
 File: plots/nb_multiclass_confmatrix.jpg Graphic file (type jpg)
 <use plots/nb_multiclass_confmatrix.jpg>
-Package pdftex.def Info: plots/nb_multiclass_confmatrix.jpg  used on input line 318.
-(pdftex.def)             Requested size: 180.17026pt x 188.05418pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--319
-
- []
-
-[15 <./plots/knn_multiclass_confmatrix.png> <./plots/nb_multiclass_confmatrix.jpg>]
-<plots/multiclass_tree.png, id=116, 808.7013pt x 237.0456pt>
-File: plots/multiclass_tree.png Graphic file (type png)
-<use plots/multiclass_tree.png>
-Package pdftex.def Info: plots/multiclass_tree.png  used on input line 348.
-(pdftex.def)             Requested size: 440.42834pt x 129.09866pt.
-<plots/multiclass_dt_conf_matrix.png, id=117, 363.5181pt x 379.4175pt>
-File: plots/multiclass_dt_conf_matrix.png Graphic file (type png)
-<use plots/multiclass_dt_conf_matrix.png>
-Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 364.
-(pdftex.def)             Requested size: 180.17026pt x 188.0467pt.
- [16 <./plots/multiclass_tree.png> <./plots/multiclass_dt_conf_matrix.png>]) (./capitolo4.tex
-<plots/linear.png, id=123, 221.8689pt x 287.6346pt>
-File: plots/linear.png Graphic file (type png)
-<use plots/linear.png>
-Package pdftex.def Info: plots/linear.png  used on input line 26.
-(pdftex.def)             Requested size: 128.37425pt x 166.43317pt.
-<plots/ridge.png, id=124, 207.4149pt x 287.6346pt>
-File: plots/ridge.png Graphic file (type png)
-<use plots/ridge.png>
-Package pdftex.def Info: plots/ridge.png  used on input line 33.
-(pdftex.def)             Requested size: 120.1189pt x 166.57361pt.
-<plots/lasso.png, id=125, 207.4149pt x 287.6346pt>
-File: plots/lasso.png Graphic file (type png)
-<use plots/lasso.png>
-Package pdftex.def Info: plots/lasso.png  used on input line 40.
-(pdftex.def)             Requested size: 120.1189pt x 166.57361pt.
-<plots/dt_regressor.png, id=126, 207.4149pt x 287.6346pt>
-File: plots/dt_regressor.png Graphic file (type png)
-<use plots/dt_regressor.png>
-Package pdftex.def Info: plots/dt_regressor.png  used on input line 47.
-(pdftex.def)             Requested size: 120.1189pt x 166.57361pt.
- [17]) (./capitolo5.tex [18 <./plots/linear.png> <./plots/ridge.png> <./plots/lasso.png> <./plots/dt_regressor.png>]
-<plots/5_min_sup.png, id=138, 621.522pt x 403.9893pt>
-File: plots/5_min_sup.png Graphic file (type png)
-<use plots/5_min_sup.png>
-Package pdftex.def Info: plots/5_min_sup.png  used on input line 34.
-(pdftex.def)             Requested size: 240.33405pt x 156.21751pt.
-<plots/5_min_conf.png, id=139, 570.933pt x 354.123pt>
-File: plots/5_min_conf.png Graphic file (type png)
-<use plots/5_min_conf.png>
-Package pdftex.def Info: plots/5_min_conf.png  used on input line 41.
-(pdftex.def)             Requested size: 240.33405pt x 149.06564pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--53
-
- []
-
-[19 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 127--131
-
- []
-
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20] [21]
-
-LaTeX Warning: Empty bibliography on input line 223.
-
-(./main.aux)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-02-20>
- ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 18029 strings out of 474116
- 357415 string characters out of 5743682
- 1952187 words of memory out of 5000000
- 40162 multiletter control sequences out of 15000+600000
- 610197 words of font info for 68 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (23 pages, 1940557 bytes).
-PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 0 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Package pdftex.def Info: plots/nb_multiclass_c
