@@ -234,7 +234,7 @@ only in \texttt{awardWins}; in the other listed columns \texttt{"\textbackslash 
     \vspace{1em}
     
     \item \texttt{runtimeMinutes}: this attribute has 4,852 missing values (29.5\%). Two imputation strategies were employed, both based on random sampling within the interquartile range. 
-    One strategy used the \texttt{titleType} feature to define the range, while the other imputed values based off of the attribute's distribution alone. 
+    The first used \texttt{titleType} to define the range, while the other imputed values based off of the attribute's distribution alone. 
     The choice of which of the two strategies to use depends on the specific task, and will be specified in the corresponding sections.
     
     \item \texttt{awardWins}: this feature has 2618 \texttt{NaN} values (about 16\%).
@@ -256,7 +256,7 @@ Because of this, the samples were removed from the dataset. \\
 
 
 Some features showed a heavy right-skewed distribution, with typical traits of Power-Law Distributions. Their Kernel Density Estimations are shown in figure~\ref{fig:left_skewed}.
-\vspace{1em}
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.48\textwidth}
