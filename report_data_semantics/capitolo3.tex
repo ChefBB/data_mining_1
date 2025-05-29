@@ -94,18 +94,16 @@ a maximum tree depth of 26, and a minimum of 3 samples per leaf.
 The obtained decision tree is shown in Figure~\ref{fig:binary_dt}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{plots/binary_dt.png}
+    \includegraphics[width=0.9\linewidth]{plots/binary_dt.png}
     \captionsetup{justification=centering, width=0.9\linewidth}
     \caption{Decision Tree for binary classification}
     \label{fig:binary_dt}
 \end{figure}
 
 Unsurprisingly, the most important feature for the model was \texttt{criticReviewsTotal},
-which amounted to 0.6 in the feature importance ranking. The 3 following important
+which amounted to 0.6 in the feature importance ranking. The 3 following more important
 features were \texttt{totalCredits} (0.15), \texttt{totalMedia} (0.10) and \texttt{numRegions} (0.09).
 These four take up around 93\% of the total feature importance, and are all present in the first
-two splits shown in the Decision Tree.\\
-These four features take up around 93\% of the total feature importance, and are all present in the first
 two splits shown in the Decision Tree.
 % Classification performance is summarized in Table~\ref{tab:binary_classification_report}.
 
@@ -161,7 +159,7 @@ precision scores of the class (0.78 on train, 0.75 on test).
 \subsection{Model Comparison - Binary Classification}
 After applying the three algorithms to the binary classification task, it emerged that all models struggle to identify the minority class, 
 \textit{High Engagement}, leading to lower recall values: 0.65 for K-NN, 0.70 for Naïve Bayes, and 0.69 for Decision Tree. 
-This is confirmed by the confusion matrices, where it appears that many \textit{High Engagement} records are misclassified as \textit{Low Engagement}.\\
+This is confirmed by the confusion matrices, where it appears that many \textit{High Engagement} records are misclassified as \textit{Low Engagement}.
 
 Among the models, K-NN handled the minority class best in terms of precision (0.83) and F1-score (0.73). 
 However, the fact that Naïve Bayes performed the highest in terms of recall (0.70) makes it a more valid alternative in scenarios where preventing 
@@ -234,7 +232,6 @@ Specifically, missing entries were filled by sampling from the overall distribut
 \texttt{runtimeMinutes}, without referencing \texttt{titleType} itself. 
 For the same reason, outliers detected by observing the distribution of \texttt{runtimeMinutes} were removed, 
 and not the ones based on \texttt{titleType} (see subsection 1.3.2).\\
-
 One final point to note is the imbalance in the target feature (previously shown in
 figure~\ref{fig:titleType_distrib}), which was explicitly taken into account
 during the design of the models. As for the binary classification task, macro-averaged F1-score was
@@ -387,13 +384,13 @@ The model showed a general tendency towards overfitting; many configurations wer
 this. The overall accuracy shows a significant drop (from 0.86 on the train set, to 0.75 on the test set),
 as well as the macro-averaged F1-score, going from 0.65 to 0.52.
 This was given from the \textit{tvMiniSeries} and \textit{tvSpecial} classes: on the train set these had f1-scores of
-respectively 0.35 and 0.22, and both had 0.10 on the test set. 
-In order to mitigate overfitting, post-pruning was tested, but did not give particular benefits.
-Higher values for the parameter $\alpha$ had minor positive effects on the generalization
-capabilities of the model, at the cost of losing predictions on the less represented classes.
-Since they were by far the least represented classes, they required a trade-off between low-represented classes classification
-and generalization. This can be seen in Figure~\ref{fig:multiclass_dt_conf_matrix}, which shows
+respectively 0.35 and 0.22, and both had 0.10 on the test set.
+This can be seen in Figure~\ref{fig:multiclass_dt_conf_matrix}, which shows
 that most predictions for these classes were wrong.\\
+Post-pruning was also tested, but did not give particular benefits.
+Higher values for the parameter $\alpha$ had minor positive effects on the generalization
+capabilities of the model, at the cost of losing predictions on the less represented classes.\\
+
 % Another aspect highlighted by the confusion matrix is the fact that \textit{tvMovie} was often
 % classified as \textit{movie}, leading to a recall value of 0.26 on the test set.
 % This is likely due to the fact that the two classes are overlapping, since they are semantically related,

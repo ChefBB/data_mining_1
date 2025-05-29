@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748555123.51226 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748555930.45653 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748555119.99342 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748555123.51292 0
+["pdflatex"] 1748555926.65309 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748555930.45717 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748545781.52817 7947 9882c73fa50157b6eb1b9cb2de886ebe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -145,14 +145,14 @@
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "capitolo1.tex" 1748549604.86078 19231 8c40bf6d876f415d1005f21e75b2560f ""
   "capitolo2.tex" 1748551485.40205 21030 232dd318d498c2742446ab99e9fbb42f ""
-  "capitolo3.tex" 1748555113.03738 33036 4129fccb0064eac6e938ff967190079b ""
+  "capitolo3.tex" 1748555926.16285 32714 ccf40fda08c9216766bcc2457b46b571 ""
   "capitolo4.tex" 1748554446.12562 7267 8bcfe917fc0d758cf8cf1656044c276f ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748555123.01658 15203 6ad00702c527571041030bfad8069afc "pdflatex"
+  "main.aux" 1748555929.79438 15203 6ad00702c527571041030bfad8069afc "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1748555123.02195 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748555929.79996 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748545781.52817 7947 9882c73fa50157b6eb1b9cb2de886ebe ""
-  "main.toc" 1748555123.02211 2812 f391f69471339d2a51550beb395186d2 "pdflatex"
+  "main.toc" 1748555929.8001 2812 f391f69471339d2a51550beb395186d2 "pdflatex"
   "plots/5_min_conf.png" 1748423396.27224 51666 247bb2898aca798f5d782fdc39fa8499 ""
   "plots/5_min_sup.png" 1748423396.27512 40859 adff69002735abb7bb8cfad7309abeed ""
   "plots/ROC_multiclass.png" 1748528829.8501 62547 5bb94e735f3ec82ea4ebcd83a52d24b0 ""
