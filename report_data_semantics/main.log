@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -821,16 +821,16 @@ File: plots/correlation_matrix.png Graphic file (type png)
 Package pdftex.def Info: plots/correlation_matrix.png  used on input line 165.
 (pdftex.def)             Requested size: 250.24199pt x 250.23521pt.
 [3]
-<plots/nominations_distrib.png, id=34, 403.2666pt x 339.669pt>
+<plots/nominations_distrib.png, id=34, 346.896pt x 284.0211pt>
 File: plots/nominations_distrib.png Graphic file (type png)
 <use plots/nominations_distrib.png>
 Package pdftex.def Info: plots/nominations_distrib.png  used on input line 191.
-(pdftex.def)             Requested size: 215.20444pt x 181.26761pt.
-<plots/totalVideos_Images_distrib.png, id=35, 403.2666pt x 339.669pt>
+(pdftex.def)             Requested size: 215.20444pt x 176.1996pt.
+<plots/totalVideos_Images_distrib.png, id=35, 346.896pt x 284.0211pt>
 File: plots/totalVideos_Images_distrib.png Graphic file (type png)
 <use plots/totalVideos_Images_distrib.png>
 Package pdftex.def Info: plots/totalVideos_Images_distrib.png  used on input line 197.
-(pdftex.def)             Requested size: 215.20444pt x 181.26761pt.
+(pdftex.def)             Requested size: 215.20444pt x 176.1996pt.
  [4 <./plots/correlation_matrix.png> <./plots/nominations_distrib.png> <./plots/totalVideos_Images_distrib.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 227.
@@ -1110,7 +1110,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (23 pages, 1933878 bytes).
+Output written on main.pdf (23 pages, 1925294 bytes).
 PDF statistics:
  236 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
