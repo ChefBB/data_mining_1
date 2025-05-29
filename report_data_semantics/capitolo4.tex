@@ -19,73 +19,94 @@ with the attribute \texttt{userReviewsTotal}, allowing univariate regression
 to be performed, while maintaining a clear separate semantic meaning.
 Multivariate Regression was performed with \texttt{numVotes}, \texttt{numRegions} and
 \texttt{totalMedia} as additional features, because of their high correlations with the target variable.
-All features were normalized using StandardScaler, and all models' parameters
-were optimized using Cross-Validation.
+All models' parameters
+were optimized using Cross-Validation, using Negative Mean Squared Error as scoring criterion.
 Table~\ref{tab:uni_multi_regression_report} shows the test performances of the different regressors.
 \begin{table}[H]
     \centering
-    \begin{tabular}{lccccccc}
+    \begin{tabular}{lc@{\hskip 30pt}ccc}
         \toprule
         % mae, mse normalized over target variable range
-         & \textbf{Intercept} & \textbf{Coefficient} & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} & $\alpha$ \\
+         & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} \\
         \midrule
-        \textbf{Univariate} \\
+        \multicolumn{4}{c}{\textbf{Univariate}} \\
         \midrule
-        Linear & -1.16* 10$^{-16}$ & 0.732 & 0.565 & 0.432 & 0.474 & - \\ % train mae: 0.6427363729986589
-        Ridge & -1.16* 10$^{-16}$ & 0.732 & 0.565 & 0.432 & 0.474 & 1* 10$^{-4}$ \\ % alpha=100
-        Lasso & -1.16* 10$^{-16}$ & 0.732 & 0.565 & 0.432 & 0.474 & 1* 10$^{-4}$ \\ % alpha=100
-        DT & - & - & 0.601 & 0.446 & 0.434 & - \\
-        % {'ccp_alpha': 0.004077514155476392, 'criterion': 'friedman_mse', 'max_depth': 35,
-        % 'max_leaf_nodes': 19, 'min_impurity_decrease': 0.07111495324380178, 'min_samples_leaf': 19,
-        % 'min_samples_split': 8}
-        47-NN & - & - & 0.603 & 0.424 & 0.432 & - \\
+        Linear & 0.465 & 3.419 & 189.543 \\
+        Ridge & 0.465 & 3.419 & 189.550 \\
+        Lasso & 0.279 & 3.948 & 255.732 \\
+        DT & 0.700 & 2.313 & 106.531 \\ % max_depth=35
+        47-NN & 0.643 & 2.221 & 126.539 \\ % k=24
         \midrule
-        \textbf{Multiple}\\
+        \multicolumn{4}{c}{\textbf{Multiple}} \\
         \midrule
-        Linear & - & - & 0.628 & 0.436 & 0.405 & - \\
-        Ridge & - & - & 0.628 & 0.436 & 0.405 & 37.649 \\ % alpha=0.1
-        Lasso & - & - & 0.608 & 0.438 & 0.427 & 0.1 \\ % alpha=0.1
-        DT & - & - & 0.659 & 0.395 & 0.371 & - \\
-        % (ccp_alpha=0.0006952130531190704, criterion='friedman_mse',
-        % max_depth=8, min_samples_leaf=9, min_samples_split=7)
-        15-NN & - & - & 0.667 & 0.383 & 0.362 & - \\
+        Linear & 0.628 & 3.125 & 132.002 \\
+        Ridge & 0.627 & 3.071 & 132.119 \\ % alpha=1000
+        Lasso & 0.610 & 2.731 & 138.249 \\ % alpha=10
+        DT & 0.702 & 2.119 & 105.854 \\ % max depth=8
+        15-NN & 0.673 & 2.268 & 105.864 \\ % 15 neighbors
         \bottomrule
     \end{tabular}
-    \caption{Classification report for binary classification}
+    \caption{Performance report for Univariate and Multiple Regression}
     \label{tab:uni_multi_regression_report}
 \end{table}
-In Univariate Regression, the Linear, Ridge, and Lasso models underperformed compared to both Decision
-Tree and K-Nearest Neighbors regressors. Neither L1 nor L2 regularization significantly improved
-performance, suggesting that the underlying relationship between the variables may not be well
-captured by a linear model. 
-Interestingly, the Decision Tree's Mean Absolute Error was the highest, but the Mean Squared Error was
-lower than the linear models, indicating that its predictions were more accurate
-on average, but with some outliers that were not well predicted.
-K-Nearest Neighbors was the best performer, achieving better scores in all metrics.
+The linear models underperformed compared to both Decision
+Tree and K-Nearest Neighbors regressors in both tasks. In the first regression, neither L1 nor L2
+regularization improved performances, with Lasso performing worse than the other linear models.
+The same goes for Multiple Regression, but in this case L1 regularization had a slightly lower Mean Absolute Error
+than the other linear models.
+All linear models had a boost in performance with the additional features in Multiple Regression.
 
-In Multiple Regression, all models were able to express more of the variance in the target variable,
-as can be seen from the R-Squared values' rise.
-Interestingly, all Linear models had a slight drop in Mean Absolute Error performance compared to the
-Univariate Regression, indicating an average error growth. However, their Mean Squared Error decreased,
-suggesting that the models made fewer severe mistakes or large errors.
-The Ridge model had the same performance as the Linear model, but with a regularization
-parameter of 37.649, which is significantly higher than the one used in Univariate Regression.
-The Lasso model, on the other hand, had a lower regularization parameter of 0.1, which is
-still higher than the one used in Univariate Regression, but its performance was worse than the other
-linear models.
-The Decision Tree and K-Nearest Neighbors regressors performed better than the linear models,
-with the K-Nearest Neighbors achieving the best performance in all metrics.
-
-An interesting observation is that both Decision Tree and K-Nearest Neighbors regressors achieved their
-best performances with higher tree depth and larger numbers of neighbors, respectively, in the
-Univariate Regression. In contrast, in Multiple Regression, they performed better with lower tree depth
-and fewer neighbors. Specifically, the Decision Tree depths were 35 (Univariate) and 8 (Multiple),
-while the K-Nearest Neighbors' numbers of neighbors were 47 and 15. This suggests that in the
-Univariate setting, the models needed greater complexity to capture the potentially nonlinear
-relationship between the single feature and the target. Meanwhile, in Multiple Regression, the
-combined features likely captured the relationship more linearly or simply, allowing the models to
-generalize better with reduced complexity.
+K-NN regressors had solid performances, with a slight increase in Multiple Regression for the Mean Absolute Error,
+but a significantly lower Mean Squared Error.
+The best performing model in both tasks was the Decision Tree regressor, although the additional features
+offered a slight improvement in performance. An interesting observation is that the Cross-Validation
+best hyperparameters for Univariate Regression indicated a high maximum depth of 35 for Univariate Regression,
+while the best hyperparameter for Multiple Regression was a maximum depth of 8; a similar trend was observed
+in the K-NN regressors, where the optimal number of neighbors was 47 for Univariate Regression and 15 for Multiple Regression.
+This suggests that the additional features in Multiple Regression allowed the model to generalize better,
+reducing the need for a more complex model.
 
 
 
 \section{Multivariate Regression}
+As for Univariate and Multiple regressions, independent variables were
+chosen by studying the correlations of other features with the target variables.
+The chosen target variables (\texttt{userReviewsTotal} and \texttt{criticReviewsTotal})
+shared the same top correlated features, which were found to be \texttt{totalCredits},
+\texttt{numRegions} and \texttt{totalMedia}.
+As in previous regression tasks, hyperparameters were optimized using Cross-Validation,
+using Negative Mean Squared Error as scoring criterion .
+Table~\ref{tab:multi_regression_report} shows the test performances of the different regressors.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc@{\hskip 30pt}ccc}
+        \toprule
+        % mae, mse normalized over target variable range
+         & \textbf{user R$^2$} & \textbf{user MAE} & \textbf{user MSE} & \textbf{critic R$^2$} & \textbf{critic MAE} & \textbf{critic MAE} \\
+        \midrule
+        Linear & 0.812 & 5.877 & 721.100 & 0.623 & 3.339 & 131.068 \\
+        Ridge & 0.812 & 5.877 & 721.099 & 0.623 & 3.339 & 131.069 \\ % alpha=0.1
+        Lasso & 0.812 & 5.624 & 722.818 & 0.604 & 3.113 & 137.847 \\ % alpha=1
+        DT & 0.781 & 4.100 & 841.425 & 0.706 & 2.247 & 102.348 \\ % max_depth=45
+        22-NN & 0.761 & 4.268 & 917.439 & 0.685 & 2.278 & 109.629 \\ % k=22
+        \bottomrule
+    \end{tabular}
+    \caption{Performance report for Multivariate Regression}
+    \label{tab:multi_regression_report}
+\end{table}
+
+The linear models had generally similar performances. Regularization seemed to provide some improvements
+on some metrics, but overall the differences were not particularly significant, and both $\alpha$ parameters
+were kept low by the Cross-Validation.
+This suggests that the Linear model did not necessitate particular regularization to perform at its best.
+Similarly to the previous task, the linear models had worse performances than the Decision Tree and K-NN
+regressors on the \texttt{criticReviewsTotal} target variable.
+For \texttt{userReviewsTotal}, they all had higher R$^2$ scores, with Lasso and Linear regression
+performing the best, as well as a lower Mean Squared Error; however,
+their MAE was higher than both Decision Tree and K-NN regressors.
+This suggests that the linear models were able to
+express most of the variance in the target variable, they were not able to
+provide accurate estimates for individual Titles. This suggests the presence of outliers and noise
+in the dataset, likely due to a non-linear relationship between the features and the target variables.
+This is further confirmed by the complexity of the Decision Tree, which had a maximum depth of 45,
+and the K-NN regressor, which had 22 neighbors.

@@ -33,4 +33,4 @@
 \contentsline {chapter}{\numberline {5}Pattern Mining}{19}{}%
 \contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{20}{}%
 \contentsline {section}{\numberline {5.2}Extraction of rules}{20}{}%
-\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{20}{}%
+\contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{21}{}%
