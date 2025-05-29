@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748511058.90623 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748512341.48053 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748511055.43814 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748511058.90686 0
+["pdflatex"] 1748512337.73578 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748512341.48105 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -58,7 +58,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb" 1255129361 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb" 1255129361 109598 cb570392cb143ca78182169795feed7a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb" 1254269338 27863 09ce3735688ffde955e72da27c95b61a ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb" 1254269338 27941 d1f5d03f61a46c3fcc3a2ba904ddda52 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb" 1255129361 113227 1010e11451afc2822c95dae77c390042 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb" 1255129361 115291 2ae7034c644e971beb573b1e6606f863 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb" 1255129361 108480 ee1de99df36ee0a16b36023b9c9d8a58 ""
@@ -147,13 +146,13 @@
   "capitolo1.tex" 1748510942.91632 19377 d51cbec77751bb0e223d112f4cf03d57 ""
   "capitolo2.tex" 1748504994.68992 24609 a8ff48caae4ce6caa0d91bb844cafb95 ""
   "capitolo3.tex" 1748504994.69071 30762 6cbdeecafa8b89fcacd4b325471a6761 ""
-  "capitolo4.tex" 1748507494.95723 4045 7a663d2e442a6127c2c3206c82503dfb ""
+  "capitolo4.tex" 1748512337.38204 5414 212346df58a87810bb562fc616d618fc ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748511058.39495 15594 cab74056bd8b639821d00574afd54021 "pdflatex"
+  "main.aux" 1748512340.92346 14745 8ad4a938160b5bf2497e5f763ab61edd "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1748511058.40148 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748512340.93107 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
-  "main.toc" 1748511058.40162 2815 3f2b1cde72fe48d2684910432dcfa421 "pdflatex"
+  "main.toc" 1748512340.93128 2815 1176b8ecc33d89c1eb1ddea5400071bf "pdflatex"
   "plots/5_min_conf.png" 1748423396.27224 51666 247bb2898aca798f5d782fdc39fa8499 ""
   "plots/5_min_sup.png" 1748423396.27512 40859 adff69002735abb7bb8cfad7309abeed ""
   "plots/binary_dt.png" 1748339665.29033 207375 08ae0ff6de7b8b83409efbb775ecc0b2 ""
@@ -162,14 +161,11 @@
   "plots/dbscan_scatterplot.png" 1748504994.72787 93557 70c6a60d4d7376b78445dc5d93eb894b ""
   "plots/dendrogram_4.png" 1748098454.4865 22684 ddaa9f71ad4c29b0b12d892d94fd8d7d ""
   "plots/dendrogram_complete.png" 1748261066.46021 25972 ec0a13c64eea97c48c1f13cf0b3f00c6 ""
-  "plots/dt_regressor.png" 1748436943.44907 29745 66c137cc3e8df1ab92487ac21b40b0cb ""
   "plots/kmeans_clusters.png" 1748504994.7301 98578 bf77bb86e62f49f20e365cde51cd2299 ""
   "plots/knn_binary_confmatrix.png" 1748504994.73101 12741 80a391160c23499164f2bc0d19f9d98c ""
   "plots/knn_multiclass_confmatrix.png" 1748504994.73226 46915 dcfe3279d603daea788f63a6a0499d88 ""
-  "plots/lasso.png" 1748436721.8304 28986 7b40d343abee7bd40c7ba15616efb36f ""
   "plots/left_skew_distribs.png" 1748511044.22151 52040 7ab87284d69073bdcdc95a30f44efcf5 ""
   "plots/left_skew_distribs_log.png" 1748511054.90908 64989 35ea032ff03108b11700de974de3dc88 ""
-  "plots/linear.png" 1748437403.62667 32176 40f8b59caa76c5d3b55075474071e53b ""
   "plots/max_min_pctg.png" 1748100575.37453 52591 a1c56af192b871687ff4d73b63401897 ""
   "plots/multiclass_dt_conf_matrix.png" 1748435854.0133 45666 6e8ffe7ca87b927c36134639130089ba ""
   "plots/multiclass_tree.png" 1748422428.8584 230296 df72c835598017cef61805445698626b ""
@@ -178,7 +174,6 @@
   "plots/nominations_distrib.png" 1748510899.09096 35484 9389f98bf5236aeea6648d16960d2fac ""
   "plots/outliers.png" 1748505734.87819 36244 f34b61deb556403ade8bd0d7d4a44187 ""
   "plots/rating_distrib.png" 1748510631.36818 23920 8cf7f422bcbb32f46cef87b95f71c83e ""
-  "plots/ridge.png" 1748436712.22168 29324 cdf8c5e91018ff0679d1c1a1bc21695b ""
   "plots/scatter_complete.png" 1748268919.00469 133382 4dfb6043563768f0fff7d8bdb7c209f9 ""
   "plots/scatter_ward.png" 1748268744.16142 144044 fbbe37cce4357a3cc7f83b6a3b246802 ""
   "plots/sil_sse_hierarchical_clust.png" 1748100727.19942 62222 93703fe08205068fa724c5ef093be07f ""
