@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748547811.65998 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748549608.52304 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748547808.03267 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748547811.66058 0
+["pdflatex"] 1748549605.20641 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748549608.52357 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748545781.52817 7947 9882c73fa50157b6eb1b9cb2de886ebe ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -143,20 +143,20 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "capitolo1.tex" 1748529332.64514 19388 0f395fd7d0fd25e9a690d08b70b63a99 ""
-  "capitolo2.tex" 1748504994.68992 24609 a8ff48caae4ce6caa0d91bb844cafb95 ""
-  "capitolo3.tex" 1748528829.84685 30232 7eda4455d6352e27df60cfc731ddd917 ""
-  "capitolo4.tex" 1748547807.68395 6481 4c091c6445127d3b0c9c6cfd27325a72 ""
+  "capitolo1.tex" 1748549604.86078 19231 8c40bf6d876f415d1005f21e75b2560f ""
+  "capitolo2.tex" 1748547909.33832 20700 ef7b094913def5500e8d3ea6f4df50be ""
+  "capitolo3.tex" 1748547909.33956 32004 a68b0cc0531d0a42048cea36186cb27c ""
+  "capitolo4.tex" 1748547869.99296 6630 43a18fd4385a36e08730c76f1ff9038f ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748547811.12976 14996 59049d8230da167485a950e748fef73c "pdflatex"
+  "main.aux" 1748549608.0172 14989 03450f62bd7d40d6159bbcb1dec4652e "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1748547811.13608 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748549608.02256 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748545781.52817 7947 9882c73fa50157b6eb1b9cb2de886ebe ""
-  "main.toc" 1748547811.13628 2815 f3e092e47611bed0339bd24b5f62f95f "pdflatex"
+  "main.toc" 1748549608.02271 2814 d833fe153b637f5e27017b0e61d73784 "pdflatex"
   "plots/5_min_conf.png" 1748423396.27224 51666 247bb2898aca798f5d782fdc39fa8499 ""
   "plots/5_min_sup.png" 1748423396.27512 40859 adff69002735abb7bb8cfad7309abeed ""
   "plots/binary_dt.png" 1748339665.29033 207375 08ae0ff6de7b8b83409efbb775ecc0b2 ""
-  "plots/correlation_matrix.png" 1748504994.72408 104121 1f964b064e5712c921baf8342c1820f1 ""
+  "plots/correlation_matrix.png" 1748547909.3452 101841 9536be6c0d8ee75470a7559ae7c33daf ""
   "plots/dbscan_kth.png" 1748504994.72584 66500 40ec345229d92030bacececc70afca20 ""
   "plots/dbscan_scatterplot.png" 1748504994.72787 93557 70c6a60d4d7376b78445dc5d93eb894b ""
   "plots/dendrogram_4.png" 1748098454.4865 22684 ddaa9f71ad4c29b0b12d892d94fd8d7d ""

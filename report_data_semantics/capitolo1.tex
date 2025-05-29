@@ -47,10 +47,10 @@ merged with a logical OR operation. This is not true for the \textit{short} type
 
 \subsection{Discrete Attributes Analysis}
 This paragraph provides an overview of the discrete attributes in the dataset, focusing on their distributions and statistics.
-The following figures~\ref{fig:titleType_distrib} and~\ref{fig:rating_distrib} show bar plots of \texttt{titleType} and \texttt{rating} attributes, respectively.\\
-From figure~\ref{fig:titleType_distrib} it is observed that the classes of the titleType attribute are unbalanced, with \textit{movie} being the most frequent class (5535 records).
+Figures~\ref{fig:titleType_distrib} and~\ref{fig:rating_distrib} show bar plots of \texttt{titleType} and \texttt{rating} attributes, respectively.\\
+Figure~\ref{fig:titleType_distrib} shows that the classes of the \texttt{titleType} attribute are imbalanced, with \textit{movie} being the most frequent class (5535 records).
 It was observed that the class \textit{tvShort} is the least frequent in the dataset, with only 40 records (around 0.24\% of the dataset). Because of this, these rows were discarded from the dataset, as they were considered irrelevant for the analysis.
-The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively). \\
+The decision was not repeated for \textit{tvSpecial} and \textit{tvMiniSeries}, as they cover slightly more than 1\% of the dataset each (166, 1.01\% and 224, 1.36\%, respectively).
 \begin{figure}[H]
     \centering
     % First subfigure
@@ -86,7 +86,6 @@ to all other intervals.
 Multi-label one-hot encoding was applied to the \texttt{genres} column. 
 Each unique genre was represented as a binary feature, allowing records that belong to multiple genres simultaneously to maintain this information; this generated 28 new features.
 Depending on the task, some were often discarded to avoid overfitting or to reduce the number of features.
-This will be discussed in the corresponding sections.
 Rows with no genres were assigned a vector of all zeros, indicating the absence of any genres.\\
 
 % After that, multi-label one-hot encoding was applied to the
@@ -243,15 +242,15 @@ only in \texttt{awardWins}; in the other listed columns \texttt{"\textbackslash 
 
     \item \texttt{genres}: it has 382 missing values (2.3\%). Having dealt this variable with a
     multi-label one-hot encoding process (as has been described in the \textit{Encoding and Transformation of categorical attributes}
-    section), a vector of all zeros is assigned to record with missing genres values.
+    section), a vector of all zeros is assigned to records with missing genres values.
 \end{itemize}
 
 
 
 \subsection{Semantic Inconsistencies, Feature Transformations and Outlier detection}
 While analyzing the dataset, it was observed that the \textit{Videogame} type of the \texttt{titleType} attribute (259 records - around 1.58\% of the dataset) 
-was not consistent with the other values of the same feature, being \textit{Videogame} a fundamentally different titleType.
-Other then this semantic inconsistency, these rows generated problems for some of the other attributes, such as \texttt{runtimeMinutes}, resulting in most values being missing and difficult to impute. 
+was not consistent with the other values of the same feature, being \textit{Videogame} a fundamentally different type.
+These rows also generated problems for some of the other attributes, such as \texttt{runtimeMinutes}, resulting in most values being missing and difficult to impute. 
 Because of this, the samples were removed from the dataset. \\
 
 
