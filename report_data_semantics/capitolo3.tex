@@ -2,8 +2,7 @@
 \chapter{Classification}
 \label{ch:capitolo3}
 Classification was performed on the available training set using three different algorithms: K-NN (\textit{K-Nearest Neighbours}), Naïve Bayes and Decision Trees.
-The target variables chosen for this task are 2: \texttt{titleType} and \texttt{has\_LowEngagement}.
-These will be discussed in more detail in the corresponding sections below.
+A binary classification task and a multiclass one were performed, respectively using the target variables \texttt{has\_LowEngagement} and \texttt{titleType}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DA VEDERE SE METTERE SOLO QUESTO AL POSTO CHE IN OGNUNA DELLE SEZIONI%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % For K-NN and Naïve Bayes, a portion of the training set (referred to as the validation set) was used to select the best hyperparameters for the first model (used as an external validation 
 % after internal cross-validation with RandomizedSearch) and to choose the best feature set for the second one. 
@@ -22,36 +21,34 @@ An analysis of semantically related features was run to decide whether to discar
 \texttt{numVotes}, while \texttt{criticReviewsTotal} has 67\% correlation.
 Due to its semantic similarity with \texttt{numVotes}, \texttt{userReviewsTotal} was discarded for this task.
 In contrast, \texttt{criticReviewsTotal} was retained as it was deemed to provide distinct and complementary information. 
-Moreover, its correlation with other features was not considered sufficiently high to make the problem trivial.\\
-
-An important aspect of the chosen binary classification task is the class imbalance, with 10287 records
-classified as \textit{Low Engagement} and 4668 as \textit{High Engagement} in the training set.
+Moreover, its correlation with other features was not considered sufficiently high to make the problem trivial.
+An important aspect of the chosen binary classification task is the class imbalance, with 10287 records in the training set
+belonging to the \textit{Low Engagement} class and 4668 to \textit{High Engagement}.
 This imbalance was taken into account during model training and evaluation, with a focus on
-macro-averaged F1-score to mitigate its impact on the results.\\
+macro-averaged F1-score to mitigate its impact on the results.
 
 \subsection{K-NN - Binary Classification}
-
+The features used for the K-NN algorithm were normalized, as the model is sensitive to unscaled values: log-transformation (when needed) and \texttt{StandardScaler} were applied to data. 
+Then, to perform this task, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality.
 \begin{wrapfigure}{r}{0.40\textwidth}
     \centering
     \includegraphics[width=0.30\textwidth]{plots/knn_binary_confmatrix.png}
     \caption{K-NN binary classification}
     \label{fig:binary_knn_confusion_matrix}
 \end{wrapfigure}
-The features used for the K-NN algorithm were normalized, as the model is sensitive to unscaled values: log-transformation (when needed) and \texttt{StandardScaler} were applied to data. 
-Then, to perform this task, care was taken in selecting the appropriate type and amount of features to avoid unnecessary increased dimensionality.
-For example, to provide the model with information about the origin of the titles, without introducing all 7 \texttt{countryOfOrigin\_[continent code]} attributes, only \texttt{countryOfOrigin\_freq\_enc} was kept. 
+
+For example, only \texttt{countryOfOrigin\_freq\_enc} was used instead of including all 7 \texttt{countryOfOrigin\_[continent code]} attributes. 
 The remaining variables of the dataset were maintained as they offered diverse and non-redundant insights.\\
 For this algorithm, a portion of the training set was held out as a validation set to enable external validation after internal cross-validation. 
 A randomized hyperparameter search was indeed performed on the reduced training set, with each configuration evaluated using stratified 5-fold cross-validation. 
-This process aimed to identify the optimal value of \textit{k} and explore additional algorithm parameters. 
-The best configuration found is: \texttt{weights:'uniform', n\_neighbors:9, metric:'cityblock'}, which achieved the highest accuracy on the selected feature set.\\
+The objective was to identify the optimal value of \textit{k} and explore additional algorithm parameters. 
+The configuration that achieved the highest accuracy on the selected feature set is: \texttt{weights:'uniform', n\_neighbors:9, metric:'cityblock'}. \\
 
 The resulting model shows solid performance, achieving a test accuracy of 0.85. As expected, it performs better on the \textit{Low Engagement} class, with a high recall (0.94) and F1-score (0.89). 
 In contrast, the \textit{High Engagement} class is more challenging for the model; while precision is reasonable (0.83), recall (0.65) indicates that a significant number of instances are misclassified as 
 \textit{Low Engagement}.
-This analysis is reflected in the confusion matrix in Figure~\ref{fig:binary_knn_confusion_matrix}, where 550 out of 1561 \textit{High Engagement} samples were incorrectly labeled as \textit{Low Engagement}.\\
-
-To summarize, the macro average F1-score of 0.81 is suggesting that the model maintains a balanced performance across both classes.
+This analysis is reflected in the confusion matrix in Figure~\ref{fig:binary_knn_confusion_matrix}, where 550 out of 1561 \textit{High Engagement} samples were incorrectly labeled as \textit{Low Engagement}.
+In general, the macro average F1-score of 0.81 suggests that the model maintains a balanced performance across both classes.
 
 
 
@@ -63,16 +60,18 @@ To summarize, the macro average F1-score of 0.81 is suggesting that the model ma
     \caption{NB binary classification}
     \label{fig:nb_binary}
 \end{wrapfigure}
-For Naïve Bayes, a validation set was used to select the best feature set. Two variants were evaluated: GaussianNB and CategoricalNB. 
+For Naïve Bayes, a validation set was used to select the best feature set. Two variants of the algorithm were evaluated: GaussianNB and CategoricalNB. 
 However, skewed distribution of continuous attributes and the relevance of discrete features (e.g., genres), made GaussianNB less suitable 
-for the task, resulting in a slightly lower performance, in terms of accuracy and classification of underrepresented classes. 
+for the task, resulting in a slightly lower performance in terms of accuracy and classification of underrepresented classes. 
 Therefore, only CategoricalNB results are reported. 
-To apply CategoricalNB, continuous features were discretized using meaningful bins, and each \texttt{countryOfOrigin\_[continent code]} feature was binarized (0 / $>$0), to maintain the only significant information; 
-only \texttt{is\_from\_America\_bin} and \texttt{is\_from\_Europe\_bin} were used. Final features were encoded with OrdinalEncoder as required.
-The results show good classification performance with an overall accuracy of 0.83, a solid outcome given the simplicity of the NB model.
-However, differences between classes emerged: the \textit{Low Engagement} class performed better, with precision 0.87, recall 0.89, and F1 score 0.88, 
-while the model struggled more identifying  \textit{High Engagement} examples, as confirmed by the low recall (0.70) for that value and by the 481 false 
-negatives in the confusion matrix. The macro F1 average of 0.80, actually indicates a good balance overall, but some difficulty remains in handling the minority class.
+To apply CategoricalNB, continuous features were discretized using meaningful bins, and each \texttt{countryOfOrigin\_[continent code]} feature was binarized (0/$>$0) to maintain only the significant information; 
+however, only \texttt{is\_from\_America\_bin} and \texttt{is\_from\_Europe\_bin} were used. All features were encoded with OrdinalEncoder as required.
+The model achieved an overall accuracy of 0.83: a solid outcome for a binary classification task considering the simplicity of the algorithm.\\
+
+However, differences between classes emerged: the \textit{Low Engagement} class performed better, with a precision of 0.87, a recall of 0.89, and an F1-score of 0.88.
+On the other hand, the model struggled more in identifying \textit{High Engagement} examples, as confirmed by the low recall for that class (0.70) and by the 481 false 
+negatives in the confusion matrix (Figure~\ref{fig:nb_binary}). The macro average F1-score of 0.80 actually indicates a good balance overall.
+
 
 % \begin{figure}[H]
 %     \centering
@@ -160,7 +159,7 @@ Precision scores of the class (0.78 on train, 0.75 on test).
 \subsection{Model Comparison - Binary Classification}
 After applying the three algorithms to the binary classification task, it emerged that all models struggle to identify the minority class, 
 \textit{High Engagement}, leading to lower recall values: 0.65 for K-NN, 0.70 for Naïve Bayes, and 0.69 for Decision Trees. 
-This is confirmed by the confusion matrices, where many \textit{High Engagement} records are misclassified as \textit{Low Engagement}.\\
+This is confirmed by the confusion matrices, where it appears that many \textit{High Engagement} records are misclassified as \textit{Low Engagement}.\\
 
 Among the models, K-NN handled the minority class best in terms of precision (0.83) and F1-score (0.73). 
 However, the fact that Naïve Bayes performed the highest in terms of recall (0.70) makes it a more valid alternative in scenarios where preventing 
@@ -230,7 +229,9 @@ for this task, due to its relevance within the dataset. Because of their strong 
 feature set. Furthermore, since the primary imputation method for missing values in \texttt{runtimeMinutes}
 relied on information from the chosen target variable, these values were re-imputed to avoid data leakage.
 Specifically, missing entries were filled by sampling from the overall distribution of
-\texttt{runtimeMinutes}, without referencing \texttt{titleType} itself.\\
+\texttt{runtimeMinutes}, without referencing \texttt{titleType} itself. 
+For the same reason, outliers detected by observing the distribution of \texttt{runtimeMinutes} were removed, 
+and not the ones based on \texttt{titleType} (see subsection 1.3.2).\\
 
 One final point to note is the imbalance in the target feature (previously shown in
 figure~\ref{fig:titleType_distrib}), which was explicitly taken into account
@@ -295,35 +296,36 @@ a key metric for model evaluation, as it provides a balance between each class's
     \label{fig:multiclass_knn_confusion_matrix}
 \end{wrapfigure}
 For the multiclass classification task using the K-NN algorithm, the inclusion of a broad set of 
-features is necessary and justified, as it was found to help the model to better distinguish between 
-underrepresented classes - even if the results in their classification are not optimal. 
-Even though the choice of keeping those classes lowers the overall performance (accuracy) of the model, 
-it is a trade-off in favor of larger coverage and sensitivity across all classes.
+features is justified, as it helps the model to better distinguish between 
+underrepresented classes, despite not reaching optimal results. 
 The hyperparameter tuning strategy that was employed is the same as in binary classification with K-NN. 
 The configuration that achieved the best performances is: \texttt{{weights:'uniform', n\_neighbors:12, metric:'cityblock'}}.\\ 
 
 As expected, the model shows mixed performances across the different classes. 
 The overall test accuracy reaches 0.76, which is a respectable result for a multiclass problem. 
-However, since accuracy is a global metric, more attention should be paid to the performances of the single classes. 
-Classes with a larger support, like \textit{tvEpisode} (4690 records in the training set) and \textit{movie} (5442), are handled quite well: \textit{tvEpisode} reaches an F1-score of 0.83 and \textit{movie} 0.84, both supported by high recall values (respectively 0.93 and 0.87). 
+However, since accuracy is a global metric, more attention was paid to the performances of the single classes. 
+The ones with larger support, like \textit{tvEpisode} (4690 records in the training set) and \textit{movie} (5442), are handled quite well: \textit{tvEpisode} reaches an F1-score of 0.83 and \textit{movie} 0.84, both supported by high recall values (respectively 0.93 and 0.87). 
 This is also clearly visible in the confusion matrix of Figure~\ref{fig:multiclass_knn_confusion_matrix}, where these classes dominate with a high count of correct predictions. 
-On the other hand, the model struggles with 2 classes in particular: \textit{tvMiniSeries} and \textit{tvSpecial}, i.e. the classes with the least support (respectively 186 and 158). 
-In particular, \textit{tvMiniSeries} shows a very low recall (0.03), meaning that it is rarely correctly identified. 
-Similarly, \textit{tvMovie} is mostly misclassified, showing a low F1-score of 0.29.\\
+On the other hand, the model struggles with 2 classes in particular: \textit{tvMiniSeries} and \textit{tvSpecial}, i.e. the ones with the least support (respectively 186 and 158). 
+% In particular, \textit{tvMiniSeries} shows a very low recall (0.03), meaning that it is rarely correctly identified. 
+% Similarly, \textit{tvMovie} is mostly misclassified, showing a low F1-score of 0.29.\\
 % forse rimetti i dati -> non messi sotto
-% An interesting trend to notice in the confusion matrix is how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}. This is reflected in a very low recall (0.24) for \textit{tvSeries} and in a quite high precision (0.76) for \textit{tvEpisode}.
-% This is likely due to the similar nature of the two, as both refer to television content and often share overlapping characteristics, considering also that a tv episode is can be considered part of a tv series. 
+Interesingly, the matrix shows how records belonging to class \textit{tvSeries} are frequently misclassified as \textit{tvEpisodes}; this is likely due to the similar nature of the two. 
+This is reflected in a very low recall (0.24) for \textit{tvSeries} and in a quite high precision (0.76) for \textit{tvEpisode}.\\
+
+% This is likely due to the similar nature of the two, as both refer to television content and often share overlapping characteristics, 
+% considering also that a tv episode is can be considered part of a tv series. 
 % A similar confusion occurs between \textit{tvMovie} and \textit{movie}.\\
-To summarize, since the model achieves a macro average F1-score of 0.50, this reflects clearly this imbalance in performance: while the model performs well on the majority classes, it fails to generalize well especially the minority ones.
+To summarize, the macro average F1-score of 0.50 reflects clearly the imbalance in performance: while the model performs well on the majority classes, it fails to generalize well especially the minority ones.
 
 
 
 
 \subsection{Naïve Bayes - Multiclass Classification} 
-For the multiclass classification task, the same procedure as binary classification (explained in Subsection 3.1.2) were applied. 
-Note that including genre features, significantly improved classification across all classes, particularly those with limited support in the training set. 
-Under GaussianNB, tvMiniSeries (68 objects) was not classified at all, and tvMovie (288) and tvSpecial (42) were poorly classified. 
-With CategoricalNB, which better handles categorical data, these classes showed improvements, confirming its suitability for this task.\\   
+For the multiclass classification task, the same procedures as binary classification (explained in subsection 3.1.2) were applied. 
+Note that including the one-hot encoded \textit{genres} features significantly improved classification across all classes, particularly those with limited support in the training set. 
+While with GaussianNB, \textit{tvMiniSeries} was not classified at all, and \textit{tvMovie} and \textit{tvSpecial} were poorly classified. 
+On the other hand, since CategoricalNB better handles categorical data, these classes showed improvements, confirming its suitability for this task.\\   
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
     \captionsetup{justification=raggedleft, width=1\linewidth}
@@ -332,13 +334,13 @@ With CategoricalNB, which better handles categorical data, these classes showed 
     \includegraphics[width=0.9\linewidth]{plots/nb_multiclass_confmatrix.jpg}
 \end{wrapfigure}
 The model achieves an overall accuracy of 0.73, reasonable for multiclass classification, but indicative of difficulties in handling all categories equally. 
-High F1-scores (about 0.80) for frequent classes like \texttt{movie}, \texttt{tvEpisode}, and \texttt{short} suggest effective recognition, likely due to their prevalence and distinctive traits. 
-The \texttt{movie} class also shows strong precision (0.82) and recall (0.84), confirming the model’s reliability on this category.
-As expected, performance drops for underrepresented classes: \texttt{tvMiniSeries}, \texttt{tvSpecial}, and \texttt{tvMovie}  have low F1-scores (respectivly 0.02, 0.21, 0.17). 
-Other than their low support, this is probably linked to the presence of common features with more dominant classes, such as \texttt{tvEpisode} or \texttt{Movie} (e.g., 140 \texttt{tvMovie} instances misclassified as movie). 
-The \texttt{tvSeries} class also shows issues, with moderate precision (0.52) but low recall (0.40), indicating many missed instances.
-The very low macro F1-score actually reflects the inability of the model to perform in a balanced way on all the classes, 
-while the higher weighted F1-score (0.71) , suggests that the majority classes have a greater influence on overall performance than the minorities.
+For frequent classes like \textit{movie}, \textit{tvEpisode}, and \textit{short} high F1-scores (about 0.80) suggest effective recognition, likely due also to their distinctive traits. 
+In addition, the \textit{movie} class also shows strong precision (0.82) and recall (0.84), confirming the model's reliability on this category.
+As expected, also for NB, performance drops for underrepresented classes: \textit{tvMiniSeries}, \textit{tvSpecial}, and \textit{tvMovie} have low F1-scores (respectively 0.02, 0.21, and 0.17). 
+Other than their low support, this is probably linked to the presence of common features with more dominant classes, such as \textit{tvEpisode} or \textit{movie} (e.g., 140 \textit{tvMovie} instances misclassified as movie). 
+Also the \textit{tvSeries} class shows issues, with moderate precision (0.52) but low recall (0.40), indicating many missed instances.
+The very low macro F1-score (0.46) actually reflects the inability of the model to perform in a balanced way on all the classes.
+% while the higher weighted F1-score (0.71) suggests that the majority classes have a greater influence on overall performance than the minorities.
 
 % \begin{figure}[H]
 %     \centering
@@ -406,8 +408,11 @@ of the \textit{tvMiniSeries} records being misclassified as \textit{tvSeries}.
 % On the other hand, well represented classes, such as \textit{movie} (5442 records in the training set) and \textit{tvEpisode} (4690), are generally classified accurately, as previously discussed.\\
 The analysis of Decision Tree, Categorical Naïve Bayes, and K-NN models reveals several consistent patterns in their performances. 
 As expected, underrepresented classes like  \textit{tvMiniSeries} (186 records in the training set), \textit{tvMovie} (844), and \textit{tvSpecial} (158) show consistently low recall and F1-scores across all models.
- \textit{tvMiniSeries} performs worst, with recall between 0.01 (Naïve Bayes) and 0.07 (Decision Trees), and a maximum F1-score of 0.10. 
- In contrast, well-represented classes like  \textit{movie} (5442) and\textit{tvEpisode}(4690) are always classified accurately. However, class imbalance alone does not fully explain the misclassifications. The confusion matrices showed systematic misclassification patterns, 
+\textit{tvMiniSeries} performs worst, with recall between 0.01 (Naïve Bayes) and 0.07 (Decision Trees), and a maximum F1-score of 0.10. 
+In contrast, well-represented classes like  \textit{movie} (5442) and\textit{tvEpisode}(4690) are always classified accurately. 
+Even though the choice of keeping those classes lowers the overall performance (accuracy) of the model, 
+it is a trade-off in favor of larger coverage and sensitivity across all classes.\\
+However, class imbalance alone does not fully explain the misclassifications. The confusion matrices showed systematic misclassification patterns, 
 where minority classes were frequently absorbed into semantically related but more dominant categories. 
 Across all models, but at different extent, \textit{tvMovie} is frequently confused with \textit{movie}, and \textit{tvMiniSeries} is often predicted as \textit{tvSeries}, e.g. resulting in 37 out of 68 instances misclassified by Decision Trees.
 K-NN also shows a tendency to predict \textit{tvSeries} as \textit{tvEpisode}.\\
