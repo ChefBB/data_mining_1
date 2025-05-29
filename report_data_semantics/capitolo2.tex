@@ -1,10 +1,10 @@
 \chapter{Clustering}
 \label{ch:capitolo2}
 
-This chapter of the report aims at illustrating the clustering analysis performed on the dataset at hand.
+This chapter aims at illustrating the clustering analysis performed on the dataset at hand.
 The employed clustering techniques are K-means (Centroid-based), DBSCAN (density-based) and hierarchical clustering.
-
-The analysis conducted using these methods focused on a selection of the continuous attributes of the dataset, which were appropriately log-transformed (when needed - as mentioned in subsection 1.3.2), and normalized using \texttt{MinMaxScaler}. 
+The analysis is conducted using these methods on a selection of the continuous attributes of the dataset, 
+which were appropriately log-transformed (when needed - as mentioned in subsection 1.3.2), and normalized using \texttt{MinMaxScaler}. 
 
 % For the K-means algorithm, \texttt{totalNominations} and \texttt{totalMedia} were excluded due to their high proportion of zero values, which negatively affected cluster formation.
 % In addition, an attempt was made to incorporate categorical variables to the analysis with the K-means algorithm by converting them into binary attributes and constructing a mixed-distances matrix. 
@@ -22,11 +22,12 @@ This step was motivated by the algorithm's sensitivity to the curse of dimension
 For this reason, although only \texttt{numVotes}, \texttt{totalCredits}, \texttt{userReviewsTotal}, \texttt{runtimeMinutes}, and \texttt{criticReviewsTotal},
 were chosen for this task, they proved to be a solid choice due to their ability to represent meaningful aspects of the data.
 To identify the proper number of clusters, both SSE and Silhouette scores were evaluated. 
-The objective was to find a configuration that reduces the SSE while maintaining a robust Silhouette score and a proper \textit{k}. 
-The plots in Figure X show that \textit{k} = 4 provides a balance between the two values (obtaining SSE equal to 535.51 and 0.315 for the Silhouette score).
+The objective was to find a configuration that reduces the SSE while maintaining a robust Silhouette score and a proper \textit{k}. \\
+
+The plots in Figure~\ref{fig:sse_silh_kmeans} show that \textit{k} = 4 provides a balance between the two values (obtaining SSE equal to 535.51 and 0.315 for the Silhouette score).
 Only for visualization purposes, Principal Component Analysis (PCA) was employed. 
 The first two components account for 58.01\% and 21.48\% of the total variance, indicating that this projection provides a fairly informative view of the clustering structure. 
-The cluster results are presented in figure~\ref{fig:kmeans_visualization}. 
+The resulting clusters are presented in figure~\ref{fig:kmeans_visualization}. 
 The 4 distinct clusters appear well-separated, suggesting that K-means managed to capture meaningful groupings in the data.
 
 
@@ -40,13 +41,13 @@ The 4 distinct clusters appear well-separated, suggesting that K-means managed t
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.44\textwidth}
+    \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/sse_silh_kmeans_def.png}
         \caption{SSE and Silhouette scores}
         \label{fig:sse_silh_kmeans}
     \end{subfigure}
-    \begin{subfigure}[b]{0.44\textwidth}
+    \begin{subfigure}[b]{0.42\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/kmeans_clusters.png}
         \caption{Clustering Visualization with PCA}
@@ -68,18 +69,18 @@ To determine suitable DBSCAN parameters, the k-th distance plot was used as star
 By varying \textit{k} (\textit{MinPts}) and observing the corresponding distance curves, the range between 0.08 and 0.2 was identified for a possible \textit{Eps} value.
 The algorithm was applied to the following features: \texttt{numVotes}, \texttt{totalCredits}, \texttt{criticReviewsTotal}, \texttt{userReviewsTotal}, and \texttt{runtimeMinutes}. 
 Although different combinations were tested, they all led to similar results. 
-Effectively, initial experiments clearly revealed DBSCAN’s sensitivity to highly sparse and imbalanced datasets; 
+Effectively, initial experiments clearly revealed DBSCAN's sensitivity to highly sparse and imbalanced data; 
 in most cases, the algorithm produced a highly populated single cluster corresponding to the dominant dense region, 
 while leaving the sparser regions largely unstructured.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.44\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/dbscan_kth.png}
         \caption{K-th distance plot}
         \label{fig:dbscan_kth}
     \end{subfigure}
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.44\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/dbscan_scatterplot.png}
         \caption{Visualization with PCA}
@@ -88,58 +89,24 @@ while leaving the sparser regions largely unstructured.
     \caption{DBSCAN - Cluster analysis}
     \label{fig:subplots_DBSCAN}
 \end{figure}
-
-Initial experiments clearly revealed DBSCAN's sensibility towards high-sparsed and imbalanced dataset;
-in most cases the algorithm produced an highly populated single cluster in correspondence of the dominant dense region, leaving sparser regions largely unstructured. 
-To address this issue and obtain more meaningful clustering, different combination of \texttt{min\_eps} and \texttt{min\_points} in the following ranges were tested:
+To address this issue and obtain more meaningful clustering results, different combinations of \texttt{min\_eps} and \texttt{min\_points} in the following ranges were tested:
 \begin{itemize}
     \item \texttt{eps\_list} =  [0.08, 0.09, 0.1, 0.12, 0.14, 0.16, 0.18, 0.2, 0.3, 0.4, 1.0];
     \item \texttt{min\_points\_list} =  [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20].
 \end{itemize}
-
-Each combination was evaluated based on the number of clusters (with a minimum threshold of 2), size of the clusters, noise points, and silhouette score 
-(filtered for values $>$ 0.1), excluding the cases where only one cluster was created, or where the silhouette value was consisidered too low.
-
-% First of all it is interesting to report that setting \textit{Eps} value > 0.16 never led to the formation of more than one cluster, (for any \texttt{min\_points} tested). 
-% Similarly, eps value between 0.13 and 0.16 consistently led to the collapse of most points into a single large cluster, with, occasionally, one/two minor residual clusters, (for any \texttt{min\_points} tested). \\
-
-% Note that, in this context, the high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
-% On the other side the combination of lower epsilon values (as 0.10) and few \texttt{min\_pts} (4-5) 
-% often resulted in over-fragmentation, producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups.
-% In general with \textit{Eps} values (between 0.09-0.12) the algorithm was able to differentiate between regions of varying density, as \textit{Eps} = 0.13 was identified as the threshold below which DBSCAN starts splitting the big cluster in two different ones.
-% \textbf{- EVENT METTI GRAFICO-  as Shown in Figure X}\\
-
-% In Table~\ref{tab:eps} the most interesting results are summarized.
-% \begin{table}[h]
-% \centering
-% \begin{tabular}{llll}
-% \toprule
-% \textbf{eps threshold} & \textbf{Min points} & \textbf{Silhouette} & \textbf{Cluster composition}  \\
-% \midrule
-% \texttt{\textbf{$\varepsilon$} > 0.16} & for any tested \texttt{min\_points}  & valori  & never led to the formation of more than one cluster (for any \texttt{min\_points} tested) \\
-% \texttt{0.13 $\leq$ \textbf{$\varepsilon$} < 0.16 } & for any tested \texttt{min\_points}&  valori  & consistently led to a single large cluster, with, occasionally, one/two minor residual clusters (for any \texttt{min\_points} tested)\\
-% \texttt{0.11 $\leq$ \textbf{$\varepsilon$} < 0.13 } & for any tested \texttt{min\_points} & valori &  DBSCAN starts splitting the big cluster in two different ones, starting to differentiate differentiate between regions of varying density\\
-% \texttt{\textbf{$\varepsilon$} < 0.11} & with lower \texttt{min\_points} (4, 5)& valori  & often resulted in over-fragmentation, producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups.  \\
-
-% \bottomrule
-% \end{tabular}
-% \caption{title}
-% \label{tab:eps}
-% \end{table}
-
-% Even if the configurations did not yield fully satisfactory results, in Table~\ref{tab:eps} the most interesting ones are summarized.
-% Note that, in this context, an high Silhouette score is misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity.
-Even though the configurations did not produce fully satisfactory results, the most relevant ones are summarized in Table~\ref{tab:eps}. 
-The reported Silhouette scores are computed excluding noise points; therefore, no score is provided when only a single cluster is formed. 
-It is important to note that, in this context, a high Silhouette score can be misleading, as it tends to favor cohesion of the main cluster, at the expense of structural granularity. 
+Each configuration was evaluated based on the number of clusters (with a minimum threshold of 2), their size, noise points, and Silhouette score 
+(filtered for values $>$ 0.1), excluding cases with a single cluster or very low Silhouette values.
+Although results were not fully satisfactory, the most relevant configurations are summarized in Table~\ref{tab:eps}. 
+The reported Silhouette scores are computed excluding noise points; therefore, no score is given when only one cluster is formed. 
+Note that, in this context, high Silhouette scores can be misleading, as they can favor compactness over structural granularity,
 \begin{table}[h]
 % \hspace*{-0.5cm}
 \centering
-\begin{tabular}{llll}
+\begin{tabular}{llcl}
 \toprule
 \textbf{eps threshold} & \textbf{Min points} & \textbf{Silhouette} & \textbf{Cluster composition}  \\
 \midrule
-\texttt{\textbf{$\varepsilon$} $>$ $0.16$} & for any tested value & \texttt{---} & never led to more than one cluster \\
+\texttt{\textbf{$\varepsilon$} $>$ $0.16$} & for any tested value & \texttt{$-$} & never led to more than one cluster \\
 \texttt{$0.13$ $\leq$ \textbf{$\varepsilon$} $\leq$ $0.16$} & for any tested value &  $[0.54,\ 0.70]$  & led to one cluster and, occasionally, 1 or 2 minor ones\\
 \texttt{\textbf{$\varepsilon$} $<$ $0.13$}& for any tested value & $[0.10,\ 0.31]$ & the big cluster it's splitted in two different ones \\
 \texttt{\textbf{$\varepsilon$} $\leq$ $0.10$} & lower values $[4,\ 5]$& $[0.10,\ 0.25]$  & led to several, not meaningful, clusters of 5/6 points\\
@@ -149,20 +116,21 @@ It is important to note that, in this context, a high Silhouette score can be mi
 \label{tab:eps}
 \end{table}
 
-
-
-Exlcuding the combination with higher \textit{Eps} value, that made the points collaps into one cluster, and the ones with low \textit{Eps} and few \texttt{min\_pts} ,that resulted in over-fragmentation, 
+Excluding the combination with higher \textit{Eps} value (that made the points collapse into one cluster), and the ones with low \textit{Eps} and few \texttt{min\_pts} (that resulted in over-fragmentation)
 the analysis focused on \textit{Eps} in the range $[0.11,\ 0.13)$.
-Despite the limitations of the dataset structure, in this range the algorithm was able to differentiate between regions of varying density, 
+Despite the limitations of the dataset structure, in this range the algorithm was able to differentiate between regions of varying density.
 % producing several clusters of very few elements (5/6), typically corresponding to isolated outliers or noise points rather than meaningful groups, 
 
 One of the most interesting compromise (though still suboptimal in absolute terms) was found with \textit{Eps} = 0.11, \texttt{min\_points} = 7: 
-As shown in (Figure~\ref{fig:dbscan_visualization}), this setting resulted in a 3 cluster structure: a compact cluster of 10378 points was extracted from the densest region, a less dense cluster with fewer points (4347) captured intermediate-density areas or mild outliers, 
-and a very small one (only 11 points), but well-separated, cluster effectively captured a potential relevant local pattern. Only 219 points were labeled as noise, and the Silhouette Score was 0.2699.\\
+As shown in (Figure~\ref{fig:dbscan_visualization}), this setting resulted in a three-cluster structure. A compact one of 10378 points was extracted from the densest region.
+A second less dense cluster with fewer points (4347) captured intermediate-density areas or mild outliers. 
+Finally, a very small but well-separated cluster, of only 11 points, effectively captured a potential relevant local pattern. 
+In addition, 219 points were labeled as noise.
+The resulting Silhouette Score was 0.2699.\\
 
-\textbf{QUESTA PARTE VOLENDO PUò ANDARE NELLE CONSIDERAZIONI GENERALI}\\
-To conclude, these observations highlight DBSCAN's limitations when applied to datasets with skewed feature distributions and unbalanced local densities.
-Nonetheless, the exploration helped isolate parameter ranges where meaningful subclusters begin to emerge,beyond the dominant density mass.
+% \textbf{QUESTA PARTE VOLENDO PUò ANDARE NELLE CONSIDERAZIONI GENERALI}\\
+% To conclude, these observations highlight DBSCAN's limitations when applied to datasets with skewed feature distributions and unbalanced local densities.
+% Nonetheless, the exploration helped isolate parameter ranges where meaningful subclusters begin to emerge,beyond the dominant density mass.
 
 
 
@@ -202,9 +170,22 @@ Nonetheless, the exploration helped isolate parameter ranges where meaningful su
 \section{Hierarchical clustering}\label{sec:hierarchical}
 Hierarchical clustering was performed using all linkages (Ward, Average, Complete, Single), with the Euclidean
 distance metric. After a careful analysis of multiple clusterings, it was decided to procede with
-all remaining numerical features, log transformed and normalized with \texttt{MinMaxScaler}.
+all remaining numerical features.
 Figure~\ref{fig:hier_clust_stats} shows the results of the analysis, which includes the Silhouette and SSE
-scores, as well as the maximum and minimum percentage of points per cluster.
+scores, as well as the maximum and minimum percentage of points per cluster.\\
+
+From figure~\ref{fig:max_min_pctg}, it can be observed that Single linkage produces a single cluster which contains basically all data points. This makes it unsuitable for this use case.
+Average and Complete linkages produce a cluster with a high maximum cluster size (above 90\% of the dataset for most
+of the number of clusters tested for Average, and 80\% for Complete).
+These results are likely due to two main causes: 
+\begin{itemize}
+    \item Usage of skewed features, which lead to areas with a very high density of points;
+    \item High dimensionality of the dataset, which makes it more difficult to separate clusters effectively.
+\end{itemize}
+
+These issues are mitigated by Ward's method, which doesn't show a dominant biggest cluster, for
+all numbers of clusters tested. The minimum cluster size is also consistently more balanced
+across different numbers of clusters.\\
 \begin{figure}[H]
     \centering
     % Left: Tall figure (a)
@@ -225,22 +206,9 @@ scores, as well as the maximum and minimum percentage of points per cluster.
     \label{fig:hier_clust_stats}
 \end{figure}
 
-From figure~\ref{fig:max_min_pctg}, it can be observed that Single linkage produces a single cluster which contains basically all data points. This makes it unsuitable for this use case.
-Average and Complete linkages produce a cluster with a high maximum cluster size (above 90\% of the dataset for most
-of the number of clusters tested for Average, and 80\% for Complete).
-These results are likely due to two main causes: 
-\begin{itemize}
-    \item Usage of skewed features, which lead to areas with a very high density of points;
-    \item High dimensionality of the dataset, which makes it more difficult to separate clusters effectively.
-\end{itemize}
-
-These issues are mitigated by Ward's method, which doesn't show a dominant biggest cluster, for
-all numbers of clusters tested. The minimum cluster size is also consistently more balanced
-across different numbers of clusters.\\
-
 
 Since Ward's method is based on Squared Error, it's not surprising how its SSE is consistently lower than other linkages, as shown in the second graph of figure~\ref{fig:sil_sse_hierarchical_clust}.
-What's more interesting is that Ward's method has the lowest Silhouette scores for all numbers
+More interesting is that Ward's method has the lowest Silhouette scores for all numbers
 of clusters tested, which indicates that the clusters are not well separated. This is due to
 the fact that Ward's method groups the data which resides in the high-density area
 mentioned above into smaller clusters, leading to less well-defined boundaries between them.
@@ -253,19 +221,17 @@ the other two will not be discussed further, as they provide limited insights on
 % (17.1\% against 16.8\% for 4 clusters) and a lower SSE. Figure~\ref{fig:dendrograms_ward} shows
 % the dendrograms for the two clusterings.
 \subsection{Ward's method}
-Figure~\ref{fig:dendrograms_ward} a dendrogram and a scatter plot for a clustering obtained through
-Ward's Method. Because of the parameters observed in the previous section, cleaner dendrograms,
-as well as consistency with other clustering methods, the hierarchical clustering is cut at 4 clusters.
+
 % Both clusterings are set to have 4 clusters, which in both cases leads to cleaner dendrograms.
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/dendrogram_4.png}
         \caption{Ward's Method Dendrogram}
         \label{fig:dendrogram_ward}
     \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{plots/scatter_ward.png}
         \caption{Ward's Method Scatter plot}
@@ -274,15 +240,10 @@ as well as consistency with other clustering methods, the hierarchical clusterin
     \caption{Ward's method clustering}
     \label{fig:dendrograms_ward}
 \end{figure}
+Figure~\ref{fig:dendrograms_ward} shows a dendrogram and a scatter plot of the clustering obtained through
+Ward's Method. The cut at 4 clusters was chosen based on the parameters discussed in the previous section
+and on the clarity of the dendrogram.\\
 
-% The obtained dendrogram has clearly separated clusters, as shown in figure~\ref{fig:dendrogram_ward}.
-% The clusters all form at a similar distance (around 12), meaning the SSE increase is similar for
-% all clusters.
-% It is interesting to note how the smallest cluster is merged with the others at the last merge; this,
-% as can be observed in figure~\ref{fig:scatter_ward}, is the cluster which resides in the less dense area of the dataset.
-% The other three clusters are closer to each other, as they are a result of the split of the higher density
-% area of the dataset. Compared to K-Means, the clusters are not as cleanly separated in the PCA space,
-% leading to overlapping areas between them.
 The dendrogram in Figure~\ref{fig:dendrogram_ward} reveals well-separated clusters, all of which merge at a
 similar linkage distance (approximately 12). This indicates that the increase in within-cluster sum of
 squares (SSE) is relatively consistent across all cluster merges, as expected from Ward's method.
@@ -293,12 +254,22 @@ closer to one another.
 Compared to K-Means, the clusters identified by Ward's method appear less clearly separated in the PCA
 projection, resulting in some overlap between adjacent groups.
 
+% The obtained dendrogram has clearly separated clusters, as shown in figure~\ref{fig:dendrogram_ward}.
+% The clusters all form at a similar distance (around 12), meaning the SSE increase is similar for
+% all clusters.
+% It is interesting to note how the smallest cluster is merged with the others at the last merge; this,
+% as can be observed in figure~\ref{fig:scatter_ward}, is the cluster which resides in the less dense area of the dataset.
+% The other three clusters are closer to each other, as they are a result of the split of the higher density
+% area of the dataset. Compared to K-Means, the clusters are not as cleanly separated in the PCA space,
+% leading to overlapping areas between them.
+
+
 
 
 \subsection{Complete Linkage}
 Figure~\ref{fig:dendrograms_complete} shows the dendrogram and scatter plot for a clustering obtained
 through Complete Linkage.
-Since the tendency of this linkage is to merge into a single cluster, the clustering is cut at 4 clusters,
+Since the tendency of this linkage is to merge all points into a single cluster, the clustering is cut at 4 clusters,
 which helps mitigating the issue. While selecting five clusters would have introduced an additional split
 within the largest cluster with similar SSE and Silhouette scores, the resulting group was found to be
 poorly separated and lacked meaningful distinction.
@@ -336,35 +307,19 @@ is a product of the sparsity of these clusters' regions.
 \end{figure}
 
 \section{General considerations}\label{sec:considerations}
-\textbf{PUNTI TRATTABILI (non in ordine):}
+K-means achieved a high Silhouette score (0.315) and low SSE (535.51), but only after reducing the number of variables. 
+This reflects the algorithm's tendency to perform well in simplified feature spaces, though at the cost of losing some informational richness.\\
+In comparison, hierarchical clustering using Ward's method, which also minimizes SSE, 
+led to lower performance (Silhouette 0.140, SSE 1329), but more variables were kept,
+providing a broader view of the dataset. The resulting clusters were less clearly
+separated, but Ward's method is better at capturing hierarchical structures, which can be informative in exploratory analysis. In addition, given that the dataset is sparse and unbalanced, a high 
+Silhouette score alone is not a reliable indicator of clustering quality.\\
+DBSCAN produced acceptable Silhouette scores as well (0.269, excluding noise), 
+but this is largely due to its tendency to merge dense areas together, while treating isolated points as noise. 
+While this can improve internal cohesion metrics, it does not reflect meaningful segmentation, especially when the data contains a dominant dense area. 
+However, the analysis revealed parameter ranges where meaningful subclusters start to emerge, beyond the dominant density mass.\\
+Overall, each algorithm showed trade-offs: K-means achieved compact clusters with fewer variables, 
+hierarchical clustering with Ward's method retained more information but less separation, 
+and DBSCAN captured dense areas but was sensitive to data structure and tuning.
 
-- k-means raggiunge valori alti di silhouette ma perchè le variabili usate sono poche - questo può essere
-confrontato con ward's che usa invece più variabili (ma paragonabile per valore di silhouette? altrimenti fare confronto con metodo di hierarchical
-che raggiunge performance simili a kmeans- anche se meno paragonabile rispetto a ward's perchè lui + simile a kmeans dato che usa sse)
---> vedere se dire in general considerations o se in k-means
-
-- considerazioni generali su dataset, il clustering riesce a far emergere qualcosa riguardo alla struttura dei dati?
-
-- k-means algoritmo più lineare mentre dbscan e hierarchical più complessi, che magari fanno emergere cose più interessanti
-
-- confronto con titletype?
-
-- se mettiamo hierarchical clustering come prima subsection, spiegare il perchè
-
-- kmeans:
-    - obiettivo → trovare cluster ben separati, con silhouette onesta e SSE bassa
-    - risultato → 4 cluster ben separati, silhouette score di 0.315, SSE di 535.51
-    - confrontabile con metodi di hierarchical?
-
-- DBSCAN:
-        OBIETTIVO → trovare miglior compromesso tra struttura interpretabile (almeno 2 cluster), poco rumore e silhouette onesta.  
-        → e con cluster che anche se piccoli siano "effettivamente separati" 
-        problema →per caratteristiche del dataset stesso → DBSCAN tende a formare un cluster dominante nella zona densa che "cattura" la maggior parte dei dati 
-        (la classe maggioritaria) mentre dati + dispersi sono rappr come rumore o come micro-custer non significativi
-        Spesso epsilon alta →  porta a un comportamento più "aggressivo" nell'unire punti, risultando nel "cluster gigante" 
-        Tendenzialmente con epsilon più basso, l'algoritmo riesce a distinguere meglio le diverse densità,catturando sia la struttura principale che 
-        eventuali sottogruppi significativi.
-        "To conclude, these observations highlight DBSCAN's limitations when applied to datasets with skewed feature
-        distributions and unbalanced local densities. Nonetheless, the exploration helped isolate parameter ranges where
-        meaningful subclusters begin to emerge,beyond the dominant density mass."
 
