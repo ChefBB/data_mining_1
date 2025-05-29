@@ -285,21 +285,13 @@ Because of right-skewness (without a power-law distribution), other attributes w
 \end{itemize}
 
 
-Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}.
-Similarly to missing values imputation (~\ref{sec:missing_values}),
-outlier detection was performed using two different strategies:
-% Figure~\ref{fig:runtimeMinutes_boxplot} shows the first approach, which computes outliers on each \texttt{titleType} separately.
-the first approach computes outliers on each \texttt{titleType} separately,
-while the second is based on the distribution of the \texttt{runtimeMinutes} attribute alone.
-Figure~\ref{fig:outliers} reports an analysis of the feature through the IQR method separately on each type.
-% Figure ~\ref{fig:runtimeMinutes_boxplot_no_type} shows the second, which computes them based on \texttt{canHaveEpisodes} attribute and \textit{Short} genre.
 
-\begin{figure}[H]
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     % \begin{subfigure}{0.58\textwidth}
         % \includegraphics[width=\textwidth]{plots/outliers.png}
-        \includegraphics[width=0.6\textwidth]{plots/outliers.png}
-        % \captionsetup{width=0.9\linewidth, justification=centering}
+        \includegraphics[width=1\linewidth]{plots/outliers.png}
+        \captionsetup{width=0.9\linewidth, justification=raggedleft}
         \caption{Boxplot of the \texttt{runtimeMinutes} attribute for each \texttt{titleType}}
         \label{fig:runtimeMinutes_boxplot}
     % \end{subfigure}
@@ -312,8 +304,15 @@ Figure~\ref{fig:outliers} reports an analysis of the feature through the IQR met
     \captionsetup{justification=centering}
     % \caption{Outliers in the \texttt{runtimeMinutes} attribute}
     \label{fig:outliers}
-\end{figure}
-
+\end{wrapfigure}
+Regarding outliers, the feature that was found to be more problematic was \texttt{runtimeMinutes}.
+Similarly to missing values imputation (~\ref{sec:missing_values}),
+outlier detection was performed using two different strategies:
+% Figure~\ref{fig:runtimeMinutes_boxplot} shows the first approach, which computes outliers on each \texttt{titleType} separately.
+the first approach computes outliers on each \texttt{titleType} separately,
+while the second is based on the distribution of the \texttt{runtimeMinutes} attribute alone.
+Figure~\ref{fig:outliers} reports an analysis of the feature through the IQR method separately on each type.
+% Figure ~\ref{fig:runtimeMinutes_boxplot_no_type} shows the second, which computes them based on \texttt{canHaveEpisodes} attribute and \textit{Short} genre.
 % \begin{wrapfigure}{r}{0.4\textwidth}
 %     \centering
 %     \captionsetup{justification=raggedleft, width=1\linewidth}
