@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 22:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 22:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -947,87 +947,77 @@ File: plots/scatter_complete.png Graphic file (type png)
 Package pdftex.def Info: plots/scatter_complete.png  used on input line 301.
 (pdftex.def)             Requested size: 245.2399pt x 195.59267pt.
 [10 <./plots/dendrogram_complete.png> <./plots/scatter_complete.png>]) (./capitolo3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--26
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--31
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
 <plots/knn_binary_confmatrix.png, id=91, 265.2309pt x 281.853pt>
 File: plots/knn_binary_confmatrix.png Graphic file (type png)
 <use plots/knn_binary_confmatrix.png>
-Package pdftex.def Info: plots/knn_binary_confmatrix.png  used on input line 36.
+Package pdftex.def Info: plots/knn_binary_confmatrix.png  used on input line 35.
 (pdftex.def)             Requested size: 150.14671pt x 159.56119pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--48
-
- []
-
-[11 <./plots/knn_binary_confmatrix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 40--46
 
  []
 
-<plots/nb_binary_confmatrix.png, id=97, 265.2309pt x 281.853pt>
+<plots/nb_binary_confmatrix.png, id=96, 265.2309pt x 281.853pt>
 File: plots/nb_binary_confmatrix.png Graphic file (type png)
 <use plots/nb_binary_confmatrix.png>
-Package pdftex.def Info: plots/nb_binary_confmatrix.png  used on input line 62.
+Package pdftex.def Info: plots/nb_binary_confmatrix.png  used on input line 59.
 (pdftex.def)             Requested size: 150.14671pt x 159.56119pt.
-<plots/binary_dt.png, id=98, 686.565pt x 237.0456pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--70
+
+ []
+
+<plots/binary_dt.png, id=97, 686.565pt x 237.0456pt>
 File: plots/binary_dt.png Graphic file (type png)
 <use plots/binary_dt.png>
-Package pdftex.def Info: plots/binary_dt.png  used on input line 98.
+Package pdftex.def Info: plots/binary_dt.png  used on input line 97.
 (pdftex.def)             Requested size: 400.38872pt x 138.23886pt.
-[12 <./plots/nb_binary_confmatrix.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 104--110
+[12 <./plots/knn_binary_confmatrix.png> <./plots/nb_binary_confmatrix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--164
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
 
  []
 
 [13 <./plots/binary_dt.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--234
+Underfull \hbox (badness 10000) in paragraph at lines 226--235
 
  []
 
 <plots/knn_multiclass_confmatrix.png, id=107, 363.5181pt x 379.4175pt>
 File: plots/knn_multiclass_confmatrix.png Graphic file (type png)
 <use plots/knn_multiclass_confmatrix.png>
-Package pdftex.def Info: plots/knn_multiclass_confmatrix.png  used on input line 293.
+Package pdftex.def Info: plots/knn_multiclass_confmatrix.png  used on input line 294.
 (pdftex.def)             Requested size: 175.17244pt x 182.83043pt.
 
-Underfull \hbox (badness 1102) in paragraph at lines 297--304
-\OT1/lmr/m/n/10 ti-fied, as it was found to help the model to bet-ter dis-tin-
+Underfull \hbox (badness 1755) in paragraph at lines 298--303
+\OT1/lmr/m/n/10 the in-clu-sion of a broad set of fea-tures is jus-ti-fied, as it
  []
 
 
-Underfull \hbox (badness 1496) in paragraph at lines 297--304
-\OT1/lmr/m/n/10 er-age and sen-si-tiv-ity across all classes. The hy-per-pa-ram-e-
+Underfull \hbox (badness 10000) in paragraph at lines 298--303
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--304
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 <plots/nb_multiclass_confmatrix.jpg, id=108, 378.66469pt x 395.22656pt>
 File: plots/nb_multiclass_confmatrix.jpg Graphic file (type jpg)
 <use plots/nb_multiclass_confmatrix.jpg>
-Package pdftex.def Info: plots/nb_multiclass_confmatrix.jpg  used on input line 332.
+Package pdftex.def Info: plots/nb_multiclass_confmatrix.jpg  used on input line 334.
 (pdftex.def)             Requested size: 180.17026pt x 188.05418pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--333
+Underfull \hbox (badness 10000) in paragraph at lines 325--335
 
  []
 
@@ -1035,14 +1025,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--333
 <plots/multiclass_tree.png, id=113, 808.7013pt x 237.0456pt>
 File: plots/multiclass_tree.png Graphic file (type png)
 <use plots/multiclass_tree.png>
-Package pdftex.def Info: plots/multiclass_tree.png  used on input line 363.
+Package pdftex.def Info: plots/multiclass_tree.png  used on input line 365.
 (pdftex.def)             Requested size: 440.42834pt x 129.09866pt.
 <plots/multiclass_dt_conf_matrix.png, id=114, 363.5181pt x 379.4175pt>
 File: plots/multiclass_dt_conf_matrix.png Graphic file (type png)
 <use plots/multiclass_dt_conf_matrix.png>
-Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 379.
+Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 381.
 (pdftex.def)             Requested size: 180.17026pt x 188.0467pt.
- [15 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png>]) (./capitolo4.tex [16 <./plots/multiclass_dt_conf_matrix.png>] [17]) (./capitolo5.tex [18]
+ [15 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png>] [16 <./plots/multiclass_dt_conf_matrix.png>]) (./capitolo4.tex [17]) (./capitolo5.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18]
 <plots/5_min_sup.png, id=130, 621.522pt x 403.9893pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
@@ -1058,15 +1052,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
+[19 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 127--131
 
  []
 
-[19 <./plots/5_min_sup.png> <./plots/5_min_conf.png>]) [20]
+) [20]
 
 LaTeX Warning: Empty bibliography on input line 224.
 
@@ -1089,13 +1080,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  17988 strings out of 474116
  356585 string characters out of 5743682
- 1950187 words of memory out of 5000000
+ 1951187 words of memory out of 5000000
  40121 multiletter control sequences out of 15000+600000
  610197 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (22 pages, 1823835 bytes).
+Output written on main.pdf (22 pages, 1823856 bytes).
 PDF statistics:
  220 PDF objects out of 1000 (max. 8388607)
  109 compressed objects within 2 object streams

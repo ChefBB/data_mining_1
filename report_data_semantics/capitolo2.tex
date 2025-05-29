@@ -311,7 +311,7 @@ In terms of performance metrics, K-means achieved the highest Silhouette score (
 This reflects the algorithm's tendency to perform well in simplified feature spaces, though at the cost of losing some informational richness.\\
 In comparison, hierarchical clustering using Ward's method, which also minimizes SSE, 
 led to worse performance metrics (Silhouette 0.17, SSE 1545) and poor separation between clusters, but was able to retain more information by using more variables.
-Complete Linkage had a similar SSE (1800), but a much higher Silhoette score (0.30), resulting in a better separated clustering. However, it led to a
+Complete Linkage had a similar SSE (1800), but a much higher Silhoette score (0.30), resulting in better separated clusters. However, it led to a
 heavily imbalanced cluster distribution, with one cluster containing over 80\% of the data points.\\
 % The resulting clusters were less clearly
 % separated, but Ward's method is better at capturing hierarchical structures, which can be informative in exploratory analysis.\\
@@ -322,7 +322,7 @@ but this is largely due to its tendency to merge dense areas together, while tre
 While this can improve internal cohesion metrics, it does not reflect meaningful segmentation, especially when the data contains a densely dominant area. 
 However, the analysis revealed parameter ranges where meaningful subclusters start to emerge, beyond the dominant density mass.\\
 Overall, each algorithm showed trade-offs: K-means achieved compact clusters with fewer variables, 
-hierarchical clustering with Ward's method retained more information but less separation, 
+hierarchical clustering retained more information but resulted in eitherless separation or imbalanced clusters, 
 and DBSCAN captured dense areas but was sensitive to data structure and tuning.
 
 

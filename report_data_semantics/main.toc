@@ -32,5 +32,5 @@
 \contentsline {section}{\numberline {4.2}Multivariate Regression}{18}{}%
 \contentsline {chapter}{\numberline {5}Pattern Mining}{18}{}%
 \contentsline {section}{\numberline {5.1}Extraction and discussion of frequent patterns}{19}{}%
-\contentsline {section}{\numberline {5.2}Extraction of rules}{19}{}%
+\contentsline {section}{\numberline {5.2}Extraction of rules}{20}{}%
 \contentsline {section}{\numberline {5.3}Exploiting rules for target prediction}{20}{}%
