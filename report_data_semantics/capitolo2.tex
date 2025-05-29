@@ -126,7 +126,7 @@ As shown in (Figure~\ref{fig:dbscan_visualization}), this setting resulted in a 
 A second less dense cluster with fewer points (4347) captured intermediate-density areas or mild outliers. 
 Finally, a very small but well-separated cluster, of only 11 points, effectively captured a potential relevant local pattern. 
 In addition, 219 points were labeled as noise.
-The resulting Silhouette Score was 0.2699.\\
+The resulting Silhouette Score was 0.2699.
 
 % \textbf{QUESTA PARTE VOLENDO PUò ANDARE NELLE CONSIDERAZIONI GENERALI}\\
 % To conclude, these observations highlight DBSCAN's limitations when applied to datasets with skewed feature distributions and unbalanced local densities.
@@ -207,7 +207,7 @@ across different numbers of clusters.\\
 \end{figure}
 
 
-Since Ward's method is based on Squared Error, it's not surprising how its SSE is consistently lower than other linkages, as shown in the second graph of figure~\ref{fig:sil_sse_hierarchical_clust}.
+Since Ward's method is based on Squared Error, it's not surprising how its SSE is consistently lower than other linkages, as shown in figure~\ref{fig:sil_sse_hierarchical_clust}.
 More interesting is that Ward's method has the lowest Silhouette scores for all numbers
 of clusters tested, which indicates that the clusters are not well separated. This is due to
 the fact that Ward's method groups the data which resides in the high-density area
@@ -244,9 +244,9 @@ Figure~\ref{fig:dendrograms_ward} shows a dendrogram and a scatter plot of the c
 Ward's Method. The cut at 4 clusters was chosen based on the parameters discussed in the previous section
 and on the clarity of the dendrogram.\\
 
-The dendrogram in Figure~\ref{fig:dendrogram_ward} reveals well-separated clusters, all of which merge at a
+The dendrogram in figure~\ref{fig:dendrogram_ward} reveals well-separated clusters, all of which merge at a
 similar linkage distance (approximately 12). This indicates that the increase in within-cluster sum of
-squares (SSE) is relatively consistent across all cluster merges, as expected from Ward's method.
+squares (SSE) is relatively consistent across all of the final clusters' merges.
 Notably, the smallest cluster is the last to be merged, which suggests it is more distinct from the others.
 As shown in Figure~\ref{fig:scatter_ward}, this cluster lies in a sparser region of the dataset.
 In contrast, the remaining three clusters originate from the denser region, and are therefore spatially
@@ -307,16 +307,19 @@ is a product of the sparsity of these clusters' regions.
 \end{figure}
 
 \section{General considerations}\label{sec:considerations}
-K-means achieved a high Silhouette score (0.315) and low SSE (535.51), but only after reducing the number of variables. 
+In terms of performance metrics, K-means achieved the highest Silhouette score (0.315) and lowest SSE (535.51). This was possible after reducing the number of variables. 
 This reflects the algorithm's tendency to perform well in simplified feature spaces, though at the cost of losing some informational richness.\\
 In comparison, hierarchical clustering using Ward's method, which also minimizes SSE, 
-led to lower performance (Silhouette 0.140, SSE 1329), but more variables were kept,
-providing a broader view of the dataset. The resulting clusters were less clearly
-separated, but Ward's method is better at capturing hierarchical structures, which can be informative in exploratory analysis. In addition, given that the dataset is sparse and unbalanced, a high 
-Silhouette score alone is not a reliable indicator of clustering quality.\\
+led to worse performance metrics (Silhouette 0.17, SSE 1545) and poor separation between clusters, but was able to retain more information by using more variables.
+Complete Linkage had a similar SSE (1800), but a much higher Silhoette score (0.30), resulting in a better separated clustering. However, it led to a
+heavily imbalanced cluster distribution, with one cluster containing over 80\% of the data points.\\
+% The resulting clusters were less clearly
+% separated, but Ward's method is better at capturing hierarchical structures, which can be informative in exploratory analysis.\\
+% In addition, given that the dataset is sparse and imbalanced, a high 
+% Silhouette score alone is not a reliable indicator of clustering quality.\\
 DBSCAN produced acceptable Silhouette scores as well (0.269, excluding noise), 
 but this is largely due to its tendency to merge dense areas together, while treating isolated points as noise. 
-While this can improve internal cohesion metrics, it does not reflect meaningful segmentation, especially when the data contains a dominant dense area. 
+While this can improve internal cohesion metrics, it does not reflect meaningful segmentation, especially when the data contains a densely dominant area. 
 However, the analysis revealed parameter ranges where meaningful subclusters start to emerge, beyond the dominant density mass.\\
 Overall, each algorithm showed trade-offs: K-means achieved compact clusters with fewer variables, 
 hierarchical clustering with Ward's method retained more information but less separation, 
