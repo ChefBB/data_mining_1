@@ -324,7 +324,7 @@ To summarize, the macro average F1-score of 0.50 reflects clearly the imbalance 
 For the multiclass classification task, the same procedures as binary classification (explained in subsection 3.1.2) were applied. 
 Note that including the one-hot encoded \textit{genres} features significantly improved classification across all classes, particularly those with limited support in the training set. 
 While with GaussianNB, \textit{tvMiniSeries} was not classified at all, and \textit{tvMovie} and \textit{tvSpecial} were poorly classified. 
-On the other hand, since CategoricalNB better handles categorical data, these classes showed improvements, confirming its suitability for this task.\\   
+On the other hand, since CategoricalNB better handles categorical data, these classes showed improvements, confirming its suitability for this task.
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
     \captionsetup{justification=raggedleft, width=1\linewidth}
@@ -373,6 +373,10 @@ of the tree are based, with a feature importance of 0.45.
 Three out of the four splits in the following level are based on \texttt{numRegions} being less than
 2, giving the feature an importance of 0.13; the fourth is based on the \textit{Adventure} genre,
 which has an importance of 0.01.
+
+The model showed a general tendency towards overfitting; many configurations were tested to prevent
+this. The overall accuracy shows a significant drop (from 0.86 on the train set, to 0.75 on the test set),
+as well as the macro-averaged F1-score, going from 0.65 to 0.52.\\
 \begin{wrapfigure}{r}{0.4\textwidth}
     \centering
     \captionsetup{justification=raggedleft, width=1\linewidth}
@@ -380,9 +384,6 @@ which has an importance of 0.01.
     \label{fig:multiclass_dt_conf_matrix}
     \includegraphics[width=0.9\linewidth]{plots/multiclass_dt_conf_matrix.png}
 \end{wrapfigure}
-The model showed a general tendency towards overfitting; many configurations were tested to prevent
-this. The overall accuracy shows a significant drop (from 0.86 on the train set, to 0.75 on the test set),
-as well as the macro-averaged F1-score, going from 0.65 to 0.52.
 This was given from the \textit{tvMiniSeries} and \textit{tvSpecial} classes: on the train set these had f1-scores of
 respectively 0.35 and 0.22, and both had 0.10 on the test set.
 This can be seen in Figure~\ref{fig:multiclass_dt_conf_matrix}, which shows
@@ -390,7 +391,6 @@ that most predictions for these classes were wrong.\\
 Post-pruning was also tested, but did not give particular benefits.
 Higher values for the parameter $\alpha$ had minor positive effects on the generalization
 capabilities of the model, at the cost of losing predictions on the less represented classes.\\
-
 % Another aspect highlighted by the confusion matrix is the fact that \textit{tvMovie} was often
 % classified as \textit{movie}, leading to a recall value of 0.26 on the test set.
 % This is likely due to the fact that the two classes are overlapping, since they are semantically related,

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  29 MAY 2025 23:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.14)  30 MAY 2025 00:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -998,11 +998,6 @@ File: plots/nb_multiclass_confmatrix.jpg Graphic file (type jpg)
 <use plots/nb_multiclass_confmatrix.jpg>
 Package pdftex.def Info: plots/nb_multiclass_confmatrix.jpg  used on input line 333.
 (pdftex.def)             Requested size: 180.17026pt x 188.05418pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--334
-
- []
-
 [14 <./plots/knn_multiclass_confmatrix.png>]
 <plots/multiclass_tree.png, id=113, 808.7013pt x 237.0456pt>
 File: plots/multiclass_tree.png Graphic file (type png)
@@ -1012,59 +1007,24 @@ Package pdftex.def Info: plots/multiclass_tree.png  used on input line 365.
 <plots/multiclass_dt_conf_matrix.png, id=114, 363.5181pt x 379.4175pt>
 File: plots/multiclass_dt_conf_matrix.png Graphic file (type png)
 <use plots/multiclass_dt_conf_matrix.png>
-Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 381.
+Package pdftex.def Info: plots/multiclass_dt_conf_matrix.png  used on input line 385.
 (pdftex.def)             Requested size: 180.17026pt x 188.0467pt.
- [15 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png>]
-Underfull \hbox (badness 1383) in paragraph at lines 382--393
-[] \OT1/lmr/m/n/10 The model showed a gen-eral ten-dency to-wards over-fit-ting;
- []
 
-
-Underfull \hbox (badness 1946) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 F1-score, go-ing from 0.65 to 0.52. This was given from
- []
-
-
-Underfull \hbox (badness 1867) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 had f1-scores of re-spec-tively 0.35 and 0.22, and both had
- []
-
-
-Underfull \hbox (badness 2547) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 0.10 on the test set. This can be seen in Fig-ure 3.7[],
- []
-
-
-Underfull \hbox (badness 3375) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 which shows that most pre-dic-tions for these classes were
- []
-
-
-Underfull \hbox (badness 1609) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 e-fits. Higher val-ues for the pa-ram-e-ter $\OML/lmm/m/it/10 $ \OT1/lmr/m/n/10 had mi-nor pos-
- []
-
-
-Underfull \hbox (badness 1466) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 i-tive ef-fects on the gen-er-al-iza-tion ca-pa-bil-i-ties of the model,
- []
-
-
-Underfull \hbox (badness 3668) in paragraph at lines 382--393
-\OT1/lmr/m/n/10 at the cost of los-ing pre-dic-tions on the less rep-re-sented
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 382--393
+Underfull \hbox (badness 10000) in paragraph at lines 377--386
 
  []
 
+[15 <./plots/nb_multiclass_confmatrix.jpg> <./plots/multiclass_tree.png>]
 <plots/ROC_multiclass.png, id=119, 443.0151pt x 339.669pt>
 File: plots/ROC_multiclass.png Graphic file (type png)
 <use plots/ROC_multiclass.png>
 Package pdftex.def Info: plots/ROC_multiclass.png  used on input line 418.
 (pdftex.def)             Requested size: 225.21626pt x 172.6795pt.
-[16 <./plots/multiclass_dt_conf_matrix.png> <./plots/ROC_multiclass.png>]) (./capitolo4.tex [17]) (./capitolo5.tex [18]
+ [16 <./plots/multiclass_dt_conf_matrix.png> <./plots/ROC_multiclass.png>]) (./capitolo4.tex [17]) (./capitolo5.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18]
 <plots/5_min_sup.png, id=132, 621.522pt x 403.9893pt>
 File: plots/5_min_sup.png Graphic file (type png)
 <use plots/5_min_sup.png>
@@ -1085,11 +1045,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--131
 
  []
 
-)
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[20] [21]
+) [20]
 
 LaTeX Warning: Empty bibliography on input line 224.
 
@@ -1111,17 +1067,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  17996 strings out of 474116
- 356821 string characters out of 5743682
+ 356817 string characters out of 5743682
  1951187 words of memory out of 5000000
  40129 multiletter control sequences out of 15000+600000
  610197 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,19n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 123i,20n,121p,1223b,1835s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (23 pages, 1870061 bytes).
+Output written on main.pdf (22 pages, 1869738 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
+ 222 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
