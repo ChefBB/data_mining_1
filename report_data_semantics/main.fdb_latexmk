@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1748528839.50649 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1748529340.04732 0
   "bibliography.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1748528835.57494 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748528839.5074 0
+["pdflatex"] 1748529333.55966 "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" "main.pdf" "main" 1748529340.04815 0
   "/Users/brunobarbieri/Documents/Uni/master/first/first_sem/data_mining_1/report_data_semantics/main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -144,16 +144,16 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1718359646.02718 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1718359419 8221430 7882b9a7879b697c1714b9ec0b6e673c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "capitolo1.tex" 1748510942.91632 19377 d51cbec77751bb0e223d112f4cf03d57 ""
+  "capitolo1.tex" 1748529332.64514 19388 0f395fd7d0fd25e9a690d08b70b63a99 ""
   "capitolo2.tex" 1748504994.68992 24609 a8ff48caae4ce6caa0d91bb844cafb95 ""
   "capitolo3.tex" 1748528829.84685 30232 7eda4455d6352e27df60cfc731ddd917 ""
   "capitolo4.tex" 1748527503.7937 5574 91c7ed600ba6023a2300b7c7d6200bf7 ""
   "capitolo5.tex" 1748414884.8447 8479 b2aae322e8ce4845f438b93dd1ad87d1 ""
-  "main.aux" 1748528838.87393 14744 503851cae41bcd3104465bc18f81dc95 "pdflatex"
+  "main.aux" 1748529339.05541 14756 117888c7395227eae11e5a8f3d1fa5c3 "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.run.xml" 1748528838.8815 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
+  "main.run.xml" 1748529339.06911 2307 fa280d158a7733084a6a66e2106e4193 "pdflatex"
   "main.tex" 1748414979.01329 7945 4e6e7ecb4efb7e143149207deabde7a2 ""
-  "main.toc" 1748528838.88173 2815 3f2b1cde72fe48d2684910432dcfa421 "pdflatex"
+  "main.toc" 1748529339.06954 2815 3f2b1cde72fe48d2684910432dcfa421 "pdflatex"
   "plots/5_min_conf.png" 1748423396.27224 51666 247bb2898aca798f5d782fdc39fa8499 ""
   "plots/5_min_sup.png" 1748423396.27512 40859 adff69002735abb7bb8cfad7309abeed ""
   "plots/binary_dt.png" 1748339665.29033 207375 08ae0ff6de7b8b83409efbb775ecc0b2 ""
@@ -174,7 +174,7 @@
   "plots/nb_multiclass_confmatrix.jpg" 1748504994.73432 46510 ff77e901490589113a6dcddfd3e31327 ""
   "plots/nominations_distrib.png" 1748510899.09096 35484 9389f98bf5236aeea6648d16960d2fac ""
   "plots/outliers.png" 1748505734.87819 36244 f34b61deb556403ade8bd0d7d4a44187 ""
-  "plots/rating_distrib.png" 1748510631.36818 23920 8cf7f422bcbb32f46cef87b95f71c83e ""
+  "plots/rating_distrib.png" 1748529030.27878 23959 5162958830d004adee3405e56dfa2d80 ""
   "plots/scatter_complete.png" 1748268919.00469 133382 4dfb6043563768f0fff7d8bdb7c209f9 ""
   "plots/scatter_ward.png" 1748268744.16142 144044 fbbe37cce4357a3cc7f83b6a3b246802 ""
   "plots/sil_sse_hierarchical_clust.png" 1748100727.19942 62222 93703fe08205068fa724c5ef093be07f ""
