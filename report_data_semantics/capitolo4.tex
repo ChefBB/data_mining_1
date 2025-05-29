@@ -17,117 +17,75 @@ as the target variable. Aside from the semantic meaning, this choice was also ma
 because it has a high correlation
 with the attribute \texttt{userReviewsTotal}, allowing univariate regression
 to be performed, while maintaining a clear separate semantic meaning.
-Table~\ref{tab:uni_multi_regression_report} shows the results of the Univariate and Multiple Regression
-tasks.
-% Figure~\ref{fig:univariate_regression} shows the results of the Univariate Regression task for
-% all models but KNN, which doesn't provide an interesting visualization.
-% \begin{figure}[H]
-%     \centering
-%     \begin{subfigure}{0.2565\textwidth}
-%         \centering
-%         \includegraphics[width=1\textwidth]{plots/linear.png}
-%         \caption{Linear regressor}
-%         \captionsetup{width=0.9\linewidth, justification=centering}
-%         \label{fig:linear}
-%     \end{subfigure}
-%     \begin{subfigure}{0.24\textwidth}
-%         \centering
-%         \includegraphics[width=1\textwidth]{plots/ridge.png}
-%         \caption{Ridge regressor}
-%         \captionsetup{width=0.9\linewidth, justification=centering}
-%         \label{fig:ridge}
-%     \end{subfigure}
-%     \begin{subfigure}{0.24\textwidth}
-%         \centering
-%         \includegraphics[width=1\textwidth]{plots/lasso.png}
-%         \caption{Lasso regressor}
-%         \captionsetup{width=0.9\linewidth, justification=centering}
-%         \label{fig:lasso}
-%     \end{subfigure}
-%     \begin{subfigure}{0.24\textwidth}
-%         \centering
-%         \includegraphics[width=1\textwidth]{plots/dt_regressor.png}
-%         \caption{DT regressor}
-%         \captionsetup{width=0.9\linewidth, justification=centering}
-%         \label{fig:elastic}
-%     \end{subfigure}
-%     \caption{Univariate regression prediction results in Logarithmic space}
-%     \label{fig:univariate_regression}
-% \end{figure}
-
+Multivariate Regression was performed with \texttt{numVotes}, \texttt{numRegions} and
+\texttt{totalMedia} as additional features, because of their high correlations with the target variable.
+All features were normalized using StandardScaler, and all models' parameters
+were optimized using Cross-Validation.
+Table~\ref{tab:uni_multi_regression_report} shows the test performances of the different regressors.
 \begin{table}[H]
     \centering
     \begin{tabular}{lccccccc}
         \toprule
         % mae, mse normalized over target variable range
-         & \textbf{Intercept} & \textbf{Coefficient} & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} & \textbf{$\alpha$} \\
+         & \textbf{Intercept} & \textbf{Coefficient} & \textbf{R$^2$} & \textbf{MAE} & \textbf{MSE} & $\alpha$ \\
         \midrule
         \textbf{Univariate} \\
         \midrule
-        Linear & 3.77 * 10$^-18$ & 0.598 & 0.466 & 0.260 & 1.096 & - \\ % train mae: 0.6427363729986589
-        Ridge & 3.77 * 10$^-18$ & 0.598 & 0.466 & 0.260 & 1.096 & 0.1 \\ % alpha=100
-        Lasso & 4.41 * 10$^-18$ & 0.498 & 0.412 & 0.272 & 1.206 & 0.1 \\ % alpha=100
-        DT & - & - & 0.686 & 0.177 & 0.644 & - \\
-        24-NN & - & - & 0.643 & 0.169 & 0.731 & - \\
+        Linear & -1.16 * 10$^{-16}$ & 0.732 & 0.565 & 0.432 & 0.474 & - \\ % train mae: 0.6427363729986589
+        Ridge & -1.16 * 10$^{-16}$ & 0.732 & 0.565 & 0.432 & 0.474 & 1* 10$^{-4}$ \\ % alpha=100
+        Lasso & -1.16 * 10$^{-16}$ & 0.732 & 0.565 & 0.432 & 0.474 & 1* 10$^{-4}$ \\ % alpha=100
+        DT & - & - & 0.601 & 0.446 & 0.434 & - \\
+        % {'ccp_alpha': 0.004077514155476392, 'criterion': 'friedman_mse', 'max_depth': 35,
+        % 'max_leaf_nodes': 19, 'min_impurity_decrease': 0.07111495324380178, 'min_samples_leaf': 19,
+        % 'min_samples_split': 8}
+        47-NN & - & - & 0.603 & 0.424 & 0.432 & - \\
         \midrule
         \textbf{Multiple}\\
         \midrule
-        Linear & - & - & 0.649 & 0.006 & 0.220 & - \\
-        Ridge & - & - & 0.649 & 0.006 & 0.220 & 0.1 \\ % alpha=0.1
-        Lasso & - & - & 0.627 & 0.005 & 0.233 & 0.1 \\ % alpha=0.1
-        DT & - & - & 0.705 & 0.004 & 0.185 & - \\
-        7-NN & - & - & 0.770 & 0.003 & 0.176 & - \\
+        Linear & - & - & 0.628 & 0.436 & 0.405 & - \\
+        Ridge & - & - & 0.628 & 0.436 & 0.405 & 37.649 \\ % alpha=0.1
+        Lasso & - & - & 0.608 & 0.438 & 0.427 & 0.1 \\ % alpha=0.1
+        DT & - & - & 0.659 & 0.395 & 0.371 & - \\
+        % (ccp_alpha=0.0006952130531190704, criterion='friedman_mse',
+        % max_depth=8, min_samples_leaf=9, min_samples_split=7)
+        15-NN & - & - & 0.667 & 0.383 & 0.362 & - \\
         \bottomrule
     \end{tabular}
     \caption{Classification report for binary classification}
     \label{tab:uni_multi_regression_report}
 \end{table}
+In Univariate Regression, the Linear, Ridge, and Lasso models underperformed compared to both Decision
+Tree and K-Nearest Neighbors regressors. Neither L1 nor L2 regularization significantly improved
+performance, suggesting that the underlying relationship between the variables may not be well
+captured by a linear model. 
+Interestingly, the Decision Tree's Mean Absolute Error was the highest, but the Mean Squared Error was
+lower than the linear models, indicating that its predictions were more accurate
+on average, but with some outliers that were not well predicted.
+K-Nearest Neighbors was the best performer, achieving better scores in all metrics.
 
-MSE and MAE are normalized over the range of the target variable; all metrics are calculated on
-the test set.\\
-As can be seen by the $\alpha$ values, the Ridge and Lasso regressors had their best performances
-with high regularization; the Ridge regressor in particular had the same results as the Linear regressor
-in the Univariate Regression task, while the Lasso regressor had some differences, with a lower MAE,
-but a higher MSE and lower R$^2$ score. The best performing model for Univariate Regression was 
-the Decision Tree regressor, and KNN (with 24 neighbors) had similar results, surpassing
-Linear, Ridge and Lasso regressors. Both models were tuned through Grid Search Cross-Validation.
-The obtained Decision Tree regressor had a maximum depth of 18, with an $\alpha$ of 0.075, and a
-minimum impurity decrease of 0.056.
+In Multiple Regression, all models were able to express more of the variance in the target variable,
+as can be seen from the R-Squared values' rise.
+Interestingly, all Linear models had a slight drop in Mean Absolute Error performance compared to the
+Univariate Regression, indicating an average error growth. However, their Mean Squared Error decreased,
+suggesting that the models made fewer severe mistakes or large errors.
+The Ridge model had the same performance as the Linear model, but with a regularization
+parameter of 37.649, which is significantly higher than the one used in Univariate Regression.
+The Lasso model, on the other hand, had a lower regularization parameter of 0.1, which is
+still higher than the one used in Univariate Regression, but its performance was worse than the other
+linear models.
+The Decision Tree and K-Nearest Neighbors regressors performed better than the linear models,
+with the K-Nearest Neighbors achieving the best performance in all metrics.
 
+An interesting observation is that both Decision Tree and K-Nearest Neighbors regressors achieved their
+best performances with higher tree depth and larger numbers of neighbors, respectively, in the
+Univariate Regression. In contrast, in Multiple Regression, they performed better with lower tree depth
+and fewer neighbors. Specifically, the Decision Tree depths were 35 (Univariate) and 8 (Multiple),
+while the K-Nearest Neighbors' numbers of neighbors were 47 and 15. This suggests that in the
+Univariate setting, the models needed greater complexity to capture the potentially nonlinear
+relationship between the single feature and the target. Meanwhile, in Multiple Regression, the
+combined features likely captured the relationship more linearly or simply, allowing the models to
+generalize better with reduced complexity.
 
-
-
-% \begin{table}[H]
-%     \centering
-%     \begin{tabular}{lccccccccc}
-%         \toprule
-%         % mae, mse normalized over target variable range
-%          & \textbf{Intercept} & \textbf{Coefficient} & \textbf{MAE} & \textbf{MSE} & \textbf{R$^2$} & \textbf{test MAE} & \textbf{test MSE} & \textbf{$\alpha$} \\
-%         \midrule
-%         \textbf{Univariate} & & & & & \\
-%         \midrule
-%         Linear & 1.760 & 0.126 & 0.007 & 0.253 & 0.357 & 0.007 & 0.334 & - \\
-%         Ridge & 1.760 & 0.126 & 0.007 & 0.253 & 0.357 & 0.007 & 0.334 & 100 \\ % alpha=100
-%         Lasso & 1.924 & 0.100 & 0.007 & 0.259 & 0.342 & 0.006 & 0.376 & 100 \\ % alpha=100
-%         DT & - & - & 0.005 & 0.127 & 0.678 & 0.004 & 0.194 & - \\
-%         24-NN & - & - & 0.004 & 0.135 & 0.658 & 0.004 & 0.223 & - \\
-%         \midrule
-%         \textbf{Multiple} & & & & & \\
-%         \midrule
-%         Linear & - & - & 0.006 & 0.157 & 0.601 & 0.006 & 0.220 & - \\
-%         Ridge & - & - & 0.006 & 0.157 & 0.601 & 0.006 & 0.220 & 0.1 \\ % alpha=0.1
-%         Lasso & - & - & 0.006 & 0.161 & 0.590 & 0.005 & 0.241 & 1 \\ % alpha=1
-%         DT & - & - & 0.004 & 0.085 & 0.784 & 0.004 & 0.196 & - \\
-%         7-NN & - & - & $7 * 10^{-5}$ & $8 * 10^{-5}$ & $\approx 1$ & 0.003 & 0.176 & - \\
-%         \bottomrule
-%     \end{tabular}
-%     \caption{Classification report for binary classification}
-%     \label{tab:binary_classification_report}
-% \end{table}
-While Linear, Ridge and Lasso's predictions are similar in both 
-
-For Multiple Regression, the target variable was kept the same, in order to
-allow for a direct comparison of the results obtained with the two techniques.
 
 
 \section{Multivariate Regression}
